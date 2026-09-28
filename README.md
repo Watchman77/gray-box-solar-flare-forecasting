@@ -1,0 +1,57 @@
+# Gray-Box Solar Flare Forecasting
+
+Research repository for **A Gray-Box Operational Framework for Multi-Horizon Solar Flare Forecasting: Calibration, Uncertainty, and Prospective Evaluation**.
+
+The central question is: **when should an operational user trust a solar flare forecast?**
+
+## Status
+
+This repository currently contains the research scaffold and a proposed protocol. It does not yet contain trained models, a deployed forecasting service, or validated results from the new Gray-Box experiments. Protocol choices and thresholds must be finalized before confirmatory evaluation.
+
+The initial focus is the 72-hour horizon, followed by 24-hour and 3-hour evaluation. Existing 48-hour AIA experiments remain separate baselines with their original labels and scope.
+
+## Research scope
+
+- Reuse the SHARP temporal forecasting backbone and evaluate an additional AIA image branch on matched forecast cases.
+- Fit probability calibration on earlier data and assess reliability at each horizon.
+- Define predictive uncertainty separately from confidence intervals for evaluation metrics.
+- Detect unsupported input conditions and select **normal forecast**, **degraded forecast**, or **abstention/fallback**, with recorded reasons.
+- Evaluate realistic missing observations, correlated channel outages, source changes, and solar-cycle changes.
+- Combine chronological evaluation with AR-disjoint and event-disjoint sensitivity studies.
+- Develop rolling historical replay with explicit availability assumptions, followed by genuinely prospective evaluation when forecasts can be logged before outcomes occur.
+
+## Five-layer architecture
+
+1. **Data-driven component:** temporal SHARP and optional AIA predictors.
+2. **Physically interpretable component:** magnetic-complexity features or an explicitly specified physical proxy/model.
+3. **Fusion layer:** combine supported branch outputs, accounting for input quality and availability.
+4. **Uncertainty layer:** probability calibration and task-appropriate predictive uncertainty.
+5. **Operational safety layer:** determine forecast state, reason and fallback behaviour.
+
+SHARP and AIA are physically meaningful observations. Their inclusion alone does not establish a first-principles simulator or a validated MHD/PINN component.
+
+## Start here
+
+| File | Purpose |
+|---|---|
+| [Layer protocol](docs/LAYER_PROTOCOL.md) | Inputs, methods, outputs, metrics, failure modes and decision rules for each layer. |
+| [Data contract](docs/DATA_CONTRACT.md) | Forecast unit, timestamps, labels, provenance and master prediction table. |
+| [Roadmap](docs/ROADMAP.md) | Ordered research milestones and completion evidence. |
+| [Initial evidence](docs/INITIAL_EVIDENCE.md) | Existing work and unresolved issues carried into this project. |
+| [Example protocol configuration](configs/protocol.example.json) | Machine-readable draft; no operational thresholds have been selected. |
+| [Contributor guidance](AGENTS.md) | Authorship, reproducibility and research conventions. |
+
+## Related repositories
+
+- [solar-flare-multihorizon](https://github.com/Watchman77/solar-flare-multihorizon): original multi-horizon forecasting work.
+- [solar-flare-aia-training](https://github.com/Watchman77/solar-flare-aia-training): AIA acquisition, image and magnetic baselines, fusion experiments, and cross-cycle analysis.
+
+The AIA repository remains the home of its acquisition and training work. This repository develops the operational framework and records the exact upstream versions used by each experiment.
+
+## Data and results
+
+Keep large images, tensors, model checkpoints, credentials and private correspondence out of Git. Commit small reviewed manifests, schemas, configurations and results with provenance. Read [the data policy](data/README.md) before adding an artefact.
+
+Repository owner and maintainer: **Bamidele Akinwumi — [Watchman77](https://github.com/Watchman77)**.
+
+Licensing and manuscript authorship will be documented separately before a research release. A repository scaffold does not establish publication results or an institutional partnership.

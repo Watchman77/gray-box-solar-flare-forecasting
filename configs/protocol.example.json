@@ -1,0 +1,51 @@
+{
+  "protocol_id": "gray-box-solar-flare-draft-v0",
+  "status": "proposed_not_frozen",
+  "experiments_executed_in_this_repository": false,
+  "primary_horizon_hours": 72,
+  "additional_horizons_hours": [24, 3],
+  "upstream_aia_baseline_horizon_hours": 48,
+  "target": {
+    "unit": "active_region",
+    "event": "combined_M_or_X",
+    "window": "(issue_time, issue_time + horizon]",
+    "event_time_definition": null,
+    "complete_followup_required": true
+  },
+  "inputs": {
+    "sharp": true,
+    "aia_candidate": true,
+    "aia_wavelengths_angstrom": [94, 131, 171, 193, 211, 335],
+    "continuous_goes_xrs_optional": true,
+    "issue_cadence_minutes": null,
+    "latency_policy": null,
+    "preprocessing_version": null
+  },
+  "calibration": {
+    "candidate_methods": ["platt", "isotonic"],
+    "selected_method": null,
+    "fit_role": "earlier_calibration_block",
+    "fit_on_test": false
+  },
+  "uncertainty": {
+    "selected_method": null,
+    "prediction_target": null,
+    "coverage_level": null
+  },
+  "safety": {
+    "states": ["normal", "degraded", "abstain"],
+    "thresholds": null,
+    "fallback_candidate": "separately_validated_and_calibrated_sharp_branch",
+    "fallback_validated": false
+  },
+  "evaluation": {
+    "primary": "chronological_rolling",
+    "sensitivity": ["ar_disjoint", "event_disjoint", "correlated_outages", "source_shift"],
+    "dates": null,
+    "matched_forecast_cases": true,
+    "natural_prevalence": true,
+    "purge_overlapping_outcomes": true,
+    "resampling_unit": "to_be_defined_from_region_and_temporal_dependence",
+    "prospective_logging_started": false
+  }
+}

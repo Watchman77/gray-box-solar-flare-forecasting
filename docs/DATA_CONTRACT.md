@@ -1,0 +1,46 @@
+# Forecast data contract — draft
+
+## Unit of prediction
+
+One row per `region_component_id`, `issue_time_utc`, `horizon_hours`, and `target_definition`, per experiment/model version. Region forecasts and full-disk forecasts are distinct tasks.
+
+Proposed horizons: 72 hours first; then 24 and 3 hours. The existing 48-hour experiments retain their original scope. The initial target is a combined M-or-X event in the same region within `(issue_time, issue_time + horizon]`; the choice of event start versus peak time must be explicitly frozen before labels are generated. Separate exceedance targets require their own named definition.
+
+## Required inputs
+
+| Source | Required content | Checks |
+|---|---|---|
+| SHARP | Feature values/units, HARP and NOAA associations, actual times, product series/version and quality | History completeness; timestamp semantics; NRT versus definitive provenance; availability before issue time. |
+| AIA | Channel order, observation times/exposure, spatial mapping, source and processing version | Aligned six-channel contract (94/131/171/193/211/335 Å), channel-specific quality, missingness and latency. |
+| Flare catalogue | Event identifiers, class, timestamps with time scale, region association, provider/version, coverage interval | Completeness, duplicate/ambiguous events, association consistency and follow-up through the entire horizon. |
+| Availability | Expected and received observations, unavailable channels, outage blocks and latency | Preserve the intended forecast population, including cases with missing inputs. |
+
+Continuous GOES/XRS or flare-history predictors are optional additional inputs. A catalogue used to label future events is not by itself a GOES predictor branch.
+
+## Master prediction table
+
+| Field group | Minimum fields |
+|---|---|
+| Identity | `forecast_id`, `experiment_id`, `region_component_id`, HARP/NOAA IDs, `issue_time_utc`, `horizon_hours`, `target_definition` |
+| Source provenance | source URIs/IDs, object generation or checksum, product series/version, preprocessing version |
+| Time and availability | original timestamp and time scale, observation start/end UTC, availability time or explicit latency assumption |
+| Quality | channel/feature missingness masks, quality flags, history completeness, source-regime identifier |
+| Outcomes | label, matched event IDs, label version, outcome time definition, follow-up end, completeness/ambiguity flag |
+| Experimental role | split/fold, training/calibration/policy/test role, role-assignment version |
+| Forecast | raw score, calibrated probability, model/calibrator versions, uncertainty method/output |
+| Decision | policy version, normal/degraded/abstain state, reason codes, fallback model/calibrator identity |
+
+## Rules
+
+- Convert time scales; do not obtain UTC by deleting a `TAI` suffix.
+- Keep observations and their historical availability separate. A modern cloud upload is not evidence of historical operational availability.
+- Preserve original labels; corrections create a new version with an audit trail.
+- An absent event entry is not a verified negative when catalogue coverage or region association is incomplete.
+- Training, calibration and policy fitting use only their designated earlier data. Keep evaluation prevalence natural.
+- Give all compared branches the same primary forecast cases; report availability-based exclusions separately.
+- Record unmatched or missing cases; do not silently select complete cases as the sole operational population.
+- Retain quality/OOD/abstention outcomes even when no probability is issued.
+
+## 2026 extension
+
+As of project initialization, the AIA project is extending its January–March archive through August 2026. Complete the image inventory and refresh the outcome catalogue together. A forecast near the end of August at a 72-hour horizon requires outcome coverage into early September. The latest event in a catalogue does not itself prove its coverage interval.
