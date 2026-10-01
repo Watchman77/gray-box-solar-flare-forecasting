@@ -1,3 +1,4 @@
-# Environment used for the historical cohort audit; no model-training dependencies.
+# Environment used for historical audits and candidate dataset construction.
+# No model-training dependencies.
 numpy==2.3.5
 pandas==2.2.3

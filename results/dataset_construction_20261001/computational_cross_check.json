@@ -1,0 +1,29 @@
+{
+  "status": "computational_cross_check_passed_provisional_only",
+  "case_rows": 153366,
+  "case_horizon_rows": 306732,
+  "direct_filter_sample_rows": 1596,
+  "sampling_seed_random": 7201,
+  "sampling_seed_strata": 7202,
+  "inventory_sha256": "2e29a7f19a4b95d147ca62d7f31bfd197e86d93e704bb43d4d61eafd45b7f75d",
+  "outcomes_sha256": "c10e4f0d7b8990073ed81ab76a4e106949e8e49fbb3e34cd8c493c9c7e13e166",
+  "checks": [
+    "saved artifact hashes",
+    "complete population at both horizons",
+    "unique case/horizon IDs",
+    "all component IDs present",
+    "all issue/endpoint UTC conversions",
+    "original 48h labels retained",
+    "positive event support",
+    "uncertain negatives remain missing",
+    "no final training eligibility or split roles",
+    "stratified direct event-filter comparison"
+  ],
+  "scientific_validation_not_established": [
+    "catalogue observing completeness",
+    "event/region/class adjudication",
+    "unique physical-event identity",
+    "historical input availability",
+    "model performance"
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "built_utc": "2026-10-01T19:23:59.956054+00:00",
+  "status": "candidate_inventory_built_not_training_ready",
+  "canonical_candidates": 153366,
+  "existing_matched_inputs": 113433,
+  "retained_without_matched_inputs": 39933,
+  "unmapped_components": 0,
+  "multi_noaa_candidate_rows": 37925,
+  "shared_component_issue_rows": 988,
+  "shared_component_issue_groups": 494,
+  "first_issue_utc": "2010-05-21T03:47:26+00:00",
+  "last_issue_utc": "2026-08-17T23:11:23+00:00",
+  "latest_required_72h_outcome_utc": "2026-08-20T23:11:23+00:00",
+  "feature_order": [
+    "MEANGBZ",
+    "MEANGAM",
+    "MEANGBT",
+    "MEANGBH",
+    "MEANJZD",
+    "TOTUSJZ",
+    "MEANALP",
+    "MEANJZH",
+    "ABSNJZH",
+    "SAVNCPP",
+    "MEANSHR",
+    "SHRGT45",
+    "R_VALUE",
+    "USFLUX",
+    "TOTPOT",
+    "TOTUSJH"
+  ],
+  "source_sha256": "c28623e7577447ccf245303b90b45ed455720a70ab81c826a48f2c483266cd41",
+  "leap_table_sha256": "6cb6f5d4b819f2e568e25db4b0b26d89dedf031fdffb18bc94d40f4e94e268d7",
+  "upstream_build_receipt_sha256": "9607da9f78a911e30c80ac4c5099eecde37a26f1132ccbae0cf2fff4c46e127b",
+  "upstream_review_sha256": "46410d57e10f72fb3e3ea38ce49a3c0ba0e8f3b7ff50ec12a89f3354d4af68ef",
+  "verified_upstream_files": [
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/cycle24/index.csv.gz",
+      "sha256": "3037e96158bae46528f2ebd508b4e49a15a814d31b33c13cef726dbb84eb055e",
+      "bytes": 1662344
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/cycle24/native_slot_ledger.csv.gz",
+      "sha256": "c7adb5ebf586c1e9364478cdc945dd54c2424001df8636a4d690b958bb7ef9da",
+      "bytes": 2519375
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/cycle24/sharp16_raw_three_slot.npy",
+      "sha256": "569daffd16b2e033dd91cfd4ae2876ddf0951c57f135164ef063c589abf40d01",
+      "bytes": 21454592
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/primary_cycle25/index.csv.gz",
+      "sha256": "69aa3296579152cf6abefe5ed8109030665333f205364b5ce370a63c31c93e43",
+      "bytes": 1282276
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/primary_cycle25/native_slot_ledger.csv.gz",
+      "sha256": "1c24515be410176ef4acfff22848c15d07618998673fd832dab134364544ca7e",
+      "bytes": 2048710
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/primary_cycle25/sharp16_raw_three_slot.npy",
+      "sha256": "21746e63ced9ae290d3332c6219502f42a4ff5f39a38fb5c485d682c075b54e2",
+      "bytes": 17434880
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/supplementary_2026/index.csv.gz",
+      "sha256": "1b6fe42109d8c0a472d3e77d4de84137eb83afec44facd1964b8c338febe145a",
+      "bytes": 233389
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/supplementary_2026/native_slot_ledger.csv.gz",
+      "sha256": "c49967eefedef33a96a4d4e491de3613e9491f13c85ad169c344362c80eabc5f",
+      "bytes": 537790
+    },
+    {
+      "relative_to_aia_root": "inputs/sharp16_matched_v1_20261001/supplementary_2026/sharp16_raw_three_slot.npy",
+      "sha256": "d4c930a7019514dd0dad6636feb4886bdd3882411fef93f5ee44f1d23b6bc564",
+      "bytes": 4669184
+    },
+    {
+      "relative_to_aia_root": "inputs/2026_readiness/snapshot/region_reservations.csv",
+      "sha256": "fd3991ef230d328c1598a4b4b4f6e659e81b28bc6216cc51cda84a54cacce3c3",
+      "bytes": 175939
+    },
+    {
+      "relative_to_aia_root": "archives/2026_readiness_20260930/reconciled_v2/candidate_exclusions.csv.gz",
+      "sha256": "b9946adb3a6408c0ae9366a3825d62f4b6eaac9692aa500dd26aa064f058ed90",
+      "bytes": 106311
+    },
+    {
+      "relative_to_aia_root": "inputs/goes_cutoff_time_audit_20261001/target_native_utc_map.csv.gz",
+      "sha256": "d3c566f0fb0b9524e8776c36e2b15fad78491530b7477dd20eb8aa7c89efe426",
+      "bytes": 2083731
+    }
+  ],
+  "yearly": [
+    {
+      "year": 2010,
+      "canonical_candidates": 3316,
+      "existing_matched_inputs": 2377,
+      "components_mapped": 3316
+    },
+    {
+      "year": 2011,
+      "canonical_candidates": 11277,
+      "existing_matched_inputs": 8554,
+      "components_mapped": 11277
+    },
+    {
+      "year": 2012,
+      "canonical_candidates": 10855,
+      "existing_matched_inputs": 7944,
+      "components_mapped": 10855
+    },
+    {
+      "year": 2013,
+      "canonical_candidates": 13333,
+      "existing_matched_inputs": 9833,
+      "components_mapped": 13333
+    },
+    {
+      "year": 2014,
+      "canonical_candidates": 11653,
+      "existing_matched_inputs": 8881,
+      "components_mapped": 11653
+    },
+    {
+      "year": 2015,
+      "canonical_candidates": 11259,
+      "existing_matched_inputs": 8549,
+      "components_mapped": 11259
+    },
+    {
+      "year": 2016,
+      "canonical_candidates": 6885,
+      "existing_matched_inputs": 5052,
+      "components_mapped": 6885
+    },
+    {
+      "year": 2017,
+      "canonical_candidates": 3462,
+      "existing_matched_inputs": 2705,
+      "components_mapped": 3462
+    },
+    {
+      "year": 2018,
+      "canonical_candidates": 1711,
+      "existing_matched_inputs": 1213,
+      "components_mapped": 1711
+    },
+    {
+      "year": 2019,
+      "canonical_candidates": 1058,
+      "existing_matched_inputs": 763,
+      "components_mapped": 1058
+    },
+    {
+      "year": 2020,
+      "canonical_candidates": 2089,
+      "existing_matched_inputs": 0,
+      "components_mapped": 2089
+    },
+    {
+      "year": 2021,
+      "canonical_candidates": 5828,
+      "existing_matched_inputs": 4575,
+      "components_mapped": 5828
+    },
+    {
+      "year": 2022,
+      "canonical_candidates": 11535,
+      "existing_matched_inputs": 9010,
+      "components_mapped": 11535
+    },
+    {
+      "year": 2023,
+      "canonical_candidates": 14676,
+      "existing_matched_inputs": 11187,
+      "components_mapped": 14676
+    },
+    {
+      "year": 2024,
+      "canonical_candidates": 14732,
+      "existing_matched_inputs": 11373,
+      "components_mapped": 14732
+    },
+    {
+      "year": 2025,
+      "canonical_candidates": 14774,
+      "existing_matched_inputs": 9258,
+      "components_mapped": 14774
+    },
+    {
+      "year": 2026,
+      "canonical_candidates": 14923,
+      "existing_matched_inputs": 12159,
+      "components_mapped": 14923
+    }
+  ],
+  "checks": {
+    "canonical_ids_unique": true,
+    "no_accepted_cases_lost": true,
+    "matched_identifiers_and_48h_labels_preserved": true,
+    "accepted_issue_and_history_utc_replayed": true
+  },
+  "limitations": [
+    "Canonical candidates are an upstream-curated universe, not all observable solar regions.",
+    "The native issue grid is retained; a daily operational issuance schedule is not frozen.",
+    "Matched histories contain three past states, not the old paper's seven daily states.",
+    "Existing labels/roles remain 48-hour upstream evidence; new 72-hour roles are unassigned.",
+    "Distinct HARP records can share a component and issue time; a component-level prediction requires an explicit consolidation rule.",
+    "Unmatched candidates include protocol exclusions as well as missing inputs; they are not an outage-rate estimate.",
+    "No continuous GOES features or operational availability clearance is supplied."
+  ],
+  "manifest_sha256": "2e29a7f19a4b95d147ca62d7f31bfd197e86d93e704bb43d4d61eafd45b7f75d"
+}

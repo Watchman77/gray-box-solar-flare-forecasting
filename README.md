@@ -6,7 +6,7 @@ The central question is: **when should an operational user trust a solar flare f
 
 ## Status
 
-This repository contains a working research plan, a proposed operational protocol, and executable historical-baseline audits. On 1 October 2026, the local 72-hour cohort and recovered original prediction arrays were reconciled; see the [audit findings](docs/BASELINE_72H_AUDIT.md). No new Gray-Box model has been trained or operational policy validated. Protocol choices and thresholds must be finalized before confirmatory evaluation.
+This repository contains a working research plan, a proposed operational protocol, executable historical-baseline audits, and a versioned candidate dataset. On 1 October 2026, the local 72-hour cohort and recovered original prediction arrays were reconciled; see the [audit findings](docs/BASELINE_72H_AUDIT.md). The [new dataset build](docs/DATASET_BUILD_20261001.md) retains 153,366 candidate cases, links 113,433 verified upstream AIA–SHARP inputs, and audits provisional 48/72-hour outcomes. Its labels and operational availability are not finalized. No new Gray-Box model has been trained or operational policy validated. Protocol choices and thresholds must be finalized before confirmatory evaluation.
 
 The initial focus is the 72-hour horizon, followed by 24-hour and 3-hour evaluation. Existing 48-hour AIA experiments remain separate baselines with their original labels and scope.
 
@@ -36,6 +36,7 @@ SHARP and AIA are physically meaningful observations. Their inclusion alone does
 |---|---|
 | [Execution plan](docs/EXECUTION_PLAN.md) | Immediate work sequence, uncertainty candidates, paper boundaries and completion evidence. |
 | [72-hour baseline audit](docs/BASELINE_72H_AUDIT.md) | Executed cohort/prediction reconciliation, source defects and rerun commands. |
+| [Dataset build and quality findings](docs/DATASET_BUILD_20261001.md) | Executed inventory, provisional event labels, source hashes, checks and remaining scientific decisions. |
 | [Layer protocol](docs/LAYER_PROTOCOL.md) | Inputs, methods, outputs, metrics, failure modes and decision rules for each layer. |
 | [Data contract](docs/DATA_CONTRACT.md) | Forecast unit, timestamps, labels, provenance and master prediction table. |
 | [Roadmap](docs/ROADMAP.md) | Ordered research milestones and completion evidence. |

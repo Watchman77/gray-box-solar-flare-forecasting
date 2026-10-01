@@ -1,0 +1,17 @@
+horizon_hours,input_cohort,association_scope,cases,candidate_positive,candidate_negative,unresolved,different_from_upstream_48h_among_resolved
+48,cycle24,primary,55871,2174,49484,4213,477.0
+48,cycle24,patch,55871,2833,48923,4115,1136.0
+48,not_in_matched_inputs,primary,39933,2053,34356,3524,486.0
+48,not_in_matched_inputs,patch,39933,2914,33695,3324,1347.0
+48,primary_cycle25,primary,45403,3019,36244,6140,1027.0
+48,primary_cycle25,patch,45403,4701,34985,5717,2709.0
+48,supplementary_2026,primary,12159,786,10779,594,17.0
+48,supplementary_2026,patch,12159,1060,10572,527,291.0
+72,cycle24,primary,55871,2822,47388,5661,
+72,cycle24,patch,55871,3682,46709,5480,
+72,not_in_matched_inputs,primary,39933,2704,32523,4706,
+72,not_in_matched_inputs,patch,39933,3779,31762,4392,
+72,primary_cycle25,primary,45403,3927,33346,8130,
+72,primary_cycle25,patch,45403,5977,31923,7503,
+72,supplementary_2026,primary,12159,992,10332,835,
+72,supplementary_2026,patch,12159,1336,10075,748,

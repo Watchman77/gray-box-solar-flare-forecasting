@@ -1,0 +1,197 @@
+{
+  "built_utc": "2026-10-01T19:25:44.813035+00:00",
+  "status": "candidate_outcomes_built_not_training_ready",
+  "inventory_sha256": "2e29a7f19a4b95d147ca62d7f31bfd197e86d93e704bb43d4d61eafd45b7f75d",
+  "source_receipt_sha256": "fa6d5165cc1d5411cf366a66804a109e99329eeccfa80b5fb0c0ea112031a3fe",
+  "catalogue_events": 44016,
+  "mx_events": 3412,
+  "mx_events_missing_region": 412,
+  "events_missing_end": 5749,
+  "events_missing_start_or_peak": 0,
+  "duplicate_event_ids": 0,
+  "nominal_start_utc": "2010-01-01T00:00:00+00:00",
+  "conservative_nominal_end_utc": "2026-09-29T00:00:00+00:00",
+  "candidate_case_horizon_rows": 306732,
+  "windows_outside_nominal_span": 0,
+  "scope_changes_by_horizon": {
+    "48": 3476,
+    "72": 4329
+  },
+  "support": [
+    {
+      "horizon_hours": 48,
+      "input_cohort": "cycle24",
+      "association_scope": "primary",
+      "cases": 55871,
+      "candidate_positive": 2174,
+      "candidate_negative": 49484,
+      "unresolved": 4213,
+      "different_from_upstream_48h_among_resolved": 477
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "cycle24",
+      "association_scope": "patch",
+      "cases": 55871,
+      "candidate_positive": 2833,
+      "candidate_negative": 48923,
+      "unresolved": 4115,
+      "different_from_upstream_48h_among_resolved": 1136
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "not_in_matched_inputs",
+      "association_scope": "primary",
+      "cases": 39933,
+      "candidate_positive": 2053,
+      "candidate_negative": 34356,
+      "unresolved": 3524,
+      "different_from_upstream_48h_among_resolved": 486
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "not_in_matched_inputs",
+      "association_scope": "patch",
+      "cases": 39933,
+      "candidate_positive": 2914,
+      "candidate_negative": 33695,
+      "unresolved": 3324,
+      "different_from_upstream_48h_among_resolved": 1347
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "primary_cycle25",
+      "association_scope": "primary",
+      "cases": 45403,
+      "candidate_positive": 3019,
+      "candidate_negative": 36244,
+      "unresolved": 6140,
+      "different_from_upstream_48h_among_resolved": 1027
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "primary_cycle25",
+      "association_scope": "patch",
+      "cases": 45403,
+      "candidate_positive": 4701,
+      "candidate_negative": 34985,
+      "unresolved": 5717,
+      "different_from_upstream_48h_among_resolved": 2709
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "supplementary_2026",
+      "association_scope": "primary",
+      "cases": 12159,
+      "candidate_positive": 786,
+      "candidate_negative": 10779,
+      "unresolved": 594,
+      "different_from_upstream_48h_among_resolved": 17
+    },
+    {
+      "horizon_hours": 48,
+      "input_cohort": "supplementary_2026",
+      "association_scope": "patch",
+      "cases": 12159,
+      "candidate_positive": 1060,
+      "candidate_negative": 10572,
+      "unresolved": 527,
+      "different_from_upstream_48h_among_resolved": 291
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "cycle24",
+      "association_scope": "primary",
+      "cases": 55871,
+      "candidate_positive": 2822,
+      "candidate_negative": 47388,
+      "unresolved": 5661,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "cycle24",
+      "association_scope": "patch",
+      "cases": 55871,
+      "candidate_positive": 3682,
+      "candidate_negative": 46709,
+      "unresolved": 5480,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "not_in_matched_inputs",
+      "association_scope": "primary",
+      "cases": 39933,
+      "candidate_positive": 2704,
+      "candidate_negative": 32523,
+      "unresolved": 4706,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "not_in_matched_inputs",
+      "association_scope": "patch",
+      "cases": 39933,
+      "candidate_positive": 3779,
+      "candidate_negative": 31762,
+      "unresolved": 4392,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "primary_cycle25",
+      "association_scope": "primary",
+      "cases": 45403,
+      "candidate_positive": 3927,
+      "candidate_negative": 33346,
+      "unresolved": 8130,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "primary_cycle25",
+      "association_scope": "patch",
+      "cases": 45403,
+      "candidate_positive": 5977,
+      "candidate_negative": 31923,
+      "unresolved": 7503,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "supplementary_2026",
+      "association_scope": "primary",
+      "cases": 12159,
+      "candidate_positive": 992,
+      "candidate_negative": 10332,
+      "unresolved": 835,
+      "different_from_upstream_48h_among_resolved": null
+    },
+    {
+      "horizon_hours": 72,
+      "input_cohort": "supplementary_2026",
+      "association_scope": "patch",
+      "cases": 12159,
+      "candidate_positive": 1336,
+      "candidate_negative": 10075,
+      "unresolved": 748,
+      "different_from_upstream_48h_among_resolved": null
+    }
+  ],
+  "output_sha256": {
+    "normalized_events.csv.gz": "84c45fc38e8989aa43541853851e6a3cb80f63be47b502efec1cbc8fada6bfac",
+    "candidate_outcomes.csv.gz": "c10e4f0d7b8990073ed81ab76a4e106949e8e49fbb3e34cd8c493c9c7e13e166",
+    "candidate_support.csv": "a3420ac8ac8e26203eaaf1c221fb11eafaed580f12b7973ce4a8396eb2d2b407",
+    "event_source_profile.csv": "63de6ccd7ff728edff2abdc460d53292ca769cdca1b67174260784034dd262e1"
+  },
+  "limitations": [
+    "All labels are provisional; no training or final split assignment is authorized by this build.",
+    "Annual files and nominal coverage do not establish uninterrupted observing/detection coverage.",
+    "Source-primary and any-NOAA-listed-on-the-current-HARP-record targets are distinct conventions, not interchangeable labels.",
+    "Unknown-region M/X events conservatively mask otherwise-negative windows for every target; these are screening flags, not evidence that each region flared.",
+    "Science-calibrated classes can differ from historical operational classes. Label disagreements have not been adjudicated.",
+    "This source contains minute-resolution reported starts; no uncertainty in the event boundary is modeled.",
+    "Region suffix expansion is limited to the verified 2010-2026 NOAA 10000-19999 epoch; no future component membership is used for event matching."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "executed_candidate_dataset_not_training_ready",
+  "canonical_object": {
+    "uri": "gs://suryabench-sharp-pipeline-bamidele/metadata/curated_sharp_suryabench_true96min_48h_AR_SPECIFIC_2010_2026.csv",
+    "generation": "1790079135531166",
+    "bytes": 77341329,
+    "sha256": "c28623e7577447ccf245303b90b45ed455720a70ab81c826a48f2c483266cd41"
+  },
+  "local_artifacts_relative_to_repository": {
+    "raw_source_directory": "data/raw/gray_box_inventory_v1",
+    "candidate_inventory": "data/processed/gray_box_inventory_v2/forecast_case_inventory.csv.gz",
+    "candidate_outcomes": "data/processed/gray_box_outcomes_v1/candidate_outcomes.csv.gz",
+    "normalized_events": "data/processed/gray_box_outcomes_v1/normalized_events.csv.gz"
+  },
+  "upstream_root": "Passed explicitly as --aia-root; input files are referenced and hash-checked, not copied or modified.",
+  "history_contract": {
+    "slots": 3,
+    "lags_minutes": [
+      288,
+      192,
+      96
+    ],
+    "sharp_features": 16,
+    "note": "Not the historical seven-daily-state model input."
+  },
+  "validation": {
+    "unittest_command": "python -m unittest discover -s tests -v",
+    "tests_passed": 20,
+    "cross_check_receipt": "computational_cross_check.json",
+    "independent_scientific_validation": false
+  },
+  "not_performed": [
+    "model training",
+    "GPU or paid cloud jobs",
+    "continuous GOES predictor assembly",
+    "final label adjudication",
+    "72-hour split freeze",
+    "writes to upstream AIA project"
+  ]
+}

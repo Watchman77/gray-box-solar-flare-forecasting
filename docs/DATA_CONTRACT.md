@@ -48,3 +48,11 @@ The upstream AIA project records its extension through 17 August 2026 as sealed,
 ## Historical 72-hour input
 
 The 1 October [baseline audit](BASELINE_72H_AUDIT.md) reproduces cohort support and recovered headline predictions, but finds unresolved region/time continuity and availability issues. Treat the historical CSV and its embedded labels as preserved source evidence. The new operational case table must establish source identities, physical time, label coverage and missing-input accounting independently.
+
+## Executed candidate inventory — 1 October 2026
+
+The [candidate dataset build](DATASET_BUILD_20261001.md) is a staging table at **native HARP-record grain**, keyed by the pinned source sample ID. It is not yet the component-level master prediction table defined above. Multiple HARP records share a component and issue time in 494 groups; retain these records and resolve the forecast unit before aggregation or evaluation.
+
+Original 48-hour labels and roles are retained as upstream evidence. New experiment roles are unassigned. Provisional 48/72-hour outcomes use the explicitly named start-time interval `(t, t+h]`, with physical elapsed hours calculated in TAI before converting endpoints to UTC. The 48-hour reconstruction is a source/convention audit and does not replace the AIA experiment's outcomes.
+
+Two association scopes are recorded separately: the source's primary NOAA ID, and the union of NOAA IDs listed on that HARP record. A component's future membership is not used to assign events. Missing-region M/X events mask otherwise-negative candidates conservatively. Nominal catalogue dates are not evidence of continuous observing coverage, so even unmasked zeros remain provisional. No build output is marked training-ready.
