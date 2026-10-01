@@ -24,4 +24,4 @@ Do not add Codex, OpenAI or another assistant as a commit author, committer or c
 - Preserve the upstream repositories. Port only the components needed here with their provenance and applicable licensing recorded.
 - Follow the user's requested scope for acquisition, training and deployment. Repository setup alone is not a request to launch expensive experiments.
 
-This initial scaffold has no executable model implementation or test suite. Validate documentation links and JSON when editing the scaffold; add meaningful tests alongside scientific code when it is introduced.
+The repository has executable baseline-audit scripts and focused scientific boundary tests, but no Gray-Box model implementation. Run `python -m unittest discover -s tests -v` for audit-code changes, and validate documentation links and JSON when editing the protocol. Preserve the distinction between historical array reconciliation and full model reproduction.

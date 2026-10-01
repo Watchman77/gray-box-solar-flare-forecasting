@@ -1,0 +1,34 @@
+{
+  "status": "historical_array_reconciliation_not_model_reproduction",
+  "model": "Simple/Avg Ensemble",
+  "horizon_hours": 72,
+  "rows": 1417,
+  "positive_rows": 150,
+  "prevalence": 0.1058574453069866,
+  "threshold": 0.707,
+  "metrics": {
+    "average_precision": 0.43004792987486956,
+    "roc_auc": 0.8610155222309919,
+    "TSS": 0.5935648513549066
+  },
+  "confusion_counts": {
+    "TN": 997,
+    "FP": 270,
+    "FN": 29,
+    "TP": 121
+  },
+  "checks": {
+    "threshold_reproduces_stored_decisions": true,
+    "average_precision_matches_saved_table": true,
+    "roc_auc_matches_saved_table": true,
+    "TSS_matches_saved_table": true,
+    "confusion_counts_match_table": true,
+    "reconstructed_validation_label_order_matches": true,
+    "reconstructed_test_label_order_matches": true
+  },
+  "may_vs_august_array_comparison": {
+    "test_labels_identical": true,
+    "simple_ensemble_probabilities_identical": true
+  },
+  "limitation": "Identical labels do not uniquely identify case IDs. Source chronology, event labels and saved model weights still require verification."
+}

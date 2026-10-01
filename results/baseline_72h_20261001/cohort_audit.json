@@ -1,0 +1,210 @@
+{
+  "profile": {
+    "raw_rows": 22355,
+    "raw_columns": 21,
+    "clean_rows": 22130,
+    "rows_removed_by_legacy_complete_case_rule": 225,
+    "clean_duplicate_region_time_rows": 0,
+    "clean_nonpositive_region_rows": 0,
+    "clean_nonfinite_feature_values": 0,
+    "invalid_or_missing_required_counts": {
+      "T_REC_dt": 0,
+      "NOAA_AR": 0,
+      "label_MX_3d": 0,
+      "MEANGBZ": 173,
+      "MEANGAM": 177,
+      "MEANGBT": 173,
+      "MEANGBH": 173,
+      "MEANJZD": 173,
+      "TOTUSJZ": 0,
+      "MEANALP": 173,
+      "MEANJZH": 173,
+      "ABSNJZH": 0,
+      "SAVNCPP": 0,
+      "MEANSHR": 217,
+      "SHRGT45": 171,
+      "R_VALUE": 0,
+      "USFLUX": 0,
+      "TOTPOT": 0,
+      "TOTUSJH": 0
+    },
+    "sequences": 9438,
+    "positive_sequences": 652,
+    "sequence_prevalence": 0.06908243271879635,
+    "sequences_with_gap_over_24h": 708,
+    "sequences_with_gap_over_48h": 49,
+    "maximum_history_span_hours": 128568.0,
+    "nonpositive_region_sequences": 0
+  },
+  "variants": {
+    "headline_floor_single_sort": {
+      "support": {
+        "train": {
+          "rows": 6606,
+          "positives": 339,
+          "regions_as_recorded": 1312,
+          "first_issue_as_recorded": "2010-05-07 12:00:00",
+          "last_issue_as_recorded": "2023-03-06 12:00:00"
+        },
+        "validation": {
+          "rows": 1415,
+          "positives": 163,
+          "regions_as_recorded": 249,
+          "first_issue_as_recorded": "2023-03-06 12:00:00",
+          "last_issue_as_recorded": "2024-05-09 12:00:00"
+        },
+        "test": {
+          "rows": 1417,
+          "positives": 150,
+          "regions_as_recorded": 243,
+          "first_issue_as_recorded": "2024-05-09 12:00:00",
+          "last_issue_as_recorded": "2025-07-16 12:00:00"
+        }
+      },
+      "boundaries": {
+        "train_to_validation": {
+          "shared_region_ids": [
+            13238,
+            13239,
+            13243,
+            13244
+          ],
+          "issue_time_tie_across_boundary": true,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 11
+        },
+        "validation_to_test": {
+          "shared_region_ids": [
+            13661,
+            13664,
+            13665,
+            13666
+          ],
+          "issue_time_tie_across_boundary": true,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 10
+        }
+      }
+    },
+    "supplement_round_second_sort": {
+      "support": {
+        "train": {
+          "rows": 6607,
+          "positives": 339,
+          "regions_as_recorded": 1312,
+          "first_issue_as_recorded": "2010-05-07 12:00:00",
+          "last_issue_as_recorded": "2023-03-06 12:00:00"
+        },
+        "validation": {
+          "rows": 1416,
+          "positives": 164,
+          "regions_as_recorded": 249,
+          "first_issue_as_recorded": "2023-03-06 12:00:00",
+          "last_issue_as_recorded": "2024-05-09 12:00:00"
+        },
+        "test": {
+          "rows": 1415,
+          "positives": 149,
+          "regions_as_recorded": 243,
+          "first_issue_as_recorded": "2024-05-10 12:00:00",
+          "last_issue_as_recorded": "2025-07-16 12:00:00"
+        }
+      },
+      "boundaries": {
+        "train_to_validation": {
+          "shared_region_ids": [
+            13238,
+            13240,
+            13243,
+            13244
+          ],
+          "issue_time_tie_across_boundary": true,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 12
+        },
+        "validation_to_test": {
+          "shared_region_ids": [
+            13661,
+            13664,
+            13665,
+            13666
+          ],
+          "issue_time_tie_across_boundary": false,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 8
+        }
+      }
+    },
+    "sensitivity_floor_deterministic_ties": {
+      "support": {
+        "train": {
+          "rows": 6606,
+          "positives": 339,
+          "regions_as_recorded": 1313,
+          "first_issue_as_recorded": "2010-05-07 12:00:00",
+          "last_issue_as_recorded": "2023-03-06 12:00:00"
+        },
+        "validation": {
+          "rows": 1415,
+          "positives": 164,
+          "regions_as_recorded": 249,
+          "first_issue_as_recorded": "2023-03-06 12:00:00",
+          "last_issue_as_recorded": "2024-05-09 12:00:00"
+        },
+        "test": {
+          "rows": 1417,
+          "positives": 149,
+          "regions_as_recorded": 243,
+          "first_issue_as_recorded": "2024-05-09 12:00:00",
+          "last_issue_as_recorded": "2025-07-16 12:00:00"
+        }
+      },
+      "boundaries": {
+        "train_to_validation": {
+          "shared_region_ids": [
+            13238,
+            13239,
+            13240,
+            13243,
+            13244
+          ],
+          "issue_time_tie_across_boundary": true,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 11
+        },
+        "validation_to_test": {
+          "shared_region_ids": [
+            13661,
+            13664,
+            13665,
+            13666
+          ],
+          "issue_time_tie_across_boundary": true,
+          "earlier_rows_with_72h_outcome_end_after_next_block_start": 10
+        }
+      }
+    }
+  },
+  "status": "cohort_lineage_audit_only_no_model_run",
+  "source": {
+    "filename": "HMI_AR_2010_2025_ML_READY_16_LABELED_MX3D.csv",
+    "sha256": "c3cd3d14588410acec2357b2e9e44ae5045a01863e8d261e202078cf203352d3"
+  },
+  "upstream_notebook": {
+    "filename": "72H_CLEAN_Journal_Revision_Main_Transformer_DLSTM.ipynb",
+    "sha256": "41138dda5d403b66e60c4afc1fad6999e655568362d1434e15a5355fc0a8f392"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "limitations": [
+    "Stored timestamps have no established time-scale/availability provenance.",
+    "Stored labels are not independently validated against an event catalogue.",
+    "The historical default argsort does not explicitly resolve equal-time ties.",
+    "Summary agreement does not prove identity of historical case membership or predictions.",
+    "Region IDs are used as stored, not reconciled physical region components.",
+    "Outcome-boundary diagnostics assume a 72-hour window with zero reporting delay."
+  ],
+  "comparison_copy": {
+    "sha256": "c3cd3d14588410acec2357b2e9e44ae5045a01863e8d261e202078cf203352d3",
+    "identical_bytes": true
+  },
+  "candidate_case_roles_sha256": "bfbfa1998d5ec8e581855a7749a13b156858c6ef41f27643ffda0c8b6b0c9ea6"
+}

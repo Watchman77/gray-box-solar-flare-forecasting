@@ -41,6 +41,10 @@ Continuous GOES/XRS or flare-history predictors are optional additional inputs. 
 - Record unmatched or missing cases; do not silently select complete cases as the sole operational population.
 - Retain quality/OOD/abstention outcomes even when no probability is issued.
 
-## 2026 extension
+## 2026 extension — updated 1 October 2026
 
-As of project initialization, the AIA project is extending its January–March archive through August 2026. Complete the image inventory and refresh the outcome catalogue together. A forecast near the end of August at a 72-hour horizon requires outcome coverage into early September. The latest event in a catalogue does not itself prove its coverage interval.
+The upstream AIA project records its extension through 17 August 2026 as sealed, with 12,159 eligible 48-hour forecast cases and 803 positive windows in the supplementary evaluation. The extension-specific label work supersedes the earlier warning about relying on the May catalogue snapshot. These are upstream 48-hour outcomes, not validated 72-hour labels. Forecasts near 17 August require complete follow-up through their corresponding times on 20 August at a 72-hour horizon, or an earlier issue cutoff. The latest event in a catalogue does not itself prove its coverage interval. The retained population has already been evaluated and cannot be presented as untouched confirmation for a new policy motivated by those results.
+
+## Historical 72-hour input
+
+The 1 October [baseline audit](BASELINE_72H_AUDIT.md) reproduces cohort support and recovered headline predictions, but finds unresolved region/time continuity and availability issues. Treat the historical CSV and its embedded labels as preserved source evidence. The new operational case table must establish source identities, physical time, label coverage and missing-input accounting independently.

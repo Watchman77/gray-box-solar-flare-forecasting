@@ -2,6 +2,8 @@
 
 Recorded 28 September 2026. These observations describe reviewed upstream snapshots, not newly executed Gray-Box experiments.
 
+**Update, 1 October 2026:** this document preserves the initial review. The AIA extension-specific 48-hour labels and frozen neural evaluation are now complete, and a matched primary fusion comparison exists; the corresponding older open items below are historical. The current working scope is in [EXECUTION_PLAN.md](EXECUTION_PLAN.md). The new [72-hour baseline audit](BASELINE_72H_AUDIT.md) independently reconstructs the original cohort and reconciles recovered headline arrays, while documenting unresolved region continuity, timing and label provenance. No 72-hour AIA/fusion or new Gray-Box policy result is inferred from the completed upstream work.
+
 | Upstream repository | Reviewed commit |
 |---|---|
 | [solar-flare-multihorizon](https://github.com/Watchman77/solar-flare-multihorizon) | `f05ff192356a79ec7fbbc0ba32dbdc289085a23a` |
