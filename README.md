@@ -12,6 +12,8 @@ The initial focus is the 72-hour horizon, followed by 24-hour and 3-hour evaluat
 
 **Label-source review:** the [event reconciliation](docs/EVENT_RECONCILIATION_20261001.md) identified 1,033 source-supported positive-label correction proposals for existing 48-hour windows, including 798 matched Cycle-25 cases. The original calculation reproduces, but event-source completeness needs repair. Corrections and source evidence are versioned separately; existing labels and model results are preserved. Complete the label review before treating inherited outcomes as final Gray-Box truth.
 
+The subsequent [daily-source region review](docs/REGION_ADJUDICATION_20261001.md) checks the 651-event association queue against 696 NOAA reports. Candidate v2 fills 55 missing regions, retains 193 disputed originals with daily support and leaves 403 associations unresolved. Its 306,732 case/horizon rows pass a separate full computational check; all 51 unit tests pass. Continuous coverage, class convention and operational availability remain dataset gates.
+
 ## Research scope
 
 - Reuse the SHARP temporal forecasting backbone and evaluate an additional AIA image branch on matched forecast cases.
@@ -40,6 +42,7 @@ SHARP and AIA are physically meaningful observations. Their inclusion alone does
 | [72-hour baseline audit](docs/BASELINE_72H_AUDIT.md) | Executed cohort/prediction reconciliation, source defects and rerun commands. |
 | [Dataset build and quality findings](docs/DATASET_BUILD_20261001.md) | Executed inventory, provisional event labels, source hashes, checks and remaining scientific decisions. |
 | [Event and label reconciliation](docs/EVENT_RECONCILIATION_20261001.md) | Source-supported correction proposals, direct NOAA report checks and provisional region recovery. |
+| [Daily-source region adjudication](docs/REGION_ADJUDICATION_20261001.md) | Executed region decisions, separately versioned 48/72-hour outcomes and full computational verification. |
 | [Layer protocol](docs/LAYER_PROTOCOL.md) | Inputs, methods, outputs, metrics, failure modes and decision rules for each layer. |
 | [Data contract](docs/DATA_CONTRACT.md) | Forecast unit, timestamps, labels, provenance and master prediction table. |
 | [Roadmap](docs/ROADMAP.md) | Ordered research milestones and completion evidence. |

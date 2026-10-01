@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-01T21:46:00.016528+00:00",
+  "status": "candidate_outcomes_v2_verified_not_training_ready",
+  "parent_commit": "19308ab072a75d00c4ba1c257579130472daeb2c",
+  "policy": "swpc_exact_peak_region_v1",
+  "code_sha256": {
+    "scripts/adjudicate_swpc_regions.py": "26991c54df9d07dd0fede424573c6cfc455ff79b1744145e954a7dfc2854820e",
+    "scripts/build_adjudicated_outcomes.py": "7f4f5b6dd1a432172dbf74e2189f08835f22b8a7d05afdfd0cd60cbe8ea76871",
+    "scripts/verify_adjudicated_outcomes.py": "f7ab8a687663979a837fa7516fab1b5595827d0551b97ccb62912115b70e5b59",
+    "tests/test_region_adjudication.py": "c13bb398594a7fc8e9e7115daf398085ccf4d7acab301d4f71643515b6ccfedc"
+  },
+  "artifact_sha256": {
+    "README.md": "48f0a58902f07de4cd41301b3d010f4bab8f55e6277f5cc6a0aef6c45c102fec",
+    "accepted_raw_region_evidence.csv": "11dd6e98f10a597eb69f03c0bd0b2cd35da1dc1bf07418e41510703e017213cb",
+    "adjudication_summary.json": "2a9efc1611bc13d7168c020c521737fde73ebc1efb3960ed99f01765772aac63",
+    "candidate_support.csv": "2e940cbdcd879b531a73a38843cb82a38bb7f33cb6bb374c1ba36d4a6e99cb3d",
+    "decisions_by_year.csv": "80c11970bdeac04cddbf9ef7c0654e0eb551c4fbc4275d163c3c45202507787f",
+    "event_decisions.csv": "8ff2f2b7f5fa1f8c3398d3cc1e11ac5ad4e59714b716f32f590e54b0eeff7c0b",
+    "label_transitions.csv": "c80c4cbb79bfd19bd9edff51c0eddd9aa2de4fb03b6b53b10fa8bd2e6280e03f",
+    "outcome_build_summary.json": "484439fbcdb6b0b87ec4e71bdd8400baf3f5f0eaf03e7524c0edf08db303b219",
+    "source_receipt.json": "61edfa879766cfe3bf56ceb6337cd52ccbd9efcbe37e358cf6a765c390238ba7",
+    "source_time_review.csv": "fdc322f20acb2fc37d1a211bc28ca2fc8ebb2493664de335a050e0dce270f3ec",
+    "verification.json": "c5e49e11a1c67a3d4e0204c613b1b456ceaaefa5545d39eb2a3f8fca1e329305"
+  },
+  "local_large_artifacts": [
+    "data/raw/swpc_region_adjudication_v1",
+    "data/processed/swpc_region_adjudication_v1",
+    "data/processed/gray_box_outcomes_v2"
+  ],
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 51,
+    "result": "passed"
+  },
+  "execution_notes": [
+    "Initial download had one transient DNS failure; a bounded retry recovered that file. Two December 2025 archive dates remained 404.",
+    "Parser initially rejected expanded archival CME rows and malformed timing. Expanded layouts are explicitly handled; 16 timing-problem rows are preserved and excluded from exact support.",
+    "Verification initially assumed all accepted decisions had direct XRA regions. One retained original instead uses qualifying optical support; the verifier was extended to check that support explicitly.",
+    "Acquisition receipt writing was subsequently hardened to retain previously pinned successes during resumptions; no source or constructed label bytes changed.",
+    "No upstream label, active training job, saved score or final split was modified."
+  ]
+}

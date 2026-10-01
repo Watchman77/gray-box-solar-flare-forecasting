@@ -1,0 +1,18 @@
+{
+  "status": "full_computational_cross_check_passed_provisional_only",
+  "daily_reports": 696,
+  "raw_report_rows_checked": 30553,
+  "accepted_associations_checked": 248,
+  "event_decisions_checked": 651,
+  "candidate_case_horizon_rows_checked": 306732,
+  "scopes_checked": [
+    "primary",
+    "patch"
+  ],
+  "all_event_links_checked": true,
+  "outcome_sha256": "37ca5f2094d6581e2b41dc282da8526cbb108dc559a9a827e47bf1dd6407c4ac",
+  "limitations": [
+    "Computational agreement is not independent physical-observation validation.",
+    "Continuous event detection, class-convention choice, historical availability and model performance remain unverified."
+  ]
+}

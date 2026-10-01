@@ -1,0 +1,33 @@
+{
+  "built_utc": "2026-10-01T21:37:57.420756+00:00",
+  "target_version": "candidate_mx_start_science_swpc_regions_v2",
+  "inventory_sha256": "2e29a7f19a4b95d147ca62d7f31bfd197e86d93e704bb43d4d61eafd45b7f75d",
+  "original_summary_sha256": "b8f0d69b6d8703f9d6657864ea03b4bf70c67b1bdbe4f7c1dc4f230a9512a376",
+  "adjudication_summary_sha256": "2a9efc1611bc13d7168c020c521737fde73ebc1efb3960ed99f01765772aac63",
+  "catalogue_events": 44016,
+  "mx_events": 3412,
+  "original_mx_missing_region": 412,
+  "filled_missing_regions": 55,
+  "retained_reviewed_original_regions": 193,
+  "quarantined_original_regions": 46,
+  "candidate_mx_unknown_region": 403,
+  "forecast_cases": 153366,
+  "case_horizon_rows": 306732,
+  "training_ready": false,
+  "upstream_labels_modified": false,
+  "output_sha256": {
+    "decisions_by_year.csv": "80c11970bdeac04cddbf9ef7c0654e0eb551c4fbc4275d163c3c45202507787f",
+    "adjudicated_events.csv.gz": "cbab03fd1c0e345d59c9ca60abb18d122162d90db183e4c8ca54a159e2be25a6",
+    "candidate_outcomes.csv.gz": "37ca5f2094d6581e2b41dc282da8526cbb108dc559a9a827e47bf1dd6407c4ac",
+    "label_transitions.csv": "c80c4cbb79bfd19bd9edff51c0eddd9aa2de4fb03b6b53b10fa8bd2e6280e03f",
+    "candidate_support.csv": "2e940cbdcd879b531a73a38843cb82a38bb7f33cb6bb374c1ba36d4a6e99cb3d"
+  },
+  "limitations": [
+    "Region decisions are conservative retrospective source adjudications, not definitive physical identification.",
+    "Science-calibrated classes and reported start times are preserved; this is not an operational-class label rebuild.",
+    "Other known-region events outside the queue are unchanged and have not all received daily-report review.",
+    "Unknown-region M/X events mask otherwise-negative windows globally; these flags do not mean each target flared.",
+    "Nominal archive spans do not establish continuous observation or event-detection completeness.",
+    "Training, calibration, test splits, final target scope and historical availability are not certified."
+  ]
+}
