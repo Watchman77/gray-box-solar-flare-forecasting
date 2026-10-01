@@ -1,0 +1,33 @@
+{
+  "status": "bounded_direct_swpc_positive_evidence_audit_complete",
+  "daily_files": 64,
+  "download_bytes": 286599,
+  "source_receipt_sha256": "7ce1719122bda38d7d0fc16b126c3f45d9318f50eadd9249f37d79cb24252e4e",
+  "reviewed_science_events": 90,
+  "events_with_direct_same_region_mx": 89,
+  "flagged_cases": 1033,
+  "cases_with_direct_swpc_mx_in_window": 1032,
+  "matched_cases_with_direct_swpc_mx_in_window": 797,
+  "by_cohort": [
+    {
+      "input_cohort": "not_in_matched_inputs",
+      "review_cases": 235,
+      "direct_positive": 235
+    },
+    {
+      "input_cohort": "primary_cycle25",
+      "review_cases": 798,
+      "direct_positive": 797
+    }
+  ],
+  "output_sha256": {
+    "case_checks.csv": "d457b94b90f951e3a5e654a3afe4f0b92c9ec3a8a91130aea28d2736692b9cbc",
+    "event_checks.csv": "ceafd7f6cd38e0c398475b61c68691c022220532b5f982f04395b004c2add0a8",
+    "parsed_xra_rows.csv": "3b0d35f41cb9c20891eb2b4f876c2af3f45f83d9894116c3ebd7e5a030afb9f7"
+  },
+  "limitations": [
+    "Only the flagged positive-evidence queue was audited; absence of a matched row does not establish a negative.",
+    "SWPC reports and HER may share underlying observations; direct reports improve provenance, not independent-observation count.",
+    "Historical products can contain corrections and uncertainty. No frozen upstream labels or scores were overwritten."
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "built_utc": "2026-10-01T20:17:34.889687+00:00",
+  "status": "event_source_reconciliation_executed_not_final_truth",
+  "inventory_sha256": "2e29a7f19a4b95d147ca62d7f31bfd197e86d93e704bb43d4d61eafd45b7f75d",
+  "previous_outcome_summary_sha256": "b8f0d69b6d8703f9d6657864ea03b4bf70c67b1bdbe4f7c1dc4f230a9512a376",
+  "reference_sources": [
+    {
+      "filename": "hek_base_1778961084955762.csv",
+      "family": "HEK_base",
+      "bytes": 185429,
+      "sha256": "f7756435331ab9dbd94507d49a3b1b29634b0ce24eebc3cea165b649d53a95c8"
+    },
+    {
+      "filename": "hek_sep_1790075866552766.csv",
+      "family": "HEK_sep",
+      "bytes": 315348,
+      "sha256": "b8ff6e145c1c45648560e229ff796d525992b7a0af9248d0fdae514baddf34a9"
+    },
+    {
+      "filename": "hek_swpc_mx_extension.csv",
+      "family": "HEK_extension",
+      "bytes": 10364,
+      "sha256": "a39f94935e9d11b727b689ab06049aadb68527d5797ed558c3da53d16aaa1472"
+    },
+    {
+      "filename": "goes_events_2010.txt",
+      "family": "HER_annual",
+      "bytes": 72588,
+      "sha256": "755c1fd49e51b5c9ab09dc476fc491192d2fac1ae6627891681d3457a427c1a3"
+    },
+    {
+      "filename": "goes_events_2011.txt",
+      "family": "HER_annual",
+      "bytes": 135323,
+      "sha256": "a6fc07c9cff89d4c958b74705d1f87575f7117d5bca5d24bb69b963411c15d07"
+    },
+    {
+      "filename": "goes_events_2012.txt",
+      "family": "HER_annual",
+      "bytes": 98665,
+      "sha256": "13f1ff547077e29f8c1e461395ed3d8b3156df65d2be8b54cdd968555c99b085"
+    },
+    {
+      "filename": "goes_events_2013.txt",
+      "family": "HER_annual",
+      "bytes": 80284,
+      "sha256": "c2f2d30a6bce52037871d5769bb3801f91abf2c5453f66db6339bccf86bb65a5"
+    },
+    {
+      "filename": "goes_events_2014.txt",
+      "family": "HER_annual",
+      "bytes": 124046,
+      "sha256": "866a254d20076bd82e354c79fe3b392946a35442635997242573a6d7e4f1a09b"
+    },
+    {
+      "filename": "goes_events_2015.txt",
+      "family": "HER_annual",
+      "bytes": 110023,
+      "sha256": "a804a4642c4fb55d80e6bc8bf06938b4e52e34d17ad3eac548018edb7945d56c"
+    },
+    {
+      "filename": "goes_events_2016.txt",
+      "family": "HER_annual",
+      "bytes": 77249,
+      "sha256": "71f266fc6da018cd66efa33226a66d72bc517aa179bc1175e5aa0216bacb15b1"
+    },
+    {
+      "filename": "goes_events_2017.txt",
+      "family": "HER_annual",
+      "bytes": 66134,
+      "sha256": "7515fd4768da6da10e98a29820662f133478ffafed19e2477bbc4a5a1fbaaaa6"
+    },
+    {
+      "filename": "goes_events_2018.txt",
+      "family": "HER_annual",
+      "bytes": 27663,
+      "sha256": "07e97a5977651fab54c10ff1f8e63064f523421ccf84007bff6ef6de36c7ef0d"
+    },
+    {
+      "filename": "goes_events_2019.txt",
+      "family": "HER_annual",
+      "bytes": 25813,
+      "sha256": "67bcf8d634f52a08322bdf4a2a745880e056f374aea1e96834eec9289037eff7"
+    },
+    {
+      "filename": "goes_events_2020.txt",
+      "family": "HER_annual",
+      "bytes": 71034,
+      "sha256": "39fd6e9d4223efd55cdbecd3bf2d1418e817491ae0b5b48bdd82be53a9340388"
+    },
+    {
+      "filename": "goes_events_2021.txt",
+      "family": "HER_annual",
+      "bytes": 151663,
+      "sha256": "90b10802048c96289d7cc235b71069cafb758a4fff371110cb7ca7b519638fe1"
+    },
+    {
+      "filename": "goes_events_2022.txt",
+      "family": "HER_annual",
+      "bytes": 252268,
+      "sha256": "9800f86e739353ce3192aa52c1af15209cd3021fc519bc578cf2437eb0da174e"
+    },
+    {
+      "filename": "goes_events_2023.txt",
+      "family": "HER_annual",
+      "bytes": 328523,
+      "sha256": "034229f21170527a25176b65a16edf01c8176314ec284ae0a7bf86268130de5a"
+    },
+    {
+      "filename": "goes_events_2024.txt",
+      "family": "HER_annual",
+      "bytes": 313954,
+      "sha256": "219679822fc9f0abb40ca0880b4710a3dad13f4d3b64a7a277c4e718788d78b5"
+    },
+    {
+      "filename": "goes_events_2025.txt",
+      "family": "HER_annual",
+      "bytes": 82801,
+      "sha256": "85129fdaa5cf15fe286f7d9f5b6e33dfc5138485f216937fd29dd3b4750e9be3"
+    }
+  ],
+  "reference_rows": 40477,
+  "science_mx_events": 3412,
+  "reference_rows_with_time_problems": 21,
+  "reference_rows_with_assumed_rollovers": 575,
+  "reference_rows_with_four_digit_region_suffix": 2,
+  "reference_status_counts": {
+    "existing_region_exact_peak_agreement": 2523,
+    "existing_region_reference_conflict": 239,
+    "existing_region_no_known_exact_reference": 238,
+    "missing_region_no_exact_reference": 224,
+    "missing_region_exact_start_peak_candidate": 113,
+    "missing_region_peak_only_candidate": 71,
+    "missing_region_conflicting_references": 4
+  },
+  "proposed_region_fills": 113,
+  "label_sensitivity": [
+    {
+      "horizon_hours": 48,
+      "scope": "primary",
+      "previous_unresolved": 14471,
+      "remaining_unresolved": 10163,
+      "new_candidate_positives": 95,
+      "new_candidate_negatives": 4213
+    },
+    {
+      "horizon_hours": 48,
+      "scope": "patch",
+      "previous_unresolved": 13683,
+      "remaining_unresolved": 9650,
+      "new_candidate_positives": 99,
+      "new_candidate_negatives": 3934
+    },
+    {
+      "horizon_hours": 72,
+      "scope": "primary",
+      "previous_unresolved": 19332,
+      "remaining_unresolved": 13916,
+      "new_candidate_positives": 104,
+      "new_candidate_negatives": 5312
+    },
+    {
+      "horizon_hours": 72,
+      "scope": "patch",
+      "previous_unresolved": 18123,
+      "remaining_unresolved": 13110,
+      "new_candidate_positives": 104,
+      "new_candidate_negatives": 4909
+    }
+  ],
+  "upstream_label_replay_disagreements_utc": 1,
+  "upstream_label_replay_disagreements_native_clock": 0,
+  "old_negative_cases_with_corroborated_science_positive": 1033,
+  "matched_old_negative_cases_with_corroborated_science_positive": 798,
+  "output_sha256": {
+    "event_reconciliation.csv.gz": "00fe9e4168983a25958a1cfdca524e0397b87dfa999bf34aac39a83aca8cd3ba",
+    "event_reconciliation_by_year.csv": "013bfecc83be3ba337bdbd57129d37a0344765db2388e51a73ec2d759a8b54ce",
+    "label_lineage_by_year_cohort.csv": "17b813ab043c7080a2fe4627e524449ce8f6eb81dbfe550590afa17207f093df",
+    "label_lineage_diagnostics.csv.gz": "5d73bc83c997c8cbf692d33ebd2f8c8117c2823752f0ac32f92a14464ed7aebc",
+    "reference_enriched_candidate_outcomes.csv.gz": "32776eeec204eaf50a2b9357b469485b43a63c344fa1d9f01abec0c41ea46df9",
+    "reference_events.csv.gz": "c432df1f7d9533288d4df9e085ea50e177dec41303443f0f7e5353b63bf4e6a3",
+    "reference_source_profile.csv": "a6adcc67134b28c00435d147b5751d0ddf7ae2dbccb2ef0014b9d57bc4c3a50e",
+    "source_enriched_events.csv.gz": "62fd77b133c11dc008f13a3e8cc89b6225ef6dc0e51d201116c7a52fe31afaa7"
+  },
+  "limitations": [
+    "HER/HEK products share lineage; agreement is not an independent physical observation.",
+    "Exact timestamp matches provide source-backed candidates, not adjudicated physical-event truth.",
+    "Science classes/start times remain unchanged; no operational-to-science class rescaling is inferred.",
+    "Annual clock rollovers are minimal-forward assumptions and are excluded as strict fill evidence.",
+    "Annual files omit observed December-31 entries and the 2025 file ends in April; none certifies continuous coverage.",
+    "All negatives remain provisional; observing coverage, region/crop scope and final experiment splits are unresolved.",
+    "The pre-existing AIA and ASR datasets, labels, jobs and results are not changed."
+  ]
+}

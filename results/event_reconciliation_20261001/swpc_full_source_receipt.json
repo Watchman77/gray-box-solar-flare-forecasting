@@ -1,0 +1,390 @@
+{
+  "retrieved_utc": "2026-10-01T20:25:55.702369+00:00",
+  "sources": [
+    {
+      "file": "20211028events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2021/10/20211028events.txt",
+      "sha256": "3cbca335d6cfc3756f7daf60fe09a7ee3acf5fb5ffbc812c580aaa4fab39954f",
+      "bytes": 4490
+    },
+    {
+      "file": "20211228events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2021/12/20211228events.txt",
+      "sha256": "d8f8149d9178ff1c270fb41a1e6aae6c6ac84fd0eaf6e8e4032701f68947e344",
+      "bytes": 4012
+    },
+    {
+      "file": "20220118events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/01/20220118events.txt",
+      "sha256": "c38fdcb3e9d0b8f8599d9e952f87390c9c53fd52815da589383e14ad2cd80723",
+      "bytes": 2291
+    },
+    {
+      "file": "20220302events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220302events.txt",
+      "sha256": "5454ad4b965e59306b571bf577c21d434c9d58d9cab666f5bc240cab861f90b6",
+      "bytes": 2460
+    },
+    {
+      "file": "20220314events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220314events.txt",
+      "sha256": "88c66f52623ee4b4d0fe6c172ed92c2c9e49296d4d3ee7ead69cd3529be3191e",
+      "bytes": 1804
+    },
+    {
+      "file": "20220315events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220315events.txt",
+      "sha256": "7651ffd0aa789843edd7e80ec7080e5a79b81905deada20e44bcc488122a858f",
+      "bytes": 2047
+    },
+    {
+      "file": "20220328events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220328events.txt",
+      "sha256": "afc3948f53e79ea8287c787291061392fbafeb222fe5a5f21246a1ed879afdc0",
+      "bytes": 5634
+    },
+    {
+      "file": "20220329events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220329events.txt",
+      "sha256": "ec8a60d185ffb0498e9a51063d73c9e4ba6d82a2e4c94f9a37e77d8c9e187686",
+      "bytes": 6456
+    },
+    {
+      "file": "20220330events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220330events.txt",
+      "sha256": "c230e6231950b859f5d0b7ddf8b9c96b3c8de3f6c9e320110046f1d1e8584cbe",
+      "bytes": 4653
+    },
+    {
+      "file": "20220331events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/03/20220331events.txt",
+      "sha256": "8f10d524d36da91c5c8c3028da87e5314fe8c61d16e7a2912ec990be4636a318",
+      "bytes": 6772
+    },
+    {
+      "file": "20220402events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/04/20220402events.txt",
+      "sha256": "22dbb22fb01f4cb5d72742d93085a59587e6c9bb29eb8e91ad7a2ab2e3a3a4cb",
+      "bytes": 4991
+    },
+    {
+      "file": "20220425events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/04/20220425events.txt",
+      "sha256": "3112c0c42bc2d68eca6a50da6a1e20777e5735ce441a3ef1f1119698a1d958d8",
+      "bytes": 3106
+    },
+    {
+      "file": "20220504events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/05/20220504events.txt",
+      "sha256": "7b842951601271796c06cd5d384da606509126360c26970822f77bf3e393f075",
+      "bytes": 5885
+    },
+    {
+      "file": "20220505events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/05/20220505events.txt",
+      "sha256": "33bde75deef4d931a98c4cd178e87b0740e51dbf5dedc40a4e7a6317095e6351",
+      "bytes": 6623
+    },
+    {
+      "file": "20220525events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/05/20220525events.txt",
+      "sha256": "ffd812df513788bd8eea29595f90b3e24233776256c39778a54b58904c1abe06",
+      "bytes": 3105
+    },
+    {
+      "file": "20220616events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/06/20220616events.txt",
+      "sha256": "15297e9d516fa21a1fb4d61c5e7871e6f4d297f32afe134fe1eef93e1b57cd1d",
+      "bytes": 4014
+    },
+    {
+      "file": "20220716events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/07/20220716events.txt",
+      "sha256": "ade4b553139e12fba3d2d861feb91a7395dfd05b241b4779d995444732cb1792",
+      "bytes": 5393
+    },
+    {
+      "file": "20220816events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/08/20220816events.txt",
+      "sha256": "803762432e859156f99ce2ae229e424dee4290aa3ca5e40546b1c570f60fa663",
+      "bytes": 4983
+    },
+    {
+      "file": "20220817events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/08/20220817events.txt",
+      "sha256": "571726188140bc29e353878f7272efed17cc5c85b82c1c972918d43c3106e2a9",
+      "bytes": 7108
+    },
+    {
+      "file": "20220818events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/08/20220818events.txt",
+      "sha256": "f9b9b6e2f17362de080435fb6837ca4291d0699d8c105cdc3dc35ad3ddbcf4a8",
+      "bytes": 6618
+    },
+    {
+      "file": "20220819events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/08/20220819events.txt",
+      "sha256": "647424b8ed6aa21b0d8dadbf4f78696a318a920e37d8439e46efc1fd5bda2a0f",
+      "bytes": 4411
+    },
+    {
+      "file": "20220920events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/09/20220920events.txt",
+      "sha256": "ad72b0001b7391ff108dca897bd179b9e40cfd6ec422e6aabdc9bd4c1f3986cd",
+      "bytes": 4977
+    },
+    {
+      "file": "20221001events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/10/20221001events.txt",
+      "sha256": "4cc6cfac12d40f6e2fa1d4efe48fe635523c0fb8067b1891fb63ae9c225e4149",
+      "bytes": 4903
+    },
+    {
+      "file": "20221002events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/10/20221002events.txt",
+      "sha256": "2a536465da0a92ba721b4c3e2ea912432b15ec701298e9dc0593b56761c9b984",
+      "bytes": 6038
+    },
+    {
+      "file": "20221003events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/10/20221003events.txt",
+      "sha256": "e80f9cb784b54c2f88536a50be7556c9e01a22b8aa664fec42e8841269c9baed",
+      "bytes": 5310
+    },
+    {
+      "file": "20221010events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/10/20221010events.txt",
+      "sha256": "3156d5163b0a9f9b9124a6449b7dee7c89d72ca407175beba4989956de4f3382",
+      "bytes": 3515
+    },
+    {
+      "file": "20221115events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/11/20221115events.txt",
+      "sha256": "479c359ddea742450529b16dbffe4c3a576e818a727e251ca787986b3f75d1fc",
+      "bytes": 3436
+    },
+    {
+      "file": "20221201events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/12/20221201events.txt",
+      "sha256": "d4411f589e2cd7c6bf49634feb1c35853a13e9f3198aa9a5b5c51de7a6325376",
+      "bytes": 2296
+    },
+    {
+      "file": "20221227events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/12/20221227events.txt",
+      "sha256": "c1db198c4853f5e3207aa19767e8a9e593482ec9382c8c3804af636624bbd0b3",
+      "bytes": 3686
+    },
+    {
+      "file": "20221230events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/12/20221230events.txt",
+      "sha256": "11c53fd0462e7ae588728c183c9e3199d584b3b989d9557a43f928c8eb7d3852",
+      "bytes": 4989
+    },
+    {
+      "file": "20230109events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/01/20230109events.txt",
+      "sha256": "9e3e1595085f229c155e339c6c9a234be3651c88c43aa24a7f689f35ef847434",
+      "bytes": 5802
+    },
+    {
+      "file": "20230112events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/01/20230112events.txt",
+      "sha256": "1eafdbd303160144c06480ab422859bdc652d6bcda54225ccedd25e345e17871",
+      "bytes": 6865
+    },
+    {
+      "file": "20230114events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/01/20230114events.txt",
+      "sha256": "bfaac94f34311c2f7d1387d315d01cd388122d23ad00ce41ed504dccd965df52",
+      "bytes": 4827
+    },
+    {
+      "file": "20230224events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/02/20230224events.txt",
+      "sha256": "4064dc43e1942839d3ef57fb99feb1b12e68963bc04f1b5fd09860bcfe15d972",
+      "bytes": 5886
+    },
+    {
+      "file": "20230225events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/02/20230225events.txt",
+      "sha256": "032a9db73a57ac7d5313a31be17c00e665d91fde473a814c7913fc15098e8995",
+      "bytes": 5806
+    },
+    {
+      "file": "20230228events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/02/20230228events.txt",
+      "sha256": "aabdeb36b66d71c1807f00fc32ef25f650a0776d8b16724418b60dbb8edbd620",
+      "bytes": 5234
+    },
+    {
+      "file": "20230305events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/03/20230305events.txt",
+      "sha256": "b1114fa8f1e10d230aab697ada049424e373d4bea3c61c6fc28cce1e05630428",
+      "bytes": 4253
+    },
+    {
+      "file": "20230308events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/03/20230308events.txt",
+      "sha256": "26b297082ab0fb56c36d52a44bf368a6be04c8041c26efc29fc676e85e32cfae",
+      "bytes": 2212
+    },
+    {
+      "file": "20230411events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/04/20230411events.txt",
+      "sha256": "d4a6bc59a766f5b4e61b1143415cfa2864ea9c4fbd61dd6b3d0a0b7cd5a8ddfd",
+      "bytes": 2948
+    },
+    {
+      "file": "20230511events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/05/20230511events.txt",
+      "sha256": "23925252f4856bba410076661f6c7c42b49955ee22b00633094645846160958b",
+      "bytes": 5462
+    },
+    {
+      "file": "20230523events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/05/20230523events.txt",
+      "sha256": "12eab1da78ece2724a58ea49a5919ee46751e67cbc2e36a9e8e79dd1e2fb5d0f",
+      "bytes": 6135
+    },
+    {
+      "file": "20230524events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/05/20230524events.txt",
+      "sha256": "6241cb5d91bcf7709a4832e9f285b20b88785a3fe769850f99ddbf281862e32d",
+      "bytes": 6382
+    },
+    {
+      "file": "20230528events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/05/20230528events.txt",
+      "sha256": "08417243dd10281188c00de685abe21c5ab7f20acd063c11bf23d9c283289b56",
+      "bytes": 3114
+    },
+    {
+      "file": "20230531events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/05/20230531events.txt",
+      "sha256": "991b54d2e7d0c61b49e6d2227d5cca85cb6c4eafc1a7c1543445a0ab427feb6c",
+      "bytes": 3524
+    },
+    {
+      "file": "20230616events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/06/20230616events.txt",
+      "sha256": "32d3b52ad40d42c19b18cd18f8020883869c58aa8ae48559b822701b31ffec24",
+      "bytes": 2703
+    },
+    {
+      "file": "20230626events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/06/20230626events.txt",
+      "sha256": "be2d75ad709244769367f3d02584a03753618ea2c66dcd415f85d00a14596d0d",
+      "bytes": 4009
+    },
+    {
+      "file": "20230627events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/06/20230627events.txt",
+      "sha256": "9e9ad85aee0d3d28ad96f39b9b269ef1844110b81c5e4c52fd24362bdc427b5e",
+      "bytes": 5396
+    },
+    {
+      "file": "20230712events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/07/20230712events.txt",
+      "sha256": "9325e573a0c53e30f0c898cc87fa56293a87bf8e26119eac58d31d96f6124be9",
+      "bytes": 6462
+    },
+    {
+      "file": "20230722events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/07/20230722events.txt",
+      "sha256": "8bad9bc9031dae835f861f1e3f1390d3e9676d09f07e0d200bf2b3d52106c82a",
+      "bytes": 4421
+    },
+    {
+      "file": "20230725events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/07/20230725events.txt",
+      "sha256": "cfd2cccd3212d8f16874f655e597efa54741edd3d8cf460a6d8c4fbb81432a35",
+      "bytes": 4092
+    },
+    {
+      "file": "20230801events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/08/20230801events.txt",
+      "sha256": "bc6d72f858d5cd5be29840195500fa82ee74c3840266594b17bc52cc297a3bf9",
+      "bytes": 4011
+    },
+    {
+      "file": "20230822events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/08/20230822events.txt",
+      "sha256": "0c29219477f54da9fba6d92882adfbaf756f6122973fba2225f1fe83d7f669d9",
+      "bytes": 3272
+    },
+    {
+      "file": "20230914events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/09/20230914events.txt",
+      "sha256": "d8b71a4d77bf2d5b4aaefb106fa3c69c995e12674ff4a2c90bb8689888f677fe",
+      "bytes": 2372
+    },
+    {
+      "file": "20230915events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/09/20230915events.txt",
+      "sha256": "c544a2ebc697aca42a706889afb94484595e0e667829f1cc734ba4f2b33ac139",
+      "bytes": 4335
+    },
+    {
+      "file": "20230916events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/09/20230916events.txt",
+      "sha256": "f9d191744090ef5387e20e7b1c8928c9bc80ec498266a0797a40a587058ddace",
+      "bytes": 3112
+    },
+    {
+      "file": "20230921events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/09/20230921events.txt",
+      "sha256": "fd68a164cf27f407f8b3e7dd78a5de337a9f04d1acb59e4b49910033fd45312f",
+      "bytes": 2947
+    },
+    {
+      "file": "20230922events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/09/20230922events.txt",
+      "sha256": "a5e135c1146b22bf2ae86e21281ea26f44ea4710e06ead1a67bdeebaeb5ebe66",
+      "bytes": 7926
+    },
+    {
+      "file": "20231010events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/10/20231010events.txt",
+      "sha256": "122436551354aa50a6585a1f9deb29a6e49d0f968e7022fcf2d5a73d02bc0e82",
+      "bytes": 2621
+    },
+    {
+      "file": "20231102events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/11/20231102events.txt",
+      "sha256": "8fd555e5788b0e47ba4518f28f0f656879b722540538e28d9c7fbc35ec3b90d4",
+      "bytes": 4406
+    },
+    {
+      "file": "20231111events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/11/20231111events.txt",
+      "sha256": "89cdd30fa5fdcfe543c1a1bf671f92f95f96361ebc87844c50224c050e1a247e",
+      "bytes": 3360
+    },
+    {
+      "file": "20231128events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/11/20231128events.txt",
+      "sha256": "fc178b575d156c22935fdb7bbc601deccd64b14bcde703ae04ca5458ba64d205",
+      "bytes": 4505
+    },
+    {
+      "file": "20231201events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/12/20231201events.txt",
+      "sha256": "fe8b67a36da348b49413a88030d5a7ec631bc90acbef586670b065787b7b2551",
+      "bytes": 2622
+    },
+    {
+      "file": "20231224events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/12/20231224events.txt",
+      "sha256": "b6366d542027587fdebfadc2832339fc6c19ba111473f6ce896b916291120cd9",
+      "bytes": 3845
+    },
+    {
+      "file": "20240814events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2024/08/20240814events.txt",
+      "sha256": "e74de212a8671739c213296605f7693c8581a59375fbaad7f109686dfeb67698",
+      "bytes": 5726
+    }
+  ],
+  "failures": []
+}

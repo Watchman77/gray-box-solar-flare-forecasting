@@ -1,0 +1,23 @@
+{
+  "status": "computational_cross_check_passed_not_final_label_clearance",
+  "proposal_events_checked": 113,
+  "case_horizon_rows_checked": 306732,
+  "all_case_label_replay_checked": 153366,
+  "flagged_case_event_links_checked": 1033,
+  "distinct_corroborating_science_events_in_flagged_cases": 90,
+  "checks": [
+    "output hashes",
+    "science event population/classes/times preserved",
+    "existing science region IDs preserved",
+    "every proposed fill checked by direct reference filtering",
+    "all cases retained at both horizons",
+    "previously resolved candidates preserved",
+    "original recorded-clock labels reproduced for every case",
+    "every flagged case has same-region M/X annual evidence inside the same future interval at the same science peak"
+  ],
+  "limitations": [
+    "Source consistency is not an independent observation or complete physical-event validation.",
+    "No catalogue coverage clearance, final labels, split freeze or model rerun is supplied."
+  ],
+  "reconciliation_summary_sha256": "1d21dab6396ba1decfc034233bb62a8618f2de373a792b0409c1ff23797e72c4"
+}

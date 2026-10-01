@@ -1,0 +1,56 @@
+{
+  "status": "three_archived_rows_checked_two_case_label_disagreements_demonstrated",
+  "checks": [
+    {
+      "date": "20220118",
+      "source_url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/01/20220118events.txt",
+      "source_sha256": "c38fdcb3e9d0b8f8599d9e952f87390c9c53fd52815da589383e14ad2cd80723",
+      "line_number": 28,
+      "event_id": "noaa-science-v1-0-1:202201181700",
+      "swpc_start_hhmm_utc": "1701",
+      "peak_hhmm_utc": "1744",
+      "swpc_class": "M1.5",
+      "science_class": "M1.5",
+      "noaa_region": 12929,
+      "reported_row": "2430 +     1701   1744      1817  G16  5   XRA  1-8A      M1.5    3.4E-02   2929",
+      "scope": "region and peak corroboration; class conventions remain distinct",
+      "forecast_case_id": "gb72-native-v1:20220116_1748_HARP7934_NOAA12929",
+      "issue_utc": "2022-01-16 17:47:23+00:00",
+      "upstream_label_48h": 0,
+      "recorded_swpc_mx_in_future_48h": true
+    },
+    {
+      "date": "20230109",
+      "source_url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/01/20230109events.txt",
+      "source_sha256": "9e3e1595085f229c155e339c6c9a234be3651c88c43aa24a7f689f35ef847434",
+      "line_number": 53,
+      "event_id": "noaa-science-v1-0-1:202301090845",
+      "swpc_start_hhmm_utc": "0845",
+      "peak_hhmm_utc": "0901",
+      "swpc_class": "M2.1",
+      "science_class": "M2.1",
+      "noaa_region": 13181,
+      "reported_row": "7910 +     0845   0901      0916  G16  5   XRA  1-8A      M2.1    2.4E-02   3181",
+      "scope": "region and peak corroboration; class conventions remain distinct",
+      "forecast_case_id": "gb72-native-v1:20230107_1224_HARP8942_NOAA13181",
+      "issue_utc": "2023-01-07 12:23:23+00:00",
+      "upstream_label_48h": 0,
+      "recorded_swpc_mx_in_future_48h": true
+    },
+    {
+      "date": "20110214",
+      "source_url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2011/02/20110214events.txt",
+      "source_sha256": "1784363445a0e8d0d4f49c3b88f5af8aac66a5f26474333f4bffda3668294b8a",
+      "line_number": 77,
+      "event_id": "noaa-science-v1-0-1:201102141345",
+      "swpc_start_hhmm_utc": "1347",
+      "peak_hhmm_utc": "1427",
+      "swpc_class": "C7.0",
+      "science_class": "M1.2",
+      "noaa_region": 11158,
+      "reported_row": "6710       1347   1427      1442  G13  5   XRA  1-8A      C7.0    1.2E-02   1158",
+      "scope": "region and peak corroboration; class conventions remain distinct"
+    }
+  ],
+  "limitation": "These spot checks do not validate every flagged window or certify complete coverage."
+}

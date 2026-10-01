@@ -1,0 +1,50 @@
+{
+  "status": "source_reconciliation_and_bounded_positive_correction_audit_complete",
+  "local_outputs": {
+    "reference_and_label_sensitivity": "data/processed/event_reconciliation_v1",
+    "daily_source_audit": "data/processed/swpc_label_audit_v1",
+    "daily_source_raw_verification": "data/processed/swpc_label_verification_v1",
+    "pinned_references": "data/raw/event_reconciliation_v1"
+  },
+  "pinned_cloud_sources": [
+    {
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/metadata/hek_mx_ar_flares_2010_2026.csv",
+      "generation": "1778961084955762",
+      "md5": "TuwuXKTp1ZY4An6+6Z5W/w=="
+    },
+    {
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/metadata/candidates/2026_sep/hek_mx_ar_flares_2010_2026_sep.csv",
+      "generation": "1790075866552766",
+      "sha256": "b8ff6e145c1c45648560e229ff796d525992b7a0af9248d0fdae514baddf34a9"
+    },
+    {
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/metadata/candidates/2026_sep/hek_swpc_mx_extension.csv",
+      "generation": "1790078758829088",
+      "sha256": "a39f94935e9d11b727b689ab06049aadb68527d5797ed558c3da53d16aaa1472"
+    }
+  ],
+  "tests_passed": 36,
+  "reproduction_code_sha256": {
+    "scripts/reconcile_event_sources.py": "280cb50a29a1239d61c9f242dec95a48fc77f301801a13f343df6210529d1d46",
+    "scripts/verify_event_reconciliation.py": "4dd2d04d89ce4e9f56695b0ab0e09f19b15e02298777252fbcfe5a6faba0565f",
+    "scripts/audit_swpc_label_disagreements.py": "8f2cdd0533ad5d935e08fed610df6c14e9d6f7f9f6628e0430c881ccc4c964ff",
+    "scripts/verify_swpc_label_audit.py": "8c46595f7c24721b2d3d5e953808d8a6ba3f624cfabdc4acf4eae0f95a26da2d"
+  },
+  "earlier_run_diagnostics": [
+    "Initial annual-parser validation stopped on inconsistent event end clocks; those source rows are retained and excluded from matching evidence.",
+    "Initial region validation stopped on two four-digit IDs in the legacy HEK CSV; original IDs are preserved and bounded-epoch normalization is recorded separately."
+  ],
+  "untouched": [
+    "upstream research files",
+    "upstream labels and evaluation roles",
+    "active GPU jobs",
+    "frozen predictions and reported performance"
+  ],
+  "not_yet_complete": [
+    "complete source-wide event adjudication",
+    "negative-window observing coverage",
+    "region/crop target definition",
+    "72-hour experimental split freeze",
+    "new model training or evaluation"
+  ]
+}

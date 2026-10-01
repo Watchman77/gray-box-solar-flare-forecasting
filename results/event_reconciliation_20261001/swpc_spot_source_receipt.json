@@ -1,0 +1,23 @@
+{
+  "retrieved_utc": "2026-10-01T20:18:46.612322+00:00",
+  "sources": [
+    {
+      "file": "20220118events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2022/01/20220118events.txt",
+      "sha256": "c38fdcb3e9d0b8f8599d9e952f87390c9c53fd52815da589383e14ad2cd80723",
+      "bytes": 2291
+    },
+    {
+      "file": "20230109events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2023/01/20230109events.txt",
+      "sha256": "9e3e1595085f229c155e339c6c9a234be3651c88c43aa24a7f689f35ef847434",
+      "bytes": 5802
+    },
+    {
+      "file": "20110214events.txt",
+      "url": "https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/daily_reports/solar_event_reports/2011/02/20110214events.txt",
+      "sha256": "1784363445a0e8d0d4f49c3b88f5af8aac66a5f26474333f4bffda3668294b8a",
+      "bytes": 6611
+    }
+  ]
+}

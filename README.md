@@ -10,6 +10,8 @@ This repository contains a working research plan, a proposed operational protoco
 
 The initial focus is the 72-hour horizon, followed by 24-hour and 3-hour evaluation. Existing 48-hour AIA experiments remain separate baselines with their original labels and scope.
 
+**Label-source review:** the [event reconciliation](docs/EVENT_RECONCILIATION_20261001.md) identified 1,033 source-supported positive-label correction proposals for existing 48-hour windows, including 798 matched Cycle-25 cases. The original calculation reproduces, but event-source completeness needs repair. Corrections and source evidence are versioned separately; existing labels and model results are preserved. Complete the label review before treating inherited outcomes as final Gray-Box truth.
+
 ## Research scope
 
 - Reuse the SHARP temporal forecasting backbone and evaluate an additional AIA image branch on matched forecast cases.
@@ -37,6 +39,7 @@ SHARP and AIA are physically meaningful observations. Their inclusion alone does
 | [Execution plan](docs/EXECUTION_PLAN.md) | Immediate work sequence, uncertainty candidates, paper boundaries and completion evidence. |
 | [72-hour baseline audit](docs/BASELINE_72H_AUDIT.md) | Executed cohort/prediction reconciliation, source defects and rerun commands. |
 | [Dataset build and quality findings](docs/DATASET_BUILD_20261001.md) | Executed inventory, provisional event labels, source hashes, checks and remaining scientific decisions. |
+| [Event and label reconciliation](docs/EVENT_RECONCILIATION_20261001.md) | Source-supported correction proposals, direct NOAA report checks and provisional region recovery. |
 | [Layer protocol](docs/LAYER_PROTOCOL.md) | Inputs, methods, outputs, metrics, failure modes and decision rules for each layer. |
 | [Data contract](docs/DATA_CONTRACT.md) | Forecast unit, timestamps, labels, provenance and master prediction table. |
 | [Roadmap](docs/ROADMAP.md) | Ordered research milestones and completion evidence. |
