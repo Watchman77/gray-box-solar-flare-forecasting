@@ -1,0 +1,18 @@
+{
+  "status": "aligned_package_exported_and_loader_checked",
+  "case_rows": 153366,
+  "table_columns": 104,
+  "tensor_rows": 113433,
+  "preview_rows": 178,
+  "horizon_scope_combinations_checked": 4,
+  "tests_passed": 55,
+  "model_fit_executed": false,
+  "baseline_preparation_executed": true,
+  "code_sha256": {
+    "scripts/package_model_dataset.py": "f7e5ff44d2f286dbc983ce50fb42b5bbc408a1cf2183f0ecc614650f2752ee3a",
+    "scripts/dataset_io.py": "187bf5e7e04fade1b848a4d78636fef48361a11c8cc69b582e17f7affb142507",
+    "scripts/export_dataset_table.py": "4b0367550154c24f96218b3dfa2b6bc82d7470e59976a9be26e02c1b29561abe",
+    "scripts/run_exploratory_sharp.py": "1e8fd72c53d05a97284003f045d84553b3647c7deb980de1c24a0e350edda2f9",
+    "tests/test_dataset_package.py": "a0a37be24313da1f433335b84b9529d22885c28d5aaaa0faeeb24909dfa21ade"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "preparation_complete",
+  "dataset_version": "gray_box_aligned_v1",
+  "target_version": "candidate_mx_start_science_swpc_regions_v2",
+  "horizon_hours": 72,
+  "scope": "primary",
+  "model": "L2_logistic_flat_three_slot_SHARP",
+  "training_rule": "Known candidate outcomes matured by 2020-01-01 UTC (Cycle-24 2010-2019 input cohort); fixed penalty 0.01; no class rebalancing.",
+  "role_counts": {
+    "train_cycle24": 49982,
+    "retrospective_cycle25": 35871,
+    "unknown_label_excluded": 16462,
+    "supplementary_2026": 11118
+  },
+  "limitations": [
+    "Exploratory candidate labels; provisional zeros and unknown-label exclusions can bias evaluation.",
+    "Previously inspected Cycle-25 years are retrospective evaluation, not untouched or prospective confirmation.",
+    "No AIA pixel model, continuous GOES predictor, calibration, conformal uncertainty or safety policy is fitted.",
+    "Calendar roles do not assert AR-disjoint or event-disjoint validation; component overlaps are reported."
+  ],
+  "shared_components_with_training": {
+    "retrospective_cycle25": 0,
+    "supplementary_2026": 0
+  }
+}

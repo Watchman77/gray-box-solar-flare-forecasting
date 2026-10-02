@@ -1,0 +1,9 @@
+{
+  "archive": "data/processed/gray_box_aligned_v1.zip",
+  "bytes": 45998520,
+  "sha256": "3bb0a7fc10d0192ed8bdabb4744079ac8ed7bcc8845d4bd21fefa45068b3df18",
+  "files": 20,
+  "archive_crc_check": "passed",
+  "preview_file": "data/processed/gray_box_aligned_v1/preview.csv",
+  "full_csv": "data/processed/gray_box_aligned_v1/dataset.csv"
+}
