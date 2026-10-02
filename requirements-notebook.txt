@@ -4,3 +4,5 @@ nbclient==0.10.2
 ipykernel==6.30.1
 matplotlib==3.10.7
 nbconvert==7.16.6
+scikit-learn==1.7.2
+scipy==1.16.3

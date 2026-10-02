@@ -1,0 +1,26 @@
+{
+  "tests_passed": 76,
+  "notebook": "notebooks/02_SHARP_72h_Calibration.ipynb",
+  "notebook_sha256": "9b72c45a3ba421e088553f526afa6e00a9908edc34d4577ed815b9a1e9bca64a",
+  "code_cells_executed": 12,
+  "execution_errors": 0,
+  "output_dir": "outputs/sharp72_calibration_v1_20261002T083245963780Z",
+  "all_saved_output_hashes_verified": true,
+  "independent_sklearn_scores_and_numpy_histogram_checks": [
+    "gru:raw:retrospective_cycle25",
+    "gru:raw:supplementary_2026",
+    "gru:platt:retrospective_cycle25",
+    "gru:platt:supplementary_2026",
+    "gru:isotonic:retrospective_cycle25",
+    "gru:isotonic:supplementary_2026",
+    "logistic:raw:retrospective_cycle25",
+    "logistic:raw:supplementary_2026",
+    "logistic:platt:retrospective_cycle25",
+    "logistic:platt:supplementary_2026",
+    "logistic:isotonic:retrospective_cycle25",
+    "logistic:isotonic:supplementary_2026"
+  ],
+  "frozen_training_artifacts_verified_unchanged_in_notebook": true,
+  "presentation_rerun_metrics_identical": true,
+  "presentation_check": "Inspected the rendered notebook tables, both model reliability figures and bin-support panels, zero-based count axes, and stated limitations in the browser."
+}

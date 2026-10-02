@@ -2,6 +2,8 @@
 
 For model training, open [01_SHARP_72h_Training.ipynb](../notebooks/01_SHARP_72h_Training.ipynb). It is the primary training interface and contains executable training code and saved outputs. Install `requirements-notebook.txt` into the selected kernel if needed. The notebook uses the verified archive or `data/processed/training_snapshot_20261002/gray_box_aligned_v1/`: this separate snapshot preserves the working package after its derived `dataset.csv` changed. The arrays and labels were unchanged, and the original archive checksum was verified before extraction.
 
+Continue with [02_SHARP_72h_Calibration.ipynb](../notebooks/02_SHARP_72h_Calibration.ipynb) for earlier-data calibration and method selection. Its configuration pins the exact training output and dataset; another training run requires a separately pinned experiment configuration. It keeps the backbones fixed and preserves the conformal/policy blocks.
+
 The assembled dataset is in `data/processed/gray_box_aligned_v1/`. The portable archive is `data/processed/gray_box_aligned_v1.zip`. Large files are local and Git-ignored; the committed [manifest](../results/dataset_package_20261002/manifest.json) records their contents and checksums.
 
 | Open this | Contents |
