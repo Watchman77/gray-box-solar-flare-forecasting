@@ -1,0 +1,21 @@
+{
+  "snapshot_utc": "2026-10-02T16:58:11.224995+00:00",
+  "sources": {
+    "legacy_xrs": {
+      "record": "19D_GOES_LEGACY_UNION_ARCHIVE_20261002.json",
+      "sha256": "46a7de0614bf3d355cf43ccad72848a60acf793227f8e0762f317047dc60ac84",
+      "status": "LEGACY_UNION_ARCHIVE_VERIFIED_LOCAL_AND_VM",
+      "predictors_created": false,
+      "historical_delivery_proven": false
+    },
+    "modern_xrs": {
+      "record": "goes_modern_native_inventory_20261002/state.json",
+      "sha256": "114968b64c47abab882b4101f7cc330a01b61aa04a004635da96772ec5328c74",
+      "source_state_utc": "2026-10-02T16:58:09.764772+00:00",
+      "files_in_inventory": 2797,
+      "source_plan_sha256": "84f3535b669c8c830c2a7607468d5788963c41b2bbfb1ee60e7ab32f076c1ed4",
+      "status": "inventory snapshot; complete source review and predictor acceptance not inferred"
+    }
+  },
+  "scope": "Read-only source status; no upstream jobs launched or modified"
+}

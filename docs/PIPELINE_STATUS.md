@@ -2,6 +2,14 @@
 
 The exploratory SHARP path has now completed real model fitting, saved-model inference and full-population output at both 48 and 72 hours. The AIA input reader accepts both source metadata schemas and has decoded three pinned cloud objects, including the last August 2026 case. This closes the software issues found in this pass; it is not validation of a trained AIA fusion or operational safety model.
 
+## Multimodal integration preparation — 2 October 2026
+
+[Notebook 07](../notebooks/07_SHARP_AIA_GOES_72h_Integration.ipynb) executed all eight cells. The 96,596 candidate comparison cases preserve the existing training/validation/calibration/policy/later-evaluation roles; all 113,433 parent SHARP rows reconcile. The image inventory deduplicates 289,788 references to 113,037 objects. It preserves the full population, including 2,089 2020 cases with no assembled SHARP histories and no eligible role in the frozen comparison. GOES requests cover the candidate cases, but no XRS measurements or predictor matrix are fabricated.
+
+The new interface rejects 48-hour targets, different splits/training populations, future observations, later-data fitting, silently dropped cases and probabilities for missing inputs. Historical availability must be declared; a verified-as-of claim requires timestamps and evidence. These structural checks do not prove the actual model's provenance or scientific validity. Native TAI and UTC endpoint preservation was independently checked, including 107 leap-second-crossing windows. All 118 tests pass. [Verification and experiment contract](../results/multimodal72_preparation_20261002/verification.json).
+
+The upstream AIA project's source inventory was inspected read-only. A timestamped snapshot records ongoing modern-XRS acquisition and legacy source work; neither is an accepted predictor tensor. This preparation launches no upstream worker, cloud job, download or model fit. Next: a separately specified 72-hour AIA run using the frozen roles, followed by matched fusion. GOES models additionally require an accepted past-only feature specification and aligned inputs. No completed AIA/GOES/fusion training is claimed here.
+
 | Issue | Implemented handling | Executed check |
 |---|---|---|
 | Older AIA objects use `channels`; newer objects use `wavelengths` | `aia_io.load_aia_frame` accepts either, requires the exact six-channel order, rejects disagreement, preserves pixels and ignores embedded old labels. | Actual 2019, 2025 and 17 August 2026 files loaded; all have finite `(512,512,6)` arrays. |

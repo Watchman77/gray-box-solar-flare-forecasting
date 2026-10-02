@@ -1,0 +1,8 @@
+role,population,candidate_sharp_aia,positive_candidates,region_components,unknown_labels,missing_sharp_histories
+train,38647,25586,1476,629,3912,10035
+model_validation,6282,3905,416,99,1080,1586
+probability_calibration,5018,2831,184,69,1445,1109
+conformal_calibration,6196,4168,384,95,793,1454
+policy_validation,18103,13142,422,313,519,4590
+retrospective_cycle25,61383,35846,3860,943,12469,16061
+supplementary_2026,14923,11118,992,128,1337,2764

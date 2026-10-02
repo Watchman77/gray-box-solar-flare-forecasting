@@ -29,6 +29,24 @@ The assembled dataset is in `data/processed/gray_box_aligned_v1/`. The portable 
 
 Both primary-NOAA and current-HARP NOAA-union targets are available at 48 and 72 hours. The three history slots are issue minus 288, 192 and 96 native minutes. AIA pixels stay in the existing GCS bucket; this package does not repeat that download. GOES here supplies event labels, not a continuous XRS input branch.
 
+### Shared 72-hour AIA/GOES experiment
+
+[Notebook 07](../notebooks/07_SHARP_AIA_GOES_72h_Integration.ipynb) has executed preparation of the matched experiment. It retains all 153,366 population cases and exports 96,596 candidate cases with known outcomes, finite SHARP inputs, ordered past AIA references and an eligible frozen role. These are candidate cases, not certified image/GOES availability or a final three-input denominator. It preserves native TAI and pinned UTC endpoints, including leap-second crossings.
+
+The completed local output is `outputs/multimodal72_preparation_v1_20261002T165758076710Z/`:
+
+- `multimodal_case_manifest.csv.gz`: full population, independent missingness/label flags and frozen roles.
+- `candidate_comparison_cases.csv.gz`: exact requested case IDs, histories and 72-hour outcomes.
+- `aia_object_requests.csv.gz`: 113,037 unique source objects; generation/hash verification is still pending.
+- `goes_case_requests.csv.gz`: issue-time cutoffs keyed by case; this is not an XRS feature matrix.
+- `experiment_contract.json`: target, split, fitting and import requirements; model fitting has not started in this notebook.
+
+The upstream AIA project's raw GOES source work can be reused after acceptance. Its existing 48-hour forecasts and different training roles are not interchangeable with this experiment. The import interface requires every requested case, explicit input failures and no probability for failed inputs. Independently reproduce the preparation checks with:
+
+```bash
+python scripts/verify_multimodal72.py --output outputs/multimodal72_preparation_v1_20261002T165758076710Z
+```
+
 Blank target cells in the CSV and −1 in the arrays mean **unknown**, never “no flare.” Blank SHARP values on unmatched cases mean **inputs not assembled**. `tensor_row=-1` is a missing pointer, not a Python index to use. Existing upstream 48-hour labels are retained in their own column.
 
 ## View without AIA

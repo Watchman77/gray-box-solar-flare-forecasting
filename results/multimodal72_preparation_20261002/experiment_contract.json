@@ -1,0 +1,76 @@
+{
+  "experiment": "multimodal72_matched_candidate_v1",
+  "status": "prepared_not_trained",
+  "horizon_hours": 72,
+  "target_scope": "primary",
+  "target_version": "candidate_mx_start_science_swpc_regions_v2",
+  "dataset_manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+  "split_manifest_sha256": "b687afd3d953f884b21c2bcab527a39de3a7ca127e0262b3f727b201d080a846",
+  "training_case_ids_sha256": "34fd687a1491d8185c35ba41e53044d88345514afc776ba456a7a36adbc3a140",
+  "parent_training_summary_sha256": "e6418e5aac60a4ef7641ff32cd5c1b1b282db1e2b88af0a6f6aebc79a62058d0",
+  "parent_split_sha256": "8f59894d2dd9ce596bc9bb534b2c41951f4fbefda6b77c659ab9ba124bee90b9",
+  "parent_predictions_sha256": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+  "branches": [
+    "sharp",
+    "aia",
+    "goes",
+    "sharp_goes",
+    "sharp_aia",
+    "sharp_aia_goes"
+  ],
+  "blocks": [
+    {
+      "role": "train",
+      "start": "2010-01-01",
+      "end": "2014-01-01"
+    },
+    {
+      "role": "model_validation",
+      "start": "2014-01-01",
+      "end": "2014-07-01"
+    },
+    {
+      "role": "probability_calibration",
+      "start": "2014-07-01",
+      "end": "2015-01-01"
+    },
+    {
+      "role": "conformal_calibration",
+      "start": "2015-01-01",
+      "end": "2015-07-01"
+    },
+    {
+      "role": "policy_validation",
+      "start": "2015-07-01",
+      "end": "2020-01-01"
+    },
+    {
+      "role": "retrospective_cycle25",
+      "start": "2021-01-01",
+      "end": "2026-01-01"
+    },
+    {
+      "role": "supplementary_2026",
+      "start": "2026-01-01",
+      "end": "2027-01-01"
+    }
+  ],
+  "reporting_delay_hours": 24,
+  "time_scale": "Preserve native issue_tai and the pinned UTC endpoints. The 72h interval is added in native TAI; naive UTC subtraction can differ by one second across an inserted leap second.",
+  "training_case_policy": "Exact matched training IDs required; input failures require a versioned protocol amendment and matched refits, not silent dropping.",
+  "probability_kind": "raw",
+  "fit_roles": [
+    "train"
+  ],
+  "selection_roles": [
+    "model_validation"
+  ],
+  "late_fusion": "Fixed equal probability average reference; any learned combiner uses model_validation only. Fit calibration afterward on probability_calibration.",
+  "goes_source_role": "Past continuous XRS predictors are separate from future-event outcome labels.",
+  "goes_observation_cutoff": "Observation and any aggregation interval end must be at or before issue time; operational claims additionally require availability evidence.",
+  "goes_input_specification": "Pending upstream source-quality/availability acceptance and explicit history, detector, satellite and preprocessing specification.",
+  "matched_evaluation": "Compare every pair on identical known-outcome cases with accepted inputs; also report whole-population availability. Repeat SHARP+AIA on triple-input support to isolate GOES addition.",
+  "scientific_acceptance": "Structural import checks do not verify actual training provenance, checkpoint replay, all source pixels, GOES quality or historical delivery.",
+  "validation_status": "Retrospective exploratory labels. AR/event-disjoint sensitivities and genuinely prospective evaluation remain separate work.",
+  "reuse_scope": "Reuse upstream raw images, source inventories and compatible code; 48-hour scores and differently fitted checkpoints are not this 72-hour experiment."
+}
