@@ -1,0 +1,28 @@
+{
+  "independent_sampled_update_dates": 71,
+  "independently_verified_threshold_rows": 1704,
+  "all_journal_latest_availability_before_cutoff": true,
+  "all_issued_set_memberships_verified": 1137200,
+  "aggregate_metric_comparisons_verified": 32,
+  "all_annual_coverage_numerators_verified": true,
+  "earlier_method_selection_independently_reproduced": true,
+  "missing_and_before_start_sets_remain_null": true,
+  "all_output_hashes_verified": true,
+  "output_dir": "outputs/sharp72_rolling_v1_20261002T100951575030Z",
+  "tests_passed": 92,
+  "code_cells_executed": 14,
+  "execution_errors": 0,
+  "notebook": "notebooks/04_SHARP_72h_Rolling_Conformal.ipynb",
+  "notebook_sha256": "4baf3c575ff3197bd6ec9e3484e644fd684604472e5e8afdbf0431451f961d73",
+  "embedded_executed_functions_match_tested_modules": true,
+  "figure_sha256": {
+    "support_and_ambiguity.png": "af6f437f90c2b8dff5f12cf903564025153d7f983250242b824d6f79412005e9",
+    "set_composition.png": "131e5826bd39cb9aacb67f8695923596cfacc952c378648298ceb177bc938113",
+    "annual_coverage.png": "d1ae672fcaddd3255e3f7b1005e0662d57a17681b928fa9e10098ad54e3ae402"
+  },
+  "presentation_check": {
+    "rendered_html_tables_inspected": true,
+    "all_three_figures_visually_inspected": true,
+    "result_table_screenshot_inspected": true
+  }
+}

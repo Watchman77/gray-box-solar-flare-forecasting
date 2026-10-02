@@ -69,4 +69,25 @@ Outputs preserve coverage numerators and denominators, annual results, empty/sin
 
 All 14 notebook code cells executed successfully and all 84 repository tests pass. A separate calculation using sorted scores and rational-number ranks checked all 16 aggregate comparisons, annual coverage numerators, and saved set membership. Calibration-sample coverage was checked as an implementation sanity check, not held-out validation. The rendered tables and all three figures were inspected. [Compact results and verification](../results/sharp72_conformal_20261002/) are versioned; full population sets remain local in the timestamped output directory recorded by the verification receipt.
 
-Policy-development outcomes remain unused for fitting and evaluation. The next stage should compare a fixed-threshold policy with a carefully specified rolling update using only matured earlier labels, developed on the policy block. Previously inspected Cycle-25/2026 data remain retrospective. These candidate-label results do not establish operational readiness, independent event validation, a continuous-target quantile regression model, or an AIA fusion result.
+At the end of Notebook 03, policy-development outcomes remained unused for fitting and evaluation. Notebook 04 below uses that block to select a rolling update method. Previously inspected Cycle-25/2026 data remain retrospective. These candidate-label results do not establish operational readiness, independent event validation, a continuous-target quantile regression model, or an AIA fusion result.
+
+## Rolling conformal replay
+
+[Notebook 04](../notebooks/04_SHARP_72h_Rolling_Conformal.ipynb) has executed a daily replay with frozen backbones and probability maps. It compares the exact Notebook 03 class-conditional thresholds with 90-, 180- and 365-day class-conditional updates. Each 00:00 UTC update uses only earlier known-outcome cases whose full 72-hour follow-up and assumed 24-hour reporting delay have elapsed. Each class requires 50 windows from five mapped region components; otherwise that class is always included. These support guards are operational heuristics, not coverage guarantees. There are no scored 2020 cases, so the 2021 restart explicitly begins with insufficient recent support.
+
+Method selection uses only the 13,142 eligible July 2015–2019 development cases (422 positive), minimizing the largest class coverage deficit at the primary 90% target, then mean set size and a fixed tie order. Both backbones select 180 days; this choice is retained at the 95% sensitivity target. The development block is now used and cannot be presented as untouched policy validation.
+
+| Primary 90% target | Fixed flare coverage | Selected rolling flare coverage | Selected rolling both-label fraction |
+|---|---:|---:|---:|
+| GRU, 2021–2025 | 73.5% | 87.9% | 36.0% |
+| GRU, partial 2026 | 43.5% | 78.3% | 37.4% |
+| Logistic, 2021–2025 | 73.9% | 87.5% | 35.9% |
+| Logistic, partial 2026 | 44.9% | 80.0% | 37.9% |
+
+Recent calibration improves observed flare inclusion in these comparisons but does not achieve the requested 90% coverage. More cases retain both possible outcomes. GRU nonflare coverage changes from 84.0% to 89.2% in 2021–2025 and from 91.7% to 90.4% in 2026; the tradeoff is not a uniform improvement. At the 95% sensitivity target, selected GRU flare coverage is 92.0% and 88.8%, respectively, also below target.
+
+All 153,366 candidate cases remain represented. The 39,933 missing-input cases receive no set; unknown outcomes never calibrate or enter metrics. Daily journals record support, guards, availability cutoffs, thresholds and support-case hashes. Region-component and seven-day UTC block bootstraps use 1,000 replicates for fixed/selected coverage and paired differences. They are conditional on the realized sequence of sets: they do not rerun adaptation or include model, calibration, label or selection uncertainty.
+
+All 14 code cells executed without errors and all 92 repository tests passed. Independent calculations reproduced earlier selection, all 32 aggregate comparisons, annual coverage numerators and all 1,137,200 issued set memberships. A stratified sample of 71 update dates independently checked 1,704 threshold records and exact history membership; every journal record passed the latest-availability cutoff check. Rendered result tables and all three figures were inspected. [Results and verification](../results/sharp72_rolling_20261002/) record the exact run and hashes.
+
+This is exploratory historical replay designed after earlier retrospective findings. Later labels enter calibration only after assumed maturity, so it is not label-free transfer from Cycle 24. The method updates rolling quantiles at fixed alpha; it does not implement an adaptive conformal inference error-feedback controller. Temporal dependence, shift, provisional labels and unverified historical delivery prevent an operational coverage guarantee. A forecast-state decision policy and future forecasts logged before outcomes remain subsequent work.

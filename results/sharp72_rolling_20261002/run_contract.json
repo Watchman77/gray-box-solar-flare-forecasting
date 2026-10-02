@@ -1,0 +1,78 @@
+{
+  "config": {
+    "experiment": "sharp72_rolling_conformal_candidate_v1",
+    "parent_dir": "outputs/sharp72_calibration_v1_20261002T083245963780Z",
+    "calibration_summary_sha256": "bbdba037ac756ef4ea0b71299439f76fe1f0135595cb2ed0542afe2cbceb9811",
+    "fixed_dir": "outputs/sharp72_conformal_v1_20261002T085647154969Z",
+    "fixed_summary_sha256": "bcb708925b9f4a7b1a44cac24dabde59140a76281195ced2ecd44a879dc950b5",
+    "dataset_manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+    "horizon": 72,
+    "scope": "primary",
+    "history_start": "2015-01-01",
+    "replay_start": "2015-07-01",
+    "policy_start": "2015-07-01",
+    "policy_end": "2020-01-01",
+    "reporting_delay_hours": 24,
+    "reporting_delay_status": "Assumed; historical delivery and revision times are unverified",
+    "update_cadence": "00:00 UTC daily, applied to inherited native issue-time cases",
+    "lookback_days": [
+      90,
+      180,
+      365
+    ],
+    "window_membership": "issue in [update - lookback, update), outcome_end + reporting_delay <= update",
+    "minimum_windows_per_class": 50,
+    "minimum_region_components_per_class": 5,
+    "insufficient_support": "Always include the unsupported class; do not recycle stale thresholds",
+    "models": [
+      "gru",
+      "logistic"
+    ],
+    "alphas": [
+      0.1,
+      0.05
+    ],
+    "primary_alpha": 0.1,
+    "candidate_methods": [
+      "fixed_2015",
+      "rolling_90d",
+      "rolling_180d",
+      "rolling_365d"
+    ],
+    "selection": "Per backbone at alpha 0.1 on policy_validation: minimize maximum class coverage deficit below 0.9; then mean set size; then declared order. Retain same selected method at alpha 0.05.",
+    "evaluation_roles": [
+      "retrospective_cycle25",
+      "supplementary_2026"
+    ],
+    "bootstrap_repetitions": 1000,
+    "bootstrap_seed": 16180,
+    "bootstrap_groups": [
+      "region_component",
+      "calendar_7day_UTC"
+    ],
+    "bootstrap_scope": "Conditional paired resampling of issued sets; does not rerun the sequential adaptation"
+  },
+  "source_code_sha256": "a0b635312ea83e363b3d626ed0ff34a23f4d64867e2b2b23c8aedf3d98e0b87a",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "probability_methods": {
+    "gru": "raw",
+    "logistic": "raw"
+  },
+  "set_encoding": {
+    "0": "empty",
+    "1": "nonflare_only",
+    "2": "flare_only",
+    "3": "both",
+    "null": "no_set_issued"
+  },
+  "guard_encoding": {
+    "0": "supported",
+    "1": "class0_insufficient",
+    "2": "class1_insufficient",
+    "3": "both_insufficient",
+    "null": "no_set_issued"
+  }
+}

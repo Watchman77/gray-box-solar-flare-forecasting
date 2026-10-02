@@ -6,6 +6,8 @@ Continue with [02_SHARP_72h_Calibration.ipynb](../notebooks/02_SHARP_72h_Calibra
 
 Continue with [03_SHARP_72h_Conformal_Uncertainty.ipynb](../notebooks/03_SHARP_72h_Conformal_Uncertainty.ipynb) for pooled and class-conditional sets fitted on January–June 2015. It pins the Notebook 02 output, reports class-specific and annual coverage at 90%/95% targets, and preserves missing-input/unknown-outcome cases. Its recorded transfer failures are retained; the operational policy is not yet validated.
 
+Continue with [04_SHARP_72h_Rolling_Conformal.ipynb](../notebooks/04_SHARP_72h_Rolling_Conformal.ipynb) for daily uncertainty updates using only matured earlier outcomes. Its configuration pins the exact Notebook 02 probabilities and Notebook 03 fixed class-conditional thresholds. It compares 90/180/365-day windows, selects a method on July 2015–2019, and records later coverage alongside ambiguous sets and insufficient-support guards. This stage consumes the earlier policy-development block; that block is no longer untouched. The notebook has executed with saved tables and three figures. Full per-case sets and daily threshold journals remain local; [compact results and verification](../results/sharp72_rolling_20261002/) are versioned.
+
 The assembled dataset is in `data/processed/gray_box_aligned_v1/`. The portable archive is `data/processed/gray_box_aligned_v1.zip`. Large files are local and Git-ignored; the committed [manifest](../results/dataset_package_20261002/manifest.json) records their contents and checksums.
 
 | Open this | Contents |
