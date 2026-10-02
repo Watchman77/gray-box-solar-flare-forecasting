@@ -1,0 +1,29 @@
+{
+  "status": "completed_exploratory_guard_diagnostic",
+  "completed_utc": "2026-10-02T13:21:57.616741+00:00",
+  "population_cases": 153366,
+  "case_alpha_rows": 306732,
+  "subset_comparisons": 96,
+  "limitations": [
+    "This is a post-hoc diagnostic of already inspected data and provisional labels. No new thresholds or operational policy are selected.",
+    "Guard contributions describe deterministic routing of frozen decisions, not causes of solar activity, causes of model error or independently validated improvements.",
+    "Standalone guard counts overlap. Unique counts measure dropping one guard while keeping the other three. Equal allocation shares each removed case among its triggered guards and reconciles totals; it is not a unique scientific attribution.",
+    "A false alert prevented and a true alert suppressed have different operational values. Raw counts and selective error do not supply an agreed cost or utility.",
+    "Conditional paired intervals use region or time-block resampling of realized predictions; model fitting, rolling calibration, threshold selection and label uncertainty are not repeated. Intervals are per comparison, without multiplicity correction.",
+    "Windows overlap and are not independent flare events. Matched known-outcome metrics exclude unknown labels and missing inputs, which remain in the full-population diagnostic table.",
+    "The diagnostic does not change the q99 feature-distance or q95 seed-spread thresholds. Removing the support guard is an accounting ablation, not approval to issue forecasts with weak calibration support.",
+    "Fallback cases are selected difficult cases. Their error rate is not the logistic model error rate across the entire population. Neither backbone nor fallback is operationally certified."
+  ],
+  "output_sha256": {
+    "paired_intervals.csv": "1d0823f14df585dd6f10824eb8c2be7fe711b1a246840b8c48e0f61bfe515498",
+    "protocol_before_diagnostics.json": "2522fc630accacdcda8f2fa2d72d9cdba3260644e2a856de3812e34748eec342",
+    "subset_metrics.csv": "ae360b619d36d4647ecc3d94cfb383bfdcc3da9a0da992229456b2ee2358c2f6",
+    "guard_overlap.csv": "d5c35c56873771ee6400916de007bedaf72ad9e91a841e41ba157bd4229bf4d3",
+    "fallback_routes.csv": "228c4ec40c0ccbea9d4466451e0d54263100ced55c3cbd51e11eea022d78a1fb",
+    "gate_attribution.csv": "8a88c10597795bd680a4e5a21abf31844c8a10d81ed9022c2452d3b5fbb9a9a8",
+    "case_diagnostics.csv.gz": "c6cbbafb65825292f20d042986bfca1e5a67bd872e4109bac8134f37c1e14a68",
+    "run_contract.json": "3cf5fb4cd2c1192cfb4d81e223c920caca022d24c516ea004b16e8ca027ec028",
+    "yearly_attribution.csv": "6eb5d65c149167078a39654d097537e4e77981d801b0af10696f3d38bc495bdb",
+    "executed_diagnostic_code.py": "e45bd975dc621351d5aa58a052e5e92079c5e7a7773a979d9435c11c3a592963"
+  }
+}

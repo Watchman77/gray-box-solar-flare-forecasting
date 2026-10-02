@@ -1,0 +1,94 @@
+{
+  "config": {
+    "experiment": "sharp72_gate_diagnostics_v1",
+    "policy_dir": "outputs/sharp72_policy_v1_20261002T110739251629Z",
+    "policy_summary_sha256": "5ead535caead0b30d0a1c9bdc2a2435ea7bd7ba3d578890674c779c54c7e2f37",
+    "rolling_dir": "outputs/sharp72_rolling_v1_20261002T100951575030Z",
+    "rolling_summary_sha256": "28f744f50a476b2950bc299487d754101cb96c588d8723a25d832f1d69dd5f6d",
+    "alphas": [
+      0.1,
+      0.05
+    ],
+    "primary_alpha": 0.1,
+    "guards": [
+      "support",
+      "distance",
+      "spread",
+      "conflict"
+    ],
+    "guard_bits": {
+      "support": 1,
+      "distance": 2,
+      "spread": 4,
+      "conflict": 8
+    },
+    "comparison": "All 16 subsets of the four existing guards, with original GRU singleton decisions, frozen thresholds and no fallback",
+    "attribution": "Each removed baseline decision is shared equally among its triggered guards; this reconciles counts without privileging a gate order and is not a causal attribution",
+    "evaluation_roles": [
+      "policy_validation",
+      "retrospective_cycle25",
+      "supplementary_2026"
+    ],
+    "bootstrap_repetitions": 1000,
+    "bootstrap_seed": 13579,
+    "bootstrap_groups": [
+      "region_component",
+      "calendar_7day_UTC"
+    ],
+    "bootstrap_scope": "Paired conditional group resampling of realized decisions for removing one guard versus all guards; no refitting, adaptation or multiple-comparison correction",
+    "selection": "No new threshold, winning policy or operational cost is selected in this diagnostic",
+    "status": "exploratory_post_hoc_diagnostic"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "source_code_sha256": "e45bd975dc621351d5aa58a052e5e92079c5e7a7773a979d9435c11c3a592963",
+  "frozen_thresholds": {
+    "distance": 379.55586300796773,
+    "spread": 0.03214735801588442
+  },
+  "metric_definitions": {
+    "retention": [
+      "issued",
+      "cases"
+    ],
+    "selective_error": [
+      "errors",
+      "issued"
+    ],
+    "flare_retention": [
+      "flare_issued",
+      "flare_cases"
+    ],
+    "nonflare_retention": [
+      "nonflare_issued",
+      "nonflare_cases"
+    ],
+    "alert_fraction_of_all_flares": [
+      "true_alerts",
+      "flare_cases"
+    ],
+    "false_clear_fraction_of_all_flares": [
+      "false_clears",
+      "flare_cases"
+    ],
+    "deferred_fraction_of_all_flares": [
+      "deferred_flares",
+      "flare_cases"
+    ],
+    "false_alert_fraction_of_all_nonflares": [
+      "false_alerts",
+      "nonflare_cases"
+    ],
+    "false_clear_rate_among_retained_flares": [
+      "false_clears",
+      "flare_issued"
+    ],
+    "false_alert_rate_among_retained_nonflares": [
+      "false_alerts",
+      "nonflare_issued"
+    ]
+  },
+  "operational_policy_changed": false
+}

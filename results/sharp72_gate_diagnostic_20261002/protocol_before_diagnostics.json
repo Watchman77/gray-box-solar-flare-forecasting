@@ -1,0 +1,43 @@
+{
+  "config": {
+    "experiment": "sharp72_gate_diagnostics_v1",
+    "policy_dir": "outputs/sharp72_policy_v1_20261002T110739251629Z",
+    "policy_summary_sha256": "5ead535caead0b30d0a1c9bdc2a2435ea7bd7ba3d578890674c779c54c7e2f37",
+    "rolling_dir": "outputs/sharp72_rolling_v1_20261002T100951575030Z",
+    "rolling_summary_sha256": "28f744f50a476b2950bc299487d754101cb96c588d8723a25d832f1d69dd5f6d",
+    "alphas": [
+      0.1,
+      0.05
+    ],
+    "primary_alpha": 0.1,
+    "guards": [
+      "support",
+      "distance",
+      "spread",
+      "conflict"
+    ],
+    "guard_bits": {
+      "support": 1,
+      "distance": 2,
+      "spread": 4,
+      "conflict": 8
+    },
+    "comparison": "All 16 subsets of the four existing guards, with original GRU singleton decisions, frozen thresholds and no fallback",
+    "attribution": "Each removed baseline decision is shared equally among its triggered guards; this reconciles counts without privileging a gate order and is not a causal attribution",
+    "evaluation_roles": [
+      "policy_validation",
+      "retrospective_cycle25",
+      "supplementary_2026"
+    ],
+    "bootstrap_repetitions": 1000,
+    "bootstrap_seed": 13579,
+    "bootstrap_groups": [
+      "region_component",
+      "calendar_7day_UTC"
+    ],
+    "bootstrap_scope": "Paired conditional group resampling of realized decisions for removing one guard versus all guards; no refitting, adaptation or multiple-comparison correction",
+    "selection": "No new threshold, winning policy or operational cost is selected in this diagnostic",
+    "status": "exploratory_post_hoc_diagnostic"
+  },
+  "recorded_utc": "2026-10-02T13:21:51.464632+00:00"
+}

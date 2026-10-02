@@ -10,6 +10,8 @@ Continue with [04_SHARP_72h_Rolling_Conformal.ipynb](../notebooks/04_SHARP_72h_R
 
 Continue with [05_SHARP_72h_Decision_Policy.ipynb](../notebooks/05_SHARP_72h_Decision_Policy.ipynb) for experimental state routing and abstention. It pins the original training outputs and Notebook 04 sets, fits a feature-distance reference on 2010–2013, and freezes distance/disagreement limits from January–June 2014. The executed comparisons expose the logistic fallback's high error rate and the guarded GRU's large flare-deferral fraction. State names do not certify safety. Per-case decisions remain local; [compact outputs and verification](../results/sharp72_policy_20261002/) are versioned. No new AIA download or backbone training is required.
 
+Continue with [06_SHARP_72h_Gate_Diagnostics.ipynb](../notebooks/06_SHARP_72h_Gate_Diagnostics.ipynb) to trace the guard tradeoffs. It uses exact Notebook 04/05 outputs, compares all guard subsets, reconciles overlapping triggers and separates fallback false alarms from false clears. No retraining or threshold change is performed. The reader preserves CSV floating-point values with round-trip parsing, including inclusive threshold ties. [Compact results](../results/sharp72_gate_diagnostic_20261002/) include the independent verification receipt.
+
 The assembled dataset is in `data/processed/gray_box_aligned_v1/`. The portable archive is `data/processed/gray_box_aligned_v1.zip`. Large files are local and Git-ignored; the committed [manifest](../results/dataset_package_20261002/manifest.json) records their contents and checksums.
 
 | Open this | Contents |

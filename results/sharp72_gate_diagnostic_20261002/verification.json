@@ -1,0 +1,29 @@
+{
+  "status": "independent_verification_passed",
+  "output_dir": "outputs/sharp72_gate_diagnostic_v1_20261002T132147162267Z",
+  "all_output_hashes_verified": true,
+  "parent_guard_and_decision_rows_verified": 306732,
+  "subset_metric_rows_verified": 96,
+  "all_gate_contributions_independently_reconciled": true,
+  "all_fallback_route_counts_reconciled": true,
+  "paired_difference_point_estimates_verified": 288,
+  "operational_policy_changed": false,
+  "tests_passed": 109,
+  "code_cells_executed": 11,
+  "execution_errors": 0,
+  "notebook": "notebooks/06_SHARP_72h_Gate_Diagnostics.ipynb",
+  "notebook_sha256": "4f698998c6431a88748efa7fdeba89b1dcd34d727aaf537331cb80e49e2178d4",
+  "embedded_functions_match_tested_modules": true,
+  "high_spread_fallback_reinstates_original_decision_all_3731_case_level_rows": true,
+  "figure_sha256": {
+    "guard_attribution.png": "b44a6b6dc5e135b3b80619e02236b434335cac1126fb91eada92dd695646cd89",
+    "fallback_error_types.png": "6ddb054d592ba29c4f36f9bf8eadf4a90628d6a61da87060a43e7872a56305c7",
+    "single_guard_removal.png": "8cb80f8266eb2df4e82715bf21cb13da5f36b365c2b2612d7043a1d9309086b1"
+  },
+  "all_three_figures_visually_inspected": true,
+  "presentation_check": {
+    "rendered_summary_and_tables_inspected": true,
+    "all_three_figures_visually_inspected": true,
+    "summary_screenshot_inspected": true
+  }
+}
