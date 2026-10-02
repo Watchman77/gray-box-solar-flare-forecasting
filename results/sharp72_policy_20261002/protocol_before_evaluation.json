@@ -1,0 +1,98 @@
+{
+  "config": {
+    "experiment": "sharp72_decision_policy_candidate_v1",
+    "dataset": "data/processed/training_snapshot_20261002/gray_box_aligned_v1",
+    "dataset_manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+    "training_dir": "outputs/sharp72_notebook_v1_20261002T080801721986Z",
+    "training_summary_sha256": "e6418e5aac60a4ef7641ff32cd5c1b1b282db1e2b88af0a6f6aebc79a62058d0",
+    "rolling_dir": "outputs/sharp72_rolling_v1_20261002T100951575030Z",
+    "rolling_summary_sha256": "28f744f50a476b2950bc299487d754101cb96c588d8723a25d832f1d69dd5f6d",
+    "alphas": [
+      0.1,
+      0.05
+    ],
+    "primary_alpha": 0.1,
+    "feature_distance": "Squared Mahalanobis distance, Ledoit-Wolf covariance fitted on 2010-2013 training cases, original signed-log standardization, flattened 3x16 histories",
+    "threshold_reference_role": "model_validation",
+    "threshold_reference_period": "January-June 2014; already used for backbone early stopping; no outcome-based gate selection",
+    "quantile_method": "higher",
+    "primary_policy": "guarded_fallback",
+    "policy_selection": "No later-outcome selection. Primary gates fixed at feature-distance q99 and seed-spread q95; other pairs are declared sensitivity checks.",
+    "policies": [
+      {
+        "name": "gru_singleton",
+        "support": false,
+        "conflict": false,
+        "fallback": false,
+        "distance_quantile": null,
+        "spread_quantile": null
+      },
+      {
+        "name": "supported_gru",
+        "support": true,
+        "conflict": false,
+        "fallback": false,
+        "distance_quantile": null,
+        "spread_quantile": null
+      },
+      {
+        "name": "guarded_gru",
+        "support": true,
+        "conflict": true,
+        "fallback": false,
+        "distance_quantile": 0.99,
+        "spread_quantile": 0.95
+      },
+      {
+        "name": "guarded_fallback",
+        "support": true,
+        "conflict": true,
+        "fallback": true,
+        "distance_quantile": 0.99,
+        "spread_quantile": 0.95
+      },
+      {
+        "name": "fallback_q95_q90",
+        "support": true,
+        "conflict": true,
+        "fallback": true,
+        "distance_quantile": 0.95,
+        "spread_quantile": 0.9
+      },
+      {
+        "name": "fallback_q975_q95",
+        "support": true,
+        "conflict": true,
+        "fallback": true,
+        "distance_quantile": 0.975,
+        "spread_quantile": 0.95
+      },
+      {
+        "name": "fallback_q995_q975",
+        "support": true,
+        "conflict": true,
+        "fallback": true,
+        "distance_quantile": 0.995,
+        "spread_quantile": 0.975
+      },
+      {
+        "name": "fallback_q100_q99",
+        "support": true,
+        "conflict": true,
+        "fallback": true,
+        "distance_quantile": 1.0,
+        "spread_quantile": 0.99
+      }
+    ],
+    "evaluation_roles": [
+      "policy_validation",
+      "retrospective_cycle25",
+      "supplementary_2026"
+    ],
+    "bootstrap_repetitions": 1000,
+    "bootstrap_seed": 24680,
+    "bootstrap_scope": "Conditional on realized state decisions; region-component and 7-day UTC blocks; adaptation and policy development are not rerun",
+    "policy_status": "research_prototype_not_operationally_validated"
+  },
+  "recorded_utc": "2026-10-02T11:07:44.465550+00:00"
+}

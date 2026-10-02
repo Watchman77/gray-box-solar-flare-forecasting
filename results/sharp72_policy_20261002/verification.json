@@ -1,0 +1,37 @@
+{
+  "status": "independent_verification_passed",
+  "output_dir": "outputs/sharp72_policy_v1_20261002T110739251629Z",
+  "all_output_hashes_verified": true,
+  "distance_scores_independently_recomputed": 113433,
+  "all_gate_order_statistics_verified": true,
+  "fit_and_reference_membership_hashes_verified": true,
+  "seed_spreads_independently_recomputed": 113433,
+  "policy_alpha_combinations": 16,
+  "population_state_assignments_verified": 2453856,
+  "aggregate_metric_rows_verified": 48,
+  "state_metric_rows_verified": 144,
+  "yearly_metric_rows_verified": 44,
+  "full_population_state_totals_verified": true,
+  "all_abstentions_have_null_issued_probabilities": true,
+  "tests_passed": 101,
+  "code_cells_executed": 12,
+  "execution_errors": 0,
+  "notebook": "notebooks/05_SHARP_72h_Decision_Policy.ipynb",
+  "notebook_sha256": "0e063a7547105b096f70bea9b0629e6cfb12609b8f37a0eb7543a8843164ddba",
+  "embedded_functions_match_tested_module": true,
+  "figures_visually_inspected": [
+    "risk_retention.png",
+    "flare_outcomes.png",
+    "population_states.png"
+  ],
+  "presentation_check": {
+    "rendered_summary_and_tables_inspected": true,
+    "summary_screenshot_inspected": true,
+    "all_three_figures_visually_inspected": true
+  },
+  "figure_sha256": {
+    "flare_outcomes.png": "af29150cd536bfbb033353535dd4ed55f074d7ac592dfe369adc79b8c2b8de4b",
+    "population_states.png": "66fbca00a2d02c47d5b6bbc4c690684aaf977b72d51f40b779c735c3d9f67780",
+    "risk_retention.png": "cc6fb4488d7681fdbcc8d6c93d4c5c5d9b56eef9e72acfa44854d340ee6b9823"
+  }
+}

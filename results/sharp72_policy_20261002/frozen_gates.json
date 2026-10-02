@@ -1,0 +1,45 @@
+{
+  "fit_cases": 25586,
+  "reference_cases": 3905,
+  "fit_case_ids_sha256": "b670d7e96a236f1e433d5a50b3078ec548569f88f55228b28f885c3497d9126d",
+  "reference_case_ids_sha256": "544d3b54c3332641326f519cd938d2ae242dbd23fc394f3a9671c295d1b029dd",
+  "covariance_shrinkage": 0.0004973324331986849,
+  "selected_rolling_methods": {
+    "gru": "rolling_180d",
+    "logistic": "rolling_180d"
+  },
+  "policies": {
+    "gru_singleton": {
+      "distance": null,
+      "spread": null
+    },
+    "supported_gru": {
+      "distance": null,
+      "spread": null
+    },
+    "guarded_gru": {
+      "distance": 379.55586300796773,
+      "spread": 0.03214735801588442
+    },
+    "guarded_fallback": {
+      "distance": 379.55586300796773,
+      "spread": 0.03214735801588442
+    },
+    "fallback_q95_q90": {
+      "distance": 104.88743725579944,
+      "spread": 0.02108345794397121
+    },
+    "fallback_q975_q95": {
+      "distance": 199.3936367442847,
+      "spread": 0.03214735801588442
+    },
+    "fallback_q995_q975": {
+      "distance": 617.0075240816575,
+      "spread": 0.03941852671584514
+    },
+    "fallback_q100_q99": {
+      "distance": 3575.9873009473667,
+      "spread": 0.060912041648649565
+    }
+  }
+}

@@ -31,3 +31,9 @@ The AR-disjoint and event-disjoint evaluations must be named separately from ord
 | `abstain` | No validated mode currently satisfies the decision policy. | No fabricated probability; reason codes and intended escalation/fallback action. |
 
 Numerical decision thresholds remain unset. State names express policy behaviour; they do not imply that any particular uncertainty estimate guarantees correctness.
+
+## Executed research prototype, 2 October 2026
+
+[Notebook 05](../notebooks/05_SHARP_72h_Decision_Policy.ipynb) implements and evaluates candidate state routing with earlier-reference feature-distance and seed-disagreement limits. These experimental limits do not replace the operational approval requirements above. Its `normal` and `degraded` output values explicitly carry research-prototype status in the run contract; `degraded` identifies a candidate logistic fallback, not an already validated reduced-input service.
+
+The fallback's observed error among routed windows is 49.2% in 2021–2025 and 46.4% in partial 2026 at the parent 90% conformal level. It remains a documented negative candidate. GRU-only guards lower observed error among issued decisions but defer about 53% of flare windows. An acceptable operational policy has therefore not been established. See [the executed results and limits](PIPELINE_STATUS.md#forecast-state-decision-experiment).
