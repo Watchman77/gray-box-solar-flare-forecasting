@@ -1,0 +1,95 @@
+{
+  "tests_passed": 84,
+  "output_dir": "outputs/sharp72_conformal_v1_20261002T085647154969Z",
+  "independent_order_statistic_and_membership_checks": [
+    "gru:pooled:0.1:retrospective_cycle25",
+    "gru:pooled:0.1:supplementary_2026",
+    "gru:pooled:0.05:retrospective_cycle25",
+    "gru:pooled:0.05:supplementary_2026",
+    "gru:class_conditional:0.1:retrospective_cycle25",
+    "gru:class_conditional:0.1:supplementary_2026",
+    "gru:class_conditional:0.05:retrospective_cycle25",
+    "gru:class_conditional:0.05:supplementary_2026",
+    "logistic:pooled:0.1:retrospective_cycle25",
+    "logistic:pooled:0.1:supplementary_2026",
+    "logistic:pooled:0.05:retrospective_cycle25",
+    "logistic:pooled:0.05:supplementary_2026",
+    "logistic:class_conditional:0.1:retrospective_cycle25",
+    "logistic:class_conditional:0.1:supplementary_2026",
+    "logistic:class_conditional:0.05:retrospective_cycle25",
+    "logistic:class_conditional:0.05:supplementary_2026"
+  ],
+  "all_yearly_coverage_numerators_verified": true,
+  "fit_coverage_sanity_checks": [
+    {
+      "model": "gru",
+      "method": "pooled",
+      "alpha": 0.1,
+      "all": 0.9004318618042226,
+      "flare": 0.09375
+    },
+    {
+      "model": "gru",
+      "method": "pooled",
+      "alpha": 0.05,
+      "all": 0.9503358925143954,
+      "flare": 0.4609375
+    },
+    {
+      "model": "gru",
+      "method": "class_conditional",
+      "alpha": 0.1,
+      "all": 0.9006717850287908,
+      "flare": 0.9036458333333334
+    },
+    {
+      "model": "gru",
+      "method": "class_conditional",
+      "alpha": 0.05,
+      "all": 0.9505758157389635,
+      "flare": 0.953125
+    },
+    {
+      "model": "logistic",
+      "method": "pooled",
+      "alpha": 0.1,
+      "all": 0.9004318618042226,
+      "flare": 0.08854166666666667
+    },
+    {
+      "model": "logistic",
+      "method": "pooled",
+      "alpha": 0.05,
+      "all": 0.9503358925143954,
+      "flare": 0.4609375
+    },
+    {
+      "model": "logistic",
+      "method": "class_conditional",
+      "alpha": 0.1,
+      "all": 0.9006717850287908,
+      "flare": 0.9036458333333334
+    },
+    {
+      "model": "logistic",
+      "method": "class_conditional",
+      "alpha": 0.05,
+      "all": 0.9505758157389635,
+      "flare": 0.953125
+    }
+  ],
+  "all_output_hashes_verified": true,
+  "missing_inputs_and_before_fit_sets_are_null": true,
+  "population_rows": 153366,
+  "code_cells_executed": 14,
+  "execution_errors": 0,
+  "notebook": "notebooks/03_SHARP_72h_Conformal_Uncertainty.ipynb",
+  "notebook_sha256": "4b53fe9ebfebb3440f4e38fe60762285c3389079ed63a08331a8087bdbc7429d",
+  "executed_notebook_functions_match_tested_module": true,
+  "presentation_check": "Inspected rendered notebook summary and result tables in the browser, and all three saved coverage/composition/yearly figures visually.",
+  "figure_sha256": {
+    "coverage_by_class.png": "96737839a433b4eae00b2fc7097508cd37beaed32b00148ca8c06a801edfd746",
+    "set_composition.png": "05b388a75f14c6cf5656b82517dbfc376b5ab38421c683c44cb8805ebd48417c",
+    "yearly_coverage.png": "66a222548cd17b58634f3bea5f55a3edb4fd357d56c7504415c072aca1162a62"
+  }
+}

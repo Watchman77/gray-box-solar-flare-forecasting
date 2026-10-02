@@ -4,6 +4,8 @@ For model training, open [01_SHARP_72h_Training.ipynb](../notebooks/01_SHARP_72h
 
 Continue with [02_SHARP_72h_Calibration.ipynb](../notebooks/02_SHARP_72h_Calibration.ipynb) for earlier-data calibration and method selection. Its configuration pins the exact training output and dataset; another training run requires a separately pinned experiment configuration. It keeps the backbones fixed and preserves the conformal/policy blocks.
 
+Continue with [03_SHARP_72h_Conformal_Uncertainty.ipynb](../notebooks/03_SHARP_72h_Conformal_Uncertainty.ipynb) for pooled and class-conditional sets fitted on January–June 2015. It pins the Notebook 02 output, reports class-specific and annual coverage at 90%/95% targets, and preserves missing-input/unknown-outcome cases. Its recorded transfer failures are retained; the operational policy is not yet validated.
+
 The assembled dataset is in `data/processed/gray_box_aligned_v1/`. The portable archive is `data/processed/gray_box_aligned_v1.zip`. Large files are local and Git-ignored; the committed [manifest](../results/dataset_package_20261002/manifest.json) records their contents and checksums.
 
 | Open this | Contents |

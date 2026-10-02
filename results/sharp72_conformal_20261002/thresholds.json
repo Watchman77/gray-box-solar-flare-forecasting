@@ -1,0 +1,169 @@
+{
+  "models": {
+    "gru": {
+      "pooled": {
+        "0.1": {
+          "method": "pooled",
+          "alpha": 0.1,
+          "thresholds": {
+            "0": {
+              "n": 4168,
+              "rank": 3753,
+              "threshold": 0.35834534962972,
+              "include_all": false
+            },
+            "1": {
+              "n": 4168,
+              "rank": 3753,
+              "threshold": 0.35834534962972,
+              "include_all": false
+            }
+          }
+        },
+        "0.05": {
+          "method": "pooled",
+          "alpha": 0.05,
+          "thresholds": {
+            "0": {
+              "n": 4168,
+              "rank": 3961,
+              "threshold": 0.6297096113363903,
+              "include_all": false
+            },
+            "1": {
+              "n": 4168,
+              "rank": 3961,
+              "threshold": 0.6297096113363903,
+              "include_all": false
+            }
+          }
+        }
+      },
+      "class_conditional": {
+        "0.1": {
+          "method": "class_conditional",
+          "alpha": 0.1,
+          "thresholds": {
+            "0": {
+              "n": 3784,
+              "rank": 3407,
+              "threshold": 0.0980913266539573,
+              "include_all": false
+            },
+            "1": {
+              "n": 384,
+              "rank": 347,
+              "threshold": 0.9273106803496679,
+              "include_all": false
+            }
+          }
+        },
+        "0.05": {
+          "method": "class_conditional",
+          "alpha": 0.05,
+          "thresholds": {
+            "0": {
+              "n": 3784,
+              "rank": 3596,
+              "threshold": 0.2031950056552887,
+              "include_all": false
+            },
+            "1": {
+              "n": 384,
+              "rank": 366,
+              "threshold": 0.9837606729318699,
+              "include_all": false
+            }
+          }
+        }
+      }
+    },
+    "logistic": {
+      "pooled": {
+        "0.1": {
+          "method": "pooled",
+          "alpha": 0.1,
+          "thresholds": {
+            "0": {
+              "n": 4168,
+              "rank": 3753,
+              "threshold": 0.2834798190745012,
+              "include_all": false
+            },
+            "1": {
+              "n": 4168,
+              "rank": 3753,
+              "threshold": 0.2834798190745012,
+              "include_all": false
+            }
+          }
+        },
+        "0.05": {
+          "method": "pooled",
+          "alpha": 0.05,
+          "thresholds": {
+            "0": {
+              "n": 4168,
+              "rank": 3961,
+              "threshold": 0.7243002813827755,
+              "include_all": false
+            },
+            "1": {
+              "n": 4168,
+              "rank": 3961,
+              "threshold": 0.7243002813827755,
+              "include_all": false
+            }
+          }
+        }
+      },
+      "class_conditional": {
+        "0.1": {
+          "method": "class_conditional",
+          "alpha": 0.1,
+          "thresholds": {
+            "0": {
+              "n": 3784,
+              "rank": 3407,
+              "threshold": 0.1207576451621587,
+              "include_all": false
+            },
+            "1": {
+              "n": 384,
+              "rank": 347,
+              "threshold": 0.9103240476236687,
+              "include_all": false
+            }
+          }
+        },
+        "0.05": {
+          "method": "class_conditional",
+          "alpha": 0.05,
+          "thresholds": {
+            "0": {
+              "n": 3784,
+              "rank": 3596,
+              "threshold": 0.1930168726842814,
+              "include_all": false
+            },
+            "1": {
+              "n": 384,
+              "rank": 366,
+              "threshold": 0.977079340763182,
+              "include_all": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "support": {
+    "cases": 4168,
+    "nonflare": 3784,
+    "flare": 384,
+    "region_components": 95,
+    "first_issue_utc": "2015-01-01 01:11:25+00:00",
+    "last_issue_utc": "2015-06-24 08:47:25+00:00"
+  },
+  "fit_case_ids_sha256": "59aa9a3f6898172fdd88e4d1d20a06bb445db0a7a9bb520efdf62715137a3cf0"
+}
