@@ -1,0 +1,13 @@
+{
+  "status": "metadata_pinned_no_images_downloaded",
+  "utc": "2026-10-02T18:15:02.557912+00:00",
+  "parent_contract_sha256": "3d8ad4882433a5670b832d763cb428031b8f18f2deefe4083f03205ce19c87cd",
+  "fit_cases_sha256": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622",
+  "objects_sha256": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515",
+  "training_cases": 25586,
+  "selection_cases": 3905,
+  "images": 35050,
+  "metadata_requests": 53,
+  "image_downloads": 0,
+  "source_bytes": 193059291601
+}

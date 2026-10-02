@@ -1,0 +1,15 @@
+{
+  "status": "prepared_not_launched",
+  "bundle_sha256": "45256b1e2888b2aa802516959e6f7522014018583d22e6bfc2a146dec02c0758",
+  "bundle_bytes": 2250621,
+  "notebook_sha256": "7eb4806daddbb0f76457946f0553b2f58e87a5355fc5a475b5a81ce96326cdb4",
+  "validated_code_cells": 7,
+  "tests_passed": 126,
+  "shared_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "image_downloads": 0,
+  "large_derived_cache": false,
+  "full_training_complete": false,
+  "remote_bundle_staged_and_verified": true,
+  "remote_cpu_restart_and_integrity_tests_passed": 2,
+  "remote_gpu_started": false
+}
