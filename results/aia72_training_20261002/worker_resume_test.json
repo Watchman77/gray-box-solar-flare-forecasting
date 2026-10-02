@@ -1,0 +1,8 @@
+{
+  "status": "worker_count_resume_equivalence_passed",
+  "test": "interrupted two-worker fit resumed with four workers matches uninterrupted weights and selection history",
+  "environment": "local CPU torch2.8.0",
+  "suite_tests_passed": 127,
+  "test_source_sha256": "b85e3ab835e695a18c441ba32cec582fdf6266963ea1fa04d0c2763a7e690f2a",
+  "full_test_log_sha256": "a2e5ca8c605b25a151f90989f3a171a7ac7d296cfe4f76dc25b71f8fd1493201"
+}

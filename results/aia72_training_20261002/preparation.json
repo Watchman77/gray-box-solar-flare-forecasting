@@ -1,15 +1,20 @@
 {
-  "status": "prepared_not_launched",
+  "status": "workers4_continuation_dispatched",
   "bundle_sha256": "45256b1e2888b2aa802516959e6f7522014018583d22e6bfc2a146dec02c0758",
   "bundle_bytes": 2250621,
   "notebook_sha256": "7eb4806daddbb0f76457946f0553b2f58e87a5355fc5a475b5a81ce96326cdb4",
   "validated_code_cells": 7,
-  "tests_passed": 126,
+  "tests_passed": 127,
   "shared_lock": "/home/abmoses2000/.aia19b2_run.lock",
   "image_downloads": 0,
   "large_derived_cache": false,
   "full_training_complete": false,
   "remote_bundle_staged_and_verified": true,
-  "remote_cpu_restart_and_integrity_tests_passed": 2,
-  "remote_gpu_started": false
+  "remote_cpu_restart_and_integrity_tests_passed": 3,
+  "remote_gpu_started": true,
+  "visual_inspection": "Prepared HTML source notebook inspected; live GPU notebook outputs pending.",
+  "training_start_receipt": "training_start_snapshot.json",
+  "active_VM_directory": "/home/abmoses2000/graybox_aia72_workers4_20261002",
+  "runtime_amendment": "worker_amendment.json",
+  "source_notebook_execution": "First invocation executed and checkpointed incomplete; continuation running"
 }

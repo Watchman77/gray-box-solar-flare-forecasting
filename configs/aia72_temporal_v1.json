@@ -20,7 +20,7 @@
   "ensemble": "arithmetic mean of all three seed probabilities",
   "model": "fresh temporal CNN GRU; 6 channels; 3 histories; image size 256; no 48h weights",
   "normalization": "seed17 sample of at most1000 training images,1024 pixels per image; asinh q75 scale then mean/std; resize bilinear",
-  "num_workers": 2,
+  "num_workers": 4,
   "max_cached_images_per_worker": 96,
   "cpu_threads": 2,
   "checkpoint_interval_seconds": 60,

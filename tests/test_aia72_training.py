@@ -36,6 +36,24 @@ class TinyCases(Dataset):
 
 
 class AIA72TrainingTests(unittest.TestCase):
+    def test_worker_count_change_preserves_resumed_training(self):
+        torch.set_num_threads(1)
+        config = {'batch_size': 2, 'num_workers': 2, 'learning_rate': .001, 'weight_decay': .0001,
+                  'max_epochs': 1, 'patience': 4, 'checkpoint_interval_seconds': 999, 'gradient_clip': 1.}
+        with tempfile.TemporaryDirectory() as tmp:
+            full, resumed = Path(tmp) / 'full', Path(tmp) / 'resumed'
+            cases = TinyCases()
+            train_seed(cases, cases, config, 17, full, 'same-science', 'cpu', time.monotonic() + 240, model_factory=TinyModel)
+            train_seed(cases, cases, config, 17, resumed, 'same-science', 'cpu', time.monotonic() + 240,
+                       model_factory=TinyModel, stop_after_steps=2)
+            train_seed(cases, cases, {**config, 'num_workers': 4}, 17, resumed, 'same-science', 'cpu',
+                       time.monotonic() + 240, model_factory=TinyModel)
+            a = torch.load(full / 'seed_17_resume.pt', weights_only=True)
+            b = torch.load(resumed / 'seed_17_resume.pt', weights_only=True)
+            self.assertEqual(a['state']['history'], b['state']['history'])
+            for name in a['model']:
+                self.assertTrue(torch.equal(a['model'][name], b['model'][name]), name)
+
     def test_mid_epoch_resume_preserves_optimizer_rng_and_results(self):
         torch.set_num_threads(1)
         config = {'batch_size': 2, 'num_workers': 0, 'learning_rate': .001, 'weight_decay': .0001,

@@ -1,0 +1,33 @@
+{
+  "status": "worker_count_only_amendment_verified",
+  "utc": "2026-10-02T19:58:07.200654+00:00",
+  "reason": "CPU-bound NPZ decoding; two busy workers on four-core VM with GPU waiting",
+  "configuration_changes": {
+    "num_workers": {
+      "before": 2,
+      "after": 4
+    }
+  },
+  "parent_contract_sha256": "06285aeaa238b7a4f344ab4caecace80811a36f29e268fa9a5f93618800a4fca",
+  "new_contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+  "parent_bundle_manifest_sha256": "9dba7cc0b3ac664b62c7559e20f594e1ea4d6f24c9d88c5056e1d50e787dc381",
+  "resume_test_receipt_sha256": "305fe054258747bc71ee9fb9c99ca9a8b123c9454b8b1332ee8ea0132abf3299",
+  "checkpoints": [
+    {
+      "name": "seed_17_resume.pt",
+      "parent_sha256": "01d85e47682b2b05ec8d0bcead412d4b2efab448af1b6a9a13a611859d308ec1",
+      "new_sha256": "a157193d35c6e63abf9e3ab9c4d4a6d07cf45d15d7de20937b0e19653b7c41c0",
+      "all_model_optimizer_rng_cursor_values_identical": true,
+      "seed_state": {
+        "epoch": 1,
+        "cursor": 2560,
+        "steps": 160,
+        "elapsed_seconds": 389.836764364969
+      }
+    }
+  ],
+  "source_run_preserved": "/home/abmoses2000/graybox_aia72_v1_20261002",
+  "new_run": "/home/abmoses2000/graybox_aia72_workers4_20261002",
+  "scientific_configuration_changed": false,
+  "new_images_downloaded": 0
+}

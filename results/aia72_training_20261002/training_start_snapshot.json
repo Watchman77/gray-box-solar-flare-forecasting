@@ -1,0 +1,77 @@
+{
+  "snapshot_utc": "2026-10-02T19:48:04.324269+00:00",
+  "records": {
+    "handoff_release.json": {
+      "utc": "2026-10-02T19:42:17.297423+00:00",
+      "status": "GPU_RELEASED_TO_GRAYBOX",
+      "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+      "reservation_sha256": "8064062ab97f091d1e33bb7f9d652af2e050cd20cf3627a718ba7e14d22ebf49",
+      "prior_review_status": "CACHED_2025_FROZEN_SLICE_INDEPENDENTLY_VERIFIED",
+      "prior_review_completed_utc": "2026-10-02T18:34:00.891530+00:00",
+      "prior_review_sha256": "f694cc2b83dd0b1a824023635e52b89960b636de55fbe488a3a0b4998c1d6dac",
+      "prior_review_pid": 1658429,
+      "prior_review_process_absent": true,
+      "prior_inference_process_absent": true,
+      "shared_locks_acquired_for_handoff": true,
+      "gpu_empty_under_lock": true,
+      "evidence_reference": "/home/abmoses2000/aia_sharp16_refit9_cached_2025_20261002/cached_2025/completed_archive/accepted.json",
+      "archive_acceptance_sha256": "e0494a0df8791dfc57d0e396dc310ab53c9d26ae40a3d24f961bb72863c35d34",
+      "completed_archive_local_and_remote_verified": true,
+      "new_AIA_GPU_jobs_allowed": false,
+      "graybox_must_acquire_common_lock_and_recheck_GPU": true,
+      "minimum_free_bytes_both_volumes": 21474836480,
+      "disk_free_bytes": {
+        "/home/abmoses2000": 24387223552,
+        "/mnt/disks/aia-cache": 39500812288
+      },
+      "note": "Resource handoff only; AIA full evaluation remains incomplete. Preserve all caches/checkpoints and shared environment. Gray-Box retains reservation until explicit coordinated release."
+    },
+    "queue_dispatch.json": {
+      "status": "handoff_queue_dispatched",
+      "pid": 1661212,
+      "image_downloads": 0,
+      "new_VM": false,
+      "new_GPU_job_started_by_dispatch": false,
+      "wait_limit_seconds": 1800,
+      "training_invocations_maximum": 1
+    },
+    "queue_status.json": {
+      "utc": "2026-10-02T19:42:36.248805+00:00",
+      "status": "starting_shared_GPU_guarded_notebook",
+      "pid": 1661212
+    },
+    "outputs/invocation_20261002T194238Z/execution.json": {
+      "status": "running",
+      "pid": 1661493,
+      "utc": "2026-10-02T19:42:38.899424+00:00",
+      "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+      "lock_inode": 519274,
+      "release_sha256": "9869c36e07bc82fe5f2e0adb9e275594f511f56a1cec75febfb5a9a1998479f1",
+      "bundle_sha256": "9dba7cc0b3ac664b62c7559e20f594e1ea4d6f24c9d88c5056e1d50e787dc381"
+    },
+    "outputs/training/benchmark.json": {
+      "status": "technical_benchmark_only",
+      "device": "NVIDIA L4",
+      "batch_size": 16,
+      "timed_batches": 4,
+      "seconds_per_batch_including_loader": 0.7772007254825439,
+      "rough_training_epoch_minutes": 20.725352679534506,
+      "peak_gpu_allocated_GiB": 1.6494970321655273,
+      "limitation": "Tiny sample; cold disk cache, full normalization/data checking and validation can change full-epoch time",
+      "weights_discarded": true
+    },
+    "outputs/training/progress.json": {
+      "utc": "2026-10-02T19:47:32.121644+00:00",
+      "status": "running",
+      "seed": 17,
+      "epoch": 1,
+      "case_cursor": 784,
+      "training_cases": 25586,
+      "steps": 49,
+      "elapsed_seconds": 124.18195722904056,
+      "contract_sha256": "06285aeaa238b7a4f344ab4caecace80811a36f29e268fa9a5f93618800a4fca",
+      "full_training_complete": false
+    }
+  },
+  "gpu_processes": "pid, used_gpu_memory [MiB]\n1661497, 2272 MiB\n"
+}
