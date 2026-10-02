@@ -1,0 +1,67 @@
+{
+  "status": "technical_aia72_canary_passed_not_scientific_training",
+  "completed_utc": "2026-10-02T17:39:28.805534+00:00",
+  "cases": 14,
+  "roles": {
+    "train": 2,
+    "model_validation": 2,
+    "probability_calibration": 2,
+    "conformal_calibration": 2,
+    "policy_validation": 2,
+    "retrospective_cycle25": 2,
+    "supplementary_2026": 2
+  },
+  "objects_verified": 42,
+  "metadata_schemas": {
+    "channel_names": 33,
+    "numeric_wavelengths": 9
+  },
+  "sequence_shape": [
+    3,
+    6,
+    256,
+    256
+  ],
+  "model_parameters": 1151233,
+  "technical_optimization_steps": 2,
+  "preprocessing_fit_case_ids": [
+    "gb72-native-v1:20100522_0036_HARP26_NOAA11072",
+    "gb72-native-v1:20131227_2336_HARP3535_NOAA11936"
+  ],
+  "preprocessing_fit_objects": 6,
+  "source_48h_labels_used": false,
+  "saved_model_replay": "exact_all_14_cases_same_batching",
+  "evaluation_changed_weights_or_buffers": false,
+  "independent_transform_max_absolute_difference": 0.0,
+  "initial_state_sha256": "169c21bbd50f19e57644cac736db99d83750ad85fcd3fb91d5d6b8dba5caf062",
+  "final_state_sha256": "a2391031be4898dec27686180f2ddc85a16503bf7c96f71603af3ac2872ed804",
+  "runtime": {
+    "torch": "2.10.0",
+    "numpy": "2.3.2",
+    "pandas": "2.3.3",
+    "device": "cpu",
+    "threads": 2
+  },
+  "seconds": 10.885214750014711,
+  "full_72h_training_complete": false,
+  "stage_receipt_sha256": "152d39c8bd26a7bc37890dc44d3c5eeecf854dab0f3d80f8f740744d14d1b7b1",
+  "code_sha256": {
+    "run_aia72_canary.py": "fe6d8d7fce1661f11d9b49318243a9a0d71298587a73f68c10db1a2b5f6bd9ee",
+    "aia72_data.py": "6ec096233d287b2c304c8046a06585d435ef3571942787f8efe10ad76bbed0df",
+    "aia72_model.py": "2eee175847c9e316d79459c3470675f5e024d19a9ab0bf79669882993547055a",
+    "aia_io.py": "23ea7bcb3ab4be9f4b2c6fa407029e24da8b86bca8923ab5cadfd64e7d94aac1"
+  },
+  "limitations": [
+    "Fourteen boundary cases are a software check, not representative model evaluation",
+    "Two optimization steps use only two training-role cases; weights/statistics must not initialize the scientific run",
+    "Image identities/channel order/pixels checked; full archive quality and actual per-channel observation/delivery histories are not certified",
+    "GOES is not an input to this AIA-only canary"
+  ],
+  "output_sha256": {
+    "image_checks.csv": "ace2fe04247c502030e05dbf0d64bf1e8a7f11f49d1264261482edc643306791",
+    "normalization.json": "5a670f1c3e63a59183a5f6b7edff75592f17d78a8b5337471af08e8572cae3bd",
+    "technical_canary_only.pt": "7fb187bbd589f66ba1e273e3a706abaa2faa0f2ec64265a356148f95c29eb27c",
+    "technical_logits_not_forecasts.csv": "792720ae1c2a93b55b5def3e2f6da60e399e923e327f72886fc7cadc42ee0034",
+    "technical_training_steps.csv": "08b1007080a48665f464bafb38d9344e17835b2685dd6bb5b20137050f1000c4"
+  }
+}

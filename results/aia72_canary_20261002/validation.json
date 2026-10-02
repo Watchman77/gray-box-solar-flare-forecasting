@@ -1,0 +1,10 @@
+{
+  "status": "executed_cpu_technical_check",
+  "notebook": "notebooks/08_AIA_72h_Loader_and_Model_Check.ipynb",
+  "notebook_sha256": "3f1a4627cc50ce5d437351fbc619f0e0a421d38e162f2a879a753b9b2a5f8077",
+  "executed_code_cells": 8,
+  "output_directory": "outputs/aia72_canary_notebook_20261002T173917067308Z",
+  "tests_passed": 124,
+  "full_training_complete": false,
+  "visual_inspection": "HTML preview inspected: introduction, saved result tables and final status readable"
+}

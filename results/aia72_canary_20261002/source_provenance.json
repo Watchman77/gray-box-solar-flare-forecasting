@@ -1,0 +1,13 @@
+{
+  "upstream_repository": "https://github.com/Watchman77/solar-flare-aia-training",
+  "source_notebook": "notebooks/training/19A2_Temporal_AIA_CNN_GRU_Cycle24_Training.ipynb",
+  "source_sha256": "5acff73d771fc8c6bef51b3fa97a06c65a630c83da3085ccfc14eebbf24e2af5",
+  "classes_preserved": [
+    "ConvBlock",
+    "FrameCNN",
+    "TemporalAIACNNGRU"
+  ],
+  "class_ast_sha256": "605ea143ad530bb7ec712ddf413b315238cf3bf92416d12c2abf3f3130d8d405",
+  "adaptation": "New import wrapper and fixed DROPOUT=0.30; classes unchanged. New 72-hour inputs, roles and fresh weights; no transfer of fitted 48-hour parameters.",
+  "rights_context": "Reused within the same owner\u2019s research repositories; no third-party relicensing asserted."
+}
