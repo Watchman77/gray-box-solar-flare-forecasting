@@ -1,0 +1,81 @@
+{
+  "config": {
+    "experiment": "sharp72_temporal_candidate_v1",
+    "status": "exploratory_candidate_labels",
+    "dataset_manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+    "horizon": 72,
+    "scope": "primary",
+    "reporting_delay_hours": 24,
+    "reporting_delay_status": "assumed sensitivity parameter; historical delivery unverified",
+    "blocks": [
+      {
+        "role": "train",
+        "start": "2010-01-01",
+        "end": "2014-01-01"
+      },
+      {
+        "role": "model_validation",
+        "start": "2014-01-01",
+        "end": "2014-07-01"
+      },
+      {
+        "role": "probability_calibration",
+        "start": "2014-07-01",
+        "end": "2015-01-01"
+      },
+      {
+        "role": "conformal_calibration",
+        "start": "2015-01-01",
+        "end": "2015-07-01"
+      },
+      {
+        "role": "policy_validation",
+        "start": "2015-07-01",
+        "end": "2020-01-01"
+      },
+      {
+        "role": "retrospective_cycle25",
+        "start": "2021-01-01",
+        "end": "2026-01-01"
+      },
+      {
+        "role": "supplementary_2026",
+        "start": "2026-01-01",
+        "end": "2027-01-01"
+      }
+    ],
+    "model": "one_layer_GRU_last_hidden_linear",
+    "hidden_size": 32,
+    "head_dropout": 0.2,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "max_epochs": 30,
+    "patience": 5,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "loss": "unweighted_binary_cross_entropy",
+    "selection": "minimum model_validation log loss per seed; all seeds retained",
+    "ensemble": "arithmetic_mean_of_all_three_seed_probabilities",
+    "reference": "L2_logistic_same_training_cases_fixed_penalty_0.01",
+    "evaluation_threshold": 0.5,
+    "device": "cpu",
+    "cpu_threads": 2
+  },
+  "config_sha256": "398d76919e204738c8d6f99714ba21eb6cecc86b0713cbb7b424a5bbc21e8839",
+  "code_sha256": {
+    "train_sharp_temporal.py": "f73ac013d390d87db9b16d838294ffc40227b85e37510b537e2003931c8c634d",
+    "dataset_io.py": "93e784b74c2d1038fe7620cb56d80ed554f2c41d7ef0efd2ec8f72ad33949f8e",
+    "run_exploratory_sharp.py": "85181d3beb66ba4fa500fde3bdc9c2e027f0b145a1688b7dd43769a35ac6125d"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "torch": "2.8.0"
+  },
+  "started_utc": "2026-10-02T07:55:53.886451+00:00"
+}

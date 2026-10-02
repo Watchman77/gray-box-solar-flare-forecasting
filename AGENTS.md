@@ -1,5 +1,9 @@
 # Repository guidance
 
+## Training format
+
+The user requested Jupyter `.ipynb` files for this project's training on 2 October 2026. Provide notebooks as the primary training interface, with visible configuration, executable model/training cells, saved results and checkpoints. Execute notebooks top-to-bottom before delivery when possible. Supporting Python modules may remain for testing and maintenance, but do not deliver script-only training workflows.
+
 ## Git authorship
 
 For new commits made on behalf of repository owner Bamidele Akinwumi, use:

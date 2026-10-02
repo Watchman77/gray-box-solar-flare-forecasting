@@ -1,0 +1,279 @@
+{
+  "status": "completed_exploratory_training",
+  "completed_utc": "2026-10-02T07:56:03.602342+00:00",
+  "experiment": "sharp72_temporal_candidate_v1",
+  "horizon": 72,
+  "scope": "primary",
+  "roles": [
+    {
+      "role": "conformal_calibration",
+      "cases": 4168,
+      "positive": 384,
+      "region_components": 95
+    },
+    {
+      "role": "model_validation",
+      "cases": 3905,
+      "positive": 416,
+      "region_components": 99
+    },
+    {
+      "role": "policy_validation",
+      "cases": 13142,
+      "positive": 422,
+      "region_components": 313
+    },
+    {
+      "role": "probability_calibration",
+      "cases": 2831,
+      "positive": 184,
+      "region_components": 69
+    },
+    {
+      "role": "purged_outcome_boundary",
+      "cases": 375,
+      "positive": 47,
+      "region_components": 16
+    },
+    {
+      "role": "retrospective_cycle25",
+      "cases": 35846,
+      "positive": 3860,
+      "region_components": 943
+    },
+    {
+      "role": "supplementary_2026",
+      "cases": 11118,
+      "positive": 992,
+      "region_components": 128
+    },
+    {
+      "role": "train",
+      "cases": 25586,
+      "positive": 1476,
+      "region_components": 629
+    },
+    {
+      "role": "unknown_label_excluded",
+      "cases": 16462,
+      "positive": 0,
+      "region_components": 664
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 17,
+      "epochs": 7,
+      "best_epoch": 2,
+      "best_validation_log_loss": 0.22960466685638412
+    },
+    {
+      "seed": 29,
+      "epochs": 9,
+      "best_epoch": 4,
+      "best_validation_log_loss": 0.22908596372257287
+    },
+    {
+      "seed": 43,
+      "epochs": 7,
+      "best_epoch": 2,
+      "best_validation_log_loss": 0.22565936808473275
+    }
+  ],
+  "saved_model_replay": "identical_all_supported_cases_each_seed",
+  "metrics": [
+    {
+      "role": "train",
+      "model": "probability_gru_mean",
+      "cases": 25586,
+      "positive": 1476,
+      "prevalence": 0.0576877980145392,
+      "brier": 0.03804760608035439,
+      "brier_skill_train_climatology": 0.3000797481362677,
+      "log_loss": 0.14089465555853445,
+      "average_precision": 0.5064495323944539,
+      "roc_auc": 0.9000132354081732,
+      "threshold": 0.5,
+      "tp": 429,
+      "fp": 167,
+      "fn": 1047,
+      "tn": 23943,
+      "tss": 0.28372382002542545
+    },
+    {
+      "role": "train",
+      "model": "probability_logistic",
+      "cases": 25586,
+      "positive": 1476,
+      "prevalence": 0.0576877980145392,
+      "brier": 0.039070529896135735,
+      "brier_skill_train_climatology": 0.2812621359777784,
+      "log_loss": 0.1459923775857493,
+      "average_precision": 0.49641457159943336,
+      "roc_auc": 0.8957331685510966,
+      "threshold": 0.5,
+      "tp": 289,
+      "fp": 87,
+      "fn": 1187,
+      "tn": 24023,
+      "tss": 0.19219099677516893
+    },
+    {
+      "role": "model_validation",
+      "model": "probability_gru_mean",
+      "cases": 3905,
+      "positive": 416,
+      "prevalence": 0.10653008962868117,
+      "brier": 0.0691706751556309,
+      "brier_skill_train_climatology": 0.2910443509988767,
+      "log_loss": 0.2267682885903689,
+      "average_precision": 0.48240597518612477,
+      "roc_auc": 0.9044579667967458,
+      "threshold": 0.5,
+      "tp": 124,
+      "fp": 89,
+      "fn": 292,
+      "tn": 3400,
+      "tss": 0.27256818131710653
+    },
+    {
+      "role": "model_validation",
+      "model": "probability_logistic",
+      "cases": 3905,
+      "positive": 416,
+      "prevalence": 0.10653008962868117,
+      "brier": 0.07177880756044397,
+      "brier_skill_train_climatology": 0.2643126442810395,
+      "log_loss": 0.23115656525739875,
+      "average_precision": 0.5052151029184354,
+      "roc_auc": 0.8982337345944397,
+      "threshold": 0.5,
+      "tp": 74,
+      "fp": 68,
+      "fn": 342,
+      "tn": 3421,
+      "tss": 0.15839479021981173
+    },
+    {
+      "role": "retrospective_cycle25",
+      "model": "probability_gru_mean",
+      "cases": 35846,
+      "positive": 3860,
+      "prevalence": 0.10768286559169782,
+      "brier": 0.07736469461862225,
+      "brier_skill_train_climatology": 0.21526293643173344,
+      "log_loss": 0.26704368704363146,
+      "average_precision": 0.4396029281149558,
+      "roc_auc": 0.8481822520150494,
+      "threshold": 0.5,
+      "tp": 963,
+      "fp": 821,
+      "fn": 2897,
+      "tn": 31165,
+      "tss": 0.2238143857626831
+    },
+    {
+      "role": "retrospective_cycle25",
+      "model": "probability_logistic",
+      "cases": 35846,
+      "positive": 3860,
+      "prevalence": 0.10768286559169782,
+      "brier": 0.07734090483581547,
+      "brier_skill_train_climatology": 0.21550424449085193,
+      "log_loss": 0.2670163933007759,
+      "average_precision": 0.429879738313205,
+      "roc_auc": 0.8467884103440334,
+      "threshold": 0.5,
+      "tp": 581,
+      "fp": 458,
+      "fn": 3279,
+      "tn": 31528,
+      "tss": 0.13619937025557488
+    },
+    {
+      "role": "supplementary_2026",
+      "model": "probability_gru_mean",
+      "cases": 11118,
+      "positive": 992,
+      "prevalence": 0.08922468069796725,
+      "brier": 0.06909934673687489,
+      "brier_skill_train_climatology": 0.15997023228945095,
+      "log_loss": 0.28147795786330326,
+      "average_precision": 0.3962164067851072,
+      "roc_auc": 0.7858344735366638,
+      "threshold": 0.5,
+      "tp": 205,
+      "fp": 56,
+      "fn": 787,
+      "tn": 10070,
+      "tss": 0.201122907813167
+    },
+    {
+      "role": "supplementary_2026",
+      "model": "probability_logistic",
+      "cases": 11118,
+      "positive": 992,
+      "prevalence": 0.08922468069796725,
+      "brier": 0.06904198440901377,
+      "brier_skill_train_climatology": 0.16066757698551593,
+      "log_loss": 0.2894925994343259,
+      "average_precision": 0.39517214640729825,
+      "roc_auc": 0.7838624460825853,
+      "threshold": 0.5,
+      "tp": 144,
+      "fp": 45,
+      "fn": 848,
+      "tn": 10081,
+      "tss": 0.14071728479226267
+    }
+  ],
+  "train_climatology": 0.0576877980145392,
+  "region_overlap_by_role": {
+    "train|model_validation": 0,
+    "train|probability_calibration": 0,
+    "train|conformal_calibration": 0,
+    "train|policy_validation": 0,
+    "train|retrospective_cycle25": 0,
+    "train|supplementary_2026": 0,
+    "model_validation|probability_calibration": 0,
+    "model_validation|conformal_calibration": 0,
+    "model_validation|policy_validation": 0,
+    "model_validation|retrospective_cycle25": 0,
+    "model_validation|supplementary_2026": 0,
+    "probability_calibration|conformal_calibration": 0,
+    "probability_calibration|policy_validation": 0,
+    "probability_calibration|retrospective_cycle25": 0,
+    "probability_calibration|supplementary_2026": 0,
+    "conformal_calibration|policy_validation": 0,
+    "conformal_calibration|retrospective_cycle25": 0,
+    "conformal_calibration|supplementary_2026": 0,
+    "policy_validation|retrospective_cycle25": 0,
+    "policy_validation|supplementary_2026": 0,
+    "retrospective_cycle25|supplementary_2026": 0
+  },
+  "population_rows": 153366,
+  "unscored_rows": 39933,
+  "limitations": [
+    "Candidate labels and provisional zeros; not confirmatory results.",
+    "Chronological roles with outcome/reporting purge, not an AR-disjoint or event-disjoint evaluation.",
+    "Prior Cycle-25 inspection makes evaluation retrospective; 2026 is supplementary.",
+    "Three short histories are not the published seven-daily-state ASR input contract.",
+    "Probabilities are uncalibrated; calibration/conformal/policy blocks are reserved for later stages.",
+    "Ensemble spread is seed disagreement, not a calibrated confidence interval.",
+    "Matched cohort selection and unassembled histories limit SHARP-only population claims."
+  ],
+  "output_sha256": {
+    "split_manifest.csv.gz": "8f59894d2dd9ce596bc9bb534b2c41951f4fbefda6b77c659ab9ba124bee90b9",
+    "seed_43_history.csv": "bfb59f7bba6cdf3ea2fbf4a415b11b34aaeeeff5341c01346af571abccee5e20",
+    "transform.npz": "df5759f65f8f4ca1580b733d4480023cb8056c77e8452da8c07a7f90a4eedcd6",
+    "seed_17_history.csv": "1df73e8ae1dc728b2a87e618c380eab6ca6243c6f57912a24c222b8263b097ce",
+    "predictions.csv.gz": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "seed_29_history.csv": "36fc63435214f87bc9d33f4c60596993743c26299b36d07af62ad187ce9336ed",
+    "seed_43.pt": "64a677de552fc0ae7d937f5161085d7f46020a26371f716c9cfa45a4533d0182",
+    "population_predictions.csv.gz": "d139c98e499786903d8373cb12a1744bfca57dec60ed4b014d32eb91a9aa72ea",
+    "seed_17.pt": "c76c2c95d06cc1a0bcbb133cdb2a3f9d377d4186227b1f2d37247e53255d381a",
+    "run_contract.json": "771378f033526619529091af0c72169371c6153cc480631d9d5308f95effa820",
+    "logistic_reference.npz": "053815cabd69123f2c5e144fd6ea8bcf4992cbc6b882ffbc0853384e5b9b845a",
+    "seed_29.pt": "5b29a7eb995a1296ce80c5bb170d61f02575db0435c594ab0324d303ba8927cf"
+  }
+}

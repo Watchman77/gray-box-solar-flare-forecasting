@@ -33,3 +33,13 @@ For AIA, call `load_aia_frame` from `scripts/aia_io.py`; do not assume every raw
 ## Scientific limits remain explicit
 
 The original source-association uncertainties have not been made to disappear. The dataset retains unresolved outcomes and provisional no-event labels. This pipeline can run reproducible **exploratory** comparisons while those flags remain visible. `preflight_dataset(..., purpose="confirmatory")` rejects this candidate package. Final publication claims still require an agreed target definition, treatment of coverage and missing labels, and the planned independent/grouped evaluation. No code check can substitute for those scientific decisions.
+
+## Temporal SHARP training
+
+The first 72-hour GRU training experiment has completed with seeds 17, 29 and 43, alongside a logistic reference using the identical training cases. The primary interface is now [the training notebook](../notebooks/01_SHARP_72h_Training.ipynb). Its model and training functions are included in notebook cells, so it does not depend on repository Python imports. The matching script remains as tested support code. All 71 tests pass in the training environment.
+
+The frozen blocks use 2010–2013 for fitting (25,586 eligible cases), January–June 2014 for early stopping (3,905), July–December 2014 for later probability calibration (2,831), January–June 2015 for later conformal calibration (4,168), and July 2015–2019 for policy development (13,142). A 24-hour reporting delay is assumed and outcome windows crossing each boundary are purged. Calibration/policy blocks have not been used for model selection or fitted by this stage.
+
+Retrospective Cycle-25 evaluation has 35,846 eligible cases: raw GRU-ensemble Brier 0.077365 and AP 0.439603, versus logistic Brier 0.077341 and AP 0.429880. The small descriptive differences do not establish a significant advantage. Supplementary 2026 has 11,118 eligible cases. All three saved checkpoints reproduce their predictions exactly. No mapped region-component overlaps were found between the chosen eligible blocks, but the experiment is not claimed as independently validated AR/event-disjoint or prospective evaluation.
+
+The [training receipts](../results/sharp72_training_20261002/) record configuration, histories, output hashes, verification and the original script run. Checkpoints and per-case predictions remain local. The working readable CSV had changed; integrity checks stopped the first launch. Training then used a separate snapshot extracted from the original verified archive. Working files were preserved.

@@ -1,0 +1,10 @@
+{
+  "notebook": "notebooks/01_SHARP_72h_Training.ipynb",
+  "notebook_sha256": "cfa2ed8585efecec310ed9dc5555afdf718776b8232140842e81642863282d6c",
+  "code_cells_executed": 14,
+  "execution_errors": 0,
+  "output_dir": "outputs/sharp72_notebook_v1_20261002T080801721986Z",
+  "metrics_match_script_run_exactly": true,
+  "saved_output_hashes_verified_in_notebook": true,
+  "presentation_check": "Rendered HTML results table, complete learning-curve figure, saved-results summary and full limitations inspected"
+}

@@ -1,0 +1,6 @@
+-r requirements-training.txt
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.30.1
+matplotlib==3.10.7
+nbconvert==7.16.6

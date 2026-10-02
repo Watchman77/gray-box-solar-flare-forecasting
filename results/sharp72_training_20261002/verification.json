@@ -1,0 +1,28 @@
+{
+  "tests_passed": 71,
+  "all_saved_output_hashes_verified": true,
+  "independent_auc_rank_and_brier_readback_checks": [
+    "train:probability_gru_mean",
+    "train:probability_logistic",
+    "model_validation:probability_gru_mean",
+    "model_validation:probability_logistic",
+    "retrospective_cycle25:probability_gru_mean",
+    "retrospective_cycle25:probability_logistic",
+    "supplementary_2026:probability_gru_mean",
+    "supplementary_2026:probability_logistic"
+  ],
+  "training_runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "training_dataset": "data/processed/training_snapshot_20261002/gray_box_aligned_v1",
+  "recovery": {
+    "working_package_changed_files": [
+      "dataset.csv"
+    ],
+    "original_working_files_preserved": true,
+    "archive": "data/processed/gray_box_aligned_v1.zip",
+    "archive_sha256": "3bb0a7fc10d0192ed8bdabb4744079ac8ed7bcc8845d4bd21fefa45068b3df18",
+    "action": "extract verified original archive into separate training snapshot"
+  }
+}
