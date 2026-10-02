@@ -19,6 +19,18 @@ Both primary-NOAA and current-HARP NOAA-union targets are available at 48 and 72
 
 Blank target cells in the CSV and −1 in the arrays mean **unknown**, never “no flare.” Blank SHARP values on unmatched cases mean **inputs not assembled**. `tensor_row=-1` is a missing pointer, not a Python index to use. Existing upstream 48-hour labels are retained in their own column.
 
+## View without AIA
+
+`data/processed/gray_box_sharp_goes_view_v1/sharp_goes.csv` contains 153,366 rows × 73 columns, with all three SHARP histories, region identifiers, observation times, and explicit primary/patch 48/72-hour outcomes. It has no AIA paths or pixels. The adjacent `sample.csv` has 178 viewing rows and shows only the most recent SHARP slot (issue minus 96 native minutes). The [export receipt](../results/pipeline_validation_20261002/sharp_goes_view_manifest.json) pins the source and files; every exported cell was compared after CSV readback.
+
+This is a view of the existing aligned cohort, not an independently expanded SHARP-only population. It retains 39,933 cases with unassembled SHARP histories as blank values. GOES provides event labels here, not continuous X-ray flux predictors. The uploaded `SOLAR_FLARE_FULL_2010_2025.csv` is preserved as a reference: its unspecified `FLARE_BINARY` horizon is not assumed equivalent to either new target. Its feature set contains `AREA_ACR`, whereas the current 16-feature set contains `MEANJZH` instead.
+
+```bash
+python scripts/export_sharp_goes.py \
+  --dataset data/processed/gray_box_aligned_v1 \
+  --output-dir data/processed/gray_box_sharp_goes_view_v1
+```
+
 ## Read it
 
 The CSV can be opened directly in a spreadsheet application. For modelling, use the arrays and index to avoid reading the large text export:
@@ -40,7 +52,7 @@ After extracting the portable archive, its included `dataset_io.py` provides the
 
 ## Run the CPU baseline
 
-The NumPy-only logistic runner uses the three SHARP histories, fits its transform only on development cases, excludes unknown outcomes and purges unmatured training windows. It uses the 2010–2019 Cycle-24 cohort for development, 2021–2025 for retrospective evaluation and 2026 for supplementary evaluation. These are **exploratory roles**, kept separate from final paper splits. Preparation has been executed; full model fitting is available with `--fit`.
+The NumPy-only logistic runner uses the three SHARP histories, fits its transform only on development cases, excludes unknown outcomes and purges unmatured training windows. It uses the 2010–2019 Cycle-24 cohort for development, 2021–2025 for retrospective evaluation and 2026 for supplementary evaluation. These are **exploratory roles**, kept separate from final paper splits. Both 48-hour and 72-hour fits have now completed; see [pipeline fixes and results](PIPELINE_STATUS.md).
 
 ```bash
 python scripts/run_exploratory_sharp.py \
@@ -50,6 +62,8 @@ python scripts/run_exploratory_sharp.py \
 ```
 
 Omit `--fit` for a quick preparation run that writes case roles and counts. Use a fresh output directory each time. Dependencies are the existing `requirements-audit.txt`; no GPU, new downloads or additional libraries are needed. This is a simple logistic reference, not reproduction of the published temporal network or a completed calibrated fusion model.
+
+The current repository reader enables checksums by default and the runner validates the full package before fitting. Add `--resume` to reuse a completed result only if its data/code/target contract and saved hashes still match. For portable use, the updated `gray_box_pipeline_tools_v1.zip` contains these safeguards; the original scientific-data archive remains unchanged. Its older embedded reader is retained only as the original package snapshot.
 
 ## Rebuild from cached sources
 

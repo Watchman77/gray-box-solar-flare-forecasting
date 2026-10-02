@@ -1,0 +1,40 @@
+{
+  "completed_utc": "2026-10-02T03:24:29.287821+00:00",
+  "status": "software_fixes_and_exploratory_end_to_end_runs_verified",
+  "tests_passed": 67,
+  "horizons_fit": [
+    48,
+    72
+  ],
+  "saved_model_replay": "all_supported_predictions_identical_at_both_horizons",
+  "completed_run_reuse": "72h_actual_run_verified_without_refitting",
+  "failure_recovery": "injected_fit_failure_then_successful_retry_test_passed",
+  "aia_actual_files_checked": 3,
+  "aia_metadata_schemas": [
+    "channel_names",
+    "numeric_wavelengths"
+  ],
+  "scientific_data_archive_modified": false,
+  "code_sha256": {
+    "scripts/dataset_io.py": "93e784b74c2d1038fe7620cb56d80ed554f2c41d7ef0efd2ec8f72ad33949f8e",
+    "scripts/aia_io.py": "23ea7bcb3ab4be9f4b2c6fa407029e24da8b86bca8923ab5cadfd64e7d94aac1",
+    "scripts/check_aia_sample.py": "1968eee6161e892e3fa35264ba83dd7a86c2ea97bb45e4c152080fcb03e81db1",
+    "scripts/run_exploratory_sharp.py": "85181d3beb66ba4fa500fde3bdc9c2e027f0b145a1688b7dd43769a35ac6125d",
+    "tests/test_pipeline_guards.py": "e1ab8810b094c558baf0e762aa1255547fab2d79502e6f6c66c633dc0b6698d2"
+  },
+  "evidence_sha256": {
+    "sharp72_summary.json": "eb6add613a1f8de96732e0d04db0f37f85f7e77adf8dbd03959139875fca48db",
+    "sharp48_summary.json": "8975cd6a60068d0645b06af2ab7f195989aedcd2c8a8602ddb30a53d35b981bf",
+    "aia_sample_receipt.json": "b890aca2890babcc7fb78919a244cdd4c4c78b9006f853855b144260777d2805"
+  },
+  "portable_tools": {
+    "file": "data/processed/gray_box_pipeline_tools_v1.zip",
+    "bytes": 9889,
+    "sha256": "8780f5acc0b0b8486a6ea12fb2996d9090e11756adf2290e747498ed5916e91a"
+  },
+  "remaining_scope": [
+    "Source uncertainty and provisional zeros are still scientifically unresolved.",
+    "Three AIA files do not establish whole-archive integrity or trained fusion correctness.",
+    "Final calibration, uncertainty, policy, and prospective evaluation are not implemented by this baseline."
+  ]
+}

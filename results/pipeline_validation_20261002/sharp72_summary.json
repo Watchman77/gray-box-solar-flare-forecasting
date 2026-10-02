@@ -1,0 +1,119 @@
+{
+  "status": "exploratory_fit_complete",
+  "dataset_version": "gray_box_aligned_v1",
+  "target_version": "candidate_mx_start_science_swpc_regions_v2",
+  "horizon_hours": 72,
+  "scope": "primary",
+  "model": "L2_logistic_flat_three_slot_SHARP",
+  "training_rule": "Known candidate outcomes matured by 2020-01-01 UTC (Cycle-24 2010-2019 input cohort); fixed penalty 0.01; no class rebalancing.",
+  "role_counts": {
+    "train_cycle24": 49982,
+    "retrospective_cycle25": 35871,
+    "unknown_label_excluded": 16462,
+    "supplementary_2026": 11118
+  },
+  "run_contract": {
+    "manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+    "runner_sha256": "85181d3beb66ba4fa500fde3bdc9c2e027f0b145a1688b7dd43769a35ac6125d",
+    "loader_sha256": "93e784b74c2d1038fe7620cb56d80ed554f2c41d7ef0efd2ec8f72ad33949f8e",
+    "horizon": 72,
+    "scope": "primary",
+    "fit": true,
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "preflight": {
+    "status": "passed",
+    "purpose": "exploratory",
+    "case_count": 153366,
+    "tensor_count": 113433,
+    "manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+    "checks": [
+      "all package hashes",
+      "master/tensor/label alignment",
+      "four label masks",
+      "feature masks",
+      "identity and AIA references",
+      "past-only ordered histories",
+      "outcome endpoints"
+    ],
+    "targets": [
+      {
+        "horizon": 48,
+        "scope": "primary",
+        "known": 101129,
+        "unknown": 12304
+      },
+      {
+        "horizon": 48,
+        "scope": "patch",
+        "known": 101878,
+        "unknown": 11555
+      },
+      {
+        "horizon": 72,
+        "scope": "primary",
+        "known": 96971,
+        "unknown": 16462
+      },
+      {
+        "horizon": 72,
+        "scope": "patch",
+        "known": 98100,
+        "unknown": 15333
+      }
+    ],
+    "aia_remote_object_reads": 0,
+    "remaining_limits": [
+      "AIA pixel files are referenced, not downloaded or decoded in this preflight.",
+      "Candidate zeros do not certify continuous observation coverage or historical delivery."
+    ]
+  },
+  "limitations": [
+    "Exploratory candidate labels; provisional zeros and unknown-label exclusions can bias evaluation.",
+    "Previously inspected Cycle-25 years are retrospective evaluation, not untouched or prospective confirmation.",
+    "No AIA pixel model, continuous GOES predictor, calibration, conformal uncertainty or safety policy is fitted.",
+    "Calendar roles do not assert AR-disjoint or event-disjoint validation; component overlaps are reported."
+  ],
+  "shared_components_with_training": {
+    "retrospective_cycle25": 0,
+    "supplementary_2026": 0
+  },
+  "saved_model_replay": "all_supported_predictions_identical",
+  "optimizer": {
+    "iterations": 7,
+    "converged": true,
+    "penalized_train_loss": 0.1432384295647479
+  },
+  "metrics": [
+    {
+      "role": "train_cycle24",
+      "cases": 49982,
+      "positive": 2929,
+      "brier": 0.0381601774646709,
+      "log_loss": 0.14026646182800334
+    },
+    {
+      "role": "retrospective_cycle25",
+      "cases": 35871,
+      "positive": 3860,
+      "brier": 0.07671913440051717,
+      "log_loss": 0.26525885581184
+    },
+    {
+      "role": "supplementary_2026",
+      "cases": 11118,
+      "positive": 992,
+      "brier": 0.06722233580987642,
+      "log_loss": 0.2815831969150887
+    }
+  ],
+  "population_rows": 153366,
+  "unscored_missing_input_rows": 39933,
+  "output_sha256": {
+    "cases.csv.gz": "71fd0fa9b6fcf093ff7eb13374de0f1ba1175adbb604058eae5c16349a21e508",
+    "model.npz": "379f8dd26010abdd6f022b41734c26dd131fccba505ba6162b9cd4c6b4b597d0",
+    "population_predictions.csv.gz": "824d20e81e9ae4454a5629bd3b601f698c7ad267d5f262e41801ac6f7e2b4685"
+  },
+  "completed_utc": "2026-10-02T03:18:54.298892+00:00"
+}

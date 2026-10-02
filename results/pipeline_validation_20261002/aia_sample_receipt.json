@@ -1,0 +1,82 @@
+{
+  "status": "three_cohort_aia_io_check_passed",
+  "completed_utc": "2026-10-02T03:22:04.370447+00:00",
+  "cases": [
+    {
+      "case_id": "gb72-native-v1:20191119_2000_HARP7389_NOAA12752",
+      "cohort": "cycle24",
+      "issue_utc": "2019-11-19 19:59:23+00:00",
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/samples_npz/2019/20191119_1824_HARP7389_NOAA12752.npz",
+      "generation": "1778893460735695",
+      "bytes": 5533379,
+      "sha256": "2cb2ec8695c224021e8aa0f10a8ff288145e5e03e05590624084d135cbfbd24e",
+      "shape": [
+        512,
+        512,
+        6
+      ],
+      "dtype": "float32",
+      "channels": [
+        "aia94",
+        "aia131",
+        "aia171",
+        "aia193",
+        "aia211",
+        "aia335"
+      ],
+      "finite": true,
+      "metadata_schema": "channel_names"
+    },
+    {
+      "case_id": "gb72-native-v1:20251229_2348_HARP14200_NOAA14319",
+      "cohort": "primary_cycle25",
+      "issue_utc": "2025-12-29 23:47:23+00:00",
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/jsoc_2025_2026_production_v1/samples_npz/2025/20251229_2212_HARP14200_NOAA14319.npz",
+      "generation": "1782652473183401",
+      "bytes": 5515647,
+      "sha256": "693da4beb410ed192b256287cc691c20d1a2ac65b8dcba9302da2729b74fbfbe",
+      "shape": [
+        512,
+        512,
+        6
+      ],
+      "dtype": "float32",
+      "channels": [
+        "aia94",
+        "aia131",
+        "aia171",
+        "aia193",
+        "aia211",
+        "aia335"
+      ],
+      "finite": true,
+      "metadata_schema": "numeric_wavelengths"
+    },
+    {
+      "case_id": "gb72-native-v1:20260817_2312_HARP15018_NOAA14516",
+      "cohort": "supplementary_2026",
+      "issue_utc": "2026-08-17 23:11:23+00:00",
+      "uri": "gs://suryabench-sharp-pipeline-bamidele/jsoc_2025_2026_production_v1/samples_npz/2026/20260817_2136_HARP15018_NOAA14516.npz",
+      "generation": "1790620851172368",
+      "bytes": 5541079,
+      "sha256": "e37538cb3611bb84a2b7ba78adee4886c0cc931095edab846553d85260e72271",
+      "shape": [
+        512,
+        512,
+        6
+      ],
+      "dtype": "float32",
+      "channels": [
+        "aia94",
+        "aia131",
+        "aia171",
+        "aia193",
+        "aia211",
+        "aia335"
+      ],
+      "finite": true,
+      "metadata_schema": "numeric_wavelengths"
+    }
+  ],
+  "scope": "Three latest-case history frames only; not a full AIA data or fusion-model validation."
+}

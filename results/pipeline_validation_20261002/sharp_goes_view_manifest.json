@@ -1,0 +1,28 @@
+{
+  "source_manifest_sha256": "7bb88614482cacd5fafb145d88345132a6cf97b25b8313dbefd90b08ac5b9d27",
+  "export_script_sha256": "39d6b8b7d1244105f05ae108848fe0fb15544d0ea4e9d7eace6aea88bc8cf607",
+  "rows": 153366,
+  "columns": 73,
+  "sample_rows": 178,
+  "sharp_history_available": 113433,
+  "missing_history_cases": 39933,
+  "issue_utc_min": "2010-05-21 03:47:26+00:00",
+  "issue_utc_max": "2026-08-17 23:11:23+00:00",
+  "contains_aia_columns_or_pixels": false,
+  "population": "unchanged aligned cohort; no independent SHARP-only population expansion",
+  "roundtrip_verification": "all cells compared with source projection",
+  "outputs": {
+    "sharp_goes.csv": {
+      "bytes": 104183080,
+      "sha256": "7f726276764ebb06982ce77b91c65d55940ef06f8e8edb866012dc8b325a858e"
+    },
+    "sample.csv": {
+      "bytes": 30674,
+      "sha256": "e75654ba85b69b05c2c434a35f14570c9a0f4101536faf4f87b809ad2f4fa131"
+    },
+    "README.txt": {
+      "bytes": 1224,
+      "sha256": "e34ada2d8bbc5275100e64fa496d1d0092ecbe928771cda13bd4aae3909acb30"
+    }
+  }
+}
