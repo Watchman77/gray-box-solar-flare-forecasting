@@ -1,0 +1,21 @@
+{
+  "cases": 3905,
+  "all_logits_within_tolerance": true,
+  "mismatched_cases": 0,
+  "max_absolute_logit_difference": 8.881784197001252e-16,
+  "saved_log_loss": 0.3926884123310144,
+  "replayed_log_loss": 0.3926884123310144,
+  "log_loss_difference": 0.0,
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "status": "comparison_passed_pending_controller",
+  "selected_seed": 17,
+  "selected_epoch": 2,
+  "model_state_unchanged": true,
+  "inputs_unchanged": true,
+  "fitting_steps": 0,
+  "source_image_downloads": 0,
+  "scientific_acceptance": false,
+  "later_period_evaluation": false,
+  "limitations": "Same architecture/preprocessing implementation; this tests serialized-checkpoint reproducibility on the earlier selection block, not independent scientific validation."
+}

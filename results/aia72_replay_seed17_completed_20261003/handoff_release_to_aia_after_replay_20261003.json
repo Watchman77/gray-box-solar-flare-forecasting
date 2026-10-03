@@ -1,0 +1,37 @@
+{
+  "utc": "2026-10-03T12:52:04.981115+00:00",
+  "status": "GPU_RELEASED_TO_AIA",
+  "reason": "One bounded seed17 checkpoint replay completed successfully; no fitting or retry",
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "gpu_empty_under_exclusive_lock": true,
+  "owned_controller_worker_and_process_groups_absent": true,
+  "launcher_pid": 1682325,
+  "worker_pid": 1682328,
+  "gpu": "NVIDIA L4, 0 %, 0 MiB",
+  "disk_free_bytes": {
+    "/home/abmoses2000": 23980683264,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "review_root": "/home/abmoses2000/graybox_aia72_seed17_replay_v1_20261003",
+  "last_execution_receipt": "/home/abmoses2000/graybox_aia72_seed17_replay_v1_20261003/executions/20261003T123828Z/execution_receipt.json",
+  "last_execution_receipt_sha256": "4d7822d0d0d5dcb08327e5a1080a1c7ad3fe7c0bb817d8f8574c4669108d7d24",
+  "comparison_result_sha256": "f665afdb6c2c78808a2861d1b33d3f811f50f1405049ad2248bd86c1fd6e4be5",
+  "elapsed_review_seconds": 225.5143348770216,
+  "fitting_steps": 0,
+  "scientific_acceptance": false,
+  "archive": {
+    "path": "/home/abmoses2000/graybox_aia72_seed17_replay_v1_20261003/completed_archive/snapshot.tar.gz",
+    "sha256": "6093412b41d9f36317e3119a957820147b4ea92e758054907cf2f911ad6fbd7c",
+    "bytes": 104760,
+    "manifest_sha256": "7b1a5415a9cf5b6c0a38d6e3921a4118be732a6302f193ef611d2a00996132d4",
+    "source_files": 30,
+    "all_source_files_unchanged": true
+  },
+  "supersedes_reservation_sha256": "304dfda4cb5b0b569001697686faa8f854eac3b335060b70f64f1e741944a09c",
+  "prior_handoff_receipts_preserved": true,
+  "graybox_new_fitting_allowed": false,
+  "automatic_retry": false,
+  "AIA_must_acquire_common_lock_and_recheck_GPU": true,
+  "preserve_all_caches_checkpoints_shared_environment": true
+}

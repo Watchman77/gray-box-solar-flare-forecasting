@@ -1,0 +1,23 @@
+{
+  "status": "technical_checkpoint_replay_verified",
+  "started_utc": "2026-10-03T12:38:28.153660+00:00",
+  "contract_sha256": "0404e009c201303cba0bc74dd6306f220568091899ab7713fb7033d894d0cb39",
+  "bundle_sha256": "c35fb51db97b6b741011bbf4ddc98d4d880fe566b915a302b06c742d2c056dba",
+  "authorization_sha256": "cc9ddc714722b9ddcba9d96f9db70c430aeebc553a205f8ee0017ed29ed03715",
+  "handoff_sha256": "304dfda4cb5b0b569001697686faa8f854eac3b335060b70f64f1e741944a09c",
+  "slot_seconds": 1800,
+  "cleanup_reserve_seconds": 60,
+  "common_lock_inode": 519274,
+  "fitting_steps": 0,
+  "scientific_acceptance": false,
+  "worker_pid": 1682328,
+  "returncode": 0,
+  "work_deadline_reached": false,
+  "process_group_empty": true,
+  "cancellation_signals": [],
+  "guard_error": null,
+  "result_sha256": "f665afdb6c2c78808a2861d1b33d3f811f50f1405049ad2248bd86c1fd6e4be5",
+  "finished_utc": "2026-10-03T12:42:13.667669+00:00",
+  "elapsed_slot_seconds": 225.5143348770216,
+  "reservation_return": "requires explicit coordination; this receipt does not release AIA reservation"
+}

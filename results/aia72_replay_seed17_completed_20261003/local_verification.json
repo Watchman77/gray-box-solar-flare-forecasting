@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-03T12:54:37.248686+00:00",
+  "archive_sha256": "6093412b41d9f36317e3119a957820147b4ea92e758054907cf2f911ad6fbd7c",
+  "verified_source_files": 30,
+  "comparison_rows": 3905,
+  "executed_notebook_cells": 6,
+  "notebook_errors": 0,
+  "notebook_sha256": "aa692ce7975749c54588037d38232cc52e7aab58ef109222944346cc2830de68",
+  "executed_notebook": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_replay_seed17_prepared_v2_20261003/completed_snapshot/executions/20261003T123828Z/10_AIA_72h_Checkpoint_Replay_EXECUTED.ipynb",
+  "status": "all_30_archived_files_verified_locally",
+  "technical_checkpoint_replay_verified": true,
+  "independent_scientific_validation": false,
+  "ordered_case_ids_and_labels_match_frozen_support": true,
+  "all_3905_logits_recompared_locally": true,
+  "recomputed_max_absolute_logit_difference": 8.881784197001252e-16,
+  "recomputed_saved_log_loss": 0.3926884123310144,
+  "recomputed_replayed_log_loss": 0.3926884123310144
+}
