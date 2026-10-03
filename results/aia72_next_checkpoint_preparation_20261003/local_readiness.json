@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-03T21:23:22.759031+00:00",
+  "status": "local_changed_path_CPU_checks_passed_pending_independent_review",
+  "preparation_script_sha256": "75f261a59ed8a36ffccaa10c22b517c859914b8d069178ef8dcb27fdba5df357",
+  "test_source_sha256": "6dd9743f6edccdee716a07b3f3b6109e9e067c2e74adc1ae21b96adffd25599e",
+  "test_log_sha256": "819c2455cc296978c5a7cc1579576aae58c3270fce5f5bb395e06f670a9c5709",
+  "CPU_tests_passed": 6,
+  "checks": [
+    "Exact new scientific parent/checkpoint/return binding and unchanged worker/controller/training code",
+    "Real checkpoint metadata and tampered snapshot/state rejection",
+    "Consumed predecessor allowance and old checkpoint/return rejected",
+    "Changed current owner rejected",
+    "Epoch3 validation occurs before further training; exact CPU model/optimizer/RNG/history match to uninterrupted toy run",
+    "Interrupted pending validation preserves boundary and does not start seed43"
+  ],
+  "notebook_preview_sha256": "04ae2d2f0b12f66b486f44a846d7338f7c60517feb95a733cc4fa5846935a99f",
+  "notebook_preview_code_cells": 6,
+  "notebook_preview_errors": 0,
+  "GPU_initialized": false,
+  "real_image_pixels_read": 0,
+  "training_or_replay_launched": false,
+  "metadata_preview_only": true,
+  "saved_presentation_visually_inspected": false,
+  "presentation_inspection_instructions": "Open outputs/aia72_continuation_next_checkpoint_20261003/metadata_preview/preview.html and inspect the saved tables before claiming visual verification. The metadata preview has already executed; do not start GPU training for visual inspection.",
+  "prepared_bundle_directory": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_next_checkpoint_20261003/bundle",
+  "target_vm_root": "/home/abmoses2000/graybox_aia72_continuation_v2_20261003",
+  "VM_staged": false,
+  "VM_CPU_checks_executed": false,
+  "independent_review_completed": false,
+  "new_allowance_or_handoff": false,
+  "scientific_acceptance": false,
+  "prior_preparation_failure": {
+    "status": "corrected_before_any_bundle_creation",
+    "error": "FileNotFoundError: original run_aia72_training_notebook.py is absent from the continuation source bundle",
+    "repair": "Read this retired original scheduler from the original immutable training archive when verifying original source hashes; it is not included or executed in the continuation bundle.",
+    "GPU_or_training_effect": false
+  },
+  "remaining_gates": [
+    "Independent changed-source review",
+    "Changed-path CPU checks in the existing VM runtime",
+    "Fresh explicit bounded allowance and handoff pinned to this bundle; recheck current owner and original lock"
+  ]
+}

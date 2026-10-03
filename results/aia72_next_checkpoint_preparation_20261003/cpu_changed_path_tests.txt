@@ -1,0 +1,21 @@
+test_changed_current_owner_is_rejected (__main__.NextCheckpointTests.test_changed_current_owner_is_rejected) ... ok
+test_consumed_predecessor_allowance_and_handoff_rejected (__main__.NextCheckpointTests.test_consumed_predecessor_allowance_and_handoff_rejected) ... ok
+test_epoch3_boundary_resumes_validation_before_training_and_matches_full_run (__main__.NextCheckpointTests.test_epoch3_boundary_resumes_validation_before_training_and_matches_full_run) ... {"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.700223129231953, "best_epoch": 1}
+{"seed": 29, "epoch": 2, "training_log_loss": 0.7376984506845474, "selection_log_loss": 0.6985475152276428, "best_epoch": 2}
+{"seed": 29, "epoch": 3, "training_log_loss": 0.7010380774736404, "selection_log_loss": 0.6980682036006234, "best_epoch": 3}
+{"seed": 29, "epoch": 4, "training_log_loss": 0.6119454056024551, "selection_log_loss": 0.6972988161146731, "best_epoch": 4}
+{"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.700223129231953, "best_epoch": 1}
+{"seed": 29, "epoch": 2, "training_log_loss": 0.7376984506845474, "selection_log_loss": 0.6985475152276428, "best_epoch": 2}
+{"seed": 29, "epoch": 3, "training_log_loss": 0.7010380774736404, "selection_log_loss": 0.6980682036006234, "best_epoch": 3}
+{"seed": 29, "epoch": 4, "training_log_loss": 0.6119454056024551, "selection_log_loss": 0.6972988161146731, "best_epoch": 4}
+ok
+test_next_contract_and_original_scientific_parent (__main__.NextCheckpointTests.test_next_contract_and_original_scientific_parent) ... ok
+test_real_checkpoint_metadata_and_rejection_of_changed_state (__main__.NextCheckpointTests.test_real_checkpoint_metadata_and_rejection_of_changed_state) ... ok
+test_validation_interruption_preserves_boundary_and_does_not_start_seed43 (__main__.NextCheckpointTests.test_validation_interruption_preserves_boundary_and_does_not_start_seed43) ... {"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.700223129231953, "best_epoch": 1}
+{"seed": 29, "epoch": 2, "training_log_loss": 0.7376984506845474, "selection_log_loss": 0.6985475152276428, "best_epoch": 2}
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.154s
+
+OK

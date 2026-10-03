@@ -1,0 +1,28 @@
+{
+  "status": "prepared_pending_changed_path_CPU_and_independent_review",
+  "contract_sha256": "37ffaf98eb239e7fde049f90df71e3f6cff2554033e50c68da572762f3a37e0b",
+  "bundle_sha256": "aa4b902a879ee0b06643e82f14b0efecce127472c6be0e2e442da02c3b8b3d08",
+  "source_tar_sha256": "d527053638ae66f3834d47230f613d1e30b369b215b52a546af0265422e7785f",
+  "source_tar_bytes": 32766,
+  "changed_bundle_files": [
+    "scripts/aia72_continue_contract.py",
+    "configs/aia72_continuation_v1.json",
+    "notebooks/11_AIA_72h_Training_Continuation.ipynb"
+  ],
+  "unchanged_bundle_files": [
+    "scripts/aia72_continue.py",
+    "scripts/run_aia72_continue.py",
+    "scripts/aia72_replay_contract.py",
+    "scripts/run_aia72_replay.py",
+    "scripts/train_aia72_gpu.py",
+    "scripts/aia72_model.py",
+    "scripts/aia72_vm_data.py",
+    "scripts/aia72_data.py",
+    "scripts/aia_io.py",
+    "scripts/dataset_io.py"
+  ],
+  "checkpoint_input_note": "Obsolete checkpoint29 entry removed from original-source inputs; new seed29 is pinned in full immutable initial_training manifest and checked state. Original source data/configuration retain their hashes.",
+  "GPU_launch": false,
+  "new_allowance": false,
+  "seed17_repeated": false
+}

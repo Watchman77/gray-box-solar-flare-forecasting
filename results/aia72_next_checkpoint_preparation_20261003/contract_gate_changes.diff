@@ -1,0 +1,13 @@
+--- accepted_slot2/aia72_continue_contract.py
++++ next_checkpoint/aia72_continue_contract.py
+@@ -9 +9 @@
+-ROOT = '/home/abmoses2000/graybox_aia72_continuation_v1_20261003'
++ROOT = '/home/abmoses2000/graybox_aia72_continuation_v2_20261003'
+@@ -12,2 +12,2 @@
+-RESUME = 'cd81fc957daa86c9022744dbd21e78e7912953c6ca14a5660e7fe77df92facc8'
+-RETURN = 'bcd96bf8bb9f1ac9c0d2ab871eea09d3f001a4aaac2746a3b0acd6cf17737e4e'
++RESUME = 'b8d3c08a119f6b90b11ca2cfa4253b17647d172043fa32948e2b927df40ca6bb'
++RETURN = '42f657719703913bb720bbb36ee9ac58b1d9454769fa01266837e1e5104a437c'
+@@ -29 +29 @@
+-    require(c['kind'] == 'aia72_first_training_continuation_slot', 'Wrong continuation')
++    require(c['kind'] == 'aia72_next_checkpoint_training_continuation_slot', 'Wrong continuation')
