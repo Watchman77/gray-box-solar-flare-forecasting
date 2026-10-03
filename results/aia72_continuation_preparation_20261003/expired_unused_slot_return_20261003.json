@@ -1,0 +1,33 @@
+{
+  "status": "GPU_RELEASED_TO_AIA",
+  "utc": "2026-10-03T18:59:53.086619+00:00",
+  "reason": "Expired unused allowance; coordination delivery arrived after expiry; no launch or allowance consumption recorded",
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "authorization_path": "/home/abmoses2000/graybox_aia72_continuation_v1_20261003/aia_coordination_20261003/authorization.json",
+  "authorization_sha256": "72530de8118f760e5dcfb1a7387f14d461ad9321002fac308881ece7dfe8cc0b",
+  "supersedes_reservation_sha256": "9eaef637c340244fd1c596a326ed5104217f03419d0da808eea98404597e0aaf",
+  "handoff_utc": "2026-10-03T16:15:41.439855+00:00",
+  "allowance_expires_utc": "2026-10-03T17:20:41.439855+00:00",
+  "maximum_slot_seconds": 3900,
+  "actual_reserved_elapsed_seconds": 9851.646764,
+  "reserved_overrun_seconds": 5951.646763999999,
+  "GPU_fitting_seconds": 0,
+  "consumption_claim_path": "/home/abmoses2000/.graybox_gpu_continuation_authorizations/72530de8118f760e5dcfb1a7387f14d461ad9321002fac308881ece7dfe8cc0b.json",
+  "consumption_claim_exists": false,
+  "launcher_receipt_exists": false,
+  "execution_directory_exists": false,
+  "continuation_processes_absent": true,
+  "GPU_processes_absent": true,
+  "disk_free_bytes": {
+    "/home/abmoses2000": 23399186432,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "seed29_initial_and_working_copy_unchanged": true,
+  "seed29_checkpoint_sha256": "cd81fc957daa86c9022744dbd21e78e7912953c6ca14a5660e7fe77df92facc8",
+  "prior_receipts_preserved": true,
+  "automatic_retry": false,
+  "new_allowance_granted": false,
+  "AIA_must_acquire_common_lock_and_recheck_GPU": true,
+  "billing_note": "Reserved elapsed time includes idle time and is not a claim that VM charges stopped or a calculated monetary charge."
+}
