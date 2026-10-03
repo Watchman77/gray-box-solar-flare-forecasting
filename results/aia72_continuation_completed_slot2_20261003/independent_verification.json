@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-03T20:13:48.846642+00:00",
+  "status": "bounded_invocation_independently_verified_and_explicit_return_confirmed",
+  "cleanup": {
+    "utc": "2026-10-03T20:13:44.219749+00:00",
+    "common_lock_inode": 519274,
+    "lock_acquired": true,
+    "owner_and_return_sha256": "42f657719703913bb720bbb36ee9ac58b1d9454769fa01266837e1e5104a437c",
+    "controller_and_worker_groups_empty": true,
+    "GPU_empty": true,
+    "disk_free_bytes": {
+      "/home/abmoses2000": 23398825984,
+      "/mnt/disks/aia-cache": 39500812288
+    }
+  },
+  "checkpoint_sha256": "b8d3c08a119f6b90b11ca2cfa4253b17647d172043fa32948e2b927df40ca6bb",
+  "seed29_state": {
+    "epoch": 3,
+    "cursor": 25586,
+    "loss_sum": 4894.803735494614,
+    "best_loss": 0.36538815186923185,
+    "best_epoch": 1,
+    "stale": 1,
+    "elapsed_seconds": 8201.251223390922,
+    "steps": 4800
+  },
+  "completed_selection_epochs": 2,
+  "next_resume_action": "Finish epoch3 validation before epoch4 training; no epoch3 training batches need repeating",
+  "additional_steps": 2059,
+  "additional_fitting_counter_seconds": 3578.6059455130016,
+  "reserved_seconds": 3590.1991071450757,
+  "reservation_overrun_seconds": 0,
+  "epoch2_selection_log_loss_recomputed": 0.3985897466773008,
+  "seed17_unchanged": true,
+  "seed43_not_started": true,
+  "notebook_executed_cells": 6,
+  "notebook_errors": 0,
+  "CUDA_initialized_by_verification": false,
+  "scientific_acceptance": false,
+  "training_complete": false,
+  "inherited_legacy_files": "training/learning_curves.png, invocation_result.json, notebook_status.json and benchmark.json are preserved parent artifacts; use execution/training_result.json and current executed notebook for this slot."
+}
