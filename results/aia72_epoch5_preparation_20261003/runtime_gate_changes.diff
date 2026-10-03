@@ -1,0 +1,10 @@
+--- accepted_v2/aia72_continue_contract.py
++++ epoch5_v3/aia72_continue_contract.py
+@@ -9 +9 @@
+-ROOT = '/home/abmoses2000/graybox_aia72_continuation_v2_20261003'
++ROOT = '/home/abmoses2000/graybox_aia72_continuation_v3_20261003'
+@@ -12,2 +12,2 @@
+-RESUME = 'b8d3c08a119f6b90b11ca2cfa4253b17647d172043fa32948e2b927df40ca6bb'
+-RETURN = '42f657719703913bb720bbb36ee9ac58b1d9454769fa01266837e1e5104a437c'
++RESUME = '08cc00bac09719b1d21ed8fe637f229bb0b46255eec1c51231895d54c7b13948'
++RETURN = 'c91bc482a36e585680b64601307ee3a71f53eb1d30da1526aef6a2a52ab73d42'

@@ -1,0 +1,28 @@
+{
+  "status": "prepared_pending_changed_path_CPU_and_independent_review",
+  "contract_sha256": "f3f19c08e9674965ec7d5aedead55febe1e522da3e9d45a1650c5f28639f2db3",
+  "bundle_sha256": "be91d7eaa37dd2d0e257ec8dca20185ad4a8830a8400ba66593ccdfdd658ad7f",
+  "source_tar_sha256": "424ac43fb987a276411c57de67d0346bb76effd0ed758bec488f417e18f3b656",
+  "source_tar_bytes": 32931,
+  "changed_bundle_files": [
+    "scripts/aia72_continue_contract.py",
+    "configs/aia72_continuation_v1.json",
+    "notebooks/11_AIA_72h_Training_Continuation.ipynb"
+  ],
+  "unchanged_bundle_files": [
+    "scripts/aia72_continue.py",
+    "scripts/run_aia72_continue.py",
+    "scripts/aia72_replay_contract.py",
+    "scripts/run_aia72_replay.py",
+    "scripts/train_aia72_gpu.py",
+    "scripts/aia72_model.py",
+    "scripts/aia72_vm_data.py",
+    "scripts/aia72_data.py",
+    "scripts/aia_io.py",
+    "scripts/dataset_io.py"
+  ],
+  "checkpoint_input_note": "New mid-epoch seed29 is pinned in full immutable initial_training manifest and checked state. Original science inputs and all runtime source except three literal bindings retain their hashes.",
+  "GPU_launch": false,
+  "new_allowance": false,
+  "seed17_repeated": false
+}

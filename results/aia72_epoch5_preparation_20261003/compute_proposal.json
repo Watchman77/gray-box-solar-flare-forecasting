@@ -1,0 +1,80 @@
+{
+  "status": "PREPARATION_ONLY_NOT_AN_ALLOWANCE_OR_HANDOFF",
+  "review_root": "/home/abmoses2000/graybox_aia72_continuation_v3_20261003",
+  "predecessor_return_sha256": "c91bc482a36e585680b64601307ee3a71f53eb1d30da1526aef6a2a52ab73d42",
+  "starting_checkpoint_sha256": "08cc00bac09719b1d21ed8fe637f229bb0b46255eec1c51231895d54c7b13948",
+  "starting_seed29_state": {
+    "epoch": 5,
+    "cursor": 5184,
+    "loss_sum": 926.9427725076675,
+    "best_loss": 0.3539059323749676,
+    "best_epoch": 3,
+    "stale": 1,
+    "elapsed_seconds": 11777.969757828861,
+    "steps": 6724
+  },
+  "next_action": "Resume epoch5 at cursor5184 of25586 in the saved permutation; preserve running loss, RNG and optimizer. Validate only after the remaining20402 cases.",
+  "maximum_slot_seconds": 3900,
+  "maximum_fitting_seconds": 3600,
+  "cleanup_seconds": 60,
+  "invocation_count": 1,
+  "automatic_retry": false,
+  "charge_from": "fresh_handoff_utc_including_idle",
+  "seed_order": [
+    29,
+    43
+  ],
+  "seed17_repeated": false,
+  "original_science_configuration_unchanged": true,
+  "completed_slot_accounting": {
+    "original_fitting_seconds": 21604.531843159,
+    "previous_continuation_fitting_seconds": 3578.6059455130016,
+    "additional_fitting_seconds": 3576.7185344379395,
+    "total_fitting_counter_seconds": 28759.85632310994,
+    "completed_slot_reserved_seconds": 3595.1288470210275,
+    "completed_slot_overrun_seconds": 0,
+    "previous_continuation_reserved_seconds": 3590.1991071450757,
+    "all_completed_continuation_reserved_seconds": 7185.327954166103,
+    "expired_unused_reservation_seconds": 9851.646764,
+    "expired_unused_reservation_overrun_seconds": 5951.646763999999,
+    "expired_unused_fitting_seconds": 0,
+    "remaining_previous_allowance_seconds": 0,
+    "billing_note": "Fitting counters and reservation intervals are different quantities; neither is a monetary invoice. Preserve the unused reservation separately."
+  },
+  "earliest_seed29_patience_stop_epoch_without_further_improvement": 7,
+  "planning_scenarios": [
+    {
+      "assumed_seed29_completed_epochs": 7,
+      "assumed_seed43_completed_epochs": 6,
+      "additional_fitting_hours": 6.948921611188927,
+      "with_25_percent_contingency_hours": 8.68615201398616
+    },
+    {
+      "assumed_seed29_completed_epochs": 8,
+      "assumed_seed43_completed_epochs": 6,
+      "additional_fitting_hours": 7.735120063285273,
+      "with_25_percent_contingency_hours": 9.66890007910659
+    },
+    {
+      "assumed_seed29_completed_epochs": 10,
+      "assumed_seed43_completed_epochs": 8,
+      "additional_fitting_hours": 10.87991387167066,
+      "with_25_percent_contingency_hours": 13.599892339588324
+    },
+    {
+      "assumed_seed29_completed_epochs": 20,
+      "assumed_seed43_completed_epochs": 20,
+      "additional_fitting_hours": 28.176279817790274,
+      "with_25_percent_contingency_hours": 35.22034977223784
+    }
+  ],
+  "estimate_basis": "Same measured seed17 mean seconds per completed epoch, subtracting all seed29 elapsed work. Seed29 best epoch3 and stale1 after epoch4 imply earliest patience stop at epoch7 if no improvement. Scenarios are not convergence predictions or allowances; seed43 starts only if naturally reached within the single bounded slot.",
+  "remaining_gates": [
+    "Independent source/changed-path review",
+    "Exact VM CPU changed-path preflight",
+    "Fresh explicit bounded allowance and AIA handoff; recheck current owner under original common lock"
+  ],
+  "GPU_launch_performed": false,
+  "new_allowance_recorded": false,
+  "scientific_acceptance": false
+}
