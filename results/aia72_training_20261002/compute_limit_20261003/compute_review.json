@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-03T03:59:51.633471+00:00",
+  "status": "compute_limit_reached_incomplete_experiment",
+  "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+  "configured_cumulative_fitting_limit_seconds": 21600,
+  "actual_cumulative_fitting_seconds": 21604.531843159,
+  "batch_boundary_overrun_seconds": 4.531843158998527,
+  "seeds": [
+    {
+      "seed": 17,
+      "status": "fit_complete_pending_independent_replay",
+      "epochs_completed": 6,
+      "checkpoint_epoch": 7,
+      "case_cursor": 0,
+      "steps": 9600,
+      "elapsed_seconds": 16981.88656528108,
+      "best_epoch": 2,
+      "selection_log_loss": 0.3926884123310144,
+      "resume_checkpoint_sha256": "7591d9684d12c37c42f1459af48197582ca224f22b079e579b779d5edaa2a24a",
+      "best_checkpoint_sha256": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d"
+    },
+    {
+      "seed": 29,
+      "status": "checkpointed_incomplete",
+      "epochs_completed": 1,
+      "checkpoint_epoch": 2,
+      "case_cursor": 18256,
+      "steps": 2741,
+      "elapsed_seconds": 4622.64527787792,
+      "best_epoch": 1,
+      "selection_log_loss": 0.36538815186923185,
+      "resume_checkpoint_sha256": "cd81fc957daa86c9022744dbd21e78e7912953c6ca14a5660e7fe77df92facc8",
+      "best_checkpoint_sha256": "11cf0fb8f74da9085d09fb71cebdb85e893c2e13529c718ed9e819c64234c0ca"
+    },
+    {
+      "seed": 43,
+      "status": "not_started"
+    }
+  ],
+  "artifact_integrity_verified": true,
+  "saved_selection_log_losses_recomputed": true,
+  "selection_support_matches_frozen_3905_case_block": true,
+  "executed_notebooks_without_errors": 6,
+  "independent_model_replay": "pending",
+  "all_seed_ensemble": "not_available",
+  "later_period_evaluation": "not_performed",
+  "calibration_or_fusion": "not_performed",
+  "scientific_acceptance": false,
+  "further_fitting": "requires_compute_review_and_renewed_shared_GPU_handoff",
+  "common_lock_inode": 519274,
+  "current_GPU_processes": [],
+  "disk_free_bytes": {
+    "/home/abmoses2000": 24162066432,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "wall_clock_billing_note": "Fitting counter excludes setup and idle VM time; it is not billed runtime or monetary cost."
+}

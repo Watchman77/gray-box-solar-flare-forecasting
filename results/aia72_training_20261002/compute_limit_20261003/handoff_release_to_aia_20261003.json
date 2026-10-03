@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-03T04:01:36.080424+00:00",
+  "status": "GPU_RELEASED_TO_AIA",
+  "reason": "Gray-Box six-hour cumulative fitting allowance reached; full experiment remains incomplete",
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "gpu_empty_under_exclusive_lock": true,
+  "training_kernel_loader_runner_processes_absent": true,
+  "disk_free_bytes": {
+    "/home/abmoses2000": 24122392576,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "minimum_free_bytes_both_volumes": 21474836480,
+  "graybox_root": "/home/abmoses2000/graybox_aia72_workers4_20261002",
+  "last_execution_receipt": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/invocation_20261003T025116Z/execution.json",
+  "last_execution_receipt_sha256": "8f83bd8aef7a59318dafbebb108d1f33271c6408b2448295a60d101e2663eb56",
+  "cumulative_fitting_seconds": 21604.531843159,
+  "configured_limit_seconds": 21600,
+  "archive": {
+    "utc": "2026-10-03T03:59:54.147107+00:00",
+    "status": "remote_snapshot_created_pending_local_verification",
+    "archive": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/compute_limit_archive_20261003/snapshot.tar.gz",
+    "archive_bytes": 39608320,
+    "archive_sha256": "4bc4ce063479d8f693cf4ca1883fff66a37d64391d8843ba4e5b59d90baaafdb",
+    "manifest_sha256": "82df73b48a7e5f5c631d872390addb2c33de2e79e3997a24e585d34a28ab4cbc",
+    "review_sha256": "b3dad52e759f9085e19fb7515ac449727f01c26ffd1a84929cabdc59a164fb50",
+    "file_count": 88,
+    "all_source_files_unchanged_during_snapshot": true
+  },
+  "local_verification_receipt_sha256": "dfec9865e9853cc505c8e66093e88fdbff96e3caabc9e8977f125b603d6757ee",
+  "all_88_snapshot_source_files_verified_locally": true,
+  "independent_model_replay": "pending",
+  "scientific_acceptance": false,
+  "graybox_new_fitting_allowed": false,
+  "AIA_must_acquire_common_lock_and_recheck_GPU": true,
+  "future_graybox_work_requires": "compute review and a newly coordinated shared-GPU handoff",
+  "supersedes_reservation_from": "/home/abmoses2000/graybox_aia72_workers4_20261002/handoff_release.json",
+  "prior_handoff_receipt_preserved": true,
+  "preserve_all_caches_checkpoints_shared_environment": true
+}

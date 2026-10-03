@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-03T04:00:35.173179+00:00",
+  "status": "all_archived_files_verified_locally",
+  "archive_sha256": "4bc4ce063479d8f693cf4ca1883fff66a37d64391d8843ba4e5b59d90baaafdb",
+  "manifest_sha256": "82df73b48a7e5f5c631d872390addb2c33de2e79e3997a24e585d34a28ab4cbc",
+  "review_sha256": "b3dad52e759f9085e19fb7515ac449727f01c26ffd1a84929cabdc59a164fb50",
+  "source_file_count": 88,
+  "archive_members": 90,
+  "local_archive": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/compute_limit_archive_20261003/snapshot.tar.gz",
+  "local_extracted_root": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/compute_limit_archive_20261003/snapshot",
+  "independent_model_replay": "pending",
+  "scientific_acceptance": false
+}

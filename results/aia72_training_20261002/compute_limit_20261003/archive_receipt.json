@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-03T03:59:54.147107+00:00",
+  "status": "remote_snapshot_created_pending_local_verification",
+  "archive": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/compute_limit_archive_20261003/snapshot.tar.gz",
+  "archive_bytes": 39608320,
+  "archive_sha256": "4bc4ce063479d8f693cf4ca1883fff66a37d64391d8843ba4e5b59d90baaafdb",
+  "manifest_sha256": "82df73b48a7e5f5c631d872390addb2c33de2e79e3997a24e585d34a28ab4cbc",
+  "review_sha256": "b3dad52e759f9085e19fb7515ac449727f01c26ffd1a84929cabdc59a164fb50",
+  "file_count": 88,
+  "all_source_files_unchanged_during_snapshot": true
+}
