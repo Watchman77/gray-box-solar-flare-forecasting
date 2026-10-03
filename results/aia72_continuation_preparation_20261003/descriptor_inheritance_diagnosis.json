@@ -1,0 +1,9 @@
+{
+  "finding": "SCM_RIGHTS-detached lease descriptors were inherited by detached torch_shm_manager execs on macOS after four loaders exited. lsof identified four holders; the parent had no lease FD and resource_sharer had no pending keys.",
+  "repair": "Set detached loader leases and the validated model-worker lease non-inheritable before later execs. Explicit DupFd/pass_fds transport remains.",
+  "before": "The local independent four-loader test failed even after a bounded post-exit wait. Linux v2 passed.",
+  "after": "The unchanged local independent test passes. Final v3 passes all 14 VM tests and the unchanged independent four-loader VM test.",
+  "numerical_scope": "Original train_seed, data, normalization and starting checkpoint unchanged; synthetic model/optimizer/RNG equivalence remains passing.",
+  "GPU_training_performed": false,
+  "prior_failed_evidence_preserved": true
+}

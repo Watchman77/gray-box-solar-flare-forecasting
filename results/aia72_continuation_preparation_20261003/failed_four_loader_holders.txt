@@ -1,0 +1,23 @@
+test_all_four_inherit_same_lock_and_preserve_order (test_four_holders.FourLoaderTest.test_all_four_inherit_same_lock_and_preserve_order) ... after_shutdown_workers [(23773, 0, False), (23774, 0, False), (23775, 0, False), (23776, 0, False)]
+resource_sharer_pending_keys []
+parent_fds_for_lease []
+lsof COMMAND     PID USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME
+torch_shm 23779  mac   21u   REG   1,16        0 74879601 /private/var/folders/6d/ll5ck1dx08s42bpdrg5vd6tr0000gn/T/tmp3acq72ty/synthetic.lock
+torch_shm 23780  mac   23u   REG   1,16        0 74879601 /private/var/folders/6d/ll5ck1dx08s42bpdrg5vd6tr0000gn/T/tmp3acq72ty/synthetic.lock
+torch_shm 23781  mac   21u   REG   1,16        0 74879601 /private/var/folders/6d/ll5ck1dx08s42bpdrg5vd6tr0000gn/T/tmp3acq72ty/synthetic.lock
+torch_shm 23782  mac   21u   REG   1,16        0 74879601 /private/var/folders/6d/ll5ck1dx08s42bpdrg5vd6tr0000gn/T/tmp3acq72ty/synthetic.lock
+
+ERROR
+
+======================================================================
+ERROR: test_all_four_inherit_same_lock_and_preserve_order (test_four_holders.FourLoaderTest.test_all_four_inherit_same_lock_and_preserve_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_checks_20261003/four_loader_diagnosis/test_four_holders.py", line 65, in test_all_four_inherit_same_lock_and_preserve_order
+    fcntl.flock(probe,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+----------------------------------------------------------------------
+Ran 1 test in 26.167s
+
+FAILED (errors=1)

@@ -1,0 +1,17 @@
+test_all_four_inherit_same_lock_and_preserve_order (test_four_diagnosis.FourLoaderTest.test_all_four_inherit_same_lock_and_preserve_order) ... after_shutdown_workers [(22525, 0, False), (22526, 0, False), (22527, 0, False), (22528, 0, False)]
+resource_sharer_pending_keys []
+parent_fds_for_lease []
+ERROR
+
+======================================================================
+ERROR: test_all_four_inherit_same_lock_and_preserve_order (test_four_diagnosis.FourLoaderTest.test_all_four_inherit_same_lock_and_preserve_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_checks_20261003/four_loader_diagnosis/test_four_diagnosis.py", line 63, in test_all_four_inherit_same_lock_and_preserve_order
+    fcntl.flock(probe,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+----------------------------------------------------------------------
+Ran 1 test in 26.184s
+
+FAILED (errors=1)

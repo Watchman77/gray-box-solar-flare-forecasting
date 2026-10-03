@@ -1,0 +1,32 @@
+test_bundle_source_tampering_rejected (test_aia72_continue.ContinuationTests) ... ok
+test_changed_scope_owner_receipt_and_stale_handoff_rejected (test_aia72_continue.ContinuationTests) ... ok
+test_expiry_shortens_slot_and_no_remaining_time_rejected (test_aia72_continue.ContinuationTests) ... ok
+test_four_loaders_hold_lease_without_leaking_to_exec_helpers (test_aia72_continue.ContinuationTests) ... ok
+test_guard_failure_prevents_training_call (test_aia72_continue.ContinuationTests) ... ok
+test_handback_cannot_overwrite_changed_owner_or_release_live_children (test_aia72_continue.ContinuationTests) ... ok
+test_incomplete_second_seed_never_starts_third_or_seed17 (test_aia72_continue.ContinuationTests) ... ok
+test_initial_snapshot_and_seed17_cannot_change (test_aia72_continue.ContinuationTests) ... ok
+test_late_success_write_is_invalidated (test_aia72_continue.ContinuationTests) ... ok
+test_leased_loader_preserves_original_training_result (test_aia72_continue.ContinuationTests) ... {"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.7002231342431771, "best_epoch": 1}
+{"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.7002231342431771, "best_epoch": 1}
+ok
+test_loader_child_holds_lock_after_parent_descriptor_closes (test_aia72_continue.ContinuationTests) ... ok
+test_mid_epoch_adapter_matches_original_models_optimizer_rng (test_aia72_continue.ContinuationTests) ... {"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.7002231342431771, "best_epoch": 1}
+{"seed": 29, "epoch": 2, "training_log_loss": 0.7376984506845474, "selection_log_loss": 0.698547522027267, "best_epoch": 2}
+{"seed": 43, "epoch": 1, "training_log_loss": 0.6415703147649765, "selection_log_loss": 0.6992347359100728, "best_epoch": 1}
+{"seed": 43, "epoch": 2, "training_log_loss": 0.6764263659715652, "selection_log_loss": 0.6992851532008091, "best_epoch": 1}
+{"seed": 29, "epoch": 1, "training_log_loss": 0.7513622641563416, "selection_log_loss": 0.7002231342431771, "best_epoch": 1}
+{"seed": 29, "epoch": 2, "training_log_loss": 0.7376984506845474, "selection_log_loss": 0.698547522027267, "best_epoch": 2}
+{"seed": 43, "epoch": 1, "training_log_loss": 0.6415703147649765, "selection_log_loss": 0.6992347359100728, "best_epoch": 1}
+{"seed": 43, "epoch": 2, "training_log_loss": 0.6764263659715652, "selection_log_loss": 0.6992851532008091, "best_epoch": 1}
+ok
+test_short_slot_charges_handoff_idle (test_aia72_continue.ContinuationTests) ... ok
+test_twelve_hour_proposal_or_repeated_invocation_rejected (test_aia72_continue.ContinuationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 31.737s
+
+OK
+Saved normalization reused. Image pixels read in this cell: 0.
+Notebook status: prepared_only_no_training
+Later-year evaluation, calibration and fusion remain pending.

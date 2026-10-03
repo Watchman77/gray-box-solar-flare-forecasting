@@ -1,0 +1,6 @@
+test_all_four_inherit_same_lock_and_preserve_order (test_aia_independent_four_loaders.FourLoaderTest.test_all_four_inherit_same_lock_and_preserve_order) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 21.195s
+
+OK

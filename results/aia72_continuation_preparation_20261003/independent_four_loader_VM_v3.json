@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-03T15:44:56.956721+00:00",
+  "exit": 0,
+  "seconds": 12.058411323931068,
+  "test_source_sha256": "a5064bd1bf5e4fc3891006fcaa40aefaae6db30c6d7d9539493c77931d775350",
+  "log_sha256": "d081f86ce1c7702b9557e8978b3f9bc42c99effb0a451cdb8d6e0ba19d40ed3b",
+  "GPU_launch": false,
+  "log": "test_all_four_inherit_same_lock_and_preserve_order (test_aia_independent_four_loaders.FourLoaderTest) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 7.584s\n\nOK\n"
+}

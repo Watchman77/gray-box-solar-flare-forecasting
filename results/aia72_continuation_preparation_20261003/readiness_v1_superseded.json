@@ -1,0 +1,30 @@
+{
+  "status": "frozen_local_bundle_CPU_verified_pending_source_review_and_VM_preflight",
+  "bundle": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_prepared_v1_20261003/bundle",
+  "contract_sha256": "83b73c63ba23299c797bda840f9b7bc010c8ce47d09c762774533bf3de1bb382",
+  "bundle_sha256": "dc29349444729d973090a6e2b4f5699e1880ef1b0e08e9c9f04418c23880c780",
+  "source_tar_sha256": "f56feb98392a88c608555f6e6c0e01252485d4a0860f74c090e8536dbfec3b73",
+  "source_tar_bytes": 32298,
+  "GPU_launch": false,
+  "new_allowance": false,
+  "seed17_repeated": false,
+  "utc": "2026-10-03T14:42:39.292868+00:00",
+  "CPU_tests_passed": 13,
+  "CPU_test_seconds": 26.382,
+  "test_source_sha256": "c99f18b80f25dfaa510ae77c48bdc5e894473616fba8f2ef56aae1811d497f18",
+  "test_log_sha256": "80870bf736192eb3fafce902e639a08dfc909db1c4b255c3f7d8f7ec79749b5d",
+  "metadata_preview_executed_cells": 6,
+  "metadata_preview_errors": 0,
+  "CUDA_initialized": false,
+  "image_pixels_read": 0,
+  "preview_notebook": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_prepared_v1_20261003/preview/11_AIA_72h_Training_Continuation_EXECUTED.ipynb",
+  "preview_notebook_sha256": "0cf23f00a8a6176f25144af17432ec896e9520121c24a1bcb8f5cf11cb74d3b9",
+  "visual_inspection": "Executed preview exported to HTML and queued in Codex. Visual inspection not yet confirmed.",
+  "remaining_gates": [
+    "Source review",
+    "Fresh-only VM staging, pinned metadata/CPU preflight in existing environment",
+    "New separately recorded one-slot training allowance and fresh handoff",
+    "Actual bounded GPU invocation and explicit handback"
+  ],
+  "additional_cumulative_12h_allowance_granted": false
+}
