@@ -1,0 +1,15 @@
+{
+  "authorization_sha256": "1cc1b00d05da143ca5edcd0a376e865baf7f544e85f8b1559b966900eb2e682d",
+  "status": "reservation_returned",
+  "charged_total_reserved_seconds": 3595.1288470210275,
+  "maximum_slot_seconds": 3900,
+  "remaining_allowance_seconds": 0,
+  "invocation_consumed": true,
+  "return_receipt": {
+    "path": "/home/abmoses2000/graybox_aia72_continuation_v2_20261003/handoff_return_to_aia.json",
+    "sha256": "c91bc482a36e585680b64601307ee3a71f53eb1d30da1526aef6a2a52ab73d42",
+    "utc": "2026-10-03T22:35:32.286579+00:00"
+  },
+  "overrun_seconds": 0,
+  "automatic_retry": false
+}
