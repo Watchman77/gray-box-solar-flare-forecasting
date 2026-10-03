@@ -1,0 +1,243 @@
+{
+  "utc": "2026-10-03T13:45:20.595837+00:00",
+  "status": "PROPOSAL_ONLY_NOT_AN_ALLOWANCE_OR_HANDOFF",
+  "kind": "aia72_seed29_then_seed43_unchanged_science_continuation",
+  "source_root": "/home/abmoses2000/graybox_aia72_workers4_20261002",
+  "proposed_fresh_root": "/home/abmoses2000/graybox_aia72_continuation_v1_20261003",
+  "parent_training_contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+  "parent_fitting_limit_seconds": 21600,
+  "parent_measured_cumulative_fitting_seconds": 21604.531843159,
+  "planned_seed_order": [
+    29,
+    43
+  ],
+  "seed17_action": "Preserve completed weights and replay result; no fitting or repeated replay",
+  "seed29_resume": {
+    "checkpoint_sha256": "cd81fc957daa86c9022744dbd21e78e7912953c6ca14a5660e7fe77df92facc8",
+    "state": {
+      "epoch": 2,
+      "cursor": 18256,
+      "loss_sum": 3622.822232723236,
+      "best_loss": 0.36538815186923185,
+      "best_epoch": 1,
+      "stale": 0,
+      "elapsed_seconds": 4622.64527787792,
+      "steps": 2741
+    },
+    "completed_epochs": 1,
+    "next_case_cursor_semantics": "18,256 cases already processed in the deterministic epoch-2 permutation; resume at next case, not at epoch start",
+    "preserve_exactly": [
+      "model tensors and buffers",
+      "optimizer moments and step counters",
+      "Python, NumPy, Torch and CUDA RNG states",
+      "epoch permutation seed and next-case cursor",
+      "running loss sum",
+      "best checkpoint and selection history",
+      "early-stopping stale counter",
+      "cumulative elapsed seconds"
+    ]
+  },
+  "seed43_start": "Original seed43, fresh model/optimizer; same training prevalence bias and unaltered schedule; no existing seed43 checkpoint in the verified snapshot",
+  "scientific_configuration": {
+    "experiment": "aia72_temporal_candidate_v1",
+    "status": "exploratory_candidate_labels",
+    "parent_contract_sha256": "3d8ad4882433a5670b832d763cb428031b8f18f2deefe4083f03205ce19c87cd",
+    "fit_cases_sha256": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622",
+    "horizon_hours": 72,
+    "fit_role": "train",
+    "selection_role": "model_validation",
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "max_epochs": 20,
+    "patience": 4,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "loss": "unweighted_binary_cross_entropy",
+    "selection": "minimum earlier model_validation log loss, independently per seed; retain every seed",
+    "initial_bias": "log odds of training prevalence",
+    "precision": "float32; no mixed precision or TF32",
+    "ensemble": "arithmetic mean of all three seed probabilities",
+    "model": "fresh temporal CNN GRU; 6 channels; 3 histories; image size 256; no 48h weights",
+    "normalization": "seed17 sample of at most1000 training images,1024 pixels per image; asinh q75 scale then mean/std; resize bilinear",
+    "num_workers": 4,
+    "max_cached_images_per_worker": 96,
+    "cpu_threads": 2,
+    "checkpoint_interval_seconds": 60,
+    "max_invocation_seconds": 3600,
+    "max_total_training_seconds": 21600,
+    "minimum_free_disk_GiB": 20,
+    "historical_availability": "unverified_retrospective",
+    "primary_and_supplementary_evaluation": "separate later inference; no later-year selection or calibration in this training notebook"
+  },
+  "normalization_action": "Reuse the pinned training-only normalization byte-for-byte; never refit",
+  "data_action": "Same 25,586 training and 3,905 earlier selection cases and existing image cache; no acquisition or later-period data",
+  "pinned_parent_files": {
+    "outputs/training/run_contract.json": {
+      "sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+      "bytes": 2979
+    },
+    "outputs/training/normalization.json": {
+      "sha256": "a7613227753774035a88ea339c718f07f931f6602fbd1b69c36cce864a4f9f52",
+      "bytes": 1668787
+    },
+    "outputs/training/bound_sources.json": {
+      "sha256": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a",
+      "bytes": 14164518
+    },
+    "outputs/training/seed_17_complete.json": {
+      "sha256": "4349d870e306fff089b8faacd7b1de3b39ce98eb239280ae79c58bf9cba38c47",
+      "bytes": 378
+    },
+    "outputs/training/seed_17_best.pt": {
+      "sha256": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d",
+      "bytes": 4633126
+    },
+    "outputs/training/seed_17_resume.pt": {
+      "sha256": "7591d9684d12c37c42f1459af48197582ca224f22b079e579b779d5edaa2a24a",
+      "bytes": 13887731
+    },
+    "outputs/training/seed_29_resume.pt": {
+      "sha256": "cd81fc957daa86c9022744dbd21e78e7912953c6ca14a5660e7fe77df92facc8",
+      "bytes": 13887091
+    },
+    "outputs/training/seed_29_best.pt": {
+      "sha256": "11cf0fb8f74da9085d09fb71cebdb85e893c2e13529c718ed9e819c64234c0ca",
+      "bytes": 4633126
+    },
+    "inputs/fit_cases.csv.gz": {
+      "sha256": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622",
+      "bytes": 1106678
+    },
+    "inputs/objects.json": {
+      "sha256": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515",
+      "bytes": 11160463
+    },
+    "configs/aia72_temporal_v1.json": {
+      "sha256": "bbcfa69f9b21c5e7028dff49dab601d6dac4275e7feb1afee50f739bf950177c",
+      "bytes": 1504
+    },
+    "scripts/train_aia72_gpu.py": {
+      "sha256": "e3f0c4b43f6e29d496ce271752c1f9119621f5862aa7f6ba40f4009abe92adc8",
+      "bytes": 13127
+    },
+    "scripts/aia72_model.py": {
+      "sha256": "2eee175847c9e316d79459c3470675f5e024d19a9ab0bf79669882993547055a",
+      "bytes": 2212
+    },
+    "scripts/aia72_vm_data.py": {
+      "sha256": "3764844cac29a0b90f2e3479a63f07eed1d198b73e659654a188c9f52b6e727d",
+      "bytes": 6364
+    },
+    "scripts/aia72_data.py": {
+      "sha256": "6ec096233d287b2c304c8046a06585d435ef3571942787f8efe10ad76bbed0df",
+      "bytes": 5788
+    },
+    "scripts/aia_io.py": {
+      "sha256": "23ea7bcb3ab4be9f4b2c6fa407029e24da8b86bca8923ab5cadfd64e7d94aac1",
+      "bytes": 1548
+    },
+    "scripts/dataset_io.py": {
+      "sha256": "93e784b74c2d1038fe7620cb56d80ed554f2c41d7ef0efd2ec8f72ad33949f8e",
+      "bytes": 7478
+    }
+  },
+  "runtime": {
+    "torch": "2.14.0+cu130",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "device": "NVIDIA L4"
+  },
+  "estimate": {
+    "basis": "Measured seed17 total across6completed epochs, including selection/checkpoint overhead within training calls; this includes its earlier two-worker period and resumption overhead. The tiny six-batch benchmark is not used. Subtract seed29 measured elapsed work. Assumed future epoch counts are scenarios, not predictions.",
+    "seed17_seconds": 16981.88656528108,
+    "seed17_completed_epochs": 6,
+    "mean_seconds_per_completed_epoch": 2830.314427546846,
+    "seed29_already_spent_seconds": 4622.64527787792,
+    "scenarios": [
+      {
+        "completed_epochs_assumed_for_each_remaining_seed": 5,
+        "additional_fitting_hours": 6.577916388219594,
+        "with_25_percent_contingency_hours": 8.222395485274493
+      },
+      {
+        "completed_epochs_assumed_for_each_remaining_seed": 6,
+        "additional_fitting_hours": 8.150313292412287,
+        "with_25_percent_contingency_hours": 10.18789161551536
+      },
+      {
+        "completed_epochs_assumed_for_each_remaining_seed": 8,
+        "additional_fitting_hours": 11.295107100797672,
+        "with_25_percent_contingency_hours": 14.11888387599709
+      },
+      {
+        "completed_epochs_assumed_for_each_remaining_seed": 20,
+        "additional_fitting_hours": 30.16386995110998,
+        "with_25_percent_contingency_hours": 37.70483743888747
+      }
+    ],
+    "planning_summary": "About8.15additional fitting hours if both remaining seeds finish at6epochs, about10.19hours with25% contingency;20epochs each would require about30.16hours before contingency. A12hourbound does not guarantee completion.",
+    "billing_note": "Fitting elapsed counters are not VM billed time. Proposed additional reservation wall-time cap includes setup/checkpoint/cleanup and held-idle time. VM billing outside Gray-Box reservation is separate and no monetary estimate is made."
+  },
+  "proposed_bounds": {
+    "additional_cumulative_reserved_wall_seconds": 43200,
+    "additional_cumulative_fitting_seconds_ceiling": 43200,
+    "per_invocation_total_wall_seconds": 3900,
+    "per_invocation_max_fitting_seconds": 3600,
+    "per_invocation_cleanup_reserve_seconds": 60,
+    "overall_stop": "Earliest of both remaining seeds completing under original patience/max-epoch policy or additional12hourreservation budget exhaustion. Preserve incomplete status if capped.",
+    "existing_early_stopping_patience": 4,
+    "existing_max_epochs_per_seed": 20,
+    "checkpoint_interval_seconds": 60,
+    "automatic_failure_retry": false,
+    "continuation_between_clean_invocations": "Only within newly recorded allowance and current ownership; record and verify previous final checkpoint, process cleanup and remaining ledger before each invocation; no restart after failure without review."
+  },
+  "minimal_implementation_proposal": {
+    "interface": "New continuation .ipynb with visible frozen configuration, original model and original train_seed code, status/results and an explicit external compute-extension record; local metadata preview before GPU use.",
+    "scientific_loop": "Call the original hash-verified train_seed unchanged for29then43. Do not call the old run_training driver, whose embedded six-hour cap is exhausted. Preserve original scientific config/run-contract hash and checkpoint identity; document the new outer scheduling allowance separately.",
+    "preservation": "Fresh continuation output directory with byte-identical copies of all parent training artifacts and immutable initial snapshot; parent source/output untouched. Each later invocation snapshots its predecessor checkpoint before writing the next one.",
+    "controller": "Reuse the tested same-process notebook execution and process-group supervisor from the accepted replay controller, with a training-specific contract/allowance and fixed-digest ownership gates. No detached notebook kernel.",
+    "budget_accounting": "Atomic per-allowance ledger, immutable invocation start/final receipts, monotonic timing while running; every held reservation second including setup, checkpointing, validation, cleanup and owned idle is charged. An unfinished or ambiguous prior invocation blocks continuation; never infer zero cost or reset the ledger.",
+    "termination": "Cooperative train_seed deadline allows checkpoint saving; outer supervisor bounds work and kills only owned group when needed. Failure, timeout, owner change, STOP, low disk, nonfinite loss or incomplete cleanup stops further invocations.",
+    "not_yet_implemented_or_executed": true
+  },
+  "coordination": {
+    "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+    "common_lock_inode": 519274,
+    "lock_rule": "Open existing lock r+; acquire exclusive nonblocking flock; never replace/unlink lock; inherit lease in worker",
+    "current_owner_pointer": "/home/abmoses2000/graybox_aia72_workers4_20261002/resource_reservation_status.json",
+    "current_AIA_return_sha256": "bcd96bf8bb9f1ac9c0d2ab871eea09d3f001a4aaac2746a3b0acd6cf17737e4e",
+    "before_launch": "New explicit bounded training allowance and fresh AIA handoff, pinned to exact final continuation bundle, proposed limits and parent checkpoint; independently verify bytes/current owner pointer under common lock",
+    "periodic_guards": [
+      "Fixed authorization/handoff digest",
+      "Current owner pointer equality",
+      "STOP and failure markers",
+      ">=20GiB free on boot/home and cache volumes",
+      "Monotonic work and total deadlines",
+      "No second GPU job"
+    ],
+    "return_protocol": [
+      "Finish or checkpoint the active seed without modifying parent artifacts",
+      "Preserve executed notebook, logs, ledger, final checkpoints and integrity manifest",
+      "Verify launcher/worker/loader descendants absent and GPU empty under original common lock",
+      "Write a fresh GPU_RELEASED_TO_AIA receipt and atomically update current owner pointer to identical bytes; preserve all prior handoffs",
+      "Send AIA exact receipt paths/hashes and actual status, including unfinished seeds; return promptly before repository publication"
+    ]
+  },
+  "remaining_gates": [
+    "Compute review of this proposal",
+    "Implement and test minimal continuation adapter/controller and .ipynb against pinned original train_seed; preserve restart equivalence",
+    "Freeze exact continuation bundle and VM CPU preflight",
+    "Record new bounded allowance and fresh handoff",
+    "GPU execution and saved-checkpoint verification for newly completed seeds"
+  ],
+  "GPU_launch_performed": false,
+  "new_allowance_recorded": false,
+  "further_fitting_authorized_by_this_file": false,
+  "scientific_limits": "Candidate labels and historical availability remain provisional. No later-year evaluation, calibration, fusion or independent scientific validation is performed by continuation."
+}
