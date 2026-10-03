@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-03T07:46:41.533653+00:00",
+  "proposal_id": "seed17_checkpoint_replay_30m",
+  "status": "proposal_only_not_authorized_not_launched",
+  "recommendation": "Replay the completed seed17 best checkpoint before extending fitting",
+  "work": "Restore the epoch2 checkpoint and reproduce its saved predictions on exactly the3905 earlier model_validation cases with the existing cached images and saved normalization",
+  "requested_temporary_GPU_slot_seconds": 1800,
+  "time_limit_scope": "Entire reserved execution including loading, replay, writing results and cleanup; any incomplete replay remains unverified; no automatic retry",
+  "fitting_seconds_requested": 0,
+  "existing_fitting_limit_seconds": 21600,
+  "existing_actual_fitting_seconds": 21604.531843159,
+  "fitting_limit_change_requested": false,
+  "additional_compute_allowance_needed": "One separately approved GPU review slot of at most30minutes; the exhausted fitting allowance does not automatically cover it",
+  "source_readiness": {
+    "checkpoint_inputs_normalization_predictions": "present locally and on VM; hashes verified",
+    "current_GPU_owner": "AIA; no handoff to Gray-Box",
+    "dedicated_replay_notebook_and_bounded_launcher": "not yet implemented or tested; preparation required before any runnable-ready claim",
+    "scientific_protocol": "proposed here; retain exact frozen support, model, preprocessing and float32 settings"
+  },
+  "planned_checks": [
+    "Fresh model restored from saved weights; no optimizer or training call",
+    "Exactly3905 expected case IDs in unchanged order, labels identical, no case omission",
+    "Existing cache-only inputs; saved normalization reused without refitting",
+    "All logits finite and match saved epoch2 logits with fixed proposed float32 tolerance atol1e-6 rtol1e-5; discrepancies fail rather than change tolerance",
+    "Recompute saved logloss and record maximum prediction difference",
+    "Model parameters and buffers unchanged by inference; all hashes and notebook/logs retained"
+  ],
+  "planned_outputs": [
+    "Executed replay notebook",
+    "Per-case prediction comparison",
+    "Checksummed verification receipt or explicit incomplete/failure receipt"
+  ],
+  "resource_rules": [
+    "Fresh explicit AIA-to-GrayBox release required",
+    "Same persistent shared lock inode519274 and GPU-empty check",
+    "Same VM and environment; one GPU job;20GiB minimum free on both volumes",
+    "No new image downloads, derived disk caches, or changes to existing training artifacts",
+    "Explicit GPU return to AIA after cleanup"
+  ],
+  "limitations": [
+    "Checkpoint replay is a technical reproducibility check, not independent scientific validation on unseen data",
+    "No Cycle25/2026 inference, model reselection, calibration, fusion or fitting",
+    "Thirtyminutes is a proposed hard allowance, not a guaranteed completion time or monetary quote"
+  ],
+  "verified_source_sha256": {
+    "outputs/training/seed_17_best.pt": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d",
+    "outputs/training/seed_17_complete.json": "4349d870e306fff089b8faacd7b1de3b39ce98eb239280ae79c58bf9cba38c47",
+    "outputs/training/seed_17_epoch_02_selection.csv.gz": "342b5f1155cd2be43c5fbd7d782c3da07b65a73b9ccc44bc64f2df23735c9ed8",
+    "outputs/training/normalization.json": "a7613227753774035a88ea339c718f07f931f6602fbd1b69c36cce864a4f9f52",
+    "outputs/training/bound_sources.json": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a",
+    "inputs/fit_cases.csv.gz": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622",
+    "inputs/objects.json": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515",
+    "configs/aia72_temporal_v1.json": "bbcfa69f9b21c5e7028dff49dab601d6dac4275e7feb1afee50f739bf950177c",
+    "scripts/aia72_model.py": "2eee175847c9e316d79459c3470675f5e024d19a9ab0bf79669882993547055a",
+    "scripts/aia72_vm_data.py": "3764844cac29a0b90f2e3479a63f07eed1d198b73e659654a188c9f52b6e727d"
+  }
+}

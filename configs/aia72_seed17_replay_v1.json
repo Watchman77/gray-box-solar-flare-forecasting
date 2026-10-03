@@ -1,0 +1,85 @@
+{
+  "kind": "aia72_seed17_saved_checkpoint_replay",
+  "seed": 17,
+  "selected_epoch": 2,
+  "source_root": "/home/abmoses2000/graybox_aia72_workers4_20261002",
+  "case_count": 3905,
+  "role": "model_validation",
+  "ordered_support_sha256": "f8dab27335622ef3220ebe86872d4b3c9fff3c7f6f7c6206de6f8484b5b982b3",
+  "unique_images": 4661,
+  "batch_size": 16,
+  "num_workers": 4,
+  "max_cached_images_per_worker": 96,
+  "runtime": {
+    "torch": "2.14.0+cu130",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "device": "NVIDIA L4"
+  },
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "slot_seconds": 1800,
+  "cleanup_reserve_seconds": 60,
+  "fitting_allowed": false,
+  "automatic_retry": false,
+  "existing_fitting_limit_seconds": 21600,
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "review_root": "/home/abmoses2000/graybox_aia72_seed17_replay_v1_20261003",
+  "consumed_root": "/home/abmoses2000/.graybox_gpu_review_authorizations",
+  "owner_pointer": "/home/abmoses2000/graybox_aia72_workers4_20261002/resource_reservation_status.json",
+  "minimum_free_bytes": 21474836480,
+  "inputs": {
+    "checkpoint": {
+      "path": "outputs/training/seed_17_best.pt",
+      "sha256": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d"
+    },
+    "completion": {
+      "path": "outputs/training/seed_17_complete.json",
+      "sha256": "4349d870e306fff089b8faacd7b1de3b39ce98eb239280ae79c58bf9cba38c47"
+    },
+    "reference": {
+      "path": "outputs/training/seed_17_epoch_02_selection.csv.gz",
+      "sha256": "342b5f1155cd2be43c5fbd7d782c3da07b65a73b9ccc44bc64f2df23735c9ed8"
+    },
+    "normalization": {
+      "path": "outputs/training/normalization.json",
+      "sha256": "a7613227753774035a88ea339c718f07f931f6602fbd1b69c36cce864a4f9f52"
+    },
+    "sources": {
+      "path": "outputs/training/bound_sources.json",
+      "sha256": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a"
+    },
+    "cases": {
+      "path": "inputs/fit_cases.csv.gz",
+      "sha256": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622"
+    },
+    "objects": {
+      "path": "inputs/objects.json",
+      "sha256": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515"
+    },
+    "training_contract": {
+      "path": "outputs/training/run_contract.json",
+      "sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db"
+    },
+    "training_config": {
+      "path": "configs/aia72_temporal_v1.json",
+      "sha256": "bbcfa69f9b21c5e7028dff49dab601d6dac4275e7feb1afee50f739bf950177c"
+    },
+    "prior_return": {
+      "path": "handoff_release_to_aia_20261003.json",
+      "sha256": "59d27415b5acff1f11ffb67c9ec77609d18ce0ac95e26882178b5a407c22f3bf"
+    }
+  },
+  "expected_artifacts": [
+    "execution_receipt.json",
+    "execution.log",
+    "progress.json",
+    "prediction_comparison.csv.gz",
+    "comparison_result.json",
+    "10_AIA_72h_Checkpoint_Replay_EXECUTED.ipynb"
+  ],
+  "scientific_scope": "Technical saved-checkpoint reproducibility on the earlier selection block; shared implementation remains; no new fitting, selection, later-period inference, calibration or fusion.",
+  "deadline_behavior": "Stop work before reserved cleanup; terminate worker process group if needed; never accept partial results or auto-retry. OS-level unkillable processes are a failed cleanup, not permission to release the reservation."
+}

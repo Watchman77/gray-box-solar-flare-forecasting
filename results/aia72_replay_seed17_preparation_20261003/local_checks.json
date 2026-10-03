@@ -1,0 +1,29 @@
+{
+  "status": "local_preparation_checks_passed_GPU_replay_not_run",
+  "focused_cpu_tests": 18,
+  "source_findings_addressed": [
+    "STOP/failure/disk checks through execution and publication",
+    "non-interruptible owned-group cleanup with alarm test",
+    "fixed authorization/handoff hashes and current owner binding",
+    "canonical launch/consumption paths",
+    "late publication invalidation"
+  ],
+  "actual_selected_checkpoint_loads_strictly_on_CPU": true,
+  "actual_model_parameters": 1151233,
+  "actual_model_tensors_finite": true,
+  "preview_code_cells": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "preview_notebook_sha256": "763ca9e1deb5a91445b840184680dd3fcfbdd75cf9a96d9687cdaf79a63a98ae",
+  "CUDA_initialized": false,
+  "image_pixels_read": 0,
+  "independent_scientific_replay": "not_run",
+  "initial_draft_check_failures": "Sandbox blocked ps in process tests; canonical path comparison needed macOS resolution; cleanup now force-kills owned group on inspection failure. Corrected and final focused tests passed.",
+  "bundle_sha256": "c35fb51db97b6b741011bbf4ddc98d4d880fe566b915a302b06c742d2c056dba",
+  "contract_sha256": "0404e009c201303cba0bc74dd6306f220568091899ab7713fb7033d894d0cb39"
+}
