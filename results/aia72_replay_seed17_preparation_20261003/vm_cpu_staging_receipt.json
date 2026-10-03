@@ -1,0 +1,109 @@
+{
+  "utc": "2026-10-03T12:27:31.537248+00:00",
+  "status": "vm_source_staging_and_cpu_preflight_passed",
+  "gpu_job_launched": false,
+  "fitting_launched": false,
+  "image_pixels_read": false,
+  "automatic_retry": false,
+  "contract_sha256": "0404e009c201303cba0bc74dd6306f220568091899ab7713fb7033d894d0cb39",
+  "bundle_manifest_sha256": "c35fb51db97b6b741011bbf4ddc98d4d880fe566b915a302b06c742d2c056dba",
+  "test_source_sha256": "e051c51b80de073ca8654be4dea6d8a911d060ed6ca8d3d86599e497481af94b",
+  "free_bytes_before": {
+    "/home/abmoses2000": 23981195264,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "verified_bundle_members": {
+    "scripts/aia72_replay.py": "e756bca79802a573c32ef61beb9d86eefe21082bb254885e06118b6690ad2ccf",
+    "scripts/aia72_replay_contract.py": "ba075988b99fe278e084cf157c65dde61a2b7b8560ceb3e821132149590b54dc",
+    "scripts/run_aia72_replay.py": "a446811990743baa09f3bf00635452d89dda2742811e82270ce3dca881089efa",
+    "scripts/aia72_model.py": "2eee175847c9e316d79459c3470675f5e024d19a9ab0bf79669882993547055a",
+    "scripts/aia72_vm_data.py": "3764844cac29a0b90f2e3479a63f07eed1d198b73e659654a188c9f52b6e727d",
+    "scripts/aia72_data.py": "6ec096233d287b2c304c8046a06585d435ef3571942787f8efe10ad76bbed0df",
+    "scripts/aia_io.py": "23ea7bcb3ab4be9f4b2c6fa407029e24da8b86bca8923ab5cadfd64e7d94aac1",
+    "scripts/dataset_io.py": "93e784b74c2d1038fe7620cb56d80ed554f2c41d7ef0efd2ec8f72ad33949f8e",
+    "notebooks/10_AIA_72h_Checkpoint_Replay.ipynb": "df209096fae7a87aeb604c0db02b26f192f58e4ae8c135a4959d68b2af0bcb85",
+    "configs/aia72_seed17_replay_v1.json": "0404e009c201303cba0bc74dd6306f220568091899ab7713fb7033d894d0cb39"
+  },
+  "verified_inputs_before": {
+    "checkpoint": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/seed_17_best.pt",
+      "sha256": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d"
+    },
+    "completion": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/seed_17_complete.json",
+      "sha256": "4349d870e306fff089b8faacd7b1de3b39ce98eb239280ae79c58bf9cba38c47"
+    },
+    "reference": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/seed_17_epoch_02_selection.csv.gz",
+      "sha256": "342b5f1155cd2be43c5fbd7d782c3da07b65a73b9ccc44bc64f2df23735c9ed8"
+    },
+    "normalization": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/normalization.json",
+      "sha256": "a7613227753774035a88ea339c718f07f931f6602fbd1b69c36cce864a4f9f52"
+    },
+    "sources": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/bound_sources.json",
+      "sha256": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a"
+    },
+    "cases": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/inputs/fit_cases.csv.gz",
+      "sha256": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622"
+    },
+    "objects": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/inputs/objects.json",
+      "sha256": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515"
+    },
+    "training_contract": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/outputs/training/run_contract.json",
+      "sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db"
+    },
+    "training_config": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/configs/aia72_temporal_v1.json",
+      "sha256": "bbcfa69f9b21c5e7028dff49dab601d6dac4275e7feb1afee50f739bf950177c"
+    },
+    "prior_return": {
+      "path": "/home/abmoses2000/graybox_aia72_workers4_20261002/handoff_release_to_aia_20261003.json",
+      "sha256": "59d27415b5acff1f11ffb67c9ec77609d18ce0ac95e26882178b5a407c22f3bf"
+    }
+  },
+  "free_bytes_before_tests": {
+    "/home/abmoses2000": 23981060096,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "test_final_exit": 0,
+  "test_elapsed_seconds": 11.749550538952462,
+  "test_log_sha256": "9d5e15bb2888f533a3f3b8446d18153961ba82d27524f76893b1718696093840",
+  "test_result": {
+    "runtime": {
+      "torch": "2.14.0+cu130",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]"
+    },
+    "tests_run": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "cuda_initialized": false,
+    "cuda_visible_devices": "-1"
+  },
+  "verified_inputs_after": {
+    "checkpoint": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d",
+    "completion": "4349d870e306fff089b8faacd7b1de3b39ce98eb239280ae79c58bf9cba38c47",
+    "reference": "342b5f1155cd2be43c5fbd7d782c3da07b65a73b9ccc44bc64f2df23735c9ed8",
+    "normalization": "a7613227753774035a88ea339c718f07f931f6602fbd1b69c36cce864a4f9f52",
+    "sources": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a",
+    "cases": "0c7a192cea7777373ee6bdb637aad6cbef8e05f1d66e0766f499d5b2f4c4f622",
+    "objects": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515",
+    "training_contract": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+    "training_config": "bbcfa69f9b21c5e7028dff49dab601d6dac4275e7feb1afee50f739bf950177c",
+    "prior_return": "59d27415b5acff1f11ffb67c9ec77609d18ce0ac95e26882178b5a407c22f3bf"
+  },
+  "free_bytes_after": {
+    "/home/abmoses2000": 23981051904,
+    "/mnt/disks/aia-cache": 39500812288
+  },
+  "final_exit": 0,
+  "completed_utc": "2026-10-03T12:27:43.703940+00:00",
+  "review_root": "/home/abmoses2000/graybox_aia72_seed17_replay_v1_20261003"
+}

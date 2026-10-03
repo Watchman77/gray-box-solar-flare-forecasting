@@ -1,0 +1,23 @@
+test_alarm_during_cleanup_does_not_leave_descendants (replay_cpu_tests.ReplayTests) ... ok
+test_changes_during_final_success_write_invalidate_receipt (replay_cpu_tests.ReplayTests) ... ok
+test_comparison_does_not_relax_tolerance (replay_cpu_tests.ReplayTests) ... ok
+test_comparison_rejects_nonfinite_and_duplicate_rows (replay_cpu_tests.ReplayTests) ... ok
+test_copied_bundle_cannot_claim_a_second_root (replay_cpu_tests.ReplayTests) ... ok
+test_expired_replay_cannot_succeed (replay_cpu_tests.ReplayTests) ... ok
+test_fresh_separate_allowance_and_handoff_required (replay_cpu_tests.ReplayTests) ... ok
+test_gpu_or_descendants_block_acceptance (replay_cpu_tests.ReplayTests) ... ok
+test_input_and_source_tampering_rejected (replay_cpu_tests.ReplayTests) ... ok
+test_mid_execution_guard_failure_terminates_worker (replay_cpu_tests.ReplayTests) ... ok
+test_rejects_changed_labels (replay_cpu_tests.ReplayTests) ... ok
+test_rejects_model_buffer_mutation (replay_cpu_tests.ReplayTests) ... ok
+test_rejects_reordered_or_missing_cases (replay_cpu_tests.ReplayTests) ... ok
+test_simultaneous_handoff_and_owner_change_is_rejected (replay_cpu_tests.ReplayTests) ... ok
+test_stop_owner_disk_and_late_output_guards (replay_cpu_tests.ReplayTests) ... ok
+test_success_uses_eval_and_does_not_change_weights (replay_cpu_tests.ReplayTests) ... ok
+test_supervisor_keeps_normal_exit_successful (replay_cpu_tests.ReplayTests) ... ok
+test_supervisor_terminates_unresponsive_child_and_grandchild (replay_cpu_tests.ReplayTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 7.138s
+
+OK
