@@ -1,0 +1,25 @@
+{
+  "status": "replay_core_and_metadata_block_planner_prepared_not_GPU_executed",
+  "local_replay_CPU_tests_passed": 8,
+  "local_metadata_planner_CPU_tests_passed": 4,
+  "source_sha256": {
+    "scripts/aia72_completion_replay.py": "ed366a2cbcbacfa42fcf67f843c3e22dbddfd772652fa4ea81fb34a9c33881a5",
+    "tests/test_aia72_completion_replay.py": "efe84f1cbaa9fea402ba3126c7fa90d808c879282c7492d4e7af08b450605d6f",
+    "scripts/prepare_aia72_inference_inputs.py": "cdf884dd05c4a157d766ece9a0d89e823842dc5f014ffe8e535f3bc1a0f0b3b3",
+    "tests/test_aia72_inference_preparation.py": "0d4580bd268f58b0e5ce1f7e41d9ddb6e2693be26c583705c26ba155c3539793"
+  },
+  "test_replay_log_sha256": "ac8e321e51d7c8ece82bbddc4857361d8a5d94af1cfdd25e86fa63b52f572af8",
+  "scientific_model_replays_executed": 0,
+  "GPU_launches": 0,
+  "source_image_downloads": 0,
+  "proposed_replay_slot_seconds": 1800,
+  "bound_basis": "Accepted seed17 replay used225.514s; two comparable replays about451s, leaving substantial margin within30min. Proposed only; no allowance issued.",
+  "production_requirements": [
+    "accepted completed v5 training snapshot and final return",
+    "exact best29/best43 hashes and selected epochs",
+    "frozen canonical runtime/controller/notebook and persistent loader leases",
+    "independent review and fresh phase-specific allowance/handoff"
+  ],
+  "scientific_acceptance": false,
+  "total_analysis_complete": false
+}

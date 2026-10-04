@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-04T09:16:19.618374+00:00",
+  "status": "LIVE_SEED_TRANSITION_VERIFIED",
+  "probe_utc": "2026-10-04T09:15:31.440504+00:00",
+  "probe_sha256": "60a75bb42e88737919cad8789660cd0117bd3d520820a5196e7263c0d4749883",
+  "ssh_final_exit": 0,
+  "tool_session": 5086,
+  "seed29_epoch7_selection_in_log": true,
+  "seed43_actual_saved_progress": {
+    "utc": "2026-10-04T09:15:23.553282+00:00",
+    "status": "running",
+    "seed": 43,
+    "epoch": 1,
+    "case_cursor": 1680,
+    "training_cases": 25586,
+    "steps": 105,
+    "elapsed_seconds": 190.11154485493898,
+    "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+    "full_training_complete": false
+  },
+  "total_training_complete": false,
+  "scientific_acceptance": false,
+  "explicit_priority_return": false,
+  "note": "The log records seed 29 epoch-7 selection and actual saved seed-43 updates. Final seed-29 checkpoint/replay acceptance remains Gray review work. AIA remains Mac-only.",
+  "record_type": "coordination_probe_verified_locally_not_completed_artifact_review",
+  "seed17_repeated": false
+}

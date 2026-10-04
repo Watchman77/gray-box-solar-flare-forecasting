@@ -1,0 +1,19 @@
+{
+  "status": "independent_metadata_and_block_reconciliation_passed",
+  "cases": 96596,
+  "objects": 113037,
+  "blocks": 192,
+  "old_training_pins_preserved": 35050,
+  "new_pins_reconciled_to_raw_metadata_pages": 77987,
+  "case_loss_or_duplication": false,
+  "within_role_order_and_batch_boundaries_preserved": true,
+  "largest_all_images_block_bytes": 3958743130,
+  "source_sha256": "cdf884dd05c4a157d766ece9a0d89e823842dc5f014ffe8e535f3bc1a0f0b3b3",
+  "verifier_sha256": "f87ae2c00664d3b462042bbf9880f2f85c9ddd58af32b425c8cdfef6e1cdb84d",
+  "receipt_sha256": "e61dd1745e4829f3a2a206e91286917d31ab977137bf83eb1461bf60b987bdb5",
+  "GPU_launches": 0,
+  "image_downloads": 0,
+  "cache_or_pixel_verification_performed": false,
+  "scientific_acceptance": false,
+  "prior_verification_attempt": "Local inefficient repeated set-difference loop manually interrupted before output publication; no mutation to metadata or scientific inputs. Corrected by computing the lookup set once."
+}

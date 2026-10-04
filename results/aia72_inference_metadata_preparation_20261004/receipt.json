@@ -1,0 +1,76 @@
+{
+  "status": "metadata_and_block_plan_complete_not_inference",
+  "image_downloads": 0,
+  "GPU_launches": 0,
+  "VM_operations": 0,
+  "cloud_mutations": 0,
+  "maximum_metadata_requests": 300,
+  "maximum_seconds": 600,
+  "utc": "2026-10-04T09:30:11.364201+00:00",
+  "metadata_requests": 115,
+  "elapsed_seconds": 40.92073095799424,
+  "cases": 96596,
+  "objects": 113037,
+  "reused_training_object_pins": 35050,
+  "new_object_pins": 77987,
+  "total_unique_image_bytes": 621865070276,
+  "parent_contract_sha256": "3d8ad4882433a5670b832d763cb428031b8f18f2deefe4083f03205ce19c87cd",
+  "original_training_objects_sha256": "ba5b2c12dfac49a7ce78d3b168ba98eb364b99a00b4818798eb4204c4d1aa515",
+  "objects_sha256": "51f2bb4ff1d8024b4e7e7f7c58d4942b424387dfb11f76608c7ab9d70ff017bc",
+  "cases_sha256": "b687afd3d953f884b21c2bcab527a39de3a7ca127e0262b3f727b201d080a846",
+  "blocks_sha256": "12209abb54b3a3789d95fa8576e0617dbdf76ff7985e30a0ac9c8e12f91c2359",
+  "block_count": 192,
+  "max_block_cases": 512,
+  "batch_size": 16,
+  "scratch_cap_bytes": 15032385536,
+  "minimum_free_disk_bytes": 21474836480,
+  "role_summary": [
+    {
+      "role": "train",
+      "cases": 25586,
+      "blocks": 50,
+      "largest_block_image_bytes": 3742411908
+    },
+    {
+      "role": "model_validation",
+      "cases": 3905,
+      "blocks": 8,
+      "largest_block_image_bytes": 3712438258
+    },
+    {
+      "role": "probability_calibration",
+      "cases": 2831,
+      "blocks": 6,
+      "largest_block_image_bytes": 3370386895
+    },
+    {
+      "role": "conformal_calibration",
+      "cases": 4168,
+      "blocks": 9,
+      "largest_block_image_bytes": 3563049743
+    },
+    {
+      "role": "policy_validation",
+      "cases": 13142,
+      "blocks": 26,
+      "largest_block_image_bytes": 3754219064
+    },
+    {
+      "role": "retrospective_cycle25",
+      "cases": 35846,
+      "blocks": 71,
+      "largest_block_image_bytes": 3769171199
+    },
+    {
+      "role": "supplementary_2026",
+      "cases": 11118,
+      "blocks": 22,
+      "largest_block_image_bytes": 3958743130
+    }
+  ],
+  "historical_availability": "unverified_retrospective",
+  "scientific_acceptance": false,
+  "cache_join_performed": false,
+  "cache_pixels_verified": false,
+  "next": "Join these exact URI/generation/checksum pins with preserved VM cache inventories; verify actual bytes on use. Freeze reviewed inference/controller bounds after saved-model replay. This receipt authorizes no download, launch or retirement."
+}
