@@ -1,0 +1,19 @@
+{
+  "status": "GPU_RELEASED_TO_AIA",
+  "utc": "2026-10-04T00:15:14.304703+00:00",
+  "reason": "One bounded training continuation invocation ended; no automatic next invocation",
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "review_root": "/home/abmoses2000/graybox_aia72_continuation_v3_20261003",
+  "supersedes_reservation_sha256": "76dd889e429fe7ed9803cc94d1428e03716c62dba00007c1950ef12bdb907800",
+  "worker_pid": 1692737,
+  "worker_process_group_empty": true,
+  "gpu_empty_under_exclusive_lock": true,
+  "execution_receipt": "/home/abmoses2000/graybox_aia72_continuation_v3_20261003/execution/execution_receipt.json",
+  "execution_receipt_sha256": "a4014f072198b76b26023d1b7f0e5e650a165364c8d3c75e45d54f7931fa5587",
+  "execution_status": "bounded_training_invocation_verified",
+  "scientific_acceptance": false,
+  "automatic_retry": false,
+  "new_fitting_allowed_by_this_receipt": false,
+  "AIA_must_acquire_common_lock_and_recheck_GPU": true
+}
