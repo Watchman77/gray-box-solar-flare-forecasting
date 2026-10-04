@@ -1,0 +1,59 @@
+{
+  "status": "completed_GPU_replay_archive_and_original_predictions_verified",
+  "archive_sha256": "5cf04890be3a00fff19e403cf5080e55b802f6db25353590216e971a7739ebab",
+  "archive_bytes": 17336886,
+  "snapshot_files": 69,
+  "comparisons": [
+    {
+      "seed": 29,
+      "cases": 3905,
+      "mismatches": 0,
+      "replayed_log_loss": 0.3539059323749676,
+      "recomputed_max_absolute_logit_difference": 8.881784197001252e-16
+    },
+    {
+      "seed": 43,
+      "cases": 3905,
+      "mismatches": 0,
+      "replayed_log_loss": 0.37149200731234083,
+      "recomputed_max_absolute_logit_difference": 8.881784197001252e-16
+    }
+  ],
+  "three_seed_probability_average_verified": true,
+  "selection_cases": 3905,
+  "executed_code_cells": 6,
+  "notebook_errors": 0,
+  "notebook_code_matches_source": true,
+  "notebook_visual_inspection": false,
+  "no_model_forward_or_training_in_verification": true,
+  "replay_elapsed_seconds": 433.59115709597245,
+  "charged_reserved_seconds": 444.2935371090425,
+  "reservation_overrun_seconds": 0,
+  "returned_owner_sha256": "d0ee440ed05554281ab1b5730ae6ce1fe0270c91f560ffba69afb848dfc56afe",
+  "scientific_acceptance": false,
+  "later_period_evaluation_complete": false,
+  "fusion_complete": false,
+  "finished_utc": "2026-10-04T16:04:44.126785+00:00",
+  "all_three_AIA72_models_trained_and_technically_replayed": true,
+  "seed17_accepted_replay_reused": true,
+  "new_training_steps": 0,
+  "executed_notebook": "notebooks/16_AIA_72h_Completed_Model_Replay_EXECUTED.ipynb",
+  "executed_notebook_sha256": "60969b5f1b7630714e27d32281f990751122d9bf41b47e2561bf1a1a33fa5fa5",
+  "unmodified_archived_notebook_sha256": "b4a68a6fc6593f59cd1aa18815269c99ee9b5879e265fcb8d438b0624cce3a50",
+  "collection_final_SSH_exit": 0,
+  "collector_source_sha256": "012a2b66f496c177288e09539a9d266d66ae0b1d04b23ff92aba4c8f60709668",
+  "collector_source_preserved_separately_from_VM_archive": true,
+  "remaining_work": [
+    "Later-period AIA predictions on frozen matched cases",
+    "SHARP/AIA probability fusion",
+    "Calibration, uncertainty and operational policy evaluation"
+  ],
+  "labels_and_historical_availability": "Provisional; unchanged limitations apply.",
+  "separate_numeric_verification": {
+    "status": "passed",
+    "method": "Separate scalar stdlib calculation in the cooperating AIA chat; not external scientific validation.",
+    "result_sha256": "d3fe14f8d57bb03892e05682d3302930f651df7350997d5453ded52a1be4621f",
+    "review_sha256": "a0c427c42a04a4b89caf6e1d08e308498102677db9e1379c80f237a265ecf86b",
+    "verifier_source_sha256": "84b9e60597df979af0fc214ac93c5b91c0d3886144e8adf4c74ab8e4da2e331a"
+  }
+}

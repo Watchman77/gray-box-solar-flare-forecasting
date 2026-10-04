@@ -1,0 +1,15 @@
+{
+  "cases": 3905,
+  "all_logits_within_tolerance": true,
+  "mismatched_cases": 0,
+  "max_absolute_logit_difference": 8.881784197001252e-16,
+  "saved_log_loss": 0.3539059323749676,
+  "replayed_log_loss": 0.3539059323749676,
+  "log_loss_difference": 0.0,
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "seed": 29,
+  "best_epoch": 3,
+  "fitting_steps": 0,
+  "best_checkpoint_sha256": "edacf36873f0c7f88d52b8f795a1bd8f3eb15275d8673e92d63ac879d5b53d36"
+}

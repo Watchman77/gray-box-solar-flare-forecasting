@@ -1,0 +1,56 @@
+{
+  "status": "technical_three_seed_replay_verified_pending_controller",
+  "replayed_seeds": [
+    29,
+    43
+  ],
+  "seed17_replay_reused": true,
+  "seed17_repeated": false,
+  "selection_cases": 3905,
+  "comparisons": [
+    {
+      "cases": 3905,
+      "all_logits_within_tolerance": true,
+      "mismatched_cases": 0,
+      "max_absolute_logit_difference": 8.881784197001252e-16,
+      "saved_log_loss": 0.3539059323749676,
+      "replayed_log_loss": 0.3539059323749676,
+      "log_loss_difference": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "seed": 29,
+      "best_epoch": 3,
+      "fitting_steps": 0,
+      "best_checkpoint_sha256": "edacf36873f0c7f88d52b8f795a1bd8f3eb15275d8673e92d63ac879d5b53d36"
+    },
+    {
+      "cases": 3905,
+      "all_logits_within_tolerance": true,
+      "mismatched_cases": 0,
+      "max_absolute_logit_difference": 8.881784197001252e-16,
+      "saved_log_loss": 0.37149200731234083,
+      "replayed_log_loss": 0.37149200731234083,
+      "log_loss_difference": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "seed": 43,
+      "best_epoch": 3,
+      "fitting_steps": 0,
+      "best_checkpoint_sha256": "8b993d9903dddb92f0f9857659761f5ceee7943a8fc9d5a7dd758cee4eeb8438"
+    }
+  ],
+  "output_sha256": {
+    "seed_29_comparison.csv.gz": "7be8b52b3149aa0fdb1a1c5e9d2442b48786f5012a5e0a09fb99f3131e7a07d8",
+    "seed_29_comparison.json": "346ad602a5d9ca3083d953f2213c1cadf0d195b9ae86e598f296d3e9bf179402",
+    "seed_43_comparison.csv.gz": "c223a724201a755f10b66ff9bc9935a623fd107e9dcebf4bbad5cac9527998f0",
+    "seed_43_comparison.json": "125bcd0db816b0b8ff13795ea98be55dd45f919f5b65c0df900b24e1e32354e4",
+    "three_seed_selection_predictions.csv.gz": "f334a738c65b7de2d345fb5a6952a7200be5b19d5d64581a469c1a1f6b77dac0"
+  },
+  "replay_elapsed_seconds": 433.59115709597245,
+  "fitting_steps": 0,
+  "inputs_unchanged": true,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false,
+  "later_period_evaluation": false,
+  "limitations": "Saved-model reproducibility on earlier model-selection cases only. Ensemble averages all three saved reference probabilities after replay checks. No new fitting, selection, calibration, later-period evaluation or fusion."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "GPU_RELEASED_TO_AIA",
+  "utc": "2026-10-04T16:04:44.167467+00:00",
+  "reason": "Completed-model replay invocation ended; Gray total-analysis scheduling priority remains retained",
+  "review_root": "/home/abmoses2000/graybox_aia72_completion_replay_v1_20261004",
+  "common_lock": "/home/abmoses2000/.aia19b2_run.lock",
+  "common_lock_inode": 519274,
+  "supersedes_reservation_sha256": "86528b082873e5b3c973e3a9821d3bce244a04f677f2233fb2b591eebe1f45a2",
+  "worker_pid": 1705210,
+  "worker_launch_state": "started",
+  "cleanup_verified": true,
+  "worker_process_group_empty": true,
+  "gpu_empty_under_exclusive_lock": true,
+  "execution_receipt": "/home/abmoses2000/graybox_aia72_completion_replay_v1_20261004/execution/execution_receipt.json",
+  "execution_receipt_sha256": "1a837a62f8d70c3bdf435461d7064eeab550554464f11a530a1093392dcbc65f",
+  "execution_status": "technical_checkpoint_replay_verified",
+  "automatic_retry": false,
+  "scientific_acceptance": false,
+  "total_analysis_priority_returned": false,
+  "new_GPU_work_allowed_by_this_receipt": false
+}

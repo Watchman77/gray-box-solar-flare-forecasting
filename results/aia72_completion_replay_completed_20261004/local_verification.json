@@ -1,0 +1,36 @@
+{
+  "status": "completed_GPU_replay_archive_and_original_predictions_verified",
+  "archive_sha256": "5cf04890be3a00fff19e403cf5080e55b802f6db25353590216e971a7739ebab",
+  "archive_bytes": 17336886,
+  "snapshot_files": 69,
+  "comparisons": [
+    {
+      "seed": 29,
+      "cases": 3905,
+      "mismatches": 0,
+      "replayed_log_loss": 0.3539059323749676,
+      "recomputed_max_absolute_logit_difference": 8.881784197001252e-16
+    },
+    {
+      "seed": 43,
+      "cases": 3905,
+      "mismatches": 0,
+      "replayed_log_loss": 0.37149200731234083,
+      "recomputed_max_absolute_logit_difference": 8.881784197001252e-16
+    }
+  ],
+  "three_seed_probability_average_verified": true,
+  "selection_cases": 3905,
+  "executed_code_cells": 6,
+  "notebook_errors": 0,
+  "notebook_code_matches_source": true,
+  "notebook_visual_inspection": false,
+  "no_model_forward_or_training_in_verification": true,
+  "replay_elapsed_seconds": 433.59115709597245,
+  "charged_reserved_seconds": 444.2935371090425,
+  "reservation_overrun_seconds": 0,
+  "returned_owner_sha256": "d0ee440ed05554281ab1b5730ae6ce1fe0270c91f560ffba69afb848dfc56afe",
+  "scientific_acceptance": false,
+  "later_period_evaluation_complete": false,
+  "fusion_complete": false
+}

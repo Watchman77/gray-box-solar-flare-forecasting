@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-04T16:21:17.568807+00:00",
+  "status": "COMPLETED_REPLAY_ARCHIVE_AND_ORIGINAL_ROWS_INDEPENDENTLY_VERIFIED",
+  "archive_sha256": "5cf04890be3a00fff19e403cf5080e55b802f6db25353590216e971a7739ebab",
+  "archive_bytes": 17336886,
+  "members": 71,
+  "manifest_files": 69,
+  "manifest_sha256": "52bfcbdd6d6b2c4f85e46423449c1883b281e9eb07e6dee05dae25c44ae40d6d",
+  "reviewed_source_files": 18,
+  "original_input_files": 19,
+  "selection_cases": 3905,
+  "comparisons": [
+    {
+      "seed": 29,
+      "cases": 3905,
+      "mismatches": 0,
+      "max_absolute_logit_difference_from_CSV": 8.881784197001252e-16,
+      "recomputed_log_loss": 0.35390593237496765
+    },
+    {
+      "seed": 43,
+      "cases": 3905,
+      "mismatches": 0,
+      "max_absolute_logit_difference_from_CSV": 8.881784197001252e-16,
+      "recomputed_log_loss": 0.37149200731234083
+    }
+  ],
+  "three_seed_original_reference_probability_mean_verified": true,
+  "seed17_repeated": false,
+  "fitting_steps": 0,
+  "executed_original_notebook_cells": 6,
+  "elapsed_verification_seconds": 0.5785246250452474,
+  "replay_elapsed_seconds": 433.59115709597245,
+  "charged_reserved_seconds": 444.2935371090425,
+  "overrun_seconds": 0,
+  "local_stdlib_only": true,
+  "model_image_VM_work": false,
+  "Gray_total_analysis_priority_retained": true,
+  "later_period_scientific_acceptance": false,
+  "source_review_scope": "Scalar numeric/source/artifact checks; no notebook visual review or rerun."
+}
