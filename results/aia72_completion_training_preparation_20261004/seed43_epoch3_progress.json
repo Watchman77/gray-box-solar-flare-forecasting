@@ -1,0 +1,28 @@
+{
+  "status": "live_progress_verified_not_final_completion",
+  "probe_utc": "2026-10-04T11:21:18.182062+00:00",
+  "source_probe": {
+    "path": "outputs/aia72_completion_training_v5_20261004/live_2026-10-04T112118.182062_0000.json",
+    "sha256": "c4209c8d326a34119a3b3a789357087de7d16b4b03d6022d030d57392cbc0370"
+  },
+  "training": {
+    "utc": "2026-10-04T11:21:13.356888+00:00",
+    "status": "running",
+    "seed": 43,
+    "epoch": 3,
+    "case_cursor": 21520,
+    "training_cases": 25586,
+    "steps": 4545,
+    "elapsed_seconds": 7739.920431451988,
+    "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+    "full_training_complete": false
+  },
+  "controller_alive": true,
+  "single_gpu_process_pid": 1699562,
+  "GPU_processes": "1699562, /home/abmoses2000/aia_gpu_venv/bin/python, 2252 MiB",
+  "owner_sha256": "2d9af1b2626fe991d73468cb5723b6a75ed4f8582279de1c884c170ac39f26cc",
+  "completion_receipt_present": false,
+  "return_receipt_present": false,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false
+}

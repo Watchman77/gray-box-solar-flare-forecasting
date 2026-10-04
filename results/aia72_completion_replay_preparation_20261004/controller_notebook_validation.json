@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-04T11:33:58.575051+00:00",
+  "status": "replay_controller_and_notebook_prepared_locally_not_GPU_executed",
+  "source_sha256": {
+    "scripts/aia72_completion_replay_contract.py": "415bc354253bb2a71a894f5c33f45b40a3c8fa18811eedce5b16e155f040f32c",
+    "scripts/aia72_completion_replay_worker.py": "a4c84f7493162996e5c13773ac7f41fd832144158e0132294443d0a11c54cf0d",
+    "scripts/run_aia72_completion_replay.py": "013355fed9307d423b601f549182cd976ac4cf0f67b3e8314dab12d85a3aca50",
+    "scripts/build_aia72_completion_replay_notebook.py": "611bd4f5986b6fc081edc13102fa2f187327d2c318b7b4ff58161ac562eec210",
+    "scripts/aia72_completion_replay.py": "ed366a2cbcbacfa42fcf67f843c3e22dbddfd772652fa4ea81fb34a9c33881a5",
+    "tests/test_aia72_completion_replay_controls.py": "5f715e7d632de74e2e7c8f52fd33d06f61b5b0e6bc4d4653d5a5d49ea479cbaa",
+    "tests/test_aia72_completion_replay.py": "efe84f1cbaa9fea402ba3126c7fa90d808c879282c7492d4e7af08b450605d6f",
+    "notebooks/16_AIA_72h_Completed_Model_Replay.ipynb": "2833e8cf28d4bbb414fe8b726ca23b3c4bc02490c95deeca34a5a39ef53b1d07"
+  },
+  "validation": {
+    "command": "CUDA_VISIBLE_DEVICES='' .venv-training/bin/python -m unittest tests.test_aia72_completion_replay_controls tests.test_aia72_completion_replay -v",
+    "control_tests_passed": 7,
+    "core_tests_passed": 8,
+    "notebook_preview_code_cells_completed": 6,
+    "notebook_preview_errors": 0,
+    "preview_path": "outputs/aia72_completion_replay_preparation_20261004/preview/16_AIA_72h_Completed_Model_Replay_EXECUTED.ipynb",
+    "preview_sha256": "ec84ed74e62504d3fde7fd307adb753da09745a060c50d7b28be913f79f5e73d",
+    "visual_inspection_performed": false,
+    "visual_inspection_limitation": "Notebook schema and all preview cells verified; rendered layout has not been visually inspected."
+  },
+  "GPU_launches_from_this_preparation": 0,
+  "training_run_modified": false,
+  "final_model_inputs_bound": false,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false,
+  "remaining_dependencies": [
+    "Completed seed43 fit and independently verified v5 training archive",
+    "Freeze final selected epochs, checkpoints and return receipt in replay input bundle",
+    "Review concrete package and coordinate fresh one-job GPU handoff before replay",
+    "Later-period inference, fusion, calibration and uncertainty evaluation remain separate"
+  ]
+}
