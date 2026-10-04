@@ -1,0 +1,30 @@
+{
+  "status": "CPU_staging_and_Linux_canary_passed",
+  "owner_unchanged_sha256": "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+  "common_lock_inode": 519274,
+  "source_tar_sha256": "633b0296db6bad4edebe7cf533a118e9163feb80ed5eca314f27baebd014b9d5",
+  "bundle_sha256": "4b8c1dd072aa24c4e4ca5b5c588bc59c7b581c7041c60c089174c0264589f5ba",
+  "contract_sha256": "92dcaf0f14052f6c7d26b5ed9b3a6bec7a60317389798e048672f3251c0af41e",
+  "model_runs": 0,
+  "image_reads": 0,
+  "GPU_launches": 0,
+  "new_allowance": false,
+  "automatic_retry": false,
+  "CPU_canary": {
+    "worker_launch_state": "started",
+    "worker_pid": 1704716,
+    "cleanup_verified": true,
+    "worker_reaped": true,
+    "process_group_empty": true,
+    "cleanup_errors": [],
+    "returncode": 0,
+    "work_deadline_reached": false,
+    "cancellation_signals": [],
+    "guard_error": null
+  },
+  "copied_inputs": 19,
+  "source_files": 19,
+  "canary_log_sha256": "7d9f77c63bc81e0fcc4088b5fc64aaa334cc885af4675da1dc7c003102cdc14d",
+  "torch_imported": false,
+  "elapsed_seconds": 0.6265456369146705
+}

@@ -1,0 +1,16 @@
+{
+  "status": "downloaded_VM_staging_snapshot_independently_hash_verified",
+  "archive_sha256": "68d89bda10ab39bd374ca3c1a6298246e75829ce3dcb7acb2a8c0b153f479fc0",
+  "archive_bytes": 17022133,
+  "tar_members": 41,
+  "manifest_files": 40,
+  "all_source_and_19_input_bytes_match_accepted_package": true,
+  "CPU_receipt_sha256": "d553f2ca14a93e9a4e20f8751774853ecbd572bd2ca694367d24ac38a21e2c8c",
+  "snapshot_manifest_sha256": "b30e54366536a8605dbd3d0989b5789210075c589fda5253e34ee7b2e032faa2",
+  "staging_final_SSH_exit": 0,
+  "snapshot_read_final_SSH_exit": 0,
+  "GPU_launches": 0,
+  "new_allowance": false,
+  "automatic_retry": false,
+  "scientific_acceptance": false
+}
