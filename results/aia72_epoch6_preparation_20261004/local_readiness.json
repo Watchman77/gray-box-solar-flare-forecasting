@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-04T06:28:09.621084+00:00",
+  "status": "prepared_local_changed_path_CPU_checks_passed_pending_independent_review",
+  "preparation_script_sha256": "f0f6bffd37cd5a9fcb1dc4356bcd74a81c9be75d60083a6ec876577179722b22",
+  "test_source_sha256": "a8c6c91f0b5334378589e813d877682f0021ca21d301ecccf567e59d3a6ea53a",
+  "test_log_sha256": "99aefc468b4204f913d209898649284456e9af74954495c3a3b63eee0b327ace",
+  "tests_passed": 6,
+  "test_environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "CPU_only": true,
+    "CUDA_initialized": false
+  },
+  "checks": [
+    "Exact new checkpoint and return pins; reject old contract/consumed allowance",
+    "Real epoch6 cursor12800 steps8800 metadata; reject altered state/snapshot",
+    "Reject changed current owner",
+    "Mid-epoch synthetic remaining sample order and exact model/optimizer/RNG/history equivalence to uninterrupted run",
+    "Expired work deadline preserves saved midpoint and prevents seed43 start",
+    "Controller, worker, original model/data/training and supervision source hashes unchanged"
+  ],
+  "notebook_metadata_preview_sha256": "4bf052cf7aac0349897dacffab26816984f94a98f8176c9a33b4ded52ae6b449",
+  "notebook_executed_preview_cells": 6,
+  "notebook_preview_errors": 0,
+  "saved_presentation_visually_inspected": false,
+  "presentation_inspection_instructions": "Open outputs/aia72_continuation_epoch6_20261004/metadata_preview/preview.html to inspect saved tables. Do not run GPU training to inspect the presentation.",
+  "real_image_pixels_read": 0,
+  "real_model_fitting_or_replay": false,
+  "GPU_launch": false,
+  "VM_staged": false,
+  "VM_CPU_checks_executed": false,
+  "independent_review_complete": false,
+  "new_allowance_or_handoff": false,
+  "scientific_acceptance": false,
+  "prepared_root": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_epoch6_20261004",
+  "target_root": "/home/abmoses2000/graybox_aia72_continuation_v4_20261004",
+  "runtime_changes": "Only ROOT, RESUME and RETURN literal pins; contract and notebook reflect the verified epoch6 starting state.",
+  "timing_history_sha256": "2e509659d064ecde9234b55a9fafb670e53965f87daa8833de1cd33a55edf02b",
+  "remaining_gates": [
+    "Independent exact-source/compute review",
+    "Separately permitted VM staging and changed-path CPU preflight with CUDA hidden before import",
+    "Fresh explicit one-slot allowance and handoff with live owner/lock checks"
+  ]
+}
