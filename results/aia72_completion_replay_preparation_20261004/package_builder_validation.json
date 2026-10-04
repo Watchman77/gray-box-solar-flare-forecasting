@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-04T12:25:17.662611+00:00",
+  "status": "archive_collector_and_replay_package_builder_prepared_not_executed_on_VM",
+  "source_sha256": {
+    "scripts/prepare_aia72_completion_replay.py": "5aeb960495bfc4d065bb75673ee14144595f772ac73ebd964c8e9cab0ebf6e0d",
+    "scripts/archive_aia72_completion_training.py": "8a28509833c56ad3984b442e68384644620b8a70bc427ac666b9612fbf3da8b7",
+    "tests/test_aia72_replay_preparation.py": "9ab702c8c21fe127858f64837bebd6d3b0ea3992642207c3fe671ea1f4343a73"
+  },
+  "CPU_preparation_tests_passed": 7,
+  "real_incomplete_predecessor_rejection": "Training remains incomplete",
+  "rejected_attempt_created_output": false,
+  "collector_validation": "Python syntax checked; completed-run collection remains unexecuted pending actual training return.",
+  "collector_keeps_persistent_lock_through_CPU_verification_and_archiving": true,
+  "collector_checks": "Final controller/result/return/ledger hashes; all preserved seed17 and earlier seed29 predictions; finite checkpoint model and optimizer tensors; RNG fields; all selection losses recomputed; original stopping rules and best epoch; six completed notebook cells; archive member hashes.",
+  "final_replay_inputs_bound": false,
+  "GPU_launches": 0,
+  "new_allowance": false,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false,
+  "preparation_log_note": "An ancillary status print used probe_utc instead of actual_probe_utc after all receipts had been saved. No scientific or source operation depended on that print; the saved evidence uses actual_probe_utc."
+}
