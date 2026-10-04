@@ -1,0 +1,34 @@
+{
+  "status": "saved_model_GPU_replay_running_unverified",
+  "observed_utc": "2026-10-04T15:58:25.871179+00:00",
+  "controller_pid": 1705207,
+  "GPU_worker_pid": 1705210,
+  "GPU_memory_MiB": 656,
+  "common_lock_inode": 519274,
+  "common_lock_held": true,
+  "authorization_sha256": "a6b13cc3789d8b1a40becc12eca5134d1870da89de722a31ffbd0aafce7033f9",
+  "handoff_sha256": "86528b082873e5b3c973e3a9821d3bce244a04f677f2233fb2b591eebe1f45a2",
+  "consumed_allowance_sha256": "71553450487b69fc83972c7c42ba7046821a587f8c49d79e58c8f5f8f94e07f1",
+  "progress": {
+    "seed": 29,
+    "cases": 736,
+    "of": 3905
+  },
+  "issuer_source_sha256": "e1670fd011f6eb4ebfcde1c452196d64be7761017026fd1e141d05a8c0581eff",
+  "issuer_actual_final_SSH_exit": 0,
+  "live_read_actual_final_SSH_exit": 0,
+  "training_complete": true,
+  "fitting_steps": 0,
+  "seeds_to_replay": [
+    29,
+    43
+  ],
+  "seed17_repeated": false,
+  "maximum_reserved_seconds_including_cleanup": 1800,
+  "cleanup_reserved_seconds": 60,
+  "automatic_retry": false,
+  "initial_failed_preissuance_preserved": true,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false,
+  "note": "Initial execution receipt remains its prelaunch snapshot until final publication; actual worker/GPU/progress establish this live observation."
+}

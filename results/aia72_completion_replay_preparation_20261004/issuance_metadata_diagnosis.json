@@ -1,0 +1,21 @@
+{
+  "status": "pre_issuance_metadata_representation_mismatch_confirmed",
+  "failed_issuer_source_sha256": "a759d13917e5e41ce73a27299fc13fff4af03fb05fd812e97b6da4a4cdb67e80",
+  "actual_issuer_final_SSH_exit": 1,
+  "failure": "Package version differs: torch",
+  "distribution_torch_version": "2.14.0",
+  "runtime_torch_version": "2.14.0+cu130",
+  "recorded_training_runtime_unchanged": true,
+  "installed_packages_changed": false,
+  "owner_sha256": "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+  "coordination_or_launch_artifacts_exist": false,
+  "GPU_launches": 0,
+  "new_allowance_issued": false,
+  "automatic_retry": false,
+  "read_only_diagnosis_final_SSH_exits": [
+    0,
+    0
+  ],
+  "version_source_sha256": "b31eaf43d0d1176473e4d63a41a46b9fcf85afd285c3609375865f78f56c1a65",
+  "diagnostic_metadata_sha256": "d462090f081334980de85241c887f1f84917f30e8043d6e452abd2e0a92cbc6f"
+}
