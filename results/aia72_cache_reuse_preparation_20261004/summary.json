@@ -1,0 +1,95 @@
+{
+  "status": "offline_historical_cache_join_complete_not_live_verification",
+  "utc": "2026-10-04T10:17:01.544071+00:00",
+  "objects": 113037,
+  "cases": 96596,
+  "category_counts": {
+    "historical_matching_metadata_candidate": 61822,
+    "no_historical_candidate": 27492,
+    "historical_unversioned_path_hint": 23723
+  },
+  "historically_reported_missing": 27492,
+  "objects_with_metadata_mismatch": 0,
+  "no_historical_candidate_bytes": 151183637760,
+  "role_summary": [
+    {
+      "role": "train",
+      "cases": 25586,
+      "distinct_images": 30389,
+      "historical_candidate_categories": {
+        "historical_matching_metadata_candidate": 30389
+      },
+      "no_historical_candidate_bytes": 0
+    },
+    {
+      "role": "model_validation",
+      "cases": 3905,
+      "distinct_images": 4661,
+      "historical_candidate_categories": {
+        "historical_matching_metadata_candidate": 4661
+      },
+      "no_historical_candidate_bytes": 0
+    },
+    {
+      "role": "probability_calibration",
+      "cases": 2831,
+      "distinct_images": 3293,
+      "historical_candidate_categories": {
+        "historical_unversioned_path_hint": 3293
+      },
+      "no_historical_candidate_bytes": 0
+    },
+    {
+      "role": "conformal_calibration",
+      "cases": 4168,
+      "distinct_images": 4898,
+      "historical_candidate_categories": {
+        "historical_unversioned_path_hint": 4898
+      },
+      "no_historical_candidate_bytes": 0
+    },
+    {
+      "role": "policy_validation",
+      "cases": 13142,
+      "distinct_images": 15532,
+      "historical_candidate_categories": {
+        "historical_unversioned_path_hint": 15532
+      },
+      "no_historical_candidate_bytes": 0
+    },
+    {
+      "role": "retrospective_cycle25",
+      "cases": 35846,
+      "distinct_images": 41942,
+      "historical_candidate_categories": {
+        "no_historical_candidate": 27492,
+        "historical_matching_metadata_candidate": 14450
+      },
+      "no_historical_candidate_bytes": 151183637760
+    },
+    {
+      "role": "supplementary_2026",
+      "cases": 11118,
+      "distinct_images": 12322,
+      "historical_candidate_categories": {
+        "historical_matching_metadata_candidate": 12322
+      },
+      "no_historical_candidate_bytes": 0
+    }
+  ],
+  "gray_metadata_receipt_sha256": "e61dd1745e4829f3a2a206e91286917d31ab977137bf83eb1461bf60b987bdb5",
+  "source_code_sha256": "a633ae3286893311ceff2cadf828f4dc0d46c386b3120923db11409a8ba26722",
+  "input_evidence_sha256": {
+    "lineage_paths": "8089534872ea158357d552bf58fa1742b37d16122e7d775ae088b04b28affbd2",
+    "lineage_uris": "339b82d629d2b73715ada17b5c0a39b651a2d36c5de246f91d67b1f8d4a0f105",
+    "later_candidates": "dec0f2266bbb0e87c6164e29cae8de52d882946ad9fe65ae848c83772a8783b9"
+  },
+  "training_bound_sources_sha256": "bb02fc64516ac6c5943a3a9737edad88993109a2cd9eafdc6fb9ad88b5ada46a",
+  "plan_sha256": "f96d0c359ed058b15606bad5fc1a5a7fc1803b9d04e354bc7329c6ad0075116a",
+  "upstream_48h_labels_or_roles_imported": false,
+  "VM_operations": 0,
+  "image_downloads": 0,
+  "live_cache_presence_established": false,
+  "scientific_acceptance": false,
+  "limitations": "Historical paths and matching metadata are candidates only. Live file presence and exact content must be checked before reuse. No-candidate bytes estimate planning exposure, not a verified download requirement. Preserve pre-existing files; restoration destinations require a separate owned scratch plan."
+}

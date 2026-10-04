@@ -1,0 +1,14 @@
+{
+  "status": "independent_offline_category_join_verified",
+  "objects": 113037,
+  "matched_metadata_candidates": 61822,
+  "unversioned_path_hints": 23723,
+  "no_candidate_in_preserved_records": 27492,
+  "no_candidate_bytes": 151183637760,
+  "plan_sha256": "f96d0c359ed058b15606bad5fc1a5a7fc1803b9d04e354bc7329c6ad0075116a",
+  "summary_sha256": "b188a8fdf271cddd1f56398e25f9067e7707ee1b8f3baada9e9500e7e5ac4af2",
+  "focused_CPU_tests_passed": 5,
+  "VM_operations": 0,
+  "image_downloads": 0,
+  "live_presence_or_content_claimed": false
+}

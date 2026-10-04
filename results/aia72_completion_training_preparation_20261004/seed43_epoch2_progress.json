@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-04T10:12:34.652782+00:00",
+  "status": "LIVE_GRAY_PROGRESS_VERIFIED",
+  "probe": {
+    "path": "run_records/GRAYBOX_COMPLETION_HANDOFF_REVIEW_20261004/progress_20261004T1010.json",
+    "sha256": "9a5e1f455fbc9c5d6ca54e2757d447334e638c5f0e84189251bc2f2399dd12df",
+    "bytes": 7443
+  },
+  "probe_utc": "2026-10-04T10:10:40.757940+00:00",
+  "ssh_final_exit": 0,
+  "tool_session": 94120,
+  "training": {
+    "utc": "2026-10-04T10:10:23.530587+00:00",
+    "status": "running",
+    "seed": 43,
+    "epoch": 2,
+    "case_cursor": 6800,
+    "training_cases": 25586,
+    "steps": 2025,
+    "elapsed_seconds": 3490.0727793129627,
+    "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+    "full_training_complete": false
+  },
+  "priority_return": false,
+  "scientific_acceptance": false,
+  "record_type": "coordination_probe_verified_locally_not_final_checkpoint_review"
+}
