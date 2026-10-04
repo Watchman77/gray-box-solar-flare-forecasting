@@ -1,0 +1,27 @@
+{
+  "status": "prepared_pending_changed_path_CPU_and_independent_review",
+  "contract_sha256": "e312fbbc89a5cb803ab14945c001bb9203a6d819c40f5f10c0d03052fe5a5563",
+  "bundle_sha256": "a1440d43ba382c4afa6fb3ffd44b08c0d10dfd173d2c37c47359f6a237e10128",
+  "source_tar_sha256": "0fde86f24926a16116188bf2680b2775f94a6f7a319337f17b5c589c39fb5166",
+  "source_tar_bytes": 33069,
+  "changed_bundle_files": [
+    "scripts/aia72_continue_contract.py",
+    "configs/aia72_continuation_v1.json",
+    "notebooks/11_AIA_72h_Training_Continuation.ipynb"
+  ],
+  "unchanged_bundle_files": [
+    "scripts/aia72_continue.py",
+    "scripts/run_aia72_continue.py",
+    "scripts/aia72_replay_contract.py",
+    "scripts/run_aia72_replay.py",
+    "scripts/train_aia72_gpu.py",
+    "scripts/aia72_model.py",
+    "scripts/aia72_vm_data.py",
+    "scripts/aia72_data.py",
+    "scripts/aia_io.py",
+    "scripts/dataset_io.py"
+  ],
+  "GPU_launch": false,
+  "new_allowance": false,
+  "seed17_repeated": false
+}

@@ -1,0 +1,43 @@
+{
+  "status": "PREPARATION_ONLY_NOT_AN_ALLOWANCE_OR_HANDOFF",
+  "review_root": "/home/abmoses2000/graybox_aia72_completion_training_v5_20261004",
+  "maximum_slot_seconds": 129600,
+  "maximum_fitting_seconds": 126000,
+  "cleanup_seconds": 60,
+  "invocation_count": 1,
+  "automatic_retry": false,
+  "GPU_launch_performed": false,
+  "starting_checkpoint_sha256": "455e7be13bec0d831f827f8a4b2f7aa64c19781bab480c8d3ef076466ba7dc95",
+  "predecessor_return_sha256": "e07b42187607c3966c149918892c72b028a76af65591943872fe3b0872cf5381",
+  "original_science_configuration_unchanged": true,
+  "seed17_repeated": false,
+  "cumulative_timing_history_sha256": "bdd06cdcbc2910bfa013ccf55232a5abded01e70df61df9dd58167e9e2e1cf0d",
+  "planning_scenarios": [
+    {
+      "seed29_epochs": 7,
+      "seed43_epochs": 6,
+      "remaining_fitting_hours": 4.962956294702286,
+      "with_25_percent_contingency_hours": 6.203695368377857
+    },
+    {
+      "seed29_epochs": 10,
+      "seed43_epochs": 8,
+      "remaining_fitting_hours": 8.893948555184018,
+      "with_25_percent_contingency_hours": 11.117435693980022
+    },
+    {
+      "seed29_epochs": 20,
+      "seed43_epochs": 20,
+      "remaining_fitting_hours": 26.190314501303632,
+      "with_25_percent_contingency_hours": 32.73789312662954
+    }
+  ],
+  "bound_basis": "Measured seed17 mean time per completed epoch; subtract all seed29 accumulated fitting. Original patience/max_epochs determine actual stop.35h fitting covers32.7h maximum-epoch scenario with25% timing contingency; stop earlier whenever done.",
+  "phase1": "Continuous completion fitting29 then43; seed17 preserved. All source except contract pins/bounds and notebook metadata unchanged.",
+  "phase2": "Separate saved-best replay29/43 on3905 earlier-selection cases; retain accepted seed17 replay; freeze three-seed arithmetic-mean probability ensemble. Proposed replay bound30min from225.5s measured seed17 replay, subject to review.",
+  "phase3": "Frozen inference on96596 candidate comparison cases. Exact URI/generation/cache join and bounded streaming preparation required; no image downloads here. Estimate3x96596/3905x225.5s=4.65h compute proxy plus I/O; not a granted bound.",
+  "phase4": "Matched SHARP/AIA/fixed equal-probability fusion; earlier-only calibration/conformal/policy analysis and retrospective evaluation, with full support/missingness and paired uncertainty. Mac CPU where feasible.",
+  "outside_current_completion_claim": "Unreleased GOES predictor fusion, other forecast horizons, confirmatory labels/grouped validation and future prospective study.",
+  "priority": "Gray-Box retains scheduling priority through its agreed remaining72h analysis. The unchanged controller returns an idle resource receipt at this technical boundary; AIA must not resume research until Gray-Box explicitly returns total-analysis priority.",
+  "scientific_acceptance": false
+}

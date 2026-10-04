@@ -1,0 +1,11 @@
+{
+  "status": "local_changed_path_checks_passed_pending_independent_VM_review",
+  "tests": 7,
+  "test_source_sha256": "f704fa744f70061f62b1860ef820c9736c67420a4ea4382ebaebbcf2dc32d37d",
+  "test_log_sha256": "363ee2932a61f401fa993e1e4e589722a400e3eaabc96b69080ee57d20d1983f",
+  "preview_verification_sha256": "3f383ca63c437afe51146d7785f95b9f3c9fedebf294bc4786475327343a6c7f",
+  "CUDA_VISIBLE_DEVICES": "",
+  "GPU_launch_performed": false,
+  "model_training_worker_controller_unchanged": true,
+  "training_loop_embedded_unchanged": true
+}
