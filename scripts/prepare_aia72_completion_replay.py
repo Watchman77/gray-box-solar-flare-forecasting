@@ -39,6 +39,11 @@ def verified_snapshot(root, manifest_sha, verification_sha):
     require(verification['CUDA_initialized_by_verification'] is False and verification['seed17_unchanged'] is True,
             'CPU verification or preserved model evidence differs')
     require(verification['reservation_overrun_seconds'] == 0, 'Training reservation requires review')
+    for member_key, sha_key in [('collector_source_member','collector_source_sha256'),
+                                ('collector_launcher_member','collector_launcher_sha256')]:
+        name=verification[member_key]
+        require(name in manifest and manifest[name]['sha256']==verification[sha_key],
+                'Executed collection source is not preserved in the archive')
     return manifest, verification
 
 

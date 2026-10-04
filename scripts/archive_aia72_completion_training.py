@@ -1,25 +1,123 @@
 """CPU-only collection after the explicit v5 training return; never starts training."""
 import argparse
+from contextlib import contextmanager
 import fcntl,hashlib,json,os,shutil,subprocess,sys,tarfile
+import math
+import signal
+import time
 from pathlib import Path
 from datetime import datetime,timezone
 
+COMMON_INODE=519274
 
-def main(expected):
+
+def validate_history(state, completion=None, seed=None):
+    """Replay every strict improvement; forbid work after the first patience stop."""
+    history=state['history'];best=None;best_epoch=None;stale=0;first_stop=None
+    if len(history)>20:
+        raise ValueError('History exceeds the original 20-epoch maximum')
+    for epoch,row in enumerate(history,1):
+        if first_stop is not None:
+            raise ValueError('History continues after first mandatory stop at epoch '+str(first_stop))
+        if row['epoch']!=epoch or (seed is not None and row['seed']!=seed):
+            raise ValueError('History epoch/seed identity differs')
+        loss=row['selection_log_loss']
+        if not math.isfinite(loss) or loss<0:
+            raise ValueError('Invalid historical selection loss')
+        if best is None or loss<best:
+            best,best_epoch,stale=loss,epoch,0
+        else:
+            stale+=1
+        if row['best_epoch']!=best_epoch:
+            raise ValueError('Historical best_epoch differs at epoch '+str(epoch))
+        if stale>=4 or epoch==20:
+            first_stop=epoch
+    if (state['best_loss'],state['best_epoch'],state['stale'])!=(best,best_epoch,stale):
+        raise ValueError('Final best/stale state differs from chronological replay')
+    if completion is not None:
+        if first_stop!=len(history) or first_stop is None:
+            raise ValueError('Completion precedes the original stopping boundary')
+        if (state['epoch'],state['cursor'],state['loss_sum'],state['steps'])!=(len(history)+1,0,0,1600*len(history)):
+            raise ValueError('Completed cursor/steps differ')
+        if (completion['best_epoch'],completion['selection_log_loss'],completion['epochs_completed'],
+            completion['elapsed_seconds'])!=(best_epoch,best,len(history),state['elapsed_seconds']):
+            raise ValueError('Completion record differs from chronological replay')
+    return {'epochs_verified':len(history),'first_stopping_epoch':first_stop,
+            'best_epoch':best_epoch,'best_loss':best,'stale':stale}
+
+
+@contextmanager
+def bounded_collection(seconds=540):
+    """Inner cooperative bound; deployment also uses a 600s external timeout."""
+    start=time.monotonic()
+    def cancelled(number,_frame):
+        raise InterruptedError('CPU collection cancelled by signal '+str(number))
+    previous={number:signal.signal(number,cancelled) for number in [signal.SIGALRM,signal.SIGTERM,signal.SIGINT]}
+    signal.setitimer(signal.ITIMER_REAL,seconds)
+    try:
+        yield start+seconds
+    finally:
+        signal.setitimer(signal.ITIMER_REAL,0)
+        for number,handler in previous.items():signal.signal(number,handler)
+
+
+def expected_supervisor_command(source,expected,source_sha,launcher_sha):
+    return ['/usr/bin/timeout','--signal=TERM','--kill-after=10s','600s',
+            '/usr/bin/env','CUDA_VISIBLE_DEVICES=','OMP_NUM_THREADS=2','PYTHONDONTWRITEBYTECODE=1',
+            '/home/abmoses2000/aia_gpu_venv/bin/python','-u',str(source),
+            '--return-sha256',expected,'--source-sha256',source_sha,'--launcher-sha256',launcher_sha]
+
+
+def check_collection_guard(root,source,source_sha,launcher_sha,expected_return,lease_fd,deadline):
+    """Continuing CPU-only source, cancellation, ownership, lease and reserve gate."""
+    if time.monotonic()>=deadline:
+        raise TimeoutError('CPU collection deadline reached')
+    def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    if digest(source)!=source_sha:
+        raise ValueError('Executed collector source changed')
+    if digest(source.with_name('run_aia72_cpu_collection.sh'))!=launcher_sha:
+        raise ValueError('Collection launcher source changed')
+    original=root.parent/'graybox_aia72_workers4_20261002'
+    if any(digest(path)!=expected_return for path in [root/'handoff_return_to_aia.json',original/'resource_reservation_status.json']):
+        raise ValueError('Explicit return or resource owner changed during collection')
+    lock=root.parent/'.aia19b2_run.lock'
+    if os.fstat(lease_fd).st_ino!=COMMON_INODE or lock.stat().st_ino!=COMMON_INODE:
+        raise ValueError('Persistent lease changed')
+    for directory in [root,root/'bundle',root/'training',root/'execution',root/'completed_invocation_archive',
+                      original,original/'outputs/training']:
+        if directory.is_dir():
+            for entry in directory.iterdir():
+                if entry.name.casefold().startswith(('stop','.stop','cancel','.cancel','failure','failed')):
+                    raise ValueError('STOP/failure marker during CPU collection: '+str(entry))
+    for volume in [str(root.parent),'/mnt/disks/aia-cache']:
+        if shutil.disk_usage(volume).free<20*1024**3:
+            raise ValueError('Shared disk reserve violated during collection')
+
+
+def collect(expected,source_sha,launcher_sha,deadline):
     if not __debug__:
         raise RuntimeError('Verification requires assertions; do not run Python with -O')
     root=Path('/home/abmoses2000/graybox_aia72_completion_training_v5_20261004')
+    source=Path(__file__).resolve()
+    launcher=source.with_name('run_aia72_cpu_collection.sh')
     execution=root/'execution';training=root/'training'
     def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
     def write_new(p,value):
         with p.open('x') as f:f.write(json.dumps(value,indent=2)+'\n')
     assert os.environ.get('CUDA_VISIBLE_DEVICES') in ['', '-1']
+    parent_args=Path(f'/proc/{os.getppid()}/cmdline').read_bytes().rstrip(b'\0').decode().split('\0')
+    assert parent_args==expected_supervisor_command(source,expected,source_sha,launcher_sha),'Reviewed external timeout is required'
+    assert Path(f'/proc/{os.getppid()}/exe').resolve()==Path('/usr/bin/timeout').resolve()
+    timeout_version=subprocess.check_output(['/usr/bin/timeout','--version'],text=True,timeout=3).splitlines()[0]
+    assert 'GNU coreutils' in timeout_version,'Expected GNU timeout semantics'
     return_path=root/'handoff_return_to_aia.json';assert sha(return_path)==expected
     returned=json.loads(return_path.read_text())
     assert returned['status']=='GPU_RELEASED_TO_AIA' and returned['review_root']==str(root)
     owner=Path('/home/abmoses2000/graybox_aia72_workers4_20261002/resource_reservation_status.json')
     with Path('/home/abmoses2000/.aia19b2_run.lock').open('r+') as lease:
         fcntl.flock(lease,fcntl.LOCK_EX|fcntl.LOCK_NB);assert os.fstat(lease.fileno()).st_ino==519274
+        def guard():check_collection_guard(root,source,source_sha,launcher_sha,expected,lease.fileno(),deadline)
+        guard()
         assert sha(owner)==expected,'Owner differs from explicit return'
         ps=subprocess.check_output(['ps','-eo','pid,ppid,pgid,stat,args'],text=True,timeout=8)
         live=[]
@@ -34,13 +132,19 @@ def main(expected):
                'owner_and_return_sha256':expected,'controller_and_worker_groups_empty':True,'GPU_empty':True,'disk_free_bytes':free}
         import torch,pandas as pd,numpy as np,nbformat
         assert not torch.cuda.is_initialized() and not torch.cuda.is_available()
+        torch.set_num_threads(2)
         cpath=root/'bundle/configs/aia72_continuation_v1.json'
         assert sha(cpath)=='e312fbbc89a5cb803ab14945c001bb9203a6d819c40f5f10c0d03052fe5a5563'
         c=json.loads(cpath.read_text())
+        runtime={'torch':torch.__version__,'numpy':np.__version__,'pandas':pd.__version__,'python':sys.version}
+        assert runtime=={k:c['runtime'][k] for k in runtime},'CPU verification runtime differs from training'
+        guard()
         manifest_path=root/'bundle/continuation_bundle_manifest.json'
         assert sha(manifest_path)=='a1440d43ba382c4afa6fb3ffd44b08c0d10dfd173d2c37c47359f6a237e10128'
-        for name,digest in json.loads(manifest_path.read_text())['files'].items():assert sha(root/'bundle'/name)==digest
+        for name,digest in json.loads(manifest_path.read_text())['files'].items():
+            guard();assert sha(root/'bundle'/name)==digest
         for record in c['inputs'].values():
+            guard()
             assert sha(Path(c['source_root'])/record['path'])==record['sha256'],'Original scientific input changed'
         receipt=json.loads((execution/'execution_receipt.json').read_text())
         result=json.loads((execution/'training_result.json').read_text())
@@ -57,14 +161,17 @@ def main(expected):
         assert ledger['authorization_sha256']==receipt['authorization_sha256']
         assert result['seed17_repeated'] is False and result['later_period_evaluation'] is False
         assert [row['seed'] for row in result['checkpoints']] in [[29],[29,43]]
-        for name,digest in receipt['output_files'].items():assert sha(training/name)==digest,'Output changed: '+name
+        for name,digest in receipt['output_files'].items():
+            guard();assert sha(training/name)==digest,'Output changed: '+name
         for name,record in c['initial_training_files'].items():
+            guard()
             assert sha(root/'initial_training'/name)==record['sha256'],'Immutable initial artifact changed'
             if name.startswith('seed_17_') or (name.startswith('seed_29_epoch_') and '_selection.' in name):
                 assert sha(training/name)==record['sha256'],'Preserved training artifact changed'
         frame=pd.read_csv(Path(c['source_root'])/'inputs/fit_cases.csv.gz');selected=frame[frame.role.eq('model_validation')]
         checkpoints=[];recomputed=[]
         for row in result['checkpoints']:
+            guard()
             seed=row['seed'];assert seed in [29,43]
             checkpoint=training/f'seed_{seed}_resume.pt'
             assert sha(checkpoint)==row['resume_sha256']
@@ -85,6 +192,7 @@ def main(expected):
                 assert state['steps']>=10876
             assert [h['epoch'] for h in state['history']]==list(range(1,len(state['history'])+1))
             for history in state['history']:
+                guard()
                 epoch=history['epoch'];pred=pd.read_csv(training/f'seed_{seed}_epoch_{epoch:02d}_selection.csv.gz')
                 assert len(pred)==3905 and np.isfinite(pred.logit).all()
                 assert pred.forecast_case_id.tolist()==selected.forecast_case_id.tolist()
@@ -99,17 +207,10 @@ def main(expected):
                 assert completion['contract_sha256']==c['parent_contract_sha256']
                 assert sha(training/f'seed_{seed}_best.pt')==completion['best_checkpoint_sha256']
                 assert completion['status']=='seed_fit_complete_pending_replay' and completion['seed']==seed
-                assert state['epoch']==len(state['history'])+1 and state['cursor']==0 and state['loss_sum']==0
-                assert state['steps']==1600*len(state['history'])
-                chosen=min(state['history'],key=lambda h:h['selection_log_loss'])
-                assert state['best_epoch']==chosen['epoch']==completion['best_epoch']
-                assert state['best_loss']==chosen['selection_log_loss']==completion['selection_log_loss']
-                assert state['stale']==len(state['history'])-chosen['epoch']
-                assert state['stale']>=4 or len(state['history'])==20
-                assert 1<=len(state['history'])<=20 and completion['epochs_completed']==len(state['history'])
-                assert completion['elapsed_seconds']==state['elapsed_seconds']
+            stop_check=validate_history(state,completion if done.exists() else None,seed)
             checkpoints.append({'seed':seed,'sha256':sha(checkpoint),'state':{k:v for k,v in state.items() if k!='history'},
-                                'completed_selection_epochs':len(state['history']),'fit_complete':done.exists()})
+                                'completed_selection_epochs':len(state['history']),'fit_complete':done.exists(),
+                                'stopping_history_verification':stop_check})
         assert sum(x['state']['steps'] for x in checkpoints)-10876==result['additional_steps']
         assert any(x['seed']==29 for x in checkpoints)
         assert result['remaining_seeds_fit_complete']==(len(checkpoints)==2 and all(x['fit_complete'] for x in checkpoints))
@@ -121,7 +222,12 @@ def main(expected):
         assert not torch.cuda.is_initialized()
         assert sha(owner)==expected and sha(return_path)==expected
         assert all(shutil.disk_usage(p).free>=20*1024**3 for p in ['/home/abmoses2000','/mnt/disks/aia-cache'])
+        guard()
         archive_dir=root/'completed_invocation_archive';archive_dir.mkdir(exist_ok=False)
+        collector_copy=archive_dir/'archive_aia72_completion_training.py'
+        shutil.copyfile(source,collector_copy);assert sha(collector_copy)==source_sha
+        launcher_copy=archive_dir/'run_aia72_cpu_collection.sh'
+        shutil.copyfile(launcher,launcher_copy);assert sha(launcher_copy)==launcher_sha
         verification={'utc':datetime.now(timezone.utc).isoformat(),'status':'bounded_invocation_independently_verified_and_explicit_return_confirmed',
          'cleanup':clean,'checkpoints':checkpoints,'all_selection_losses_recomputed':recomputed,
          'additional_steps':result['additional_steps'],
@@ -132,32 +238,49 @@ def main(expected):
          'remaining_seeds_fit_complete':result['remaining_seeds_fit_complete'],
          'total_analysis_priority_returned':False,
          'controller_and_worker_dead_and_common_lock_held_through_archive':True,
+         'collector_source_sha256':source_sha,'collector_source_member':str(collector_copy.relative_to(root)),
+         'collector_launcher_sha256':launcher_sha,'collector_launcher_member':str(launcher_copy.relative_to(root)),
+         'collector_runtime':runtime,'collector_python_argv':sys.orig_argv,
+         'external_supervisor_argv':parent_args,'external_supervisor_version':timeout_version,
+         'collection_protocol':{'CPU_only':True,'inner_deadline_seconds':540,
+             'required_external_timeout_seconds':600,'external_kill_grace_seconds':10,
+             'automatic_retry':False,'continuing_STOP_source_owner_lease_disk_guards':True},
          'inherited_legacy_files':'training/learning_curves.png, invocation_result.json, notebook_status.json and benchmark.json are inherited; use execution/training_result.json and current executed notebook.'}
         write_new(archive_dir/'independent_verification.json',verification)
         files=[]
         for directory in [root/'bundle',training,execution,root/'aia_coordination_20261004']:
             files.extend(p for p in directory.rglob('*') if p.is_file())
-        files += [return_path,root/'slot_ledger.json']
+        files += [return_path,root/'slot_ledger.json',collector_copy,launcher_copy]
         assert all(not p.is_symlink() for p in files)
-        manifest={str(p.relative_to(root)):{'sha256':sha(p),'bytes':p.stat().st_size} for p in files}
+        manifest={}
+        for p in files:
+            guard();manifest[str(p.relative_to(root))]={'sha256':sha(p),'bytes':p.stat().st_size}
         write_new(archive_dir/'snapshot_manifest.json',manifest)
         archive=archive_dir/'snapshot.tar.gz'
         with tarfile.open(archive,'x:gz') as tar:
-            for p in files:tar.add(p,arcname=str(p.relative_to(root)),recursive=False)
+            for p in files:
+                guard();tar.add(p,arcname=str(p.relative_to(root)),recursive=False)
             for name in ['snapshot_manifest.json','independent_verification.json']:tar.add(archive_dir/name,arcname=name,recursive=False)
-        assert all(sha(root/name)==value['sha256'] for name,value in manifest.items())
+        for name,value in manifest.items():
+            guard();assert sha(root/name)==value['sha256']
         assert sha(owner)==expected and sha(return_path)==expected
         assert all(shutil.disk_usage(p).free>=20*1024**3 for p in ['/home/abmoses2000','/mnt/disks/aia-cache'])
         record={'utc':datetime.now(timezone.utc).isoformat(),'status':'completed_invocation_archived_pending_local_copy',
          'archive':str(archive),'archive_sha256':sha(archive),'archive_bytes':archive.stat().st_size,
          'source_file_count':len(manifest),'manifest_sha256':sha(archive_dir/'snapshot_manifest.json'),
          'verification_sha256':sha(archive_dir/'independent_verification.json'),'verification':verification}
+        guard()
+        assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True,timeout=8).strip()
         write_new(archive_dir/'archive_receipt.json',record)
+        guard()
         print(json.dumps(record,indent=2))
 
 
 if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--return-sha256",required=True)
+    parser.add_argument("--source-sha256",required=True)
+    parser.add_argument("--launcher-sha256",required=True)
     args=parser.parse_args()
-    main(args.return_sha256)
+    with bounded_collection() as deadline:
+        collect(args.return_sha256,args.source_sha256,args.launcher_sha256,deadline)

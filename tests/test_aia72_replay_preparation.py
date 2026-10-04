@@ -22,6 +22,11 @@ class ReplayPreparationTests(unittest.TestCase):
             'status':'bounded_invocation_independently_verified_and_explicit_return_confirmed',
             'remaining_seeds_fit_complete':True, 'CUDA_initialized_by_verification':False,
             'seed17_unchanged':True, 'reservation_overrun_seconds':0}
+        for kind in ['source','launcher']:
+            path=root/f'collector_{kind}.txt';path.write_text('synthetic '+kind)
+            manifest[path.name]={'sha256':sha(path),'bytes':path.stat().st_size}
+            verification[f'collector_{kind}_member']=path.name
+            verification[f'collector_{kind}_sha256']=sha(path)
         (root/'snapshot_manifest.json').write_text(json.dumps(manifest))
         (root/'independent_verification.json').write_text(json.dumps(verification))
         return self.digests(root)
@@ -40,7 +45,7 @@ class ReplayPreparationTests(unittest.TestCase):
             root=Path(tmp)/'snapshot'; digests=self.fixture(root)
             before={p.name:sha(p) for p in root.iterdir()}
             manifest, verification=verified_snapshot(root,*digests)
-            self.assertEqual(set(manifest),{'checkpoint.pt'})
+            self.assertEqual(set(manifest),{'checkpoint.pt','collector_source.txt','collector_launcher.txt'})
             self.assertTrue(verification['remaining_seeds_fit_complete'])
             self.assertEqual(before,{p.name:sha(p) for p in root.iterdir()})
 
@@ -80,6 +85,14 @@ class ReplayPreparationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Required artifact missing'):
                 prepare(Path.cwd(),root,Path(tmp)/'original',output,*digests)
             self.assertFalse(output.exists())
+
+    def test_executed_collector_and_launcher_must_be_archived(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)/'snapshot';self.fixture(root)
+            path=root/'snapshot_manifest.json';manifest=json.loads(path.read_text())
+            del manifest['collector_launcher.txt'];path.write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(ValueError,'collection source is not preserved'):
+                verified_snapshot(root,*self.digests(root))
 
     def test_preexisting_package_is_preserved(self):
         with tempfile.TemporaryDirectory() as tmp:

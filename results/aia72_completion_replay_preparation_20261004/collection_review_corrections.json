@@ -1,0 +1,47 @@
+{
+  "utc": "2026-10-04T12:50:08.425068+00:00",
+  "status": "collection_review_findings_addressed_locally_pending_independent_recheck",
+  "independent_review_sha256": "9cc075c7bbff1c590f12f7e05154099cc407e4abc7633e3d3bcde227c3c02d33",
+  "resolved_source_findings": [
+    "G-COLLECT-01",
+    "G-COLLECT-02",
+    "G-COLLECT-03"
+  ],
+  "corrections": {
+    "G-COLLECT-01": "Replays strict running-best and stale counts at every epoch, verifies each historical best_epoch and rejects every epoch after the FIRST patience-4 or max-20 stop.",
+    "G-COLLECT-02": "540s inner signal/monotonic bound plus enforced GNU timeout parent at 600s/10s kill grace; continuing STOP, both source hashes, owner/return, original inode and 20GiB reserve checks.",
+    "G-COLLECT-03": "Executed collector and launcher are hash-bound, copied into snapshot members and pinned in independent verification with exact Python/runtime and parent argv; replay builder requires both source members."
+  },
+  "CPU_collection_tests_passed": 9,
+  "CPU_package_preparation_tests_passed": 8,
+  "preserved_review_counterexamples_rejected": {
+    "first_required_stop": 5,
+    "histories_with_epochs": [
+      6,
+      10
+    ]
+  },
+  "actual_preserved_seed17_checkpoint_history_check": {
+    "passed": true,
+    "best_epoch": 2,
+    "first_stopping_epoch": 6
+  },
+  "source_sha256": {
+    "scripts/archive_aia72_completion_training.py": "67c66450b00d33624ee12afc615dca4a62b384182c31834eb5326dd83ea7693c",
+    "scripts/run_aia72_cpu_collection.sh": "64e854b2d88dae750c28e62b7c07acff390f6c2dd913401438367c13acf6ec6c",
+    "scripts/prepare_aia72_completion_replay.py": "276075050762d4585f4df76b5cfc9aa71711df23da78bdbb4b77b3406c83aa3d",
+    "tests/test_aia72_collection_controls.py": "c69e8a004e62b5ac6350feca078f48daa899a44d5ac844dc74286080a0a0c68c",
+    "tests/test_aia72_replay_preparation.py": "7adf842df7e974b231e4573a1d656c0300fb1d77f45d31fc7780060d0a287c02"
+  },
+  "source_manifest_sha256": "9b3acdba7cfa3a242c12000548941070994d7ff9ad8bb5cb94ef781f80bba552",
+  "source_tar_sha256": "8c73a43b101bdb0b5e0e4346899fc656f87a4da6ffc4e06699fc0d3812a49528",
+  "source_tar_bytes": 7426,
+  "execution_limitations": [
+    "External GNU timeout and Linux /proc parent validation are not executable on this Mac; require VM preflight and final source review before collection.",
+    "The real completed-v5 collection and final replay input package are still pending training completion."
+  ],
+  "VM_collection_performed": false,
+  "GPU_launches": 0,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false
+}
