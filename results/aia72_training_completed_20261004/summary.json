@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-04T14:49:42.409363+00:00",
+  "status": "all_three_AIA72_models_fit_CPU_checked_pending_remaining_GPU_replay",
+  "fit_complete": true,
+  "models": [
+    {
+      "status": "seed_fit_complete_pending_replay",
+      "seed": 17,
+      "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+      "best_epoch": 2,
+      "selection_log_loss": 0.3926884123310144,
+      "epochs_completed": 6,
+      "elapsed_seconds": 16981.88656528108,
+      "best_checkpoint_sha256": "0038ef7ea4a27f5394da99cc4410b07e7cff0e867c145b322dd31474fec2869d"
+    },
+    {
+      "status": "seed_fit_complete_pending_replay",
+      "seed": 29,
+      "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+      "best_epoch": 3,
+      "selection_log_loss": 0.3539059323749676,
+      "epochs_completed": 7,
+      "elapsed_seconds": 19683.77662540076,
+      "best_checkpoint_sha256": "edacf36873f0c7f88d52b8f795a1bd8f3eb15275d8673e92d63ac879d5b53d36"
+    },
+    {
+      "status": "seed_fit_complete_pending_replay",
+      "seed": 43,
+      "contract_sha256": "70fbf61bd9596e19556412121d5677f1cad083e95bd4d1c3e7679602598232db",
+      "best_epoch": 3,
+      "selection_log_loss": 0.37149200731234083,
+      "epochs_completed": 7,
+      "elapsed_seconds": 19499.482148853946,
+      "best_checkpoint_sha256": "8b993d9903dddb92f0f9857659761f5ceee7943a8fc9d5a7dd758cee4eeb8438"
+    }
+  ],
+  "executed_notebook": "notebooks/15_AIA_72h_Completion_Training_EXECUTED.ipynb",
+  "executed_notebook_sha256": "cd195a7e1ac8578f76feff811ce6a06c0efe3fb973d7d65a010f1ccaff6aac0d",
+  "unmodified_archived_notebook_sha256": "b552f12798eb41d3e4b00e4d2bd47122b8d1be4bf073fda0b255f9c49199cd52",
+  "training_cases": 25586,
+  "selection_cases": 3905,
+  "completed_fit_counter_seconds": 56165.14533953578,
+  "not_total_VM_billed_time": true,
+  "seed17_GPU_replay_already_accepted": true,
+  "seed29_and_seed43_GPU_replay_complete": false,
+  "later_period_AIA_predictions_complete": false,
+  "SHARP_AIA_fusion_evaluated": false,
+  "scientific_acceptance": false,
+  "research_limitations": [
+    "Candidate outcomes and historical availability remain provisional.",
+    "Training and saved selection scores do not constitute independent scientific validation.",
+    "Preserve failed calibration/coverage findings in later comparisons."
+  ]
+}

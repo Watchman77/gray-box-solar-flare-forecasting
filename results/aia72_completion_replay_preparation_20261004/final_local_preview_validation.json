@@ -1,0 +1,11 @@
+{
+  "status": "six_CPU_metadata_preview_cells_passed_with_final_completed_inputs",
+  "executed_notebook_sha256": "9d73817aeac9a6b71ffad75d1faf753326d5e3c834127d031c6355feb08ccf3c",
+  "input_pins_resolved": true,
+  "preview_code_cells": 6,
+  "preview_errors": 0,
+  "image_pixels_read": 0,
+  "GPU_launches": 0,
+  "scientific_acceptance": false,
+  "visual_inspection_performed": false
+}

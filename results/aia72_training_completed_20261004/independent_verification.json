@@ -1,0 +1,213 @@
+{
+  "utc": "2026-10-04T14:44:07.242929+00:00",
+  "status": "bounded_invocation_independently_verified_and_explicit_return_confirmed",
+  "cleanup": {
+    "utc": "2026-10-04T14:44:01.839831+00:00",
+    "common_lock_inode": 519274,
+    "lock_acquired": true,
+    "owner_and_return_sha256": "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+    "controller_and_worker_groups_empty": true,
+    "GPU_empty": true,
+    "disk_free_bytes": {
+      "/home/abmoses2000": 22689009664,
+      "/mnt/disks/aia-cache": 39500812288
+    }
+  },
+  "checkpoints": [
+    {
+      "seed": 29,
+      "sha256": "c76271cde5023680bcb1b0de319e0249e30cb0d70312b5475060fa1d6ece144e",
+      "state": {
+        "epoch": 8,
+        "cursor": 0,
+        "loss_sum": 0.0,
+        "best_loss": 0.3539059323749676,
+        "best_epoch": 3,
+        "stale": 4,
+        "elapsed_seconds": 19683.77662540076,
+        "steps": 11200
+      },
+      "completed_selection_epochs": 7,
+      "fit_complete": true,
+      "stopping_history_verification": {
+        "epochs_verified": 7,
+        "first_stopping_epoch": 7,
+        "best_epoch": 3,
+        "best_loss": 0.3539059323749676,
+        "stale": 4
+      }
+    },
+    {
+      "seed": 43,
+      "sha256": "2af22d8253f282c7345d621ac334e99150f6b7dce459d75b92de3ee2540b3997",
+      "state": {
+        "epoch": 8,
+        "cursor": 0,
+        "loss_sum": 0.0,
+        "best_loss": 0.37149200731234083,
+        "best_epoch": 3,
+        "stale": 4,
+        "elapsed_seconds": 19499.482148853946,
+        "steps": 11200
+      },
+      "completed_selection_epochs": 7,
+      "fit_complete": true,
+      "stopping_history_verification": {
+        "epochs_verified": 7,
+        "first_stopping_epoch": 7,
+        "best_epoch": 3,
+        "best_loss": 0.37149200731234083,
+        "stale": 4
+      }
+    }
+  ],
+  "all_selection_losses_recomputed": [
+    {
+      "seed": 29,
+      "epoch": 1,
+      "selection_cases": 3905,
+      "log_loss": 0.36538815186923185
+    },
+    {
+      "seed": 29,
+      "epoch": 2,
+      "selection_cases": 3905,
+      "log_loss": 0.3985897466773008
+    },
+    {
+      "seed": 29,
+      "epoch": 3,
+      "selection_cases": 3905,
+      "log_loss": 0.3539059323749676
+    },
+    {
+      "seed": 29,
+      "epoch": 4,
+      "selection_cases": 3905,
+      "log_loss": 0.3591048268670402
+    },
+    {
+      "seed": 29,
+      "epoch": 5,
+      "selection_cases": 3905,
+      "log_loss": 0.4667323452884934
+    },
+    {
+      "seed": 29,
+      "epoch": 6,
+      "selection_cases": 3905,
+      "log_loss": 0.39616295710407906
+    },
+    {
+      "seed": 29,
+      "epoch": 7,
+      "selection_cases": 3905,
+      "log_loss": 0.4478900322316879
+    },
+    {
+      "seed": 43,
+      "epoch": 1,
+      "selection_cases": 3905,
+      "log_loss": 0.431320206108082
+    },
+    {
+      "seed": 43,
+      "epoch": 2,
+      "selection_cases": 3905,
+      "log_loss": 0.3880682130358575
+    },
+    {
+      "seed": 43,
+      "epoch": 3,
+      "selection_cases": 3905,
+      "log_loss": 0.37149200731234083
+    },
+    {
+      "seed": 43,
+      "epoch": 4,
+      "selection_cases": 3905,
+      "log_loss": 0.41222679754851527
+    },
+    {
+      "seed": 43,
+      "epoch": 5,
+      "selection_cases": 3905,
+      "log_loss": 0.4052109556099984
+    },
+    {
+      "seed": 43,
+      "epoch": 6,
+      "selection_cases": 3905,
+      "log_loss": 0.44147004029290493
+    },
+    {
+      "seed": 43,
+      "epoch": 7,
+      "selection_cases": 3905,
+      "log_loss": 0.4882903980348339
+    }
+  ],
+  "additional_steps": 11524,
+  "additional_fitting_counter_seconds": 20255.81387707393,
+  "reserved_seconds": 20268.464042824926,
+  "reservation_overrun_seconds": 0,
+  "seed17_unchanged": true,
+  "seed43_started": true,
+  "notebook_executed_cells": 6,
+  "notebook_errors": 0,
+  "CUDA_initialized_by_verification": false,
+  "scientific_acceptance": false,
+  "remaining_seeds_fit_complete": true,
+  "total_analysis_priority_returned": false,
+  "controller_and_worker_dead_and_common_lock_held_through_archive": true,
+  "collector_source_sha256": "67c66450b00d33624ee12afc615dca4a62b384182c31834eb5326dd83ea7693c",
+  "collector_source_member": "completed_invocation_archive/archive_aia72_completion_training.py",
+  "collector_launcher_sha256": "64e854b2d88dae750c28e62b7c07acff390f6c2dd913401438367c13acf6ec6c",
+  "collector_launcher_member": "completed_invocation_archive/run_aia72_cpu_collection.sh",
+  "collector_runtime": {
+    "torch": "2.14.0+cu130",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]"
+  },
+  "collector_python_argv": [
+    "/home/abmoses2000/aia_gpu_venv/bin/python",
+    "-u",
+    "/home/abmoses2000/graybox_aia72_completion_training_v5_20261004/collection_source_v1/archive_aia72_completion_training.py",
+    "--return-sha256",
+    "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+    "--source-sha256",
+    "67c66450b00d33624ee12afc615dca4a62b384182c31834eb5326dd83ea7693c",
+    "--launcher-sha256",
+    "64e854b2d88dae750c28e62b7c07acff390f6c2dd913401438367c13acf6ec6c"
+  ],
+  "external_supervisor_argv": [
+    "/usr/bin/timeout",
+    "--signal=TERM",
+    "--kill-after=10s",
+    "600s",
+    "/usr/bin/env",
+    "CUDA_VISIBLE_DEVICES=",
+    "OMP_NUM_THREADS=2",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/home/abmoses2000/aia_gpu_venv/bin/python",
+    "-u",
+    "/home/abmoses2000/graybox_aia72_completion_training_v5_20261004/collection_source_v1/archive_aia72_completion_training.py",
+    "--return-sha256",
+    "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+    "--source-sha256",
+    "67c66450b00d33624ee12afc615dca4a62b384182c31834eb5326dd83ea7693c",
+    "--launcher-sha256",
+    "64e854b2d88dae750c28e62b7c07acff390f6c2dd913401438367c13acf6ec6c"
+  ],
+  "external_supervisor_version": "timeout (GNU coreutils) 8.32",
+  "collection_protocol": {
+    "CPU_only": true,
+    "inner_deadline_seconds": 540,
+    "required_external_timeout_seconds": 600,
+    "external_kill_grace_seconds": 10,
+    "automatic_retry": false,
+    "continuing_STOP_source_owner_lease_disk_guards": true
+  },
+  "inherited_legacy_files": "training/learning_curves.png, invocation_result.json, notebook_status.json and benchmark.json are inherited; use execution/training_result.json and current executed notebook."
+}

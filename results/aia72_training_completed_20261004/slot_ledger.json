@@ -1,0 +1,15 @@
+{
+  "authorization_sha256": "1ecc4c0d82b754c8d1307d3943a46387d62e6e8e0290c46521b9557b65566051",
+  "status": "reservation_returned",
+  "charged_total_reserved_seconds": 20268.464042824926,
+  "maximum_slot_seconds": 129600,
+  "remaining_allowance_seconds": 0,
+  "invocation_consumed": true,
+  "return_receipt": {
+    "path": "/home/abmoses2000/graybox_aia72_completion_training_v5_20261004/handoff_return_to_aia.json",
+    "sha256": "b74c994c3102deef05d8e1c545bd87159ffd53ab829bf30de353543f24c7b9d9",
+    "utc": "2026-10-04T14:37:16.388536+00:00"
+  },
+  "overrun_seconds": 0,
+  "automatic_retry": false
+}

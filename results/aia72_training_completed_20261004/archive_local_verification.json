@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-04T14:45:53.622697+00:00",
+  "status": "completed_training_archive_download_and_all_members_verified",
+  "archive_sha256": "4fe70cdb68c24a7a4fc820f711808c23f9b6926ef9a79aaa473fc2f21cb0556b",
+  "archive_bytes": 54905231,
+  "snapshot_manifest_sha256": "b702c4d20441631498ae438a6d7f2d72be25c2d7d926e6838e6c226174336b1d",
+  "independent_verification_sha256": "6f99f1d2f54c17b7ef9b58d12d38b30734629a1e5bea221867b3c7441d6676fb",
+  "source_files_verified": 78,
+  "total_archive_members": 80,
+  "all_members_regular_and_safe": true,
+  "extracted_to_fresh_directory": true,
+  "local_snapshot": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_completion_training_v5_20261004/completed_snapshot",
+  "scientific_acceptance": false,
+  "GPU_replay_completed": false
+}

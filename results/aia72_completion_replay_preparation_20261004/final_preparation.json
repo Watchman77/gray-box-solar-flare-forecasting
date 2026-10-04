@@ -1,0 +1,18 @@
+{
+  "status": "prepared_pending_CPU_preview_and_independent_review",
+  "contract_sha256": "92dcaf0f14052f6c7d26b5ed9b3a6bec7a60317389798e048672f3251c0af41e",
+  "bundle_sha256": "6a318672db903c74904625cca57c75ba6d2856037bb3db6d34827ffac27eaac1",
+  "source_tar_sha256": "2324df4557cbed29a5974aa40bf7da4a6ed3aaebcecef434a990dd9d01e571a8",
+  "source_tar_bytes": 38127,
+  "selected_epochs": {
+    "17": 2,
+    "29": 3,
+    "43": 3
+  },
+  "input_files": 19,
+  "preparation_image_reads": 0,
+  "GPU_launches": 0,
+  "new_allowance": false,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false
+}
