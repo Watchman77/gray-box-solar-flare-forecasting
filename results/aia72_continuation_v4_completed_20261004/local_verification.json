@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-04T07:50:27.837256+00:00",
+  "status": "local_archive_and_all_members_verified",
+  "archive_sha256": "46a7cf5d94d78ca933753362d374a07847222f5ffcf656557f20ccec68c64a78",
+  "archive_bytes": 37079789,
+  "source_files_verified": 62,
+  "manifest_sha256": "01dd935c24889c896973628124592fccca5568807f4059c67c63f1ec939644cd",
+  "remote_independent_verification_sha256": "cccb459907a1a71fd55e80658bf2c2d32fe40290845c6a3df1f66cedcfc0978f",
+  "seed29_checkpoint_sha256": "455e7be13bec0d831f827f8a4b2f7aa64c19781bab480c8d3ef076466ba7dc95",
+  "executed_notebook_sha256": "d5afe8f5c887be25f721905f9c455cc8a6e34cdc2cd118f7c473ca6a88731228",
+  "notebook_schema_valid": true,
+  "executed_code_cells": 6,
+  "notebook_errors": 0,
+  "notebook_reexecuted_locally": false,
+  "saved_presentation_visually_inspected": false,
+  "presentation_inspection_instructions": "Open the saved executed notebook to inspect presentation; do not rerun GPU training.",
+  "local_snapshot": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_continuation_epoch6_20261004/completed_snapshot",
+  "training_complete": false,
+  "scientific_acceptance": false,
+  "new_launch": false,
+  "training_status_source": "execution/training_result.json",
+  "inherited_artifacts_note": "training/learning_curves.png, invocation_result.json, notebook_status.json and benchmark.json are inherited; use execution/training_result.json and current executed notebook."
+}

@@ -1,0 +1,28 @@
+{
+  "status": "checkpointed_incomplete",
+  "seeds": [
+    {
+      "status": "checkpointed_incomplete",
+      "seed": 29
+    }
+  ],
+  "remaining_seeds_fit_complete": false,
+  "scientific_acceptance": false,
+  "seed17_repeated": false,
+  "later_period_evaluation": false,
+  "checkpoints": [
+    {
+      "seed": 29,
+      "epoch": 7,
+      "cursor": 20416,
+      "steps": 10876,
+      "fit_complete": false,
+      "resume_sha256": "455e7be13bec0d831f827f8a4b2f7aa64c19781bab480c8d3ef076466ba7dc95",
+      "elapsed_seconds": 18927.444897180772
+    }
+  ],
+  "initial_seed29_steps": 8800,
+  "additional_steps": 2076,
+  "original_training_loop_sha256": "e3f0c4b43f6e29d496ce271752c1f9119621f5862aa7f6ba40f4009abe92adc8",
+  "loader_amendment": "Only pass persistent lock descriptors to spawned loaders; generator/order/preprocessing unchanged"
+}

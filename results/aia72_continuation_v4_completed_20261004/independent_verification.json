@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-04T07:48:18.519860+00:00",
+  "status": "bounded_invocation_independently_verified_and_explicit_return_confirmed",
+  "cleanup": {
+    "utc": "2026-10-04T07:48:12.809060+00:00",
+    "common_lock_inode": 519274,
+    "lock_acquired": true,
+    "owner_and_return_sha256": "e07b42187607c3966c149918892c72b028a76af65591943872fe3b0872cf5381",
+    "controller_and_worker_groups_empty": true,
+    "GPU_empty": true,
+    "disk_free_bytes": {
+      "/home/abmoses2000": 22894358528,
+      "/mnt/disks/aia-cache": 39500812288
+    }
+  },
+  "checkpoints": [
+    {
+      "seed": 29,
+      "sha256": "455e7be13bec0d831f827f8a4b2f7aa64c19781bab480c8d3ef076466ba7dc95",
+      "state": {
+        "epoch": 7,
+        "cursor": 20416,
+        "loss_sum": 3458.8709086179733,
+        "best_loss": 0.3539059323749676,
+        "best_epoch": 3,
+        "stale": 3,
+        "elapsed_seconds": 18927.444897180772,
+        "steps": 10876
+      },
+      "completed_selection_epochs": 6,
+      "fit_complete": false
+    }
+  ],
+  "new_selection_losses_recomputed": [
+    {
+      "seed": 29,
+      "epoch": 6,
+      "selection_cases": 3905,
+      "log_loss": 0.39616295710407906
+    }
+  ],
+  "additional_steps": 2076,
+  "additional_fitting_counter_seconds": 3576.7385584239382,
+  "reserved_seconds": 3594.0738542990293,
+  "reservation_overrun_seconds": 0,
+  "seed17_unchanged": true,
+  "seed43_started": false,
+  "notebook_executed_cells": 6,
+  "notebook_errors": 0,
+  "CUDA_initialized_by_verification": false,
+  "scientific_acceptance": false,
+  "remaining_seeds_fit_complete": false,
+  "inherited_legacy_files": "training/learning_curves.png, invocation_result.json, notebook_status.json and benchmark.json are inherited; use execution/training_result.json and current executed notebook."
+}

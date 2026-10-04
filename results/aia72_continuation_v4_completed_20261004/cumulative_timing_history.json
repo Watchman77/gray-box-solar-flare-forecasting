@@ -1,0 +1,44 @@
+{
+  "scope": "Original fitting counter plus each subsequent completed continuation; expired unused reservation retained separately. These are not total VM billed time.",
+  "original_fitting_counter_seconds": 21604.531843159,
+  "original_fitting_limit_seconds": 21600,
+  "original_fitting_limit_overrun_seconds": 4.531843158998527,
+  "completed_continuations": [
+    {
+      "verification_file": "results/aia72_continuation_completed_slot2_20261003/independent_verification.json",
+      "sha256": "3adb4657f5d77eda2bb860b0b8fd007f0c2c12ed15dbb05b2e9d5e42af5bf746",
+      "fitting_counter_seconds": 3578.6059455130016,
+      "reserved_seconds": 3590.1991071450757,
+      "overrun_seconds": 0
+    },
+    {
+      "verification_file": "results/aia72_continuation_v2_completed_20261003/independent_verification.json",
+      "sha256": "c876f7c5880ef45328bd9ba704c51b904aca9c88a3be93ee2810a711fa18be4e",
+      "fitting_counter_seconds": 3576.7185344379395,
+      "reserved_seconds": 3595.1288470210275,
+      "overrun_seconds": 0
+    },
+    {
+      "verification_file": "results/aia72_continuation_v3_completed_20261004/independent_verification.json",
+      "sha256": "82aa791285533a6221323b4c48d72dc7bd0d47fbc6a0259eb267326c004be123",
+      "fitting_counter_seconds": 3572.7365809279727,
+      "reserved_seconds": 3590.3427892939653,
+      "overrun_seconds": 0
+    },
+    {
+      "verification_file": "results/aia72_continuation_v4_completed_20261004/independent_verification.json",
+      "sha256": "cccb459907a1a71fd55e80658bf2c2d32fe40290845c6a3df1f66cedcfc0978f",
+      "fitting_counter_seconds": 3576.7385584239382,
+      "reserved_seconds": 3594.0738542990293,
+      "overrun_seconds": 0
+    }
+  ],
+  "total_fitting_counter_seconds": 35909.33146246185,
+  "completed_continuation_reserved_seconds": 14369.744597759098,
+  "expired_unused_reservation_seconds": 9851.646764,
+  "expired_unused_reservation_overrun_seconds": 5951.646763999999,
+  "expired_unused_fitting_seconds": 0,
+  "remaining_previous_allowance_seconds": 0,
+  "excluded_from_reservation_sum": "Original training reservation intervals and separate seed17 replay are outside this continuation-only sum; they remain in their original receipts.",
+  "latest_return_sha256": "e07b42187607c3966c149918892c72b028a76af65591943872fe3b0872cf5381"
+}
