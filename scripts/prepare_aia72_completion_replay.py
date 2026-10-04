@@ -128,7 +128,8 @@ def prepare(repo, completed, original, output, manifest_sha, verification_sha):
 
     sources = {}
     for name in ['aia72_completion_replay.py','aia72_completion_replay_contract.py',
-                 'aia72_completion_replay_worker.py','run_aia72_completion_replay.py','aia72_replay.py']:
+                 'aia72_completion_replay_worker.py','run_aia72_completion_replay.py','aia72_replay.py',
+                 'aia72_replay_supervisor.py']:
         sources['scripts/'+name] = repo/'scripts'/name
     for name in ['aia72_continue.py','aia72_continue_contract.py','aia72_replay_contract.py','run_aia72_replay.py']:
         sources['scripts/'+name] = member('bundle/scripts/'+name)

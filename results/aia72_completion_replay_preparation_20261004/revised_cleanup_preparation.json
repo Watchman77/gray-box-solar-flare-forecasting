@@ -1,0 +1,60 @@
+{
+  "status": "revision_frozen_pending_independent_review",
+  "changed_members": [
+    "scripts/run_aia72_completion_replay.py"
+  ],
+  "added_members": [
+    "scripts/aia72_replay_supervisor.py"
+  ],
+  "contract_and_19_inputs_unchanged": true,
+  "frozen_v1_preserved": true,
+  "focused_CPU_tests": {
+    "passed": 23,
+    "failed": 0,
+    "platform": "macOS",
+    "command": "CUDA_VISIBLE_DEVICES='' .venv-training/bin/python -m unittest tests.test_aia72_replay_supervisor tests.test_aia72_completion_replay_controls tests.test_aia72_replay_preparation -v",
+    "runtime_seconds": 3.722,
+    "initial_sandbox_run": "4 process-inspection failures; ps denied by sandbox. Same tests passed with approved process-table access."
+  },
+  "faults_tested": [
+    "TERM PermissionError",
+    "all signals denied",
+    "process-group inspection error",
+    "unexpected cleanup exception",
+    "ambiguous spawn exception",
+    "guard failure",
+    "missing/unknown PID and incomplete proof cannot return resource"
+  ],
+  "scientific_changes": false,
+  "VM_staging_or_launch": false,
+  "new_allowance_issued": false,
+  "preview": {
+    "status": "six_CPU_metadata_preview_cells_passed_with_final_completed_inputs",
+    "executed_notebook_sha256": "9d73817aeac9a6b71ffad75d1faf753326d5e3c834127d031c6355feb08ccf3c",
+    "input_pins_resolved": true,
+    "preview_code_cells": 6,
+    "preview_errors": 0,
+    "image_pixels_read": 0,
+    "GPU_launches": 0,
+    "scientific_acceptance": false,
+    "visual_inspection_performed": false
+  },
+  "package": {
+    "status": "prepared_pending_CPU_preview_and_independent_review",
+    "contract_sha256": "92dcaf0f14052f6c7d26b5ed9b3a6bec7a60317389798e048672f3251c0af41e",
+    "bundle_sha256": "4b8c1dd072aa24c4e4ca5b5c588bc59c7b581c7041c60c089174c0264589f5ba",
+    "source_tar_sha256": "633b0296db6bad4edebe7cf533a118e9163feb80ed5eca314f27baebd014b9d5",
+    "source_tar_bytes": 40330,
+    "selected_epochs": {
+      "17": 2,
+      "29": 3,
+      "43": 3
+    },
+    "input_files": 19,
+    "preparation_image_reads": 0,
+    "GPU_launches": 0,
+    "new_allowance": false,
+    "scientific_acceptance": false,
+    "total_analysis_complete": false
+  }
+}

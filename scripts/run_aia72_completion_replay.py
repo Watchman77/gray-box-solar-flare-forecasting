@@ -15,7 +15,8 @@ from scripts.aia72_replay_contract import (
 from scripts.aia72_completion_replay_contract import (
     ROOT,CONSUMED,TRAINING,check_contract,check_allowance,guard)
 from scripts.run_aia72_replay import (
-    supervise,require_clean_worker,gpu_pids,live_group,interrupted,publish_receipt)
+    require_clean_worker,gpu_pids,live_group,interrupted,publish_receipt)
+from scripts.aia72_replay_supervisor import supervise,require_cleanup_proof
 
 
 def check_finished_training(paths):
@@ -60,15 +61,20 @@ def verify_replay_result(output):
 
 def return_resource(c, receipt, output, handoff_sha, hard_end):
     require(time.monotonic()<hard_end, 'No cleanup time remains')
+    require_cleanup_proof(receipt)
     worker=receipt.get('worker_pid')
-    require(not worker or not live_group(worker), 'Owned worker descendants remain')
+    if receipt['worker_launch_state']=='started':
+        require(not live_group(worker), 'Owned worker descendants remain')
     require(not gpu_pids(), 'GPU still occupied')
+    require(time.monotonic()<hard_end, 'Cleanup checks exhausted deadline')
     owner=Path(c['owner_pointer'])
     require(sha(owner)==handoff_sha, 'Cannot return a changed reservation')
     returned={'status':'GPU_RELEASED_TO_AIA','utc':datetime.now(timezone.utc).isoformat(),
               'reason':'Completed-model replay invocation ended; Gray total-analysis scheduling priority remains retained',
               'review_root':ROOT,'common_lock':LOCK,'common_lock_inode':LOCK_INODE,
               'supersedes_reservation_sha256':handoff_sha,'worker_pid':worker,
+              'worker_launch_state':receipt['worker_launch_state'],
+              'cleanup_verified':receipt.get('cleanup_verified',False),
               'worker_process_group_empty':True,'gpu_empty_under_exclusive_lock':True,
               'execution_receipt':str(Path(output)/'execution_receipt.json'),
               'execution_receipt_sha256':sha(Path(output)/'execution_receipt.json'),
@@ -113,6 +119,8 @@ def main():
                  'contract_sha256':csha,'bundle_sha256':a.bundle_sha256,'authorization_sha256':asha,
                  'handoff_sha256':hsha,'handoff_utc':handoff['utc'],'max_slot_seconds':authorization['max_slot_seconds'],
                  'charged_before_launch_seconds':bounds['charged_before_launch_seconds'],
+                 'worker_launch_state':'not_attempted','worker_pid':None,
+                 'cleanup_verified':False,
                  'common_lock_inode':LOCK_INODE,'fitting_steps':0,'scientific_acceptance':False,'automatic_retry':False}
         write_json(output/'execution_receipt.json',receipt)
         def check(deadline=work_end):
@@ -132,9 +140,10 @@ def main():
                      OMP_NUM_THREADS='1',GRAYBOX_COMPLETION_REPLAY_LEASE_FD=str(lease.fileno()),
                      GRAYBOX_COMPLETION_REPLAY_CONTEXT=json.dumps(context))
             with (output/'execution.log').open('x') as log:
-                receipt.update(supervise([sys.executable,'-u','-m','scripts.aia72_completion_replay_worker'],
-                                         env,bundle,log,work_end,hard_end,(lease.fileno(),),check))
+                supervise([sys.executable,'-u','-m','scripts.aia72_completion_replay_worker'],
+                          env,bundle,log,work_end,hard_end,(lease.fileno(),),check,receipt=receipt)
             signal.setitimer(signal.ITIMER_REAL,max(.001,hard_end-time.monotonic()-10))
+            require_cleanup_proof(receipt)
             require_clean_worker(receipt);check(hard_end-10)
             verify_bundle(bundle,a.bundle_sha256);verify_inputs(c)
             _,result_sha=verify_replay_result(output)

@@ -115,7 +115,9 @@ class ReplayControlTests(unittest.TestCase):
             root=Path(tmp);output=root/'execution';output.mkdir()
             (output/'execution_receipt.json').write_text('{"status":"technical_checkpoint_replay_verified"}')
             owner=root/'owner.json';owner.write_text('initial-handoff');before=sha(owner)
-            c={'owner_pointer':str(owner)};r={'status':'technical_checkpoint_replay_verified','worker_pid':4321}
+            c={'owner_pointer':str(owner)};r={'status':'technical_checkpoint_replay_verified','worker_pid':4321,
+                'worker_launch_state':'started','cleanup_verified':True,'worker_reaped':True,
+                'process_group_empty':True,'cleanup_errors':[]}
             with mock.patch.object(controller,'ROOT',str(root)),mock.patch.object(controller,'gpu_pids',return_value=[]), \
                  mock.patch.object(controller,'live_group',return_value=[4321]):
                 with self.assertRaisesRegex(ValueError,'descendants'):
@@ -126,6 +128,25 @@ class ReplayControlTests(unittest.TestCase):
                 returned=controller.return_resource(c,r,output,before,time.monotonic()+30)
             self.assertEqual(sha(owner),returned['sha256'])
             self.assertFalse(json.loads(owner.read_text())['total_analysis_priority_returned'])
+
+    def test_unknown_or_unverified_worker_cannot_return_even_with_idle_gpu(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);output=root/'execution';output.mkdir()
+            (output/'execution_receipt.json').write_text('{}')
+            owner=root/'owner.json';owner.write_text('initial-handoff');before=sha(owner)
+            good={'status':'review_incomplete_or_failed','worker_launch_state':'started','worker_pid':4321,
+                  'cleanup_verified':True,'worker_reaped':True,'process_group_empty':True,'cleanup_errors':[]}
+            bad=[{}, {'worker_launch_state':'attempting'}, {**good,'worker_pid':None},
+                 {**good,'worker_reaped':False}, {**good,'cleanup_verified':False},
+                 {**good,'cleanup_errors':[{'error':'PermissionError'}]},
+                 {**good,'worker_launch_state':'not_attempted'}]
+            with mock.patch.object(controller,'ROOT',str(root)),mock.patch.object(controller,'gpu_pids',return_value=[]), \
+                 mock.patch.object(controller,'live_group',return_value=[]):
+                for receipt in bad:
+                    with self.subTest(receipt=receipt),self.assertRaises(ValueError):
+                        controller.return_resource({'owner_pointer':str(owner)},receipt,output,before,time.monotonic()+30)
+                    self.assertEqual(sha(owner),before)
+                    self.assertFalse((root/'handoff_return_to_aia.json').exists())
 
 
 if __name__=='__main__':
