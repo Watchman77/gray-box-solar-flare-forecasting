@@ -1,0 +1,99 @@
+{
+  "utc": "2026-10-04T13:08:50.894117+00:00",
+  "status": "Linux_wrapper_and_bounded_cleanup_checks_passed_pending_actual_completed_training_collection",
+  "corrected_source_commit": "5a974eac6fe2b0b918bf445b25597e01a9f2a968",
+  "independent_local_review_sha256": "8bdaff56f173beede0877a4cbd449d0ee4b18140226f179c2d9b55973cd32001",
+  "wrapper_check": {
+    "status": "exact_unchanged_wrapper_parent_env_passed",
+    "parent_argv": [
+      "/usr/bin/timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "600s",
+      "/usr/bin/env",
+      "CUDA_VISIBLE_DEVICES=",
+      "OMP_NUM_THREADS=2",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "/home/abmoses2000/aia_gpu_venv/bin/python",
+      "-u",
+      "/tmp/graybox_cpu_collection_probe_svj_p_i9/archive_aia72_completion_training.py",
+      "--return-sha256",
+      "probe-return",
+      "--source-sha256",
+      "probe-collector",
+      "--launcher-sha256",
+      "probe-launcher"
+    ],
+    "CUDA_hidden": true,
+    "Torch_imported": false,
+    "collector_executed": false,
+    "elapsed_seconds": 0.051560355932451785
+  },
+  "GNU_timeout": "timeout (GNU coreutils) 8.32",
+  "timeout_failure_checks": [
+    {
+      "mode": "term",
+      "returncode": 124,
+      "elapsed_seconds": 1.0079540580045432,
+      "owned_probe_pids": [
+        1703247,
+        1703248
+      ],
+      "no_live_descendants": true,
+      "live_descendants_before_defensive_cleanup": []
+    },
+    {
+      "mode": "hard_kill",
+      "returncode": -9,
+      "elapsed_seconds": 1.5034146079560742,
+      "owned_probe_pids": [
+        1703250,
+        1703251
+      ],
+      "no_live_descendants": true,
+      "live_descendants_before_defensive_cleanup": []
+    }
+  ],
+  "observational_method": "Check natural child exit for up to 1 second BEFORE defensive cleanup of the owned temporary process group. TERM and hard-kill trials used shortened 1-second timeout / 0.5-second kill grace.",
+  "preserved_failed_probe": {
+    "version": 2,
+    "ssh_exit": 1,
+    "reason": "Immediate no-live-child assertion raced asynchronous process exit; one child was still listed. Defensive cleanup completed. Preserved stderr and source; final v3 checks bounded natural settling before cleanup.",
+    "stderr_sha256": "9972581b9eb283beff1760174c2be72c3e23691c0a596fb662588345132b97d1"
+  },
+  "evidence": {
+    "linux_cpu_probe.py": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe.py",
+      "sha256": "7dcb9cf6ebdfb5da11fba835c8467c61dae0df79d89ec5a4512d9e84c1a9c539"
+    },
+    "linux_cpu_probe_result.json": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe_result.json",
+      "sha256": "c3f447d347e6bec6ea7d5acfae7469a267bfd624cab4aaeb3930c065d117c494"
+    },
+    "linux_cpu_probe_v2.py": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe_v2.py",
+      "sha256": "b90085e8083bd92b8e0a3abdf7e84a385a7ef34005c854aad428c245ce542925"
+    },
+    "linux_cpu_probe_v2_stderr.txt": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe_v2_stderr.txt",
+      "sha256": "9972581b9eb283beff1760174c2be72c3e23691c0a596fb662588345132b97d1"
+    },
+    "linux_cpu_probe_v3.py": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe_v3.py",
+      "sha256": "af6d403ff3f8ad90509ae89a054eb597d1246005bf8bc9d9e0d722936ac8f015"
+    },
+    "linux_cpu_probe_v3_result.json": {
+      "path": "outputs/aia72_completion_collection_v1_20261004/linux_cpu_probe_v3_result.json",
+      "sha256": "a11a30a3f25af7c4bbb782d1672a37a8cac38d51dfd7d904933a90116d97fca8"
+    }
+  },
+  "limitations": "Stdlib-only surrogate collector under the exact unchanged launcher; actual collector/data/runtime/return checks have not run. Failure trials verify timeout semantics at shortened limits; this was not a 600-second collection.",
+  "Torch_imported_on_VM": false,
+  "training_or_shared_lock_access": false,
+  "training_modified": false,
+  "GPU_launches": 0,
+  "actual_collection_executed": false,
+  "ephemeral_remote_probe_files_removed": true,
+  "scientific_acceptance": false,
+  "total_analysis_complete": false
+}
