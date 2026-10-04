@@ -1,0 +1,31 @@
+{
+  "status": "simplified_CPU_staging_pending_source_review",
+  "source_template": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/scripts/stage_aia72_completion_replay.py",
+  "source_template_sha256": "54fc3044dcb509f54b0aa353daf3d68a80252305f293c101a390d7df559ea0a7",
+  "launch_source": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/outputs/aia72_completion_replay_v2_20261004/stage_VM_CPU_canary_v3.py",
+  "launch_source_sha256": "ab0f005494921728a6552986e6c74f9cccb10c87c803b7e888a75d89dc7ca309",
+  "source_tar_sha256": "633b0296db6bad4edebe7cf533a118e9163feb80ed5eca314f27baebd014b9d5",
+  "remote_command": "env CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 /usr/bin/timeout --signal=TERM --kill-after=10s 180s /home/abmoses2000/aia_gpu_venv/bin/python -",
+  "preparation_work_deadline_seconds": 120,
+  "cleanup_reserve_seconds": 30,
+  "CPU_canary_work_seconds": 10,
+  "CPU_canary_total_seconds": 30,
+  "nested_VM_unit_tests": false,
+  "GPU_runs": 0,
+  "Torch_imported": false,
+  "new_GPU_allowance": false,
+  "automatic_retry": false,
+  "local_canary_checks": {
+    "passed": 3,
+    "failed": 0,
+    "seconds": 0.278,
+    "test_sha256": "2d12ef56cd3117c2698239f4669201c343b277df3cc92064c6f2ffa2b64dc3f6",
+    "real_cancellation_checked": true
+  },
+  "preserved_drafts": [
+    "stage_VM_CPU_once.py",
+    "stage_VM_CPU_once_v2.py",
+    "stage_template_review_draft_v1.py",
+    "stage_template_review_draft_v2.py"
+  ]
+}
