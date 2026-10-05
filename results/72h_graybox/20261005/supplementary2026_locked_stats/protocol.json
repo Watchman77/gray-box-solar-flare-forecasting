@@ -1,0 +1,26 @@
+{
+  "status": "SUPPLEMENTARY_2026_LOCKED_STATISTICAL_ANALYSIS_COMPLETE",
+  "created_utc": "2026-10-05T18:58:11.406037+00:00",
+  "policy_reselection_performed": false,
+  "threshold_tuning_performed": false,
+  "posthoc_policy_redesign_performed": false,
+  "primary_policy_id": "fallback_v3_q90",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261005,
+    "method": "class-stratified nonparametric bootstrap",
+    "interval": "percentile 95%"
+  },
+  "paired_test": "exact McNemar on per-case correctness",
+  "source_sha256": {
+    "supplementary2026_policy_cases": "69375a700f636db85e3d889400ca62d4a108755c3e34bf772797d752b69a526e",
+    "supplementary2026_policy_results": "08dee9ebb9c94c55d4ed781fdf799272cf482daf8b63a1f202958d59aabb8fec",
+    "supplementary2026_summary": "2f03c81291d52cfc6fff72f32fb8b1c7510c4c46ff70a3c90121fade9ed83518",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa"
+  },
+  "output_sha256": {
+    "point_metrics.csv": "dcb736a309deca084a469856689be0a5b4e347c197ebc55a2adc4fdd2fff2844",
+    "bootstrap_paired_deltas.csv": "8e787ac00b90b3829aae7c65e22182fc87cc922d84d1aa0514def270dd1a6ecd",
+    "mcnemar_exact.csv": "670216bd719401778b9d2f4718a4267122f8b81637a14885c030c71da6797465"
+  }
+}
