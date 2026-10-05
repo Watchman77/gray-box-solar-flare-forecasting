@@ -1,0 +1,46 @@
+{
+  "status": "SUPPLEMENTARY_2026_FALLBACK_V3_CLEAN_EVALUATION_COMPLETE",
+  "scientific_acceptance": false,
+  "created_utc": "2026-10-05T18:17:16.930137+00:00",
+  "role": "supplementary_2026",
+  "rows": 11118,
+  "positives": 992,
+  "primary_policy_id": "fallback_v3_q90",
+  "policy_reselection_performed": false,
+  "threshold_tuning_performed": false,
+  "this_role_was_reserved_as_clean_future_evaluation": true,
+  "comparison_primary": {
+    "primary_policy_id": "fallback_v3_q90",
+    "vs_always_fusion": {
+      "availability_delta": 0.0,
+      "positive_retention_delta": 0.0,
+      "issued_tss_delta": 0.004172029206195527,
+      "false_alarm_delta": 19,
+      "abstained_flare_delta": 0
+    },
+    "vs_always_sharp": {
+      "availability_delta": 0.0,
+      "positive_retention_delta": 0.0,
+      "issued_tss_delta": -0.026486034035666517,
+      "false_alarm_delta": -528,
+      "abstained_flare_delta": 0
+    }
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "mondrian_protocol": "08eec5d86e073301ca21476ed3bb0b5590a992b1ca420c0c720c268779c4e7ec",
+    "mondrian_thresholds": "9999413b3ad78ec9f4a2c8bccb485988876da3836d3e1fc63edf198912d83188",
+    "candidate_cutoffs": "80805f898d5a7e3cd8ec8bd52550baf23cd42eda7066892f24df8dc3d79a1bd5",
+    "alarm_protocol": "afb7ba514a5b7849efa2dc2863c1d67069386d2fb866524610913b5bce2badd0",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa",
+    "v3_policy_protocol": "af38b07172a8d029a83ef310b53de2be0c6acc2d76463396258d4ad13bef5514",
+    "v3_policy_family": "878b82514338a668550cd1938a6078e0837dd322b937145351499ec33227f485"
+  },
+  "output_sha256": {
+    "supplementary2026_policy_results.csv": "08dee9ebb9c94c55d4ed781fdf799272cf482daf8b63a1f202958d59aabb8fec",
+    "supplementary2026_mondrian_coverage.csv": "83813d2a0d0c01af3d5cd846be5600c6ed5f155568169b31eb36ce197c569a40",
+    "supplementary2026_branch_metrics.csv": "910ca635a6539a49959768dfc3adf0fecd5060581d3a5a206e332ce795cdc3f3",
+    "supplementary2026_policy_cases.csv.gz": "69375a700f636db85e3d889400ca62d4a108755c3e34bf772797d752b69a526e"
+  }
+}
