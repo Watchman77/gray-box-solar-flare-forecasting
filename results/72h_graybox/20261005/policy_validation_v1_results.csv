@@ -1,0 +1,5 @@
+policy_id,cutoff_percentile,requested_cases,positives,negatives,normal_cases,degraded_cases,abstain_cases,availability_rate,normal_rate,degraded_rate,abstention_rate,positive_retention_rate,positive_abstention_rate,detected_flares,issued_but_missed_flares,abstained_flares,false_alarms,issued_tp,issued_fp,issued_fn,issued_tn,issued_recall,issued_specificity,issued_precision,issued_f1,issued_tss,issued_hss
+baseline_always_issue_fusion_when_available,,13142,422,12720,13142,0,0,1.0,1.0,0.0,0.0,1.0,0.0,329,93,0,1951,329,1951,93,10769,0.779621,0.846619,0.144298,0.243523,0.62624,0.20018
+policy_q80,0.8,13142,422,12720,10534,1704,904,0.931213,0.801552,0.129661,0.068787,0.303318,0.696682,18,110,294,198,18,198,110,11912,0.140625,0.98365,0.083333,0.104651,0.124275,0.092734
+policy_q90,0.9,13142,422,12720,11742,1001,399,0.969639,0.893471,0.076168,0.030361,0.504739,0.495261,109,104,209,927,109,927,104,11603,0.511737,0.926018,0.105212,0.17454,0.437755,0.150998
+policy_q95,0.95,13142,422,12720,12304,599,239,0.981814,0.936235,0.045579,0.018186,0.651659,0.348341,177,98,147,1355,177,1355,98,11273,0.643636,0.892699,0.115535,0.195905,0.536335,0.165756

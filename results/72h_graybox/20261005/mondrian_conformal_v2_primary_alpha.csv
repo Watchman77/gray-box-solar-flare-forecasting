@@ -1,0 +1,4 @@
+branch,alpha,nominal_class_conditional_coverage,class0_n,class1_n,class0_k,class1_k,qhat_class0,qhat_class1,min_prob_for_class1_membership,max_prob_for_class0_membership,overall_calibration_coverage,class0_calibration_coverage,class1_calibration_coverage,empty_set_rate,singleton_no_flare_rate,singleton_flare_rate,doubleton_rate
+sharp,0.1,0.9,3784,384,3407,347,0.098091,0.927311,0.072689,0.098091,0.900672,0.90037,0.903646,0.0,0.805662,0.166987,0.027351
+aia,0.1,0.9,3784,384,3407,347,0.200931,0.957593,0.042407,0.200931,0.900672,0.90037,0.903646,0.0,0.456334,0.132438,0.411228
+sharp_aia,0.1,0.9,3784,384,3407,347,0.137799,0.913883,0.086117,0.137799,0.900672,0.90037,0.903646,0.0,0.709693,0.166267,0.12404

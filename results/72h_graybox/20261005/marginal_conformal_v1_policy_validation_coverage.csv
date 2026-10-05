@@ -1,0 +1,4 @@
+branch,alpha,nominal_coverage,available_cases,empirical_coverage,empty_set_rate,singleton_rate,doubleton_rate,positive_coverage,negative_coverage
+sharp,0.1,0.9,13142,0.966596,0.014534,0.985466,0.0,0.151659,0.993632
+aia,0.1,0.9,13142,0.939279,0.029448,0.970552,0.0,0.0,0.97044
+sharp_aia,0.1,0.9,13142,0.964161,0.014077,0.985923,0.0,0.0,0.996148
