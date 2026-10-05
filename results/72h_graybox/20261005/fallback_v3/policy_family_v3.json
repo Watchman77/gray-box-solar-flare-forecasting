@@ -1,0 +1,109 @@
+{
+  "status": "FALLBACK_FIRST_V3_POLICY_FAMILY_FROZEN",
+  "scientific_acceptance": false,
+  "primary_policy_id": "fallback_v3_q90",
+  "sensitivity_policy_ids": [
+    "fallback_v3_q80",
+    "fallback_v3_q95"
+  ],
+  "development_history": {
+    "v1": "Marginal conformal + abstention failed rare-flare retention.",
+    "v2": "Mondrian repaired calibration-class balance but still abstained disproportionately on Cycle25 flares.",
+    "v3": "Redesigns uncertainty handling: uncertainty routes to SHARP fallback whenever SHARP is technically available; abstention is reserved for true fallback unavailability."
+  },
+  "cycle25_used_as_development_diagnostic": true,
+  "cycle25_used_for_numeric_threshold_tuning": false,
+  "supplementary_2026_used_for_design_or_tuning": false,
+  "numeric_cutoffs_reused_unchanged": true,
+  "candidates": [
+    {
+      "policy_id": "fallback_v3_q80",
+      "cutoff_percentile": 0.8,
+      "normal_rule": {
+        "all": [
+          "fusion technically available",
+          "fusion Mondrian state is singleton",
+          "fusion_seed_std <= 0.055102310609785599",
+          "sharp_aia_probability_gap <= 0.13379707949898259",
+          "fusion_entropy <= 0.37262787662331831"
+        ],
+        "forecast_source": "fixed 0.5/0.5 SHARP+AIA fusion"
+      },
+      "degraded_rule": {
+        "all": [
+          "NORMAL rule is false",
+          "SHARP prediction is technically available"
+        ],
+        "forecast_source": "SHARP fallback",
+        "note": "SHARP Mondrian state and seed spread are advisory diagnostics only; they do not block fallback issuance in v3."
+      },
+      "abstain_rule": "SHARP prediction is technically unavailable."
+    },
+    {
+      "policy_id": "fallback_v3_q90",
+      "cutoff_percentile": 0.9,
+      "normal_rule": {
+        "all": [
+          "fusion technically available",
+          "fusion Mondrian state is singleton",
+          "fusion_seed_std <= 0.072964537712553498",
+          "sharp_aia_probability_gap <= 0.2101402662865193",
+          "fusion_entropy <= 0.51239445112168314"
+        ],
+        "forecast_source": "fixed 0.5/0.5 SHARP+AIA fusion"
+      },
+      "degraded_rule": {
+        "all": [
+          "NORMAL rule is false",
+          "SHARP prediction is technically available"
+        ],
+        "forecast_source": "SHARP fallback",
+        "note": "SHARP Mondrian state and seed spread are advisory diagnostics only; they do not block fallback issuance in v3."
+      },
+      "abstain_rule": "SHARP prediction is technically unavailable."
+    },
+    {
+      "policy_id": "fallback_v3_q95",
+      "cutoff_percentile": 0.95,
+      "normal_rule": {
+        "all": [
+          "fusion technically available",
+          "fusion Mondrian state is singleton",
+          "fusion_seed_std <= 0.084699075967165194",
+          "sharp_aia_probability_gap <= 0.266531351714556",
+          "fusion_entropy <= 0.60835263652591154"
+        ],
+        "forecast_source": "fixed 0.5/0.5 SHARP+AIA fusion"
+      },
+      "degraded_rule": {
+        "all": [
+          "NORMAL rule is false",
+          "SHARP prediction is technically available"
+        ],
+        "forecast_source": "SHARP fallback",
+        "note": "SHARP Mondrian state and seed spread are advisory diagnostics only; they do not block fallback issuance in v3."
+      },
+      "abstain_rule": "SHARP prediction is technically unavailable."
+    }
+  ],
+  "calibration_block_state_counts": {
+    "fallback_v3_q80": {
+      "NORMAL": 2819,
+      "DEGRADED": 1349,
+      "ABSTAIN": 0,
+      "availability_rate": 1.0
+    },
+    "fallback_v3_q90": {
+      "NORMAL": 3064,
+      "DEGRADED": 1104,
+      "ABSTAIN": 0,
+      "availability_rate": 1.0
+    },
+    "fallback_v3_q95": {
+      "NORMAL": 3242,
+      "DEGRADED": 926,
+      "ABSTAIN": 0,
+      "availability_rate": 1.0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "FALLBACK_FIRST_V3_OPERATIONAL_POLICY_FROZEN",
+  "scientific_acceptance": false,
+  "created_utc": "2026-10-05T18:04:45.930297+00:00",
+  "horizon_hours": 72,
+  "primary_policy_id": "fallback_v3_q90",
+  "sensitivity_policy_ids": [
+    "fallback_v3_q80",
+    "fallback_v3_q95"
+  ],
+  "cycle25_seen_before_v3_design": true,
+  "cycle25_role_after_v3": "development_diagnostic_only",
+  "cycle25_used_for_numeric_threshold_tuning": false,
+  "supplementary_2026_outcomes_read": false,
+  "supplementary_2026_role": "clean_future_evaluation",
+  "abstention_semantics": "ABSTAIN only when SHARP fallback is technically unavailable.",
+  "normal_semantics": "Trusted multimodal fusion issue.",
+  "degraded_semantics": "Issue SHARP fallback whenever fusion is not NORMAL but SHARP is technically available.",
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "mondrian_protocol": "08eec5d86e073301ca21476ed3bb0b5590a992b1ca420c0c720c268779c4e7ec",
+    "mondrian_thresholds": "9999413b3ad78ec9f4a2c8bccb485988876da3836d3e1fc63edf198912d83188",
+    "candidate_cutoffs": "80805f898d5a7e3cd8ec8bd52550baf23cd42eda7066892f24df8dc3d79a1bd5",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa",
+    "v2_policy_protocol": "7e48dd58d7d8082492ee1451cf9c264fbc3dbf5e261f571457e6a67f0c39543f",
+    "cycle25_v2_summary": "1d3f61862a8a9b1a371d172c4aaa03d5f6759561b1164b8d4d659edde0fef14d"
+  },
+  "output_sha256": {
+    "policy_family_v3.json": "878b82514338a668550cd1938a6078e0837dd322b937145351499ec33227f485",
+    "calibration_policy_states_v3.csv.gz": "0956f8f221c81a7d007a1a7b3125ab609975188c647284b7c097ee498e2ce883"
+  },
+  "next_stage": "Evaluate frozen fallback_v3_q90 once on supplementary_2026, with q80/q95 sensitivities, without reselection."
+}
