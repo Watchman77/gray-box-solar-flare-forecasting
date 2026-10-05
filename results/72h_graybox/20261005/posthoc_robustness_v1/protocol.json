@@ -1,0 +1,48 @@
+{
+  "status": "POSTHOC_OPERATIONAL_ROBUSTNESS_V1_COMPLETE",
+  "scientific_acceptance": false,
+  "created_utc": "2026-10-05T19:15:24.496885+00:00",
+  "analysis_status": "posthoc_robustness_not_independent_validation",
+  "primary_policy_id": "fallback_v3_q90",
+  "policy_reselection_performed": false,
+  "threshold_tuning_performed": false,
+  "policy_redesign_performed": false,
+  "source_dataset": "supplementary_2026 already-opened clean evaluation cases",
+  "scenarios": {
+    "random_detected_missingness_rates": [
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "random_replicates_per_rate": 100,
+    "contiguous_detected_outage_hours": [
+      6,
+      12,
+      24,
+      48
+    ],
+    "contiguous_sampling": "up to 50 deterministic start windows per duration",
+    "detected_degradation_rates": [
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "degradation_interpretation": "AIA health flag marks affected cases unusable; v3 routes them to SHARP fallback."
+  },
+  "important_limitation": "This notebook evaluates detected outages/degradation. It does not claim to solve silent AIA corruption or guarantee automatic detection of corrupted imagery.",
+  "source_sha256": {
+    "supplementary2026_policy_cases": "69375a700f636db85e3d889400ca62d4a108755c3e34bf772797d752b69a526e",
+    "supplementary2026_summary": "2f03c81291d52cfc6fff72f32fb8b1c7510c4c46ff70a3c90121fade9ed83518",
+    "v3_protocol": "af38b07172a8d029a83ef310b53de2be0c6acc2d76463396258d4ad13bef5514",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa",
+    "candidate_cutoffs": "80805f898d5a7e3cd8ec8bd52550baf23cd42eda7066892f24df8dc3d79a1bd5",
+    "mondrian_thresholds": "9999413b3ad78ec9f4a2c8bccb485988876da3836d3e1fc63edf198912d83188"
+  },
+  "output_sha256": {
+    "scenario_level_results.csv.gz": "5285ad72792160b0ba6667a9fd99d4f2b268be2276e6a5348f15fe1d66b9bab3",
+    "scenario_summary.csv": "525ddce711b4184ca166d71de66aee7634880b2900f1fb6f00955933eb403a16",
+    "resilience_deltas_v3_vs_fusion.csv": "5fead3d507f1a5474b26fa62e23707558d9360f5418d05e474449cb0652560d3"
+  }
+}
