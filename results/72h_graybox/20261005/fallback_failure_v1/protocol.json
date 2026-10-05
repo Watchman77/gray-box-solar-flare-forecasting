@@ -1,0 +1,78 @@
+{
+  "status": "POSTHOC_FALLBACK_FAILURE_V1_COMPLETE",
+  "scientific_acceptance": false,
+  "created_utc": "2026-10-05T19:33:33.765516+00:00",
+  "analysis_status": "posthoc_robustness_not_independent_validation",
+  "primary_policy_id": "fallback_v3_q90",
+  "policy_reselection_performed": false,
+  "threshold_tuning_performed": false,
+  "policy_redesign_performed": false,
+  "architecture_fact": "Frozen fusion requires both SHARP and AIA; no AIA-only rescue path was invented post hoc.",
+  "abstain_interpretation": "ABSTAIN becomes unavoidable whenever SHARP fallback is unavailable.",
+  "scenarios": {
+    "random_sharp_outage_rates": [
+      0.01,
+      0.05,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "random_dual_outage_rates": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "independent_missingness_pairs": [
+      [
+        0.1,
+        0.01
+      ],
+      [
+        0.1,
+        0.05
+      ],
+      [
+        0.2,
+        0.05
+      ],
+      [
+        0.2,
+        0.1
+      ],
+      [
+        0.4,
+        0.1
+      ],
+      [
+        0.4,
+        0.2
+      ]
+    ],
+    "contiguous_sharp_outage_hours": [
+      6,
+      12,
+      24,
+      48
+    ],
+    "contiguous_dual_outage_hours": [
+      6,
+      12,
+      24,
+      48
+    ]
+  },
+  "source_sha256": {
+    "supplementary2026_policy_cases": "69375a700f636db85e3d889400ca62d4a108755c3e34bf772797d752b69a526e",
+    "supplementary2026_summary": "2f03c81291d52cfc6fff72f32fb8b1c7510c4c46ff70a3c90121fade9ed83518",
+    "v3_protocol": "af38b07172a8d029a83ef310b53de2be0c6acc2d76463396258d4ad13bef5514",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa",
+    "candidate_cutoffs": "80805f898d5a7e3cd8ec8bd52550baf23cd42eda7066892f24df8dc3d79a1bd5"
+  },
+  "output_sha256": {
+    "scenario_level_results.csv.gz": "1d93e97433aef020ad2fa9aa6db5fb292185ca2ef00af1fb8cab4f60dc99473e",
+    "scenario_summary.csv": "09a7f4e549416374300eca7834b1f59066e4ad5a9af90a80fcea3189dbe42b3a",
+    "deltas_v3_vs_fusion.csv": "59941cfb4d60b648f0cdedc868a0d0f5518161e5eb78d994cdfd759ca8e1ceb8",
+    "deltas_v3_vs_sharp.csv": "044e59ba384f38b857e088c7a889f2bcb7b9e1f1d46efd019927aab54dc61ac3"
+  }
+}
