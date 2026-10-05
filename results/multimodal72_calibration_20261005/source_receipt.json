@@ -1,0 +1,46 @@
+{
+  "inference_contract_sha256": "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+  "inputs": {
+    "cases.csv.gz": "b687afd3d953f884b21c2bcab527a39de3a7ca127e0262b3f727b201d080a846",
+    "objects.json": "51f2bb4ff1d8024b4e7e7f7c58d4942b424387dfb11f76608c7ab9d70ff017bc",
+    "blocks.json": "12209abb54b3a3789d95fa8576e0617dbdf76ff7985e30a0ac9c8e12f91c2359"
+  },
+  "archives": {
+    "probability_calibration_000000_000512": {
+      "archive_sha256": "d9891ddefa1a22a49fb6f5c7b4d57e703a2d735308e3208131d12420e8e3583f",
+      "ack_sha256": "7215ed89c9fd94f8538c2c2f51d9dfdbcfb0f5a3a28e1b4e963edfc879619ea2",
+      "cases": 512
+    },
+    "probability_calibration_000512_001024": {
+      "archive_sha256": "da1562912b78972c30d40c3253c69cf8c7d362d57c2614c9cde06430860977e6",
+      "ack_sha256": "78530cce05acc06f69d8702c90ace7c755aebb40dff11bc13f6778a1f39c88f5",
+      "cases": 512
+    },
+    "probability_calibration_001024_001536": {
+      "archive_sha256": "476e42b78d681ce5a59ef9ef575f4c13ae821e7e9ec1df7703cfb753f030a8cf",
+      "ack_sha256": "9b0585f8d4dc3ff42192f61d7caeb9258e1c15647a5556f7085254212e59e35f",
+      "cases": 512
+    },
+    "probability_calibration_001536_002048": {
+      "archive_sha256": "490f9f6df0e359dc5e9765f6ea6e8dc866b8f2f212e02a8f21f03be17f25d280",
+      "ack_sha256": "ddc7816c4c6ae86b1491db5f8ed68ae59d8e7c01417dcb2ea99ca3dec15d0a74",
+      "cases": 512
+    },
+    "probability_calibration_002048_002560": {
+      "archive_sha256": "475d6ce029a8a2b54ada3b0a5019e9abcdc99e740fd6155f7739a72a3539d968",
+      "ack_sha256": "0dbc4c0a6402051c04149a2b1f527b7312b8590b41ae2b315dc9123bac46e809",
+      "cases": 512
+    },
+    "probability_calibration_002560_002831": {
+      "archive_sha256": "02f0583bac89d6c46a679d92e4cca663f792ee1abfc0cf221595e82fbf182096",
+      "ack_sha256": "26da58a6c853f03518592717f1281ba3552b0030214f24b2232c14b26eb1ac91",
+      "cases": 271
+    }
+  },
+  "summary.json": "e6418e5aac60a4ef7641ff32cd5c1b1b282db1e2b88af0a6f6aebc79a62058d0",
+  "predictions.csv.gz": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+  "roles_read_from_AIA_archives": [
+    "probability_calibration"
+  ],
+  "full_inference_completion_required_for_this_earlier_fit": false
+}

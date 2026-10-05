@@ -1,0 +1,38 @@
+{
+  "calibration_start": "2014-07-01",
+  "inner_selection_start": "2014-12-01",
+  "calibration_end": "2015-01-01",
+  "reporting_delay_hours": 24,
+  "candidate_methods": [
+    "raw",
+    "platt",
+    "isotonic"
+  ],
+  "selection": "lowest inner December Brier, then log loss, then declared method order",
+  "final_fit": "refit all prespecified candidates on the entire earlier probability_calibration block",
+  "logit_clip_epsilon": 1e-06,
+  "log_loss_clip_epsilon": 1e-12,
+  "reliability_bins": 10,
+  "experiment": "multimodal72_earlier_matched_calibration_v1",
+  "created_utc": "2026-10-05T08:20:28.650974+00:00",
+  "horizon_hours": 72,
+  "target_scope": "primary",
+  "inference_package": "outputs/aia72_inference_v3_20261004",
+  "inference_contract_sha256": "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+  "case_manifest_sha256": "b687afd3d953f884b21c2bcab527a39de3a7ca127e0262b3f727b201d080a846",
+  "sharp_training_dir": "outputs/sharp72_notebook_v1_20261002T080801721986Z",
+  "sharp_summary_sha256": "e6418e5aac60a4ef7641ff32cd5c1b1b282db1e2b88af0a6f6aebc79a62058d0",
+  "sharp_predictions_sha256": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+  "fusion_weights": {
+    "sharp": 0.5,
+    "aia": 0.5
+  },
+  "calibration_support": "Identical accepted SHARP/AIA cases for every branch; preserve failed-input rows",
+  "evaluation_roles_read": [],
+  "scientific_acceptance": false,
+  "source_sha256": {
+    "scripts/calibrate_multimodal72.py": "0559fdbe96bee6a1e77cb1e52286b7cb2aaf02633a464e87f8f9953bf5046497",
+    "scripts/calibrate_sharp.py": "63b5d406447a73b402383caab1314fb98059c247adb4e3b7c34f7c20de7a33b1",
+    "scripts/aia72_inference_archive_relay.py": "1131386270a4e1ed75eb5b6e6f2a767fe74d6ce1de19e1e4f9ef2c549d691c5b"
+  }
+}

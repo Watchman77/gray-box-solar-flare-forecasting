@@ -1,0 +1,27 @@
+{
+  "status": "FRESH_INFERENCE_RESERVATION_AND_LAUNCH_REQUESTED",
+  "authorization_sha256": "44fc38eb0979e76d32a832529c7f459fac1ae1a058bad8ffedd5c5bbdb7bbc6b",
+  "handoff_sha256": "ab81817d5ca02ebcb04ffead6d9811866cd3d5539aedaf9f853b401acd3ca2c3",
+  "expires_utc": "2026-10-05T12:12:07.487184+00:00",
+  "launch_receipt": {
+    "utc": "2026-10-05T08:12:07.922769+00:00",
+    "status": "LAUNCH_REQUESTED_UNVERIFIED",
+    "controller_pid": 1710885,
+    "argv": [
+      "/home/abmoses2000/aia_gpu_venv/bin/python",
+      "-u",
+      "/home/abmoses2000/graybox_aia72_inference_v1_20261004/bundle/scripts/run_aia72_inference.py",
+      "--contract-sha256",
+      "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+      "--bundle-sha256",
+      "b46cf95e67a8656f16ad914bee4e5a0ed413561f07aa0bd288c55865784755ca",
+      "--authorization",
+      "/home/abmoses2000/graybox_aia72_inference_v1_20261004/coordination/authorization.json",
+      "--handoff",
+      "/home/abmoses2000/graybox_aia72_inference_v1_20261004/coordination/handoff_to_graybox_inference.json"
+    ],
+    "automatic_retry": false
+  },
+  "GPU_execution_observed": false,
+  "automatic_retry": false
+}

@@ -1,0 +1,19 @@
+{
+  "status": "earlier_calibration_outputs_verified",
+  "utc": "2026-10-05T08:23:26.686829+00:00",
+  "notebook_code_cells_executed": 6,
+  "focused_tests_passed": 10,
+  "candidate_rows": 2831,
+  "input_failures": 0,
+  "archived_source_blocks_verified": 6,
+  "inner_scores_recomputed_with_separate_numpy_calculation": true,
+  "selected_methods_reconciled": true,
+  "reused_fitting_helpers": true,
+  "independent_scientific_validation": false,
+  "evaluation_roles_read": [],
+  "GPU_calls": 0,
+  "output_dir": "outputs/multimodal72_calibration_v1_20261005T082136654618Z",
+  "notebook": "notebooks/18_SHARP_AIA_Fusion_72h_Calibration_EXECUTED.ipynb",
+  "source_notebook_sha256": "419ecc7539b01c40eb918e7dfbc6ea65676b1e9dde9e208906edda23d1d65a5b",
+  "executed_notebook_sha256": "134460782f8924404f4b4b81fe3095ff679653bb788e9ad102bb54de71530a1f"
+}

@@ -1,0 +1,47 @@
+{
+  "status": "completed_earlier_matched_calibration_not_evaluation",
+  "completed_utc": "2026-10-05T08:21:40.867170+00:00",
+  "selected_methods": {
+    "sharp": "raw",
+    "aia": "raw",
+    "sharp_aia": "raw"
+  },
+  "requested_cases": 2831,
+  "input_failure_cases": 0,
+  "matched_support": {
+    "inner_fit": {
+      "cases": 1900,
+      "positive": 76
+    },
+    "inner_selection": {
+      "cases": 764,
+      "positive": 98
+    },
+    "final_fit": {
+      "cases": 2831,
+      "positive": 184
+    },
+    "purged_at_inner_boundary": {
+      "cases": 167,
+      "positive": 10
+    }
+  },
+  "model_refits": 0,
+  "GPU_calls": 0,
+  "evaluation_roles_read": [],
+  "scientific_acceptance": false,
+  "source_sha256": "0559fdbe96bee6a1e77cb1e52286b7cb2aaf02633a464e87f8f9953bf5046497",
+  "limitations": [
+    "Candidate labels and historical source availability remain provisional.",
+    "Method choice on December 2014 does not establish later performance.",
+    "Full-population availability, conformal and operational policy evaluation remain separate stages.",
+    "Later Cycle-25/2026 results are retrospective; no independent or prospective validation is claimed."
+  ],
+  "output_sha256": {
+    "source_receipt.json": "6648f9516bbc9c3448e5789e771eefc86f6478d390d2f6e53035b9e7055c0e87",
+    "inner_selection_scores.csv": "7771c6ce428b6a155ab4da035cad8b2afa4d06a3e41503ee8741389046995fa2",
+    "config.json": "000bce843d1c60644d27107441e7cdebad0649412b82cd8b71f29b795b7af916",
+    "selection.json": "8570bfdfdc6583490d85f4a67c3ebcf73458a59ffa25cd9e57ecf455ca5aaedd",
+    "calibration_cases.csv.gz": "3f8ed1512ba915dedf6536cf10390f6c772a958bc94409a203d5edc166203f13"
+  }
+}
