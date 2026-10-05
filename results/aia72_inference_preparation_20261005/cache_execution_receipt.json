@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-04T17:31:10.906635+00:00",
+  "command": [
+    "/Users/mac/google-cloud-sdk/bin/gcloud",
+    "compute",
+    "ssh",
+    "abmoses2000@aia-temporal-l4",
+    "--project=sonorous-shore-450510-i4",
+    "--zone=europe-west4-c",
+    "--quiet",
+    "--ssh-flag=-T",
+    "--command=env CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 /usr/bin/timeout --signal=TERM --kill-after=10s 210s /home/abmoses2000/aia_gpu_venv/bin/python -"
+  ],
+  "stdin_sha256": "7aecc27b635d538c6f45abb95303764b310c48681ac0cef832d917cf105ee5de",
+  "automatic_retry": false,
+  "finished_utc": "2026-10-04T17:31:36.351519+00:00",
+  "elapsed_seconds": 25.440663333050907,
+  "returncode": 0,
+  "archive_sha256": "2e8ff33073b13c77b97ee55e0c3e27bb1f53f56ffbcfd6528faaffa8f82ce15a",
+  "archive_bytes": 6399481,
+  "stderr": ""
+}

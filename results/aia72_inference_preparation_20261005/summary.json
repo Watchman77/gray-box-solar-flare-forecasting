@@ -1,0 +1,23 @@
+{
+  "status": "inference_source_accepted_and_VM_preparation_verified_pending_fresh_launch",
+  "date": "2026-10-05",
+  "all_three_72h_models_trained_and_replayed": true,
+  "candidate_comparison_cases": 96596,
+  "accepted_selection_predictions_reused": 3905,
+  "remaining_inference_cases": 92691,
+  "inference_blocks": 184,
+  "live_size_matching_image_candidates": 85545,
+  "images_without_size_matching_cache": 27492,
+  "missing_image_bytes": 151183637760,
+  "image_contents_must_be_checked_before_use": true,
+  "contract_sha256": "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+  "bundle_sha256": "b46cf95e67a8656f16ad914bee4e5a0ed413561f07aa0bd288c55865784755ca",
+  "staging_receipt_sha256": "3ef482bd778dbce90bc768752e3b2c4b44427073177fef2b0c1efc176ae85eee",
+  "inference_source_review_sha256": "ad7c6a2c01b4ce4369679e890af764f14f75e42aa15e22aaa0ee01badcee5460",
+  "notebook": "notebooks/17_AIA_72h_Frozen_Model_Inference.ipynb",
+  "metadata_preview_cells_executed": 5,
+  "notebook_visual_inspection": false,
+  "GPU_inference_launched": false,
+  "scientific_acceptance": false,
+  "next": "Fresh reviewed one-use launch plus exact Mac archive collector, then matched SHARP/AIA fusion, calibration, conformal and decision evaluation."
+}

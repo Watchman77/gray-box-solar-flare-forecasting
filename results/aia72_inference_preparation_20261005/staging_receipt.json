@@ -1,0 +1,15 @@
+{
+  "status": "CPU_metadata_models_and_source_staged_not_launched",
+  "elapsed_seconds": 2.2507114361505955,
+  "archive_sha256": "43d78459ba4539d1553af96d171b6d63f5bc979b28caba416cd7667326002efe",
+  "contract_sha256": "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+  "bundle_sha256": "b46cf95e67a8656f16ad914bee4e5a0ed413561f07aa0bd288c55865784755ca",
+  "files": 30,
+  "owner_sha256": "d0ee440ed05554281ab1b5730ae6ce1fe0270c91f560ffba69afb848dfc56afe",
+  "common_lock_inode": 519274,
+  "image_downloads": 0,
+  "GPU_launches": 0,
+  "torch_imported": false,
+  "existing_sources_modified": false,
+  "automatic_retry": false
+}

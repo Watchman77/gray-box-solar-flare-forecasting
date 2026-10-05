@@ -1,0 +1,79 @@
+{
+  "status": "CPU_staged_and_live_files_verified_inference_not_launched",
+  "checked_date": "2026-10-05",
+  "contract_sha256": "95394d9f7db945c556e8600979e59837c26de6d28d910abbac11c725af3b4257",
+  "bundle_sha256": "b46cf95e67a8656f16ad914bee4e5a0ed413561f07aa0bd288c55865784755ca",
+  "full_discovery": {
+    "tests_run": 229,
+    "failed_subtests": 2,
+    "class_setup_errors": 3,
+    "cause": "Historical suites import different frozen scripts packages into one shared Python module namespace."
+  },
+  "isolated_reruns": {
+    "continuation": {
+      "passed": 14,
+      "seconds": 47.741
+    },
+    "epoch5": {
+      "passed": 6,
+      "seconds": 2.554
+    },
+    "epoch6": {
+      "passed": 6,
+      "seconds": 2.356
+    },
+    "next": {
+      "passed": 6,
+      "seconds": 2.307
+    }
+  },
+  "new_checks": {
+    "initial_focused_tests_passed": 11,
+    "two_added_archive_pipe_deadline_and_cancellation_tests_passed": 2
+  },
+  "saved_models": {
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "CPU_state_dictionary_loading_passed": true,
+    "parameters_each": 1151233,
+    "forward_passes": 0,
+    "CUDA_initialized": false
+  },
+  "notebook": {
+    "metadata_preview_code_cells": 5,
+    "visual_inspection": false,
+    "model_runs": 0
+  },
+  "outstanding": [
+    "Complete review of inference/relay/retirement sources",
+    "Bind and review fresh one-use inference issuer to actual stage receipt",
+    "Launch bounded inference and Mac archive relay",
+    "Complete matched SHARP/AIA/fusion calibration/conformal/decision evaluation"
+  ],
+  "GPU_launches_this_phase": 0,
+  "scientific_acceptance": false,
+  "log_sha256": {
+    "graybox_inference_suite_20261004.log": "dc3a4e1eccc080047b3b949345da61e76b1ea754fc6ba707f7095806ab7ddd9c",
+    "graybox_isolated_continuation_20261005.log": "93dcb2f39be1bde9a8f35371cb246199963676d3aa93bcd7fdb1d443bfca201e",
+    "graybox_isolated_epoch5_20261005.log": "2149b104ab5c51700155db51b27cd2c548bf95478cc726076eb979386b02daa9",
+    "graybox_isolated_epoch6_20261005.log": "dcc00355139f0012b2e44b2af25cfd6d79720eb2b3558f6f054356964754c12b",
+    "graybox_isolated_next_20261005.log": "807a7542e24a8745f6fde179cbc7aaa7a872418797c2268830021e3f12e34369"
+  },
+  "actual_staging": {
+    "utc": "2026-10-05T08:01:30.040286+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 7.518462584004737,
+    "receipt_sha256": "3ef482bd778dbce90bc768752e3b2c4b44427073177fef2b0c1efc176ae85eee",
+    "file_count": 30
+  },
+  "readback": {
+    "utc": "2026-10-05T08:02:54.603919+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 2.8512497500050813,
+    "snapshot_sha256": "6da3da8d9dab0be323f08b8d0bf8f298b047d0c22f809943e4d80bcd948d6962",
+    "original_receipt_recovered": true
+  }
+}

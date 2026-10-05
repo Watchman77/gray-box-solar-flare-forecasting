@@ -1,0 +1,28 @@
+{
+  "status": "live_path_and_size_reconciliation_complete_not_content_verification",
+  "objects": 113037,
+  "counts": {
+    "candidate_requires_content_verification": 85545,
+    "no_size_matching_candidate": 27492
+  },
+  "no_size_matching_candidate_bytes": 151183637760,
+  "scanned_entries": 102164,
+  "elapsed_seconds": 20.80557005305309,
+  "plan_sha256": "f96d0c359ed058b15606bad5fc1a5a7fc1803b9d04e354bc7329c6ad0075116a",
+  "source_sha256": "a6139139577a6007faf76643ff7435b3dcee0088db75e1757f7e601ae1d5dee7",
+  "owner_sha256": "d0ee440ed05554281ab1b5730ae6ce1fe0270c91f560ffba69afb848dfc56afe",
+  "common_lock_inode": 519274,
+  "VM_files_written": 0,
+  "image_downloads": 0,
+  "image_bytes_read": 0,
+  "model_runs": 0,
+  "Torch_imported": false,
+  "GPU_priority_returned": false,
+  "records_sha256": "e45cc1c4aa791264a85a93a64be32cfe8493ebb4e2aa9164ec8d943127436c10",
+  "records_bytes": 56096597,
+  "scientific_acceptance": false,
+  "disk_free_bytes": {
+    "/home/abmoses2000": 22590689280,
+    "/mnt/disks/aia-cache": 39500812288
+  }
+}
