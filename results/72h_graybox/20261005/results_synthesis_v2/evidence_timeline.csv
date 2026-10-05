@@ -1,0 +1,7 @@
+stage,role,status,key_evidence
+Marginal conformal v1 policy validation,policy_validation,failed operationally,"Marginal coverage looked high overall, but flare-class coverage collapsed; q90 abstained on 209/422 flares."
+Mondrian/class-conditional conformal v2,conformal_calibration,calibration repair,Balanced class-conditional calibration coverage near nominal 90% on reserved conformal block.
+Mondrian v2 Cycle 25 evaluation,retrospective_cycle25,diagnostic failure,Class-conditional coverage degraded under temporal shift; q90 retained only 56.7% of flares.
+Fallback-first v3 freeze,development redesign,frozen before 2026,Uncertainty routes to SHARP fallback; ABSTAIN reserved for fallback unavailability.
+Fallback-first v3 clean 2026 evaluation,supplementary_2026,clean future evaluation,"100% availability and flare retention; small non-significant TSS gain vs fusion, lower TSS but far fewer false alarms than SHARP."
+Post-hoc robustness,supplementary_2026,post-hoc,AIA outages are absorbed by SHARP fallback; SHARP failure makes ABSTAIN unavoidable.

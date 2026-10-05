@@ -1,0 +1,20 @@
+{
+  "status": "GRAYBOX_AIA72_RESULTS_SYNTHESIS_COMPLETE",
+  "created_utc": "2026-10-05T19:44:10.231755+00:00",
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "purpose": "reviewer-ready synthesis of already frozen and post-hoc evidence",
+  "outputs": [
+    "evidence_timeline.csv",
+    "clean_2026_main_results.csv",
+    "conformal_shift_summary.csv",
+    "robustness_key_scenarios.csv",
+    "manuscript_results_summary.md",
+    "figures/fig1_clean_2026_performance.png",
+    "figures/fig2_flare_class_coverage_shift.png",
+    "figures/fig3_aia_missingness_availability.png",
+    "figures/fig4_sharp_outage_availability.png"
+  ]
+}
