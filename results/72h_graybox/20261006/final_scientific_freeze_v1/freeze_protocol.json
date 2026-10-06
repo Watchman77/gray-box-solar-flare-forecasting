@@ -1,0 +1,40 @@
+{
+  "status": "FINAL_72H_SCIENTIFIC_FREEZE_COMPLETE",
+  "created_utc": "2026-10-06T05:12:31.598857+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_recalibration": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "primary_scientific_contribution": "Experimentally validated issue/degrade/withhold trust routing under temporal shift, uncertainty degradation, and realistic AIA acquisition failures.",
+  "primary_policy": "fallback_v3_q90",
+  "core_interpretation": [
+    "Operational reliability is not equivalent to raw discrimination.",
+    "Uncertainty estimates can become overconfident under temporal/domain shift.",
+    "Real missingness is strongly correlated in time and region, motivating fallback-aware rather than IID-missingness-only evaluation.",
+    "SHARP is currently the justified degraded fallback; AIA-only automatic fallback is not supported.",
+    "The 72 h framework is frozen before 24 h and 3 h replication."
+  ],
+  "limitations": [
+    "Not a true prospective deployment trial.",
+    "Exact feature-space OOD rerun is provenance-limited.",
+    "Exact event-disjoint/lead-time analysis is provenance-limited.",
+    "No universal superiority claim over SHARP.",
+    "No first-principles MHD/PINN claim."
+  ],
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "rolling_protocol": "def26820bba13e5f994a183331417301f55edaeb259aab2afaf7657147eef087",
+    "aia_fallback_protocol": "0afd531dcd7d6922914ed40b659a6c1995c9748d95a8fb9c1658b38a76ec0791",
+    "real_outage_protocol": "34158d4a4719957cec6b67ef3d6aef5c04b2ecd6a59d449e3c70f904b872e2e9",
+    "outage_structure_protocol": "c17227a605b32fbfaa451ed6c007a23341fae3ddd04a6147189a0f04028c41d5"
+  },
+  "outputs": [
+    "frozen_key_metrics.csv",
+    "scientific_claim_ledger.csv",
+    "operational_architecture_freeze.json",
+    "rolling_uq_endpoint.csv"
+  ]
+}

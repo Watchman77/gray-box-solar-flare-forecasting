@@ -1,0 +1,28 @@
+{
+  "horizon_hours": 72,
+  "nominal_issue_cadence_minutes": 96,
+  "states": {
+    "NORMAL": {
+      "condition": "SHARP+AIA technically available and frozen multimodal trust gates pass.",
+      "action": "Issue fixed 0.5/0.5 SHARP+AIA fusion forecast."
+    },
+    "DEGRADED": {
+      "condition": "NORMAL is false but SHARP remains technically available.",
+      "action": "Issue SHARP fallback and label forecast DEGRADED."
+    },
+    "ABSTAIN": {
+      "condition": "SHARP is technically unavailable.",
+      "action": "Withhold forecast. Automatic AIA-only fallback is not enabled."
+    }
+  },
+  "uq_layers": [
+    "probability calibration",
+    "Mondrian class-conditional conformal sets",
+    "seed disagreement",
+    "fusion entropy",
+    "SHARP-AIA probability gap",
+    "rolling past-only reliability monitoring"
+  ],
+  "outcome_visibility": "issue time + 72 h horizon + 24 h reporting delay",
+  "monitor_feedback_into_policy": false
+}
