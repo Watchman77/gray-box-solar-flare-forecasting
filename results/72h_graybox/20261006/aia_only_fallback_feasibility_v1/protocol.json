@@ -1,0 +1,20 @@
+{
+  "status": "POSTHOC_AIA_ONLY_FALLBACK_FEASIBILITY_COMPLETE",
+  "created_utc": "2026-10-06T04:38:45.587507+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "question": "Can the frozen AIA branch support degraded issuance when SHARP is unavailable?",
+  "decision_rule": "No new pass/fail threshold is introduced. Interpret branch skill, recall and flare-class conformal transfer jointly.",
+  "evidence_boundary": {
+    "cycle24": "development/descriptive",
+    "cycle25": "diagnostic/post-hoc",
+    "2026": "already-spent locked evidence"
+  },
+  "outputs": [
+    "branch_feasibility_summary.csv",
+    "aia_uncertainty_feasibility.csv"
+  ]
+}
