@@ -72,7 +72,7 @@ The resulting evidence leads to a deliberately narrower but operationally import
 
 Photospheric magnetic structure remains one of the dominant information sources for active-region flare prediction. Early statistical and knowledge-based approaches established the value of flare history and magnetic complexity, while the SDO era enabled standardized vector-magnetic measurements at scale. Bobra and Couvidat (2015) used HMI vector-magnetogram parameters with a support-vector machine and showed that M/X-class flare discrimination could be achieved with a relatively small number of magnetic predictors. Their work also reinforced the importance of extensive quantities related to current, free-energy proxies, magnetic flux and polarity-inversion-line structure.
 
-A limitation of snapshot forecasting is that an active region is an evolving magnetic system. Liu et al. (2019) addressed this directly with an LSTM operating on magnetic and flare-history time series. The SWAN-SF benchmark subsequently provided a curated multivariate SHARP time-series resource with cross-checked flare labels and explicit discussion of partitioning, temporal slicing and sampling (Angryk et al., 2020). Our earlier evolution-aware work likewise showed that temporal magnetic complexity can support multi-horizon M/X-class forecasting (Akinwumi et al., 2026). The present study therefore treats temporal SHARP prediction as an existing component, not as the new contribution. Its role here is to provide a strong frozen magnetic branch whose reliability and operational behaviour can be audited under later conditions.
+A limitation of snapshot forecasting is that an active region is an evolving magnetic system. Liu et al. (2019) addressed this directly with an LSTM operating on magnetic and flare-history time series. The SWAN-SF benchmark subsequently provided a curated multivariate SHARP time-series resource with cross-checked flare labels and explicit discussion of partitioning, temporal slicing and sampling (Angryk et al., 2020). Earlier work by Akinwumi and Qahwaji (2026) developed evolution-aware temporal modelling of magnetic complexity for flare forecasting. The present study treats temporal SHARP prediction as an existing component rather than a new contribution. The SHARP branch used here extends that earlier model into the 72-hour Gray-Box role design, and every SHARP score reported in this manuscript is recomputed on the Gray-Box roles rather than copied from the earlier paper.
 
 The baseline analysis in this manuscript is motivated by the same literature. A high-capacity temporal model should not be assumed useful merely because it is more complex. Wheatland (2005) explicitly argued for simple objective baselines, and Camporeale and Berger (2025) recently showed how strongly conclusions about operational flare forecasts can change when climatology, persistence and lightweight statistical models are included. We therefore compare the temporal SHARP branch against training climatology and a fixed 16-feature latest-state logistic model on exactly the same evaluation support.
 
@@ -134,7 +134,7 @@ The magnetic branch uses 16 SDO/HMI SHARP quantities in the exact frozen order: 
 
 For each case, the aligned SHARP tensor contains three histories at issue time minus 288, 192 and 96 min, giving a frozen tensor of shape 113,433 × 3 × 16. The latest magnetic observation available to the forecast is therefore the t-96 min state. The accepted tensor contains no missing numerical values.
 
-The frozen SHARP predictor is a one-layer GRU with 32 hidden units and a linear binary-output head. Three independently seeded models (17, 29 and 43) are retained, and the branch probability is their arithmetic mean. Seed selection used only the earlier model-validation block. The purpose of the present manuscript is not to re-establish the predictive value of temporal SHARP modelling; the trained branch is treated as a fixed forecasting component around which reliability and operational behaviour are evaluated.
+The frozen SHARP predictor is a one-layer GRU with 32 hidden units and a linear binary-output head. Three independently seeded models (17, 29 and 43) are retained, and the branch probability is their arithmetic mean. Seed selection used only the earlier model-validation block. This branch extends the evolution-aware temporal SHARP model of Akinwumi and Qahwaji (2026) into the present 72-hour Gray-Box study. All SHARP performance values reported here were recomputed on the Gray-Box role definitions; they are not copied from the earlier publication. The trained neural branch remains fixed while reliability and operational behaviour are evaluated.
 
 ### 3.3 AIA image input
 
@@ -170,9 +170,10 @@ Active-region leakage was checked using the reconciled region_component_id. Mapp
 
 ### 3.6 Frozen provenance
 
-The main 72 h artifacts are hash-pinned. The canonical 71,010-row non-training multimodal prediction table has SHA-256 17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46; the 113,433-row frozen SHARP prediction ledger has SHA-256 7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b; and the exact recovered SHARP tensor has SHA-256 c9921be7b7fe381b43436a0e927d15d84de83e15376025ae0d8a79a6ef917639.
+The post-freeze analyses read three hash-pinned sources and do not overwrite them. The 71,010-row non-training multimodal prediction table, `graybox_aia72_master_predictions.csv.gz`, has SHA-256 `17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46`. The 113,433-row frozen SHARP prediction ledger, `sharp72_predictions_frozen_20261002.csv.gz`, has SHA-256 `7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b`. The recovered SHARP tensor, `sharp.npy`, has shape `(113433, 3, 16)` and SHA-256 `c9921be7b7fe381b43436a0e927d15d84de83e15376025ae0d8a79a6ef917639`.
 
-These hashes define the source objects used by the post-freeze reliability, physical-applicability and baseline analyses. Later diagnostic work does not overwrite the original A-G evidence chain.
+Reliability, physical-applicability and baseline results in this paper are computed from these objects. Phase H and the baseline suite read the frozen chain; they do not refit the neural models, replace the frozen source objects, or change the v3 policy.
+
 
 ---
 
@@ -350,15 +351,16 @@ Two replay scenarios are evaluated: nominal frozen inputs and mapped real-AIA-in
 
 ### 5.8 Same-support baseline suite
 
-To test whether the manuscript's findings depend on complex predictors, the exact frozen support is also evaluated against two simple references: training-prevalence climatology and one L2 logistic regression using the 16 latest-slot SHARP features.
+The baseline suite was added post hoc after the later Cycle-25 and supplementary-2026 outcomes had already been seen. It is therefore a manuscript comparator rather than untouched confirmation. To prevent later-outcome fitting, the simple model itself is restricted to one L2 logistic regression using the 16 latest-slot SHARP features and is fitted only on the 25,586 frozen training rows; median imputation and standard scaling are also fitted on training only. Its decision threshold is selected only on `model_validation` using the same deterministic rule used for the frozen branches. No hyperparameter search, tree model or neural retraining is performed.
 
-The logistic model is fitted only on the 25,586 training rows. Median imputation and standard scaling are training-fitted. Its alarm threshold is selected on model_validation with the same deterministic rule used for the frozen branches. No hyperparameter search, tree model or neural retraining is performed.
+Primary TSS uses model-specific validation-chosen/frozen thresholds: latest-state logistic `0.10265333871104586`, frozen SHARP `0.0752000237504641`, frozen AIA `0.025101790286788`, and frozen fusion `0.0905992648354184`. TSS computed at a generic threshold of 0.5 is retained only as an auxiliary, separately labelled result and is not substituted for the primary TSS.
 
-Primary baseline reporting is restricted to policy_validation, retrospective Cycle 25 and supplementary 2026. For every model we report TSS at the appropriate frozen threshold, auxiliary TSS at 0.5, AP, Brier score and BSS relative to training climatology.
+Primary baseline reporting is restricted to `policy_validation`, retrospective Cycle 25 and supplementary 2026. For every model we report primary-threshold TSS, auxiliary TSS at 0.5, AP, Brier score and BSS relative to training climatology.
+
 
 ### 5.9 Active-region block bootstrap
 
-Repeated forecasts from the same active region are not treated as independent. For the baseline comparisons, 2,000 deterministic bootstrap replicates resample region_component_id with replacement and retain all forecast windows belonging to each sampled region. The same block draw is used for every model within a role, enabling paired model-difference intervals.
+Repeated forecasts from the same active region are not treated as independent. The bootstrap unit is `region_component_id`. For each evaluation role, 2,000 deterministic bootstrap draws resample active-region components with replacement and retain all forecast windows belonging to each sampled component. The same active-region draw is used for every model within a role, enabling paired model-difference intervals.
 
 Percentile 95% intervals are reported for TSS, AP, Brier and BSS. Paired deltas are reported for the frozen branches against climatology, the temporal SHARP model against the latest-state logistic comparator, and fusion against SHARP. These intervals quantify sampling uncertainty under clustered forecast windows; they do not create independence where none exists.
 
@@ -458,9 +460,9 @@ Thus the running system would have appeared increasingly decisive under several 
 
 ### 6.8 A simple latest-state logistic is a strong comparator
 
-The same-support baseline suite shows that forecast complexity should not be confused with operational contribution (Figure 5; Table 5).
+The same-support baseline suite shows that forecast complexity should not be confused with operational contribution (Figure 5; Table 5). The comparison is post hoc with respect to later outcomes, but the logistic fit uses training only and its threshold uses model_validation only.
 
-On policy_validation, TSS is 0.597 for the latest-state logistic, 0.628 for frozen SHARP and 0.626 for fusion. On Cycle 25, the values are 0.501, 0.541 and 0.488 respectively. In 2026 they are 0.269, 0.323 and 0.292.
+Using the model-specific validation-chosen/frozen thresholds (logistic 0.1026533; SHARP 0.0752000; AIA 0.0251018; fusion 0.0905993), TSS on `policy_validation` is 0.597 for the latest-state logistic, 0.628 for frozen SHARP and 0.626 for fusion. On Cycle 25, the values are 0.501, 0.541 and 0.488 respectively. In 2026 they are 0.269, 0.323 and 0.292. TSS at threshold 0.5 is a separate auxiliary result and is not used for these comparisons.
 
 | Role | Logistic TSS | SHARP TSS | AIA TSS | Fusion TSS |
 |---|---:|---:|---:|---:|
@@ -468,21 +470,13 @@ On policy_validation, TSS is 0.597 for the latest-state logistic, 0.628 for froz
 | Cycle 25 | 0.501 | 0.541 | 0.340 | 0.488 |
 | 2026 | 0.269 | 0.323 | 0.074 | 0.292 |
 
-The paired active-region bootstrap shows a small Cycle-25 TSS advantage for temporal SHARP over the latest-state logistic: median delta +0.039, 95% CI [0.0003, 0.0819]. The corresponding AP and Brier differences do not exclude zero. In 2026 the SHARP-logistic TSS point difference is larger (+0.052) but the 95% CI crosses zero [-0.004, 0.123].
+The paired active-region bootstrap shows a small Cycle-25 TSS advantage for temporal SHARP over the latest-state logistic: median delta +0.039, 95% CI [0.0003, 0.0819]. The corresponding AP and Brier differences do not exclude zero. In 2026 the SHARP-logistic TSS point difference is +0.052, but the 95% CI crosses zero [-0.004, 0.123]. The result supports only a modest temporal-model advantage, not a universal deep-learning superiority claim.
 
-The result supports only a modest temporal-model advantage, not a universal deep-learning superiority claim.
 
 ### 6.9 Equal-weight fusion is not universally superior to SHARP
 
-The baseline suite provides direct paired evidence against a fusion-superiority narrative.
+Table 5 contains the paired fusion-versus-SHARP comparison. At the frozen validation-chosen thresholds, Cycle-25 fusion minus SHARP is -0.053 TSS (95% CI [-0.091, -0.013]) and -0.047 average precision (95% CI [-0.084, -0.013]); both intervals exclude zero in favour of SHARP. In supplementary 2026, the corresponding TSS and AP intervals include zero, so no significant fusion-versus-SHARP difference is claimed there.
 
-On Cycle 25, fusion minus SHARP is:
-- TSS: -0.053, 95% CI [-0.091, -0.013];
-- AP: -0.047, 95% CI [-0.084, -0.013].
-
-Both intervals exclude zero in favour of SHARP. On policy_validation, fusion and SHARP have essentially identical TSS, but fusion has lower AP and worse Brier score. In 2026 the point estimates again favour SHARP, although active-region bootstrap intervals include zero.
-
-The multimodal branch is therefore valuable primarily as an operational state whose trust and failure behaviour can be studied, not because it establishes superior predictive skill.
 
 ### 6.10 Physical applicability supplies a distinct monitoring signal
 
@@ -523,7 +517,6 @@ Taken together, the 72 h evidence supports the following:
 - SHARP is a defensible availability-preserving fallback when AIA fails;
 - automatic AIA-only fallback is not supported;
 - a simple latest-state magnetic baseline is competitive, and temporal SHARP provides only a modest later-regime advantage;
-- equal-weight fusion is not universally superior to SHARP;
 - physical applicability and statistical agreement are complementary monitoring dimensions;
 - physical Mahalanobis distance is not a valid naive abstention score.
 
@@ -533,7 +526,7 @@ The evidence does not support universal predictive superiority, a causal Solar-C
 
 ### 7.1 Forecast skill and forecast trust are different system properties
 
-The central result of this study is not that a new predictor dominates existing flare-forecast models. In fact, the opposite evidence is scientifically useful: a simple latest-state logistic model is competitive, equal-weight fusion is not universally better than SHARP, and the AIA branch can become highly decisive while its rare-event reliability deteriorates. These findings force a distinction between **predictive skill** and **operational trust**.
+The central result of this study is not that a new predictor dominates existing flare-forecast models. A simple latest-state logistic model is competitive, and the AIA branch can become highly decisive while its rare-event reliability deteriorates. These findings force a distinction between **predictive skill** and **operational trust**.
 
 Predictive skill describes how well a forecast separates events from non-events or how accurate its probabilities are on a specified population. Operational trust additionally asks whether the system knows when the input regime has changed, whether an uncertainty estimate still behaves as expected, whether an input modality is available, whether a fallback has been validated, and whether withholding a forecast causes disproportionate loss of rare positive cases.
 
@@ -573,15 +566,7 @@ The 2026 shift further demonstrates why the underlying dimensions must remain vi
 
 This is the intended Gray-Box role: not to replace learned probabilities with a deterministic physical law, but to expose interpretable state and applicability evidence alongside them.
 
-### 7.6 Negative fusion results strengthen the operational interpretation
-
-The equal-weight fusion branch is useful precisely because it does not consistently win. If the paper were framed as a multimodal-performance study, the Cycle-25 paired bootstrap would be a negative result: SHARP has significantly higher TSS and AP. In the trust framework, however, that result clarifies the role of fusion.
-
-Fusion is a NORMAL-mode forecast source when its technical and trust conditions are satisfied, not the universal gold standard. The framework is allowed to degrade to a stronger constituent branch. This is operationally more realistic than forcing every modality into every prediction because multimodality is assumed to be beneficial.
-
-The result also illustrates why multimodal studies should report constituent-branch performance and same-support simple baselines. Without those comparisons, a system-level contribution can be mistaken for predictive novelty.
-
-### 7.7 Implications for operational flare forecasting
+### 7.6 Implications for operational flare forecasting
 
 Three broader implications follow.
 
@@ -625,9 +610,10 @@ The native 96-min cadence generates many overlapping 72 h windows from the same 
 
 ### 8.6 Physical-layer mechanism remains unresolved
 
-The 2026 physical-distance increase is dominated by the latest magnetic-gradient family. Same-record JSOC queries show exact keyword parity between hmi.sharp_720s and hmi.sharp_cea_720s on the tested pairs, but local-versus-JSOC equality has not been demonstrated for every overlapping CEA-era tensor row. The April-2026 shift therefore cannot yet be attributed uniquely to solar evolution or to a pipeline mechanism.
+The 2026 physical-distance increase is dominated by the latest magnetic-gradient family. The JSOC parity audit compared 120 identical HARP/T_REC pairs and found exact equality of the 16 queried SHARP summary keywords between `hmi.sharp_720s` and `hmi.sharp_cea_720s` on those pairs. That audit was not shown to cover every locally stored April-August 2026 CEA-era tensor row, and local-versus-JSOC equality was not demonstrated for the full CEA-era stored tensor. The solar-versus-pipeline origin of the April-2026 gradient shift therefore remains unresolved; this question is not closed by the paired JSOC result.
 
-The physical layer should be interpreted as an applicability/provenance monitor, not a causal flare model.
+The physical layer should be interpreted as an applicability/provenance monitor, not a causal flare model or an operational gate.
+
 
 ### 8.7 The Gray-Box layer is not first-principles physics
 
@@ -655,6 +641,27 @@ The broader conclusion is therefore practical. A trustworthy flare-forecast syst
 
 ---
 
+## Appendix A. Claim-to-artifact map
+
+The full repository record is `docs/72H_CLAIM_TO_ARTIFACT_MAP.md`. Each frozen claim below points to one repository result folder and its Git tree SHA; no local `/home/abmoses2000` path is required to locate the record.
+
+| Claim | Repository result folder | Git tree SHA | Anchor file |
+|---|---|---|---|
+| Cross-regime branch degradation and conformal transfer | `results/72h_graybox/20261006/cross_cycle_reliability_audit` | `379e766fe8afbdb0fcc54908bfa3a74d7c13a43f` | `cross_cycle_branch_metrics.csv` |
+| Later calibration degradation | `results/72h_graybox/20261006/calibration_diagnostics_v2` | `97ba7a6ea8f77eac62ae0cca2345aa4f538acdb6` | `calibration_diagnostics.csv` |
+| Reliability paradox and prospective-style rolling monitor | `results/72h_graybox/20261006/rolling_operational_replay_v1` | `e1fcf50ed640c4017e5cdfc3eb2c21bb76ccfd1d` | `past_only_uq_monitor.csv` |
+| Clustered AIA acquisition/recovery failures | `results/72h_graybox/20261006/real_outage_structure_v1` | `643bd21a68d2b92b74d02a9da85c79778e6185e6` | `empirical_outage_episodes.csv` |
+| SHARP fallback during mapped AIA failures | `results/72h_graybox/20261006/real_outage_replay_v1` | `acd070ba9d4825800831fc7230ae7a15f6f95039` | `real_outage_replay_summary.csv` |
+| AIA-only fallback not supported | `results/72h_graybox/20261006/aia_only_fallback_feasibility_v1` | `8cd0306eb05d57f4c2dc64f09765bd1721d9c7b1` | `branch_feasibility_summary.csv` |
+| Frozen fallback-first v3 semantics | `results/72h_graybox/20261005/fallback_v3` | `72c7915ce643f87a6fbe24c47c43c7b6c975f727` | `protocol.json` |
+| Clean supplementary-2026 v3 evaluation | `results/72h_graybox/20261005/supplementary2026_v3` | `b9ae10e3fd841c0985565a63871774b601072d9e` | `summary.json` |
+| Post-hoc simple baseline and paired AR bootstrap | `results/72h_graybox/20261006/baseline_suite_v2` | `1569f727348c46e09adcf4c4fde1af7e54493f1c` | `baseline_metrics.csv` |
+| Phase-H physical applicability/provenance freeze | `results/72h_graybox/20261006/phase_h_physical_layer_freeze` | `5ee4a2655740852938d12d19395e8830df6d1166` | `README.md` |
+
+The canonical source-object SHA-256 values are given in Section 3.6. Phase H and the baseline suite read those frozen objects; they do not refit the neural networks or change v3.
+
+---
+
 ## Provisional references used in Sections 1–2
 
 - Angryk, R. A., Martens, P. C., Aydin, B., et al. (2020). Multivariate time series dataset for space weather data analytics. *Scientific Data*, 7, 227. https://doi.org/10.1038/s41597-020-0548-x
@@ -673,4 +680,4 @@ The broader conclusion is therefore practical. A trustworthy flare-forecast syst
 - Nishizuka, N., Kubo, Y., Sugiura, K., Den, M., & Ishii, M. (2021). Operational solar flare prediction model using Deep Flare Net. *Earth, Planets and Space*, 73, 64. https://doi.org/10.1186/s40623-021-01381-9
 - Riggi, S., Romano, P., Pilzer, A., & Becciani, U. (2026). Solar flare forecasting with foundational transformer models across image, video, and time-series modalities. *Astronomy and Computing*, 55, 101042. https://doi.org/10.1016/j.ascom.2025.101042
 - Wheatland, M. S. (2005). A statistical solar flare forecast method. *Space Weather*, 3, S07003. https://doi.org/10.1029/2004SW000131
-- Akinwumi, B. M., et al. (2026). Evolution-Aware Temporal Modelling of Magnetic Complexity for Multi-Horizon M/X-Class Solar Flare Prediction. *Advances in Space Research*. https://doi.org/10.1016/j.asr.2026.09.024
+- Akinwumi, B. M., & Qahwaji, R. (2026). Evolution-Aware Temporal Modelling of Magnetic Complexity for Multi-Horizon M/X-Class Solar Flare Prediction. *Advances in Space Research*. https://doi.org/10.1016/j.asr.2026.09.024
