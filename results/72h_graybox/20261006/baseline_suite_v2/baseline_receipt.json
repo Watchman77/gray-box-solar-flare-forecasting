@@ -1,0 +1,35 @@
+{
+  "status": "72H_BASELINE_SUITE_COMPLETE",
+  "created_utc": "2026-10-06T14:14:18.988512+00:00",
+  "record_archived_to_repo": true,
+  "record_archived_without_rerun": true,
+  "policy_changed": false,
+  "neural_models_refit": false,
+  "simple_model_fit": "one L2 logistic on 16 latest-slot SHARP features; train role only",
+  "training_rows": 25586,
+  "training_positives": 1476,
+  "training_prevalence": 0.0576877980145392,
+  "logistic_threshold_selected_on": "model_validation",
+  "baseline_suite_added_after_later_outcomes_seen": true,
+  "evaluation_roles": ["policy_validation","retrospective_cycle25","supplementary_2026"],
+  "bootstrap": {
+    "unit": "region_component_id",
+    "draws_requested": 2000,
+    "seed": 720031,
+    "paired_across_models": true
+  },
+  "thresholds": {
+    "climatology": 0.5,
+    "logistic_latest_sharp": 0.10265333871104586,
+    "frozen_sharp": 0.0752000237504641,
+    "frozen_aia": 0.025101790286788,
+    "frozen_fusion": 0.0905992648354184
+  },
+  "source_sha256": {
+    "graybox_aia72_master_predictions.csv.gz": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp72_predictions_frozen_20261002.csv.gz": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "sharp.npy": "c9921be7b7fe381b43436a0e927d15d84de83e15376025ae0d8a79a6ef917639",
+    "alarm_thresholds.csv": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa"
+  },
+  "claim_boundary": "Post-hoc manuscript comparator only. Logistic fit uses train only; its threshold uses model_validation only. No Gray-Box policy, Phase-H monitor, or neural network is changed."
+}
