@@ -641,22 +641,30 @@ The broader conclusion is therefore practical. A trustworthy flare-forecast syst
 
 ---
 
+## Data, code and evidence availability
+
+The code, compact result artifacts, frozen policy records and claim-to-artifact trail for this 72-hour study are publicly accessible in the repository at https://github.com/Watchman77/gray-box-solar-flare-forecasting. The manuscript evidence snapshot used for the present submission draft is https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d. A public evidence index is maintained at https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/main/docs/PUBLIC_EVIDENCE_INDEX.md, and the claim-to-artifact map is maintained at https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/main/docs/72H_CLAIM_TO_ARTIFACT_MAP.md.
+
+The three large frozen source objects identified in Section 3.6 by filename, row count/shape and SHA-256 are not currently stored in the GitHub repository. Before final journal submission, those binaries should be deposited in a DOI-bearing public archive and the archive DOI/URL inserted here. No laptop path, VM/SSH location or cloud-bucket URI should be used as the manuscript availability link.
+
+---
+
 ## Appendix A. Claim-to-artifact map
 
-The full repository record is `docs/72H_CLAIM_TO_ARTIFACT_MAP.md`. Each frozen claim below points to one repository result folder and its Git tree SHA; no local `/home/abmoses2000` path is required to locate the record.
+The full public repository record is available at https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/main/docs/72H_CLAIM_TO_ARTIFACT_MAP.md. Each frozen claim below points to a public GitHub result folder in the frozen evidence snapshot (https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d) together with its Git tree SHA.
 
 | Claim | Repository result folder | Git tree SHA | Anchor file |
 |---|---|---|---|
-| Cross-regime branch degradation and conformal transfer | `results/72h_graybox/20261006/cross_cycle_reliability_audit` | `379e766fe8afbdb0fcc54908bfa3a74d7c13a43f` | `cross_cycle_branch_metrics.csv` |
-| Later calibration degradation | `results/72h_graybox/20261006/calibration_diagnostics_v2` | `97ba7a6ea8f77eac62ae0cca2345aa4f538acdb6` | `calibration_diagnostics.csv` |
-| Reliability paradox and prospective-style rolling monitor | `results/72h_graybox/20261006/rolling_operational_replay_v1` | `e1fcf50ed640c4017e5cdfc3eb2c21bb76ccfd1d` | `past_only_uq_monitor.csv` |
-| Clustered AIA acquisition/recovery failures | `results/72h_graybox/20261006/real_outage_structure_v1` | `643bd21a68d2b92b74d02a9da85c79778e6185e6` | `empirical_outage_episodes.csv` |
-| SHARP fallback during mapped AIA failures | `results/72h_graybox/20261006/real_outage_replay_v1` | `acd070ba9d4825800831fc7230ae7a15f6f95039` | `real_outage_replay_summary.csv` |
-| AIA-only fallback not supported | `results/72h_graybox/20261006/aia_only_fallback_feasibility_v1` | `8cd0306eb05d57f4c2dc64f09765bd1721d9c7b1` | `branch_feasibility_summary.csv` |
-| Frozen fallback-first v3 semantics | `results/72h_graybox/20261005/fallback_v3` | `72c7915ce643f87a6fbe24c47c43c7b6c975f727` | `protocol.json` |
-| Clean supplementary-2026 v3 evaluation | `results/72h_graybox/20261005/supplementary2026_v3` | `b9ae10e3fd841c0985565a63871774b601072d9e` | `summary.json` |
-| Post-hoc simple baseline and paired AR bootstrap | `results/72h_graybox/20261006/baseline_suite_v2` | `1569f727348c46e09adcf4c4fde1af7e54493f1c` | `baseline_metrics.csv` |
-| Phase-H physical applicability/provenance freeze | `results/72h_graybox/20261006/phase_h_physical_layer_freeze` | `5ee4a2655740852938d12d19395e8830df6d1166` | `README.md` |
+| Cross-regime branch degradation and conformal transfer | [results/72h_graybox/20261006/cross_cycle_reliability_audit](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/cross_cycle_reliability_audit) | `379e766fe8afbdb0fcc54908bfa3a74d7c13a43f` | `cross_cycle_branch_metrics.csv` |
+| Later calibration degradation | [results/72h_graybox/20261006/calibration_diagnostics_v2](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/calibration_diagnostics_v2) | `97ba7a6ea8f77eac62ae0cca2345aa4f538acdb6` | `calibration_diagnostics.csv` |
+| Reliability paradox and prospective-style rolling monitor | [results/72h_graybox/20261006/rolling_operational_replay_v1](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/rolling_operational_replay_v1) | `e1fcf50ed640c4017e5cdfc3eb2c21bb76ccfd1d` | `past_only_uq_monitor.csv` |
+| Clustered AIA acquisition/recovery failures | [results/72h_graybox/20261006/real_outage_structure_v1](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/real_outage_structure_v1) | `643bd21a68d2b92b74d02a9da85c79778e6185e6` | `empirical_outage_episodes.csv` |
+| SHARP fallback during mapped AIA failures | [results/72h_graybox/20261006/real_outage_replay_v1](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/real_outage_replay_v1) | `acd070ba9d4825800831fc7230ae7a15f6f95039` | `real_outage_replay_summary.csv` |
+| AIA-only fallback not supported | [results/72h_graybox/20261006/aia_only_fallback_feasibility_v1](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/aia_only_fallback_feasibility_v1) | `8cd0306eb05d57f4c2dc64f09765bd1721d9c7b1` | `branch_feasibility_summary.csv` |
+| Frozen fallback-first v3 semantics | [results/72h_graybox/20261005/fallback_v3](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261005/fallback_v3) | `72c7915ce643f87a6fbe24c47c43c7b6c975f727` | `protocol.json` |
+| Clean supplementary-2026 v3 evaluation | [results/72h_graybox/20261005/supplementary2026_v3](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261005/supplementary2026_v3) | `b9ae10e3fd841c0985565a63871774b601072d9e` | `summary.json` |
+| Post-hoc simple baseline and paired AR bootstrap | [results/72h_graybox/20261006/baseline_suite_v2](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/baseline_suite_v2) | `1569f727348c46e09adcf4c4fde1af7e54493f1c` | `baseline_metrics.csv` |
+| Phase-H physical applicability/provenance freeze | [results/72h_graybox/20261006/phase_h_physical_layer_freeze](https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d/results/72h_graybox/20261006/phase_h_physical_layer_freeze) | `5ee4a2655740852938d12d19395e8830df6d1166` | `README.md` |
 
 The canonical source-object SHA-256 values are given in Section 3.6. Phase H and the baseline suite read those frozen objects; they do not refit the neural networks or change v3.
 
