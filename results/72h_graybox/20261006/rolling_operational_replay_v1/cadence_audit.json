@@ -1,0 +1,7 @@
+{
+  "declared_cadence_minutes": 96,
+  "observed_interissue_count": 45860,
+  "median_within_harp_delta_minutes": 96.0,
+  "fraction_exact_96_minutes": 0.9444832097688618,
+  "fraction_within_90_102_minutes": 0.9444832097688618
+}

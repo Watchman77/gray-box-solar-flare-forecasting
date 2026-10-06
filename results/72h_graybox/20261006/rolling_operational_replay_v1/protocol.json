@@ -1,0 +1,42 @@
+{
+  "status": "PROSPECTIVE_STYLE_ROLLING_OPERATIONAL_REPLAY_COMPLETE",
+  "created_utc": "2026-10-06T04:56:18.099569+00:00",
+  "horizon_hours": 72,
+  "declared_issue_cadence_minutes": 96,
+  "outcome_reporting_delay_hours": 24,
+  "outcome_maturity_lag_hours": 96,
+  "primary_policy": "fallback_v3_q90",
+  "new_model_fitting": false,
+  "new_recalibration": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "rolling_monitor_affects_decisions": false,
+  "scenarios": [
+    "nominal_frozen_inputs",
+    "real_aia_incident_replay"
+  ],
+  "real_outage_semantics": "mapped detected AIA acquisition/recovery incidents; engineering robustness replay, not verified historical live-service delivery",
+  "aia_only_fallback": "not enabled; Phase F did not support automatic AIA-only fallback when SHARP is unavailable",
+  "past_only_rule": "At monitoring time t, only labels with issue_time + 72 h horizon + 24 h reporting delay <= t are visible.",
+  "evidence_boundary": {
+    "retrospective_cycle25": "prospective-style post-hoc chronological replay",
+    "supplementary_2026": "already-spent locked evidence; no redesign"
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "mondrian_thresholds": "9999413b3ad78ec9f4a2c8bccb485988876da3836d3e1fc63edf198912d83188",
+    "candidate_cutoffs": "80805f898d5a7e3cd8ec8bd52550baf23cd42eda7066892f24df8dc3d79a1bd5",
+    "alarm_thresholds": "a9a939edb3d3615abc9f2822cec7bf8248d416b2aafb559431abe2dfe29444fa",
+    "incident_to_graybox_mapping": "20630f25a02aac1d7ba06a83c650b445522d20b63382abb1c62e89652e7dba26"
+  },
+  "outputs": [
+    "operational_replay_log.csv.gz",
+    "cadence_audit.json",
+    "final_replay_summary.csv",
+    "monthly_state_mix.csv",
+    "past_only_monthly_monitor.csv",
+    "past_only_uq_monitor.csv"
+  ]
+}
