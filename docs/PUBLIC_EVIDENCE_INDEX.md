@@ -8,7 +8,7 @@ All manuscript evidence links below resolve to the public GitHub repository. No 
 
 - Repository: https://github.com/Watchman77/gray-box-solar-flare-forecasting
 - Frozen evidence snapshot: https://github.com/Watchman77/gray-box-solar-flare-forecasting/tree/0db085a95faa81c0b14898991312e16c88d8764d
-- Claim-to-artifact map: https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/0db085a95faa81c0b14898991312e16c88d8764d/docs/72H_CLAIM_TO_ARTIFACT_MAP.md
+- Claim-to-artifact map: https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/main/docs/72H_CLAIM_TO_ARTIFACT_MAP.md
 - Publication-figure freeze: https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/0db085a95faa81c0b14898991312e16c88d8764d/docs/PUBLICATION_FIGURES_V2_20261006.md
 - Reproducible figure notebook: https://github.com/Watchman77/gray-box-solar-flare-forecasting/blob/0db085a95faa81c0b14898991312e16c88d8764d/notebooks/72h_graybox/32_manuscript_publication_figures_v2.ipynb
 
