@@ -375,14 +375,159 @@ The experimental programme uses explicit stopping rules to prevent retrospective
 The final evidence categories are earlier development/descriptive evidence for Cycle-24 roles, post-hoc/diagnostic evidence for v3 on Cycle 25, clean future evaluation for the one-shot supplementary-2026 v3 test, and post-hoc descriptive evidence for Phase-H analyses performed after 2026 had already been opened. This chronology is used throughout the Results and Discussion sections.
 
 ## 6. Results
-Organize around:
-- cross-cycle performance and calibration drift;
-- conformal reliability degradation;
-- agreement-versus-reliability paradox;
-- outage and fallback experiments;
-- operational routing replay;
-- physical applicability diagnostics;
-- baseline comparison and uncertainty intervals.
+
+### 6.1 Cross-regime discrimination degrades
+
+The frozen forecast branches show substantial temporal degradation. On the common cross-regime support, SHARP remains the strongest individual branch, but its TSS falls from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle 25 and 0.323 in 2026. AIA remains near 0.34 through Cycle 25 before falling sharply to 0.074 in 2026. Equal-weight fusion follows the same broad decline and does not consistently exceed SHARP.
+
+| Regime | SHARP TSS | AIA TSS | Fusion TSS |
+|---|---:|---:|---:|
+| Earlier Cycle-24 development | 0.689 | 0.333 | 0.630 |
+| Cycle 25 | 0.541 | 0.340 | 0.488 |
+| Supplementary 2026 | 0.323 | 0.074 | 0.292 |
+
+The careful interpretation is transfer degradation from an earlier development regime into later conditions. These values do not establish a causal effect of solar-cycle number itself.
+
+### 6.2 Calibration and conformal reliability deteriorate
+
+Probability calibration degrades alongside discrimination. SHARP Brier Skill Score decreases from approximately 0.336 to 0.215 and 0.160 across the three regimes. Fusion BSS similarly falls from approximately 0.247 to 0.176 and 0.097. Expected calibration error increases, and later calibration slopes/intercepts deviate more strongly from the ideal relationship.
+
+The class-conditional conformal results reveal an even sharper rare-event problem. Flare-class empirical coverage for SHARP, AIA and fusion changes approximately as follows:
+
+| Regime | SHARP flare coverage | AIA flare coverage | Fusion flare coverage |
+|---|---:|---:|---:|
+| Earlier Cycle 24 | 0.806 | 0.812 | 0.838 |
+| Cycle 25 | 0.735 | 0.620 | 0.692 |
+| 2026 | 0.435 | 0.064 | 0.346 |
+
+Thus later predictions can remain highly decisive while failing to preserve the earlier flare-class coverage behaviour. The 2026 AIA branch is the clearest example: singleton rate is approximately 0.973 while flare-class coverage is only approximately 0.064.
+
+### 6.3 Statistical agreement becomes more reassuring while reliability worsens
+
+A central result is the divergence between model agreement and cross-regime reliability. On the frozen multimodal support, median fusion seed spread, fusion entropy and SHARP-AIA probability gap all decrease over time:
+
+| Regime | Median fusion seed std | Median fusion entropy | Median SHARP-AIA gap |
+|---|---:|---:|---:|
+| Earlier Cycle-24 development | 0.01222 | 0.13841 | 0.02783 |
+| Cycle 25 | 0.00643 | 0.11834 | 0.01923 |
+| 2026 | 0.00163 | 0.04872 | 0.00404 |
+
+The models therefore become more internally consistent and more decisive precisely while calibration and flare-class conformal reliability deteriorate. These agreement measures remain useful within a regime for ranking some forms of case-level risk, but they are poor standalone indicators of global temporal shift.
+
+This is the principal reliability paradox of the study: **agreement is not equivalent to trustworthiness**.
+
+### 6.4 Real AIA failures are temporally clustered
+
+The upstream engineering inventory contains 6,461 AIA acquisition/recovery incidents, with 2,290 exact Gray-Box mappings. The failures are strongly clustered rather than independent.
+
+In 2025, 359 empirical episodes are reconstructed; 332 are multi-sample clusters and 6,172 of 6,199 incident samples occur within clustered episodes. Median episode span is 19.2 h and the maximum is 124.8 h. Among mapped Gray-Box exposures, 2,085 cases occur in long episodes containing more than ten failed samples.
+
+These results show why independent random masking is an incomplete robustness model for image-based operational forecasting.
+
+### 6.5 SHARP fallback preserves issuance under mapped AIA failures
+
+Under nominal Cycle-25 replay, the frozen v3 policy issues every forecast, with approximately 77.7% NORMAL and 22.3% DEGRADED states. Replaying mapped AIA incidents shifts cases from NORMAL to DEGRADED but preserves 100% issuance because SHARP remains available.
+
+| Scenario | Regime | Availability | NORMAL | DEGRADED | TSS |
+|---|---|---:|---:|---:|---:|
+| nominal inputs | Cycle 25 | 1.000 | 0.777 | 0.223 | 0.507 |
+| real AIA incident replay | Cycle 25 | 1.000 | 0.721 | 0.279 | 0.512 |
+| nominal inputs | 2026 | 1.000 | 0.925 | 0.075 | 0.296 |
+
+The small TSS difference between nominal and incident replay is not interpreted as an improvement caused by missing data. The operational result is preservation of service availability through a pre-specified stronger fallback.
+
+### 6.6 AIA-only automatic fallback is not supported
+
+The frozen AIA branch does not provide a stable basis for automatic degraded issuance when SHARP is unavailable.
+
+| Regime | AIA TSS | Recall | AP | Flare conformal coverage | Singleton rate |
+|---|---:|---:|---:|---:|---:|
+| Earlier Cycle 24 | 0.343 | 0.911 | 0.122 | 0.837 | 0.635 |
+| Cycle 25 | 0.340 | 0.743 | 0.184 | 0.620 | 0.727 |
+| 2026 | 0.074 | 0.117 | 0.159 | 0.064 | 0.973 |
+
+In 2026, the AIA branch becomes extremely decisive while detecting only about 11.7% of positive windows. This combination argues against interpreting low entropy or singleton conformal sets as sufficient evidence for standalone operational use. ABSTAIN therefore remains the defensible state when SHARP itself is unavailable.
+
+### 6.7 Prospective-style replay confirms a confidence/reliability mismatch
+
+The rolling replay uses only matured outcomes, with a 96 h issue-to-visibility delay. Monitoring never feeds back into the policy.
+
+By the August-2026 endpoint, 46,964 past cases are matured, including 4,852 positives. Fusion flare conformal coverage is approximately 0.621 while singleton rate is approximately 0.934. Median fusion entropy is approximately 0.0912, seed spread 0.00395 and SHARP-AIA gap 0.0136.
+
+Thus the running system would have appeared increasingly decisive under several internal uncertainty summaries even while its rare-event coverage had materially weakened. The replay therefore reproduces the cross-regime reliability paradox under a past-only information flow.
+
+### 6.8 A simple latest-state logistic is a strong comparator
+
+The same-support baseline suite shows that forecast complexity should not be confused with operational contribution.
+
+On policy_validation, TSS is 0.597 for the latest-state logistic, 0.628 for frozen SHARP and 0.626 for fusion. On Cycle 25, the values are 0.501, 0.541 and 0.488 respectively. In 2026 they are 0.269, 0.323 and 0.292.
+
+| Role | Logistic TSS | SHARP TSS | AIA TSS | Fusion TSS |
+|---|---:|---:|---:|---:|
+| policy_validation | 0.597 | 0.628 | 0.319 | 0.626 |
+| Cycle 25 | 0.501 | 0.541 | 0.340 | 0.488 |
+| 2026 | 0.269 | 0.323 | 0.074 | 0.292 |
+
+The paired active-region bootstrap shows a small Cycle-25 TSS advantage for temporal SHARP over the latest-state logistic: median delta +0.039, 95% CI [0.0003, 0.0819]. The corresponding AP and Brier differences do not exclude zero. In 2026 the SHARP-logistic TSS point difference is larger (+0.052) but the 95% CI crosses zero [-0.004, 0.123].
+
+The result supports only a modest temporal-model advantage, not a universal deep-learning superiority claim.
+
+### 6.9 Equal-weight fusion is not universally superior to SHARP
+
+The baseline suite provides direct paired evidence against a fusion-superiority narrative.
+
+On Cycle 25, fusion minus SHARP is:
+- TSS: -0.053, 95% CI [-0.091, -0.013];
+- AP: -0.047, 95% CI [-0.084, -0.013].
+
+Both intervals exclude zero in favour of SHARP. On policy_validation, fusion and SHARP have essentially identical TSS, but fusion has lower AP and worse Brier score. In 2026 the point estimates again favour SHARP, although active-region bootstrap intervals include zero.
+
+The multimodal branch is therefore valuable primarily as an operational state whose trust and failure behaviour can be studied, not because it establishes superior predictive skill.
+
+### 6.10 Physical applicability supplies a distinct monitoring signal
+
+The Phase-H physical layer initially shows a 2026 increase in training-reference magnetic-state distance. After removal of a deterministic temporal redundancy, median squared Mahalanobis distance is approximately 10.86 on earlier Cycle-24 development support, 12.54 on Cycle 25 and 16.74 in 2026. The corresponding q99 OOD rates are approximately 1.30%, 1.44% and 2.82%.
+
+However, feature-family sensitivity reveals that this elevation is not broad. Removing the complete gradient family reduces 2026 median distance to 9.38 and q99 OOD rate to 1.08%, both below the Cycle-25 values for the same reduced representation. Removing only gradients__latest is already sufficient to eliminate the aggregate 2026 elevation.
+
+The shift is therefore **gradient-family dominated**.
+
+Importantly, this physical signal moves in the opposite direction from the statistical agreement signals. On the common multimodal support, median physical distance increases from approximately 11.60 to 12.54 to 16.74 while seed spread, entropy and SHARP-AIA gap all decrease. Physical applicability and statistical agreement therefore capture different aspects of system state.
+
+### 6.11 Physical distance is not a case-level error score
+
+The physical monitor cannot be promoted directly into an abstention gate. Flare windows are systematically closer to the training physical-state cloud than non-flare windows:
+
+- earlier Cycle 24: median 7.08 for flare windows versus 11.19 for non-flare windows;
+- Cycle 25: 9.29 versus 13.07;
+- 2026: 11.06 versus 17.23.
+
+Accordingly, physical distance is negatively correlated with case-level fusion squared error. Magnetically unusual cases can be easy non-flare predictions, while difficult flare cases can lie closer to the development cloud.
+
+The scientific role of the physical layer is therefore applicability/provenance monitoring, not direct selective classification.
+
+### 6.12 Source-series parity narrows, but does not eliminate, the provenance question
+
+The large 2026 gradient shift aligns temporally with an April-2026 transition in the local supplementary cohort from records sourced as hmi.sharp_720s to hmi.sharp_cea_720s. This initially creates a serious source-boundary confound.
+
+A paired JSOC audit queries both series for 120 identical HARP/T_REC records. All 16 SHARP summary keywords are numerically identical on all 120 pairs at both 1e-12 and 1e-9 tolerances; maximum absolute and relative differences are zero. HARPNUM, T_REC, CODEVER7, CALVER64, CMASK and QUALITY also match exactly, and all 240 series queries succeed.
+
+This rules out a keyword-definition difference within the queried JSOC pairs. It does not, by itself, prove that every locally stored CEA-era tensor row equals the corresponding JSOC record. The local solar-versus-pipeline origin of the April 2026 gradient shift therefore remains unresolved and is not attributed causally to Solar Cycle 25.
+
+### 6.13 Summary of supported and unsupported claims
+
+Taken together, the 72 h evidence supports the following:
+- predictive discrimination, calibration and conformal flare coverage degrade under later temporal regimes;
+- internal statistical agreement can become tighter while rare-event reliability worsens;
+- real AIA acquisition failures are temporally clustered;
+- SHARP is a defensible availability-preserving fallback when AIA fails;
+- automatic AIA-only fallback is not supported;
+- a simple latest-state magnetic baseline is competitive, and temporal SHARP provides only a modest later-regime advantage;
+- equal-weight fusion is not universally superior to SHARP;
+- physical applicability and statistical agreement are complementary monitoring dimensions;
+- physical Mahalanobis distance is not a valid naive abstention score.
+
+The evidence does not support universal predictive superiority, a causal Solar-Cycle-25 explanation of the 2026 gradient shift, a first-principles physical model, or a claim of true live prospective validation.
 
 ## 7. Discussion
 Explain why confidence is not sufficient for trust, why physical applicability is monitoring rather than a gate, why fusion was not universally superior, and why graceful degradation is valuable even without a state-of-the-art predictor claim.
