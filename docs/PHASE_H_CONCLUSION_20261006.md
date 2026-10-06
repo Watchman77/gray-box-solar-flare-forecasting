@@ -10,12 +10,13 @@ Phase H added and audited an explicit interpretable magnetic-state layer to the 
 2. A training-reference Mahalanobis applicability score detects later distribution changes that are not reflected by decreasing entropy, seed spread or SHARP–AIA disagreement.
 3. Physical applicability is not case-level predictive uncertainty: flare windows are often closer to the training physical-state cloud than non-flare windows, and physical distance is negatively associated with fusion squared error.
 4. The 2026 applicability elevation is dominated by the latest magnetic-gradient family rather than by a broad shift across all physical families.
-5. The apparent April 2026 source-series boundary is not a numerical summary-keyword artefact: paired same-record JSOC queries show exact equality for all 16 SHARP features between `hmi.sharp_720s` and `hmi.sharp_cea_720s`.
-6. Therefore physical-state monitoring and statistical confidence should be treated as complementary trust dimensions.
+5. Paired same-record JSOC queries show exact equality for all 16 SHARP features between `hmi.sharp_720s` and `hmi.sharp_cea_720s` on 120 queried pairs. This establishes JSOC pairwise keyword parity, but does not by itself prove that the local stored CEA-era tensor rows equal those JSOC values.
+6. Therefore the local April 2026 gradient-dominated shift remains unresolved as to solar versus pipeline origin.
+7. Physical-state monitoring and statistical confidence should be treated as complementary trust dimensions.
 
 ## Frozen claim
 
-> The 72 h Gray-Box framework combines learned forecasts with an explicit interpretable magnetic-state applicability layer. Retrospective analysis shows that statistical agreement can increase while the observed magnetic-feature distribution moves farther from the development reference. The physical signal is gradient-family dominated and is not explained by the SHARP CEA/non-CEA series choice for the 16 summary keywords. Physical applicability is therefore retained as an independent monitoring dimension rather than a direct abstention rule.
+> The 72 h Gray-Box framework combines learned forecasts with an explicit interpretable magnetic-state applicability layer. Retrospective analysis shows that statistical agreement can increase while the locally stored magnetic-feature distribution moves farther from the development reference. The physical signal is gradient-family dominated. Matched JSOC records do not reproduce a CEA-versus-CCD keyword difference, but the solar-versus-pipeline origin of the local April 2026 shift remains unresolved because local-versus-JSOC parity has not yet been demonstrated on overlapping CEA-era records. Physical applicability is therefore retained as an independent monitoring dimension rather than a direct abstention rule.
 
 ## Explicitly not claimed
 
@@ -36,4 +37,4 @@ The Gray-Box trust stack is now:
 5. data-quality and provenance checks;
 6. frozen operational routing.
 
-The physical layer is a monitor that can flag a physically meaningful input-distribution change even when the statistical predictors appear more mutually confident.
+The physical layer is a monitor that can flag an input-distribution/provenance change in physically interpretable variables even when the statistical predictors appear more mutually confident. The present Phase-H evidence does not establish that the April 2026 change is astrophysical.
