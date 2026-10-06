@@ -292,8 +292,87 @@ The framework's central methodological choice is to keep these trust dimensions 
 
 ---
 
-## 5. Experimental protocol
-Describe threshold freezing, policy freezing, outage replay, AIA-only fallback audit, rolling prospective-style replay, simple baseline suite, active-region block bootstrap, and claim boundaries.
+## 5. Experimental Protocol
+
+### 5.1 Evaluation philosophy and metrics
+
+The evaluation separates discrimination, probabilistic reliability, uncertainty coverage, service availability and selective routing. No single metric is treated as a complete measure of forecast quality.
+
+Categorical discrimination is summarized primarily by the True Skill Statistic (TSS), defined as recall + specificity - 1. Heidke Skill Score (HSS), recall, specificity, precision and F1 are retained where relevant. Probabilistic discrimination is summarized by average precision (AP) and ROC-AUC. Probability quality is assessed with Brier score, Brier Skill Score (BSS), log loss, expected calibration error (ECE), reliability bins, and calibration slope/intercept. BSS uses the fixed training prevalence as the reference forecast rather than refitting climatology in each later regime.
+
+Conformal behaviour is evaluated through overall set coverage, flare-class coverage, no-flare coverage, singleton rate and set composition. These are empirical transfer diagnostics; nominal conformal coverage is not assumed to remain guaranteed under non-exchangeable temporal shift.
+
+Operational evaluation additionally records availability, state mix, positive retention, and performance of the actually issued forecast source. This prevents apparent improvements that are obtained only by rejecting difficult flare-producing cases.
+
+### 5.2 Calibration, alarm thresholds and conformal freeze
+
+Probability calibration is developed only on the probability-calibration role. Raw, Platt-style and isotonic candidates are compared using an internal earlier-data procedure, after which the selected map is frozen. The final selection is the identity/raw probability for SHARP, AIA and fusion.
+
+Binary alarm thresholds for the three frozen branches are selected on model_validation only. Candidate thresholds consist of all distinct observed probabilities together with 0 and 1. The deterministic selection rule is maximum TSS, followed by maximum HSS, maximum recall and finally the lower threshold. The frozen thresholds are 0.0752000 for SHARP, 0.0251018 for AIA and 0.0905993 for equal-weight fusion.
+
+Mondrian class-conditional conformal thresholds are estimated on the conformal-calibration role at alpha = 0.10. The uncertainty cutoffs used by the trust policy are also referenced to earlier calibration support. The primary q90 policy and q80/q95 sensitivity definitions are carried forward without later numerical retuning.
+
+### 5.3 Policy chronology and fallback-first redesign
+
+The policy-development history is retained rather than hidden. Earlier policy versions used uncertainty more directly to abstain. Diagnostic evaluation on Cycle 25 showed that those designs disproportionately removed flare-producing windows, creating an unacceptable availability/positive-retention trade-off.
+
+The final v3 policy therefore changes the routing semantics: uncertainty can prevent NORMAL multimodal issuance; if SHARP remains technically available, the system degrades to SHARP rather than abstaining; and ABSTAIN is reserved for genuine SHARP unavailability.
+
+Cycle 25 informed this semantic redesign and is therefore post-hoc/diagnostic evidence for v3. Importantly, Cycle 25 was not used to select new numerical uncertainty thresholds. Supplementary-2026 outcomes remained unopened during the v3 freeze and were used once for the clean future evaluation of the frozen fallback-first policy.
+
+### 5.4 Cross-regime reliability audit
+
+The frozen SHARP, AIA and equal-weight fusion branches are compared across three evidence regimes: earlier Cycle-24 development support, retrospective Cycle-25 support and supplementary 2026.
+
+The audit is read-only: no model fitting, recalibration, threshold tuning or policy redesign is permitted. The objective is to determine whether discrimination, calibration and conformal reliability move together or diverge under later temporal conditions.
+
+### 5.5 Empirical AIA acquisition failures
+
+AIA failure experiments use recorded upstream acquisition/recovery incidents rather than independent random masking. The engineering inventory contains 6,461 incident samples across 2025-2026, of which 2,290 map exactly to Gray-Box forecast cases.
+
+Failures are grouped descriptively into empirical episodes within the same year, HARP and recovery class; a new episode begins when the inter-failure gap exceeds 192 min. This rule is deterministic and not selected from forecast outcomes. The resulting replay asks what the frozen v3 policy would do if the AIA branch were unavailable for those mapped cases while SHARP remained available.
+
+These incidents are engineering acquisition/recovery events, not verified historical live-service outages. They are used to construct realistic correlated modality failures, not to estimate the true uptime of a deployed forecasting service.
+
+### 5.6 AIA-only fallback feasibility
+
+Because ABSTAIN occurs when SHARP is unavailable, a separate post-hoc experiment asks whether the frozen AIA branch could safely serve as an automatic fallback in that condition. No new threshold is introduced. The decision is based jointly on branch TSS, recall, AP, conformal flare coverage and singleton behaviour across earlier, Cycle-25 and 2026 regimes.
+
+This analysis is intentionally conservative: a branch is not considered suitable for automatic degraded issuance merely because it returns a confident probability.
+
+### 5.7 Prospective-style chronological replay
+
+The final v3 policy is replayed in chronological issue order at the nominal 96-min cadence. The model, calibration maps, conformal thresholds and routing rules remain frozen.
+
+At monitoring time t, an outcome is visible only if the 72 h forecast window and an additional 24 h reporting-delay allowance have elapsed. Thus a case can enter the monitoring history only when issue_time + 96 h <= t. The rolling monitor does not feed back into decisions.
+
+Two replay scenarios are evaluated: nominal frozen inputs and mapped real-AIA-incident replay. The procedure approximates the information flow of prospective monitoring but does not reconstruct a historical live service. We therefore refer to it as a prospective-style chronological replay.
+
+### 5.8 Same-support baseline suite
+
+To test whether the manuscript's findings depend on complex predictors, the exact frozen support is also evaluated against two simple references: training-prevalence climatology and one L2 logistic regression using the 16 latest-slot SHARP features.
+
+The logistic model is fitted only on the 25,586 training rows. Median imputation and standard scaling are training-fitted. Its alarm threshold is selected on model_validation with the same deterministic rule used for the frozen branches. No hyperparameter search, tree model or neural retraining is performed.
+
+Primary baseline reporting is restricted to policy_validation, retrospective Cycle 25 and supplementary 2026. For every model we report TSS at the appropriate frozen threshold, auxiliary TSS at 0.5, AP, Brier score and BSS relative to training climatology.
+
+### 5.9 Active-region block bootstrap
+
+Repeated forecasts from the same active region are not treated as independent. For the baseline comparisons, 2,000 deterministic bootstrap replicates resample region_component_id with replacement and retain all forecast windows belonging to each sampled region. The same block draw is used for every model within a role, enabling paired model-difference intervals.
+
+Percentile 95% intervals are reported for TSS, AP, Brier and BSS. Paired deltas are reported for the frozen branches against climatology, the temporal SHARP model against the latest-state logistic comparator, and fusion against SHARP. These intervals quantify sampling uncertainty under clustered forecast windows; they do not create independence where none exists.
+
+### 5.10 Physical-applicability diagnostics
+
+Phase H is a hypothesis-driven post-freeze extension. The feature-family definitions, transform, covariance estimator and initial physical-state protocol were frozen before Phase-H execution, but Cycle-25 and 2026 outcomes had already been observed in A-G. Phase-H later-regime findings are therefore post-hoc.
+
+The final nonredundant MPSV is used to examine cross-regime physical distance, class-conditional behaviour, active-region aggregation, feature-family sensitivity and source/provenance effects. A structural sensitivity check removes the initially redundant temporal slope; subsequent leave-family-out analyses test whether apparent OOD is broad or dominated by one physical family. No Phase-H result is allowed to alter the v3 routing policy.
+
+### 5.11 Claim ledger and stopping rules
+
+The experimental programme uses explicit stopping rules to prevent retrospective optimization. Once the 72 h A-G evidence chain was frozen, later analyses could add diagnostics but could not rewrite the original model, calibration or policy results. Negative findings are retained as results rather than converted into new tuning cycles.
+
+The final evidence categories are earlier development/descriptive evidence for Cycle-24 roles, post-hoc/diagnostic evidence for v3 on Cycle 25, clean future evaluation for the one-shot supplementary-2026 v3 test, and post-hoc descriptive evidence for Phase-H analyses performed after 2026 had already been opened. This chronology is used throughout the Results and Discussion sections.
 
 ## 6. Results
 Organize around:
