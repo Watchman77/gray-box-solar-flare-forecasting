@@ -30,7 +30,7 @@ These results support a trust-oriented operational view: calibration, uncertaint
 2. **Reliability paradox.** Statistical agreement tightened while rare-flare reliability and conformal coverage deteriorated.
 3. **Fallback finding.** SHARP preserved availability under AIA failures; frozen AIA-only fallback was not stable enough for automatic use.
 4. **Physical applicability finding.** An interpretable magnetic-state monitor identified a gradient-dominated distribution shift that was not reflected by statistical agreement, but physical distance was not a valid case-level abstention score.
-5. **Baseline finding.** A simple latest-state SHARP logistic was competitive; temporal SHARP showed only a modest Cycle-25 TSS advantage, and equal-weight fusion was not universally superior.
+5. **Baseline finding.** A simple latest-state SHARP logistic was competitive, so the manuscript does not rely on a predictive-superiority claim.
 6. **Claim boundary.** The work does not claim MHD/PINN physics, universal predictive superiority, true live prospective validation, or a causal solar-cycle explanation of the 2026 gradient shift.
 
 ---
@@ -633,7 +633,7 @@ Although the architecture was designed for multiple horizons, the evidence in th
 
 We presented a Gray-Box trust framework for 72-hour M/X-class solar-flare forecasting that separates forecast generation from evidence about whether and how that forecast should be used. Frozen SHARP and AIA predictors are surrounded by probability calibration, class-conditional conformal uncertainty, ensemble and cross-modal agreement diagnostics, an interpretable magnetic-state applicability monitor, provenance checks and an explicit NORMAL / DEGRADED / ABSTAIN state machine.
 
-The results show why this separation matters. Predictive discrimination, calibration and flare-class conformal coverage deteriorate in later regimes even as seed spread, entropy and SHARP-AIA disagreement become smaller. Real AIA acquisition failures are strongly clustered, and a fallback-first policy preserves issuance by degrading to SHARP when the image branch is unavailable. The frozen AIA branch is not stable enough to justify automatic AIA-only fallback. A simple latest-state logistic comparator is competitive, while equal-weight fusion is not universally superior to SHARP, confirming that the contribution is operational trust rather than predictive dominance.
+The results show why this separation matters. Predictive discrimination, calibration and flare-class conformal coverage deteriorate in later regimes even as seed spread, entropy and SHARP-AIA disagreement become smaller. Real AIA acquisition failures are strongly clustered, and a fallback-first policy preserves issuance by degrading to SHARP when the image branch is unavailable. The frozen AIA branch is not stable enough to justify automatic AIA-only fallback. A simple latest-state logistic comparator is competitive, confirming that the contribution is operational trust rather than predictive dominance.
 
 The physical layer adds a second view of applicability: the magnetic-state distribution can move away from its development reference even when the learned predictors become more internally confident. That signal is useful for monitoring but is not a case-level error score and is not promoted into the routing gate.
 
