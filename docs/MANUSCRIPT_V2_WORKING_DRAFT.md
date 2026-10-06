@@ -2,7 +2,7 @@
 
 ## Working title
 
-**A Gray-Box Trust Framework for 72-Hour Solar Flare Forecasting Under Temporal Shift, Uncertainty Degradation, and Data Failure**
+**Operational Trust in 72-Hour Solar Flare Forecasting: A Gray-Box Framework for Temporal Shift and Data Failure**
 
 ## Central contribution
 
@@ -12,15 +12,15 @@ The framework combines learned SHARP and AIA predictors with calibration, confor
 
 ---
 
-## Abstract — draft v1
+## Abstract — tightened journal draft
 
-Reliable solar-flare forecasting requires more than high discrimination under a fixed retrospective test set. Operational systems must remain useful when probability calibration drifts, uncertainty estimates degrade, input modalities fail, and the physical feature distribution moves away from the development regime. We present a Gray-Box trust framework for 72-hour M/X-class solar-flare forecasting that combines frozen SHARP and AIA predictors with calibration, conformal uncertainty, statistical agreement measures, an interpretable magnetic-state applicability layer, and an explicit NORMAL / DEGRADED / ABSTAIN routing policy. All model fitting, calibration, conformal estimation and numeric trust thresholds were restricted to earlier time-ordered support. Cycle-25 diagnostic evidence exposed a failure mode in an earlier abstention design and motivated the final fallback-first routing semantics; the resulting v3 policy was then frozen without new numeric tuning before the supplementary-2026 evaluation.
+Operational solar-flare forecasting requires more than high discrimination on a fixed retrospective test set. Probabilities must remain interpretable under temporal shift, uncertainty estimates must be monitored, and the system must respond explicitly when an input modality fails. We present a Gray-Box trust framework for 72-hour active-region M/X-class flare forecasting that combines frozen SHARP and AIA predictors with probability calibration, Mondrian conformal uncertainty, ensemble and cross-modal agreement signals, an interpretable magnetic-state applicability monitor, provenance checks, and a NORMAL / DEGRADED / ABSTAIN routing policy. Model fitting, calibration, conformal estimation and numerical trust thresholds use only earlier time-ordered support. Cycle-25 diagnostics of earlier abstention policies motivated the fallback-first v3 routing semantics without new numerical tuning, after which the policy was frozen before supplementary-2026 evaluation.
 
-Across regimes, predictive reliability degraded despite increasing model agreement. For SHARP, TSS declined from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle-25 evaluation and 0.323 in 2026. Equal-weight SHARP–AIA fusion did not provide universal predictive gains and was significantly worse than SHARP in Cycle-25 TSS and average precision under paired active-region block bootstrap. A simple 16-feature latest-state SHARP logistic baseline was also competitive, confirming that the contribution is not raw predictive superiority. Conformal flare coverage degraded substantially in later regimes, while entropy, ensemble spread and SHARP–AIA disagreement became smaller, showing that internal statistical agreement can increase even as rare-event reliability worsens.
+Predictive reliability degrades substantially under later temporal transfer. SHARP TSS declines from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle 25 and 0.323 in 2026; equal-weight fusion changes from 0.630 to 0.488 and 0.292, while AIA falls to 0.074 in 2026. Flare-class conformal coverage also deteriorates, even as fusion entropy, seed spread and SHARP-AIA disagreement become smaller. Active-region block bootstrap shows that a simple latest-state SHARP logistic baseline is competitive and that fusion is significantly worse than SHARP in Cycle-25 TSS and average precision.
 
-The frozen routing policy preserved forecast availability during realistic AIA acquisition failures by degrading to SHARP rather than relying automatically on an unstable AIA-only fallback. AIA outage analysis showed clustered empirical failure episodes, while AIA-only fallback performance deteriorated sharply in 2026. The explicit physical layer revealed a gradient-family-dominated shift in the locally stored SHARP feature distribution that was not detected by statistical confidence measures; matched same-record JSOC queries showed exact parity between the 16 SHARP summary keywords in the CCD and CEA series, although the local solar-versus-pipeline origin of the April 2026 shift remains unresolved. Physical applicability was therefore retained as an independent monitoring dimension rather than a direct abstention rule.
+Mapped AIA acquisition failures are strongly clustered in time. The frozen policy preserves forecast availability by degrading to SHARP when AIA is unavailable, whereas automatic AIA-only fallback is not supported. The physical layer identifies a gradient-dominated change in the locally stored magnetic-feature distribution that is not reflected by statistical confidence, but physical distance is not a valid case-level abstention score.
 
-These results support a trust-oriented view of operational flare prediction: calibration, uncertainty, physical applicability, provenance, and graceful degradation should be treated as complementary system properties rather than inferred from predictive confidence alone.
+These results support a trust-oriented operational view: calibration, uncertainty coverage, physical applicability, provenance and fallback behaviour should be treated as complementary system properties rather than inferred from predictive confidence alone.
 
 ---
 
