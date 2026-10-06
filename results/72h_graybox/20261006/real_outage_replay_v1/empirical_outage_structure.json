@@ -1,0 +1,20 @@
+{
+  "incident_samples_total": 6461,
+  "incident_samples_by_year": {
+    "2025": 6199,
+    "2026": 262
+  },
+  "incident_blocks_total": 66,
+  "recovery_classes": {
+    "block_download_or_coverage": 6062,
+    "crop_patch_boundary": 399
+  },
+  "mapped_to_graybox_cases": 2290,
+  "mapped_by_method": {
+    "source_sample_id": 2290
+  },
+  "persistent_after_recovery_incident_ids": 262,
+  "mapped_persistent_graybox_cases": 1,
+  "block_span_hours_median": 16.0,
+  "block_span_hours_max": 22.6
+}

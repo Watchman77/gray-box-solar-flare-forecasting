@@ -1,0 +1,3 @@
+recovery_group_id,original_block_id,recovery_class,status,n_targets,n_pending_at_start,n_saved_this_run,elapsed_minutes,message
+block_download_or_coverage__2026_HARP14277_20260113_1036_20260114_0548,2026_HARP14277_20260113_1036_20260114_0548,block_download_or_coverage,error,13,,0,,DrmsExportError('Expecting value: line 1 column 1 (char 0) [status=4]')
+crop_patch_boundary__2026_HARP14305_20260125_1000_20260125_1624,2026_HARP14305_20260125_1000_20260125_1624,crop_patch_boundary,error,4,,0,,DrmsExportError('Expecting value: line 1 column 1 (char 0) [status=4]')

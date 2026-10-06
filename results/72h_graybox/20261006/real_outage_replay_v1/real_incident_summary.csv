@@ -1,0 +1,5 @@
+year,recovery_class,incident_samples,unique_blocks,unique_harps,first_time,last_time
+2025,block_download_or_coverage,5845,0,153,2025-01-24 10:00:00+00:00,2025-12-31 23:00:00+00:00
+2025,crop_patch_boundary,354,44,11,2025-01-19 11:24:00+00:00,2025-11-14 18:36:00+00:00
+2026,block_download_or_coverage,217,16,13,2026-01-13 10:36:00+00:00,2026-03-27 16:24:00+00:00
+2026,crop_patch_boundary,45,6,1,2026-01-25 11:36:00+00:00,2026-01-30 01:36:00+00:00
