@@ -156,7 +156,7 @@ All modeling roles follow a fixed chronological partition.
 | retrospective_cycle25 | 2021-01-01 to 2025-12-31 | later temporal-regime diagnostic/evaluation |
 | supplementary_2026 | 2026-01-01 onward | frozen v3 future evaluation and later descriptive audits |
 
-The final matched 72 h schedule contains 96,596 labeled forecast cases: 25,586 train; 3,905 model validation; 2,831 probability calibration; 4,168 conformal calibration; 13,142 policy validation; 35,846 retrospective Cycle 25; and 11,118 supplementary 2026. Cases outside these matched/labeled supports remain in the provenance inventory but do not enter model fitting or headline evaluation.
+The final matched 72 h schedule contains 96,596 labeled forecast cases: 25,586 train; 3,905 model validation; 2,831 probability calibration; 4,168 conformal calibration; 13,142 policy validation; 35,846 retrospective Cycle 25; and 11,118 supplementary 2026 (Table 1). Cases outside these matched/labeled supports remain in the provenance inventory but do not enter model fitting or headline evaluation.
 
 The 2020 gap is deliberate: candidate records exist for 2020, but no accepted input package is available in the three frozen matched cohorts, so the year is not silently interpolated into either development or evaluation.
 
@@ -282,7 +282,7 @@ The rolling monitor records state mix, calibration/coverage summaries and uncert
 
 ### 4.10 Gray-Box interpretation
 
-The final system is “Gray-Box” because it places an interpretable magnetic-state/applicability layer and explicit operational logic around learned predictors. It is not gray because the neural models are partially replaced by first-principles magnetohydrodynamics.
+The final system is “Gray-Box” because it places an interpretable magnetic-state/applicability layer and explicit operational logic around learned predictors (Figure 1; Table 2). It is not gray because the neural models are partially replaced by first-principles magnetohydrodynamics.
 
 In compact form, the trust stack is:
 
@@ -378,7 +378,7 @@ The final evidence categories are earlier development/descriptive evidence for C
 
 ### 6.1 Cross-regime discrimination degrades
 
-The frozen forecast branches show substantial temporal degradation. On the common cross-regime support, SHARP remains the strongest individual branch, but its TSS falls from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle 25 and 0.323 in 2026. AIA remains near 0.34 through Cycle 25 before falling sharply to 0.074 in 2026. Equal-weight fusion follows the same broad decline and does not consistently exceed SHARP.
+The frozen forecast branches show substantial temporal degradation (Figure 2; Table 3). On the common cross-regime support, SHARP remains the strongest individual branch, but its TSS falls from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle 25 and 0.323 in 2026. AIA remains near 0.34 through Cycle 25 before falling sharply to 0.074 in 2026. Equal-weight fusion follows the same broad decline and does not consistently exceed SHARP.
 
 | Regime | SHARP TSS | AIA TSS | Fusion TSS |
 |---|---:|---:|---:|
@@ -414,7 +414,7 @@ A central result is the divergence between model agreement and cross-regime reli
 
 The models therefore become more internally consistent and more decisive precisely while calibration and flare-class conformal reliability deteriorate. These agreement measures remain useful within a regime for ranking some forms of case-level risk, but they are poor standalone indicators of global temporal shift.
 
-This is the principal reliability paradox of the study: **agreement is not equivalent to trustworthiness**.
+This is the principal reliability paradox of the study: **agreement is not equivalent to trustworthiness** (Figure 3).
 
 ### 6.4 Real AIA failures are temporally clustered
 
@@ -422,7 +422,7 @@ The upstream engineering inventory contains 6,461 AIA acquisition/recovery incid
 
 In 2025, 359 empirical episodes are reconstructed; 332 are multi-sample clusters and 6,172 of 6,199 incident samples occur within clustered episodes. Median episode span is 19.2 h and the maximum is 124.8 h. Among mapped Gray-Box exposures, 2,085 cases occur in long episodes containing more than ten failed samples.
 
-These results show why independent random masking is an incomplete robustness model for image-based operational forecasting.
+These results show why independent random masking is an incomplete robustness model for image-based operational forecasting (Figure 4).
 
 ### 6.5 SHARP fallback preserves issuance under mapped AIA failures
 
@@ -438,7 +438,7 @@ The small TSS difference between nominal and incident replay is not interpreted 
 
 ### 6.6 AIA-only automatic fallback is not supported
 
-The frozen AIA branch does not provide a stable basis for automatic degraded issuance when SHARP is unavailable.
+The frozen AIA branch does not provide a stable basis for automatic degraded issuance when SHARP is unavailable (Table 4).
 
 | Regime | AIA TSS | Recall | AP | Flare conformal coverage | Singleton rate |
 |---|---:|---:|---:|---:|---:|
@@ -458,7 +458,7 @@ Thus the running system would have appeared increasingly decisive under several 
 
 ### 6.8 A simple latest-state logistic is a strong comparator
 
-The same-support baseline suite shows that forecast complexity should not be confused with operational contribution.
+The same-support baseline suite shows that forecast complexity should not be confused with operational contribution (Figure 5; Table 5).
 
 On policy_validation, TSS is 0.597 for the latest-state logistic, 0.628 for frozen SHARP and 0.626 for fusion. On Cycle 25, the values are 0.501, 0.541 and 0.488 respectively. In 2026 they are 0.269, 0.323 and 0.292.
 
@@ -490,7 +490,7 @@ The Phase-H physical layer initially shows a 2026 increase in training-reference
 
 However, feature-family sensitivity reveals that this elevation is not broad. Removing the complete gradient family reduces 2026 median distance to 9.38 and q99 OOD rate to 1.08%, both below the Cycle-25 values for the same reduced representation. Removing only gradients__latest is already sufficient to eliminate the aggregate 2026 elevation.
 
-The shift is therefore **gradient-family dominated**.
+The shift is therefore **gradient-family dominated** (Figure 6).
 
 Importantly, this physical signal moves in the opposite direction from the statistical agreement signals. On the common multimodal support, median physical distance increases from approximately 11.60 to 12.54 to 16.74 while seed spread, entropy and SHARP-AIA gap all decrease. Physical applicability and statistical agreement therefore capture different aspects of system state.
 
