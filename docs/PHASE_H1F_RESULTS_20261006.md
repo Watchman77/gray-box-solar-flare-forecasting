@@ -46,30 +46,31 @@ All metadata equality rates were 100%.
 
 H1f outcome:
 
-**SUMMARY_KEYWORDS_PARITY_CONFIRMED**
+**SUMMARY_KEYWORDS_PARITY_CONFIRMED ON THE QUERIED JSOC PAIRS**
 
-The April 2026 switch from cohort records sourced as `hmi.sharp_720s` to records sourced as `hmi.sharp_cea_720s` does **not** explain the observed 2026 gradient-family shift through a change in the 16 SHARP keyword values themselves.
+For the 120 tested same-HARP / same-T_REC records, the 16 SHARP summary keywords are exactly identical between `hmi.sharp_720s` and `hmi.sharp_cea_720s`.
 
-For the tested same HARP / same T_REC records, the summary keywords are exactly identical between series.
+This rules out a numerical keyword-definition difference **within those matched JSOC pairs**.
 
-Therefore the H1d/H1e gradient shift should no longer be described as a series-definition artefact. The remaining plausible explanations include:
+It does **not**, by itself, establish the cause of the local April 2026 drop in the stored cohort. Two evidentiary links must remain explicit:
 
-- genuine temporal change in the sampled active-region population;
-- active-region selection/composition effects;
-- viewing-geometry / disk-position effects;
-- other upstream sampling or lineage differences not represented by the series name;
-- combinations of these factors.
+1. the queried sample must demonstrably include post-4-April 2026 CEA-era times (the H1f notebook was designed to sample January–August plus a transition window, but the compact parity table alone does not document the realized time coverage);
+2. the local stored tensor values for the same HARP/T_REC records must be shown to match the corresponding JSOC keyword values.
 
-The result still does not establish a unique solar-cycle causal mechanism.
+Until local-versus-JSOC equality is demonstrated on overlapping CEA-era records, the April 2026 gradient shift remains a gradient-dominated change at the product/provenance boundary whose solar-versus-pipeline origin is unresolved.
+
+Remaining explanations include genuine temporal population change, active-region selection/composition, viewing geometry, upstream extraction/join effects, or combinations of these factors.
 
 ## 5. Consequence for the physical layer
 
 The physical-applicability monitor remains scientifically meaningful:
 
-- it detected a large gradient-family distribution shift;
-- that shift is not caused by numerical disagreement between the two SHARP series' summary keywords;
+- it detected a large gradient-family distribution shift in the stored cohort;
+- matched JSOC records do not reproduce a CEA-versus-CCD keyword difference;
 - statistical confidence/agreement signals were simultaneously becoming smaller;
 - physical distance remains unsuitable as a naive case-level rejection score.
+
+Do not state that the stored 2026 population shift is definitively genuine or astrophysical until local-versus-JSOC parity is documented for overlapping CEA-era records.
 
 Accordingly, Phase H supports an **independent physical/applicability monitoring layer**, not a direct physical abstention gate.
 
