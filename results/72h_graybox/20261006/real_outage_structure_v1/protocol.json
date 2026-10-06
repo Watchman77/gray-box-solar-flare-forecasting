@@ -1,0 +1,28 @@
+{
+  "status": "POSTHOC_REAL_AIA_OUTAGE_STRUCTURE_AUDIT_COMPLETE",
+  "created_utc": "2026-10-06T04:31:58.863338+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "native_cadence_minutes": 96,
+  "episode_rule": "Within same year+HARPNUM+recovery_class, start a new episode when inter-failure gap exceeds 192 minutes.",
+  "episode_rule_status": "descriptive deterministic grouping; not optimized against forecast outcomes",
+  "uq_context": "No new UQ fitted here. Interpretation remains tied to the frozen calibration, Mondrian conformal, seed-disagreement, entropy, and fallback/abstention framework.",
+  "limitations": [
+    "Engineering acquisition/recovery incidents are not equivalent to verified live-service outages.",
+    "Blank original block_id values are not treated as independent events.",
+    "Episode reconstruction uses temporal/HARP structure only and does not infer silent corruption.",
+    "No policy thresholds are changed using these episodes."
+  ],
+  "outputs": [
+    "incident_episode_assignments.csv",
+    "empirical_outage_episodes.csv",
+    "episode_structure_by_year.csv",
+    "episode_structure_by_class.csv",
+    "largest_outage_episodes.csv",
+    "explicit_block_reconciliation.csv",
+    "graybox_exposure_by_episode_severity.csv"
+  ]
+}

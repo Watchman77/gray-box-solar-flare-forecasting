@@ -1,0 +1,5 @@
+episode_severity,mapped_graybox_cases,unique_episodes,persistent_cases,median_episode_span_hours
+isolated,3,3,0,0.0
+short_cluster_2_4,15,11,0,4.8
+medium_cluster_5_10,187,48,0,11.2
+long_cluster_gt10,2085,140,1,56.4

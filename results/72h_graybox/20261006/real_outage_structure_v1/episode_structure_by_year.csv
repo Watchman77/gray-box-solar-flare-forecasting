@@ -1,0 +1,3 @@
+year,episodes,clustered_episodes,clustered_episode_fraction,samples_in_clustered_episodes,total_incident_samples,median_episode_samples,p90_episode_samples,max_episode_samples,median_episode_span_hours,p90_episode_span_hours,max_episode_span_hours,episodes_with_explicit_block_id,mapped_graybox_cases
+2025,359,332,0.924791086350975,6172,6199,13.0,44.19999999999999,78,19.2,69.43999999999998,124.8,32,2289
+2026,18,18,1.0,262,262,13.5,30.0,30,20.3,46.4,46.4,18,1

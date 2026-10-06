@@ -1,0 +1,5 @@
+year,recovery_class,episodes,clustered_episodes,incident_samples,median_samples_per_episode,max_samples_per_episode,median_span_hours,max_span_hours,mapped_graybox_cases
+2025,block_download_or_coverage,327,306,5845,13.0,78,19.2,124.8,2284
+2025,crop_patch_boundary,32,26,354,7.0,67,9.6,110.4,5
+2026,block_download_or_coverage,13,13,217,14.0,30,20.8,46.4,1
+2026,crop_patch_boundary,5,5,45,10.0,12,14.4,19.2,0
