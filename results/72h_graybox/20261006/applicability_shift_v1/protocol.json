@@ -1,0 +1,37 @@
+{
+  "status": "POSTHOC_APPLICABILITY_SHIFT_AUDIT_COMPLETE",
+  "created_utc": "2026-10-06T01:08:46.764949+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_probability_recalibration": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "retained_signals": [
+    "aia/sharp/fusion seed spread",
+    "SHARP-AIA probability gap",
+    "fusion entropy",
+    "input quality",
+    "conformal coverage/failure"
+  ],
+  "sharp_feature_distance_status": "historically documented but not recomputed because raw tensor/transform and per-case distance artifacts are not retained in current execution environment",
+  "historical_sharp_feature_distance_method": "squared Mahalanobis distance with Ledoit-Wolf covariance fitted on 2010-2013 transformed 3x16 SHARP histories",
+  "historical_sharp_q99_threshold": 379.55586300796773,
+  "aia_feature_space_ood_status": "not available; no image-embedding OOD claim",
+  "evidence_boundary": {
+    "cycle24": "development/descriptive",
+    "cycle25": "diagnostic/post-hoc for v3",
+    "2026": "already-spent locked evidence; no redesign"
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b"
+  },
+  "outputs": [
+    "regime_applicability_summary.csv",
+    "signal_failure_associations.csv",
+    "distribution_shift_tests.csv",
+    "signal_stratified_diagnostics.csv",
+    "figures/"
+  ]
+}
