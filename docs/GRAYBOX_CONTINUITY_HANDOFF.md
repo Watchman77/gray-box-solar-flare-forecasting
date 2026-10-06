@@ -130,3 +130,34 @@ Do not finalise Abstract/Conclusion until extension analyses and 24 h / 3 h repl
 
 ## Project separation
 Keep this project separate from the main AIA paper. AIA acquisition/model-development work belongs in `Watchman77/solar-flare-aia-training`; this repository owns the operational Gray-Box framework.
+
+## Notebook 17 executed — cross-cycle reliability findings
+Executed 6 October 2026 on the VM with no fitting/tuning/redesign.
+
+Support:
+- Cycle-24 earlier development support: 24,046 cases, 1,406 positives, prevalence 5.85%.
+- Cycle-25 diagnostic: 35,846 cases, 3,860 positives, prevalence 10.77%.
+- Supplementary 2026 locked: 11,118 cases, 992 positives, prevalence 8.92%.
+- 2010–2013 remain training-only and are not scored from in-sample predictions.
+- 2020 is absent from the accepted multimodal prediction package.
+
+Main shift:
+- SHARP TSS: 0.689 -> 0.541 -> 0.323.
+- AIA TSS: 0.333 -> 0.340 -> 0.074.
+- Fusion TSS: 0.630 -> 0.488 -> 0.292.
+- SHARP flare conformal coverage: 0.806 -> 0.735 -> 0.435.
+- AIA flare conformal coverage: 0.812 -> 0.620 -> 0.064.
+- Fusion flare conformal coverage: 0.838 -> 0.692 -> 0.346.
+- ECE worsens across periods for all three branches.
+
+Important new operational finding:
+The frozen v3 q90 state logic becomes **more NORMAL** over time despite worsening predictive skill and flare-class conformal coverage:
+- Cycle-24 earlier development: NORMAL 66.0%, DEGRADED 34.0%.
+- Cycle-25 diagnostic: NORMAL 77.7%, DEGRADED 22.3%.
+- 2026: NORMAL 92.5%, DEGRADED 7.5%.
+At the same time, SHARP–AIA probability gap, fusion seed spread and fusion entropy all decline. Therefore the current disagreement/spread/entropy gates can become reassuring under shift even while real rare-flare reliability worsens. This strongly motivates explicit OOD / feature-space applicability analysis rather than relying on predictive disagreement alone.
+
+Evidence boundary remains:
+- Cycle 24 = development/descriptive.
+- Cycle 25 = diagnostic/post-hoc for v3.
+- 2026 = already-spent clean evidence; do not redesign from it.
