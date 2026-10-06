@@ -1,0 +1,25 @@
+{
+  "status": "POSTHOC_CROSS_CYCLE_RELIABILITY_AUDIT_COMPLETE",
+  "created_utc": "2026-10-05T23:59:34.694010+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "primary_policy": "fallback_v3_q90",
+  "evidence_boundary": {
+    "cycle24": "development/descriptive only; contains prior model/calibration/policy development roles",
+    "cycle25": "diagnostic/post-hoc for v3 because Cycle25 informed v3 redesign",
+    "supplementary_2026": "reproduction/stratification of already-spent clean future evaluation; no redesign allowed"
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b"
+  },
+  "outputs": [
+    "cross_cycle_branch_metrics.csv",
+    "cross_cycle_trust_state_summary.csv",
+    "cross_cycle_support_boundaries.csv",
+    "figures/"
+  ]
+}

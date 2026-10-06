@@ -1,0 +1,6 @@
+period,status,use
+2010-2013,training period absent from canonical non-training master,do not score cross-cycle reliability from in-sample predictions
+2014-2019,available across earlier non-training development/calibration/policy roles,development/descriptive Cycle-24 reliability only
+2020,not represented in accepted multimodal prediction package,report as support gap; do not interpolate
+2021-2025,retrospective_cycle25 predictions available,diagnostic/post-hoc for v3 because Cycle25 informed redesign
+2026,supplementary_2026 predictions available,reproduce frozen clean-v3 result; no redesign
