@@ -161,3 +161,32 @@ Evidence boundary remains:
 - Cycle 24 = development/descriptive.
 - Cycle 25 = diagnostic/post-hoc for v3.
 - 2026 = already-spent clean evidence; do not redesign from it.
+
+
+## Notebook 18 executed — complete multimodal calibration diagnostics
+Executed 6 October 2026 with no model fitting, threshold tuning, policy selection, or redesign.
+
+Frozen Brier-skill reference:
+- training climatology = 0.0576877980145392.
+
+Regime-level findings:
+- SHARP Brier Skill Score: 0.336 (Cycle-24 earlier development) -> 0.215 (Cycle-25 diagnostic) -> 0.160 (2026).
+- AIA Brier Skill Score: -0.001 -> 0.013 -> -0.056.
+- Fusion Brier Skill Score: 0.247 -> 0.176 -> 0.097.
+- ECE increases across regimes for all branches:
+  - SHARP: 0.0056 -> 0.0307 -> 0.0474.
+  - AIA: 0.0217 -> 0.0674 -> 0.0793.
+  - Fusion: 0.0303 -> 0.0373 -> 0.0597.
+- 2026 calibration slopes are all < 1:
+  - SHARP 0.656, intercept -0.022.
+  - AIA 0.663, intercept +0.840.
+  - Fusion 0.810, intercept +0.791.
+Interpretation: later-period forecasts are increasingly miscalibrated; slope < 1 indicates probability spread is too extreme relative to outcomes, while the positive AIA/fusion intercepts in 2026 indicate an additional systematic probability-level shift. Do not refit on 2026.
+- AIA becomes worse than the frozen training-climatology reference in 2026 (negative BSS), while SHARP and fusion remain better than climatology but with substantially reduced skill.
+
+Annual diagnostics caveat:
+- 2018 contains zero positives and therefore calibration slope/intercept are undefined.
+- Very low-positive years such as 2019 should not be over-interpreted; regime-level summaries are the primary evidence.
+
+Phase B status: complete.
+Next scientific priority: Phase C multimodal OOD/applicability, explicitly testing feature-space/domain-shift indicators because Notebook 17 showed disagreement/spread/entropy can become more reassuring while true rare-flare reliability worsens.
