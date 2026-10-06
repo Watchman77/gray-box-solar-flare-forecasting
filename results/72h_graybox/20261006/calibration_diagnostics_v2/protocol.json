@@ -1,0 +1,25 @@
+{
+  "status": "POSTHOC_MULTIMODAL_CALIBRATION_DIAGNOSTICS_COMPLETE",
+  "created_utc": "2026-10-06T00:22:02.080606+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "train_climatology": 0.0576877980145392,
+  "brier_skill_reference": "frozen training prevalence from executed SHARP72 training summary; no later-period prevalence refit",
+  "evidence_boundary": {
+    "cycle24": "development/descriptive",
+    "cycle25": "diagnostic/post-hoc for v3",
+    "2026": "already-spent clean evaluation; descriptive only here"
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b"
+  },
+  "outputs": [
+    "calibration_diagnostics.csv",
+    "reliability_bins.csv",
+    "figures/"
+  ]
+}
