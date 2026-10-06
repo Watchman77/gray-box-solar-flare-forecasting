@@ -14,7 +14,7 @@ The framework combines learned SHARP and AIA predictors with calibration, confor
 
 ## Abstract — draft v1
 
-Reliable solar-flare forecasting requires more than high discrimination under a fixed retrospective test set. Operational systems must remain useful when probability calibration drifts, uncertainty estimates degrade, input modalities fail, and the physical feature distribution moves away from the development regime. We present a Gray-Box trust framework for 72-hour M/X-class solar-flare forecasting that combines frozen SHARP and AIA predictors with calibration, conformal uncertainty, statistical agreement measures, an interpretable magnetic-state applicability layer, and an explicit NORMAL / DEGRADED / ABSTAIN routing policy. The framework was developed using time-ordered earlier data and evaluated across later Solar Cycle 25 support and a supplementary 2026 extension, with no policy reselection on later outcomes.
+Reliable solar-flare forecasting requires more than high discrimination under a fixed retrospective test set. Operational systems must remain useful when probability calibration drifts, uncertainty estimates degrade, input modalities fail, and the physical feature distribution moves away from the development regime. We present a Gray-Box trust framework for 72-hour M/X-class solar-flare forecasting that combines frozen SHARP and AIA predictors with calibration, conformal uncertainty, statistical agreement measures, an interpretable magnetic-state applicability layer, and an explicit NORMAL / DEGRADED / ABSTAIN routing policy. All model fitting, calibration, conformal estimation and numeric trust thresholds were restricted to earlier time-ordered support. Cycle-25 diagnostic evidence exposed a failure mode in an earlier abstention design and motivated the final fallback-first routing semantics; the resulting v3 policy was then frozen without new numeric tuning before the supplementary-2026 evaluation.
 
 Across regimes, predictive reliability degraded despite increasing model agreement. For SHARP, TSS declined from 0.689 on earlier Cycle-24 development support to 0.541 on Cycle-25 evaluation and 0.323 in 2026. Equal-weight SHARP–AIA fusion did not provide universal predictive gains and was significantly worse than SHARP in Cycle-25 TSS and average precision under paired active-region block bootstrap. A simple 16-feature latest-state SHARP logistic baseline was also competitive, confirming that the contribution is not raw predictive superiority. Conformal flare coverage degraded substantially in later regimes, while entropy, ensemble spread and SHARP–AIA disagreement became smaller, showing that internal statistical agreement can increase even as rare-event reliability worsens.
 
@@ -51,7 +51,7 @@ A remaining practical challenge is how these components should interact when evi
 
 This work addresses that systems-level problem for active-region M/X-class forecasting at a 72-hour horizon. We use the term **Gray-Box** in a deliberately restricted sense. The forecasting branches remain learned data-driven models; we do not solve magnetohydrodynamic equations or impose a physics-informed neural-network loss. The “gray” component is an explicit, interpretable magnetic-state layer derived from physically meaningful SHARP families, combined with statistical uncertainty, provenance and data-quality evidence. These signals are not collapsed into a single confidence score. Instead, they are evaluated as distinct trust dimensions around a frozen operational state machine.
 
-The framework uses three operational states. **NORMAL** issues the multimodal forecast when the required branch and uncertainty conditions are satisfied. **DEGRADED** retains forecast availability through the SHARP branch when AIA information is unavailable or the multimodal trust conditions are not satisfied. **ABSTAIN** withholds the forecast when the SHARP fallback itself is unavailable. The state definitions are frozen before the later evaluation regimes and are tested without reselection on Cycle-25 or supplementary-2026 outcomes. The purpose is therefore not to demonstrate that fusion is the best predictor. It is to test whether a forecasting system can degrade gracefully and expose changes in reliability rather than silently treating every probability as equally trustworthy.
+The framework uses three operational states. **NORMAL** issues the multimodal forecast when the required branch and uncertainty conditions are satisfied. **DEGRADED** retains forecast availability through the SHARP branch when AIA information is unavailable or the multimodal trust conditions are not satisfied. **ABSTAIN** withholds the forecast when the SHARP fallback itself is unavailable. The final state semantics require an important chronology distinction. Earlier numerical thresholds were estimated only from designated development/calibration roles. Cycle-25 diagnostic evaluation of preceding policy versions showed that abstention disproportionately removed flare-producing cases, which motivated the fallback-first v3 redesign. No new numerical trust threshold was tuned on Cycle 25, and supplementary-2026 outcomes were not opened during the v3 freeze. Consequently, Cycle-25 evidence for v3 is post-hoc/diagnostic, whereas supplementary 2026 provides the clean future evaluation of the frozen v3 policy. The purpose is therefore not to demonstrate that fusion is the best predictor. It is to test whether a forecasting system can degrade gracefully and expose changes in reliability rather than silently treating every probability as equally trustworthy.
 
 The principal contributions are:
 
@@ -118,11 +118,179 @@ This positioning is intentionally different from a state-of-the-art forecasting 
 
 ---
 
-## 3. Data and frozen evaluation design
-Describe SHARP, AIA, GOES-derived labels, 72-hour target, 96-minute issue cadence, time-ordered role structure, AR leakage controls, frozen hashes, and the distinction between earlier development, Cycle-25 retrospective evaluation, and supplementary 2026 post-hoc evidence.
+## 3. Data and Frozen Evaluation Design
 
-## 4. Gray-Box trust framework
-Describe the frozen predictors, probability calibration, conformal label sets, agreement signals, explicit magnetic-state applicability layer, data-quality/provenance checks, and NORMAL / DEGRADED / ABSTAIN state machine.
+### 3.1 Forecasting unit, horizon and issue cadence
+
+The unit of analysis is an active-region forecast case defined by a HARP-linked solar active region at a specific issue time. The primary task is binary occurrence prediction: whether at least one region-associated M- or X-class flare begins in the interval (t, t + 72 h], where t is the forecast issue time. The native issue grid has a nominal cadence of 96 min. All retained SHARP and AIA histories precede the issue time and therefore contain no measurements from within the 72 h outcome window.
+
+The Gray-Box candidate inventory spans 21 May 2010 to 17 August 2026 and contains 153,366 candidate forecast records. Of these, 113,433 are linked to the accepted three-history AIA-SHARP input package. The matched input population comprises 55,871 Cycle-24 cases, 45,403 primary Cycle-25 cases and 12,159 supplementary-2026 cases. The unmatched candidate records remain in the broader provenance inventory; they are not interpreted as operational outages because unmatched status can also reflect protocol exclusions or inputs that were never assembled.
+
+GOES/NOAA event information is used to construct future outcomes, not as a continuous forecasting input. Event start time, rather than peak time, defines entry into the 72 h outcome window. Region association was reconciled against the available event/source lineage, with source-supported corrections versioned explicitly and unresolved associations preserved rather than silently converted to non-events. The primary target uses the reconciled primary-region scope. Cases whose negative status could not be supported because of unresolved region/event information are retained as unknown and excluded from supervised fitting and headline evaluation.
+
+### 3.2 SHARP magnetic input
+
+The magnetic branch uses 16 SDO/HMI SHARP quantities in the exact frozen order: MEANGBZ, MEANGAM, MEANGBT, MEANGBH, MEANJZD, TOTUSJZ, MEANALP, MEANJZH, ABSNJZH, SAVNCPP, MEANSHR, SHRGT45, R_VALUE, USFLUX, TOTPOT and TOTUSJH.
+
+For each case, the aligned SHARP tensor contains three histories at issue time minus 288, 192 and 96 min, giving a frozen tensor of shape 113,433 × 3 × 16. The latest magnetic observation available to the forecast is therefore the t-96 min state. The accepted tensor contains no missing numerical values.
+
+The frozen SHARP predictor is a one-layer GRU with 32 hidden units and a linear binary-output head. Three independently seeded models (17, 29 and 43) are retained, and the branch probability is their arithmetic mean. Seed selection used only the earlier model-validation block. The purpose of the present manuscript is not to re-establish the predictive value of temporal SHARP modelling; the trained branch is treated as a fixed forecasting component around which reliability and operational behaviour are evaluated.
+
+### 3.3 AIA image input
+
+The image branch is a separately trained temporal AIA model operating on three pre-issue image histories and six image channels. Images are resized to 256 × 256 for model input after a training-derived asinh/scale normalization. The branch uses a temporal CNN-GRU architecture trained from scratch for the 72 h task, again retaining three seeds (17, 29 and 43) and averaging their probabilities.
+
+AIA and SHARP are kept as distinct branches because they fail differently. The image branch depends on acquisition, preprocessing and image availability, whereas the magnetic branch supplies the operational fallback. This separation is essential for the later outage experiments and for distinguishing cross-modal disagreement from branch unavailability.
+
+### 3.4 Time-ordered role partition
+
+All modeling roles follow a fixed chronological partition.
+
+| Role | Date interval | Function |
+|---|---|---|
+| train | 2010-01-01 to 2013-12-31 | fit SHARP/AIA models and training-only transforms |
+| model_validation | 2014-01-01 to 2014-06-30 | model/seed selection and alarm-threshold selection |
+| probability_calibration | 2014-07-01 to 2014-12-31 | probability-calibration development |
+| conformal_calibration | 2015-01-01 to 2015-06-30 | class-conditional conformal estimation and trust-cutoff reference |
+| policy_validation | 2015-07-01 to 2019-12-31 | earlier policy evaluation |
+| retrospective_cycle25 | 2021-01-01 to 2025-12-31 | later temporal-regime diagnostic/evaluation |
+| supplementary_2026 | 2026-01-01 onward | frozen v3 future evaluation and later descriptive audits |
+
+The final matched 72 h schedule contains 96,596 labeled forecast cases: 25,586 train; 3,905 model validation; 2,831 probability calibration; 4,168 conformal calibration; 13,142 policy validation; 35,846 retrospective Cycle 25; and 11,118 supplementary 2026. Cases outside these matched/labeled supports remain in the provenance inventory but do not enter model fitting or headline evaluation.
+
+The 2020 gap is deliberate: candidate records exist for 2020, but no accepted input package is available in the three frozen matched cohorts, so the year is not silently interpolated into either development or evaluation.
+
+### 3.5 Evidence chronology and leakage control
+
+The chronological roles are necessary but not sufficient to describe the evidential status of the final policy. Model fitting, normalization, probability calibration, conformal estimation and numerical trust cutoffs are all restricted to earlier roles. Alarm thresholds for SHARP, AIA and equal-weight fusion are selected on model_validation using a deterministic rule: maximum TSS, then maximum HSS, then maximum recall, and finally the lower threshold in the event of a remaining tie.
+
+The final fallback-first v3 routing semantics were not conceived before all Cycle-25 evidence was seen. Earlier v1/v2 policies used uncertainty more aggressively for abstention; Cycle-25 diagnostic results showed that this removed a disproportionate share of flare-producing cases. The v3 redesign therefore changed the decision semantics, not the numerical cutoffs: uncertainty that prevents NORMAL multimodal issuance routes to the SHARP fallback whenever SHARP remains technically available. Cycle 25 is consequently treated as development/diagnostic evidence for v3, not untouched confirmation. Supplementary-2026 outcomes were not read during the v3 freeze and form the clean future evaluation of that policy. Later Phase-H physical-layer analyses use Cycle-25 and 2026 outcomes post hoc and are labeled accordingly.
+
+Active-region leakage was checked using the reconciled region_component_id. Mapped region-component overlap with the training set is zero for the evaluated chronological roles. Repeated 96-min forecasts from the same active region remain statistically dependent, so uncertainty intervals for headline model comparisons use active-region block resampling rather than treating forecast windows as independent observations.
+
+### 3.6 Frozen provenance
+
+The main 72 h artifacts are hash-pinned. The canonical 71,010-row non-training multimodal prediction table has SHA-256 17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46; the 113,433-row frozen SHARP prediction ledger has SHA-256 7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b; and the exact recovered SHARP tensor has SHA-256 c9921be7b7fe381b43436a0e927d15d84de83e15376025ae0d8a79a6ef917639.
+
+These hashes define the source objects used by the post-freeze reliability, physical-applicability and baseline analyses. Later diagnostic work does not overwrite the original A-G evidence chain.
+
+---
+
+## 4. Gray-Box Trust Framework
+
+### 4.1 Design principle
+
+The framework separates forecast generation from forecast trust. SHARP and AIA provide learned occurrence probabilities. Around those probabilities, the Gray-Box layer asks four different questions:
+
+1. Is the branch probability calibrated on earlier data, and does that calibration remain plausible later?
+2. Do conformal sets, seed disagreement, predictive entropy and cross-modal disagreement indicate ambiguity?
+3. Does the magnetic state resemble the development-domain magnetic states represented in training?
+4. Are the required inputs technically available and traceable?
+
+These questions are deliberately not collapsed into one score because they can move in different directions under temporal shift.
+
+### 4.2 Frozen forecast branches
+
+Let p_S denote the frozen SHARP three-seed mean probability and p_A the corresponding AIA probability. The multimodal branch is a prespecified equal-probability average,
+
+p_F = 0.5 p_S + 0.5 p_A.
+
+The weights are fixed and are not selected from Cycle-25 or 2026 outcomes. This branch is therefore a controlled multimodal comparator rather than an optimized stacking model.
+
+A separate same-support baseline analysis fits one L2-regularized logistic regression to the 16 latest-slot SHARP features using the training role only. That comparator does not enter the Gray-Box state machine; it exists solely to determine whether the frozen temporal branches demonstrate evidence beyond a transparent latest-state baseline.
+
+### 4.3 Probability calibration
+
+Three probability-calibration candidates were defined on the earlier probability-calibration role: identity/raw probability, Platt-style calibration and isotonic calibration. Candidate choice was based on an internal earlier-data selection procedure using Brier score, with log loss and declared method order used as tie-breakers. The selected calibration for SHARP, AIA and equal-weight fusion was the identity/raw map for all three branches.
+
+This apparently simple outcome is important methodologically: later probabilities are not retroactively remapped to improve Cycle-25 or 2026 calibration. Calibration deterioration is therefore measured against a genuinely frozen earlier-data choice.
+
+### 4.4 Class-conditional conformal uncertainty
+
+Binary conformal uncertainty is represented using Mondrian class-conditional calibration at alpha = 0.10. For each branch, separate nonconformity quantiles are estimated for the no-flare and flare classes on the conformal-calibration role. Each probability then produces one of four set states: singleton no-flare, singleton flare, doubleton, or empty set.
+
+The conformal state is interpreted as a coverage/ambiguity diagnostic rather than a probability-of-error estimate. In particular, later empirical loss of flare-class coverage is treated as evidence of calibration-regime mismatch, not as a contradiction of conformal theory under exchangeability.
+
+For the final v3 policy, SHARP's conformal state remains advisory during fallback. It does not block a technically available SHARP forecast. This change is deliberate: earlier policy versions showed that aggressive uncertainty-based abstention could improve apparent retained-case quality by preferentially discarding flare-producing windows.
+
+### 4.5 Statistical trust signals
+
+Three continuous multimodal signals are retained:
+
+- fusion seed spread: the standard deviation across the three seed-wise equal-weight fusion probabilities;
+- SHARP-AIA probability gap: the absolute difference |p_S - p_A|;
+- fusion entropy: -p_F log(p_F) - (1 - p_F) log(1 - p_F).
+
+Candidate cutoffs were defined on earlier support using empirical percentiles. The primary v3 policy uses the pre-existing q90 cutoffs; q80 and q95 are retained only as sensitivity definitions. These signals are used to decide whether multimodal fusion is sufficiently well-behaved for NORMAL issuance. They are not assumed to be universal domain-shift detectors.
+
+### 4.6 Explicit magnetic-state applicability layer
+
+To make the term Gray-Box scientifically explicit, Phase H adds a transparent magnetic-state representation alongside the black-box forecast branches. The 16 SHARP quantities are grouped a priori into five physically interpretable families:
+
+| Family | SHARP quantities |
+|---|---|
+| magnetic flux / PIL complexity | USFLUX, R_VALUE |
+| free energy / shear | TOTPOT, MEANSHR, SHRGT45 |
+| current / helicity / twist | TOTUSJZ, TOTUSJH, ABSNJZH, SAVNCPP, MEANJZD, MEANJZH, MEANALP |
+| field gradients | MEANGBZ, MEANGBH, MEANGBT |
+| inclination / geometry | MEANGAM |
+
+Feature transforms and robust standardization parameters are fitted on the training role only. Magnitude-like quantities use log1p scaling; declared signed current/helicity/twist quantities are represented through magnitude for the family state. Each feature is centered by the training median and scaled by the training IQR. Within each family and history slot, the robust standardized feature values are summarized by their median so that large families do not dominate simply because they contain more variables.
+
+After removal of an algebraic redundancy discovered in the first Phase-H representation, the final nonredundant Magnetic Physical State Vector (MPSV) contains three quantities for each family:
+
+latest = x(-96),
+
+net change = x(-96) - x(-288),
+
+curvature = x(-288) - 2 x(-192) + x(-96).
+
+This yields 15 interpretable state/evolution axes.
+
+A Ledoit-Wolf covariance model is fitted to the training MPSV only. Physical applicability is summarized by squared Mahalanobis distance from that training reference, with a descriptive out-of-reference flag at the training 99th percentile. A low-capacity logistic model on the same MPSV provides an interpretable physical-state probability and an optional diagnostic log-odds gap relative to the fusion probability.
+
+Crucially, Phase-H evidence did not justify turning this distance into a rejection rule. Physical distance was negatively associated with case-level squared error, and the 2026 elevation was dominated by the latest magnetic-gradient family rather than a broad shift across all families. Matched same-record JSOC queries also showed exact equality of the 16 SHARP keywords between the CCD and CEA series on the tested pairs, while the local solar-versus-pipeline origin of the April-2026 gradient shift remains unresolved. The physical layer therefore remains an independent applicability/provenance monitor and does not modify v3 routing.
+
+### 4.7 Operational state machine
+
+The primary policy is fallback_v3_q90. Its three states are mutually exclusive.
+
+**NORMAL.** Issue the fixed SHARP-AIA fusion when:
+1. SHARP and AIA are technically available;
+2. the fusion Mondrian state is a singleton;
+3. fusion seed spread is at or below the frozen q90 cutoff;
+4. the SHARP-AIA probability gap is at or below the q90 cutoff; and
+5. fusion entropy is at or below the q90 cutoff.
+
+**DEGRADED.** If NORMAL is false but the SHARP branch is technically available, issue the frozen SHARP forecast and explicitly mark the state as DEGRADED. SHARP conformal state and seed disagreement remain recorded diagnostics but do not block issuance.
+
+**ABSTAIN.** If SHARP itself is technically unavailable, withhold the forecast. Automatic AIA-only issuance is not enabled.
+
+This asymmetry is evidence-driven. Post-hoc feasibility testing showed that AIA-only performance and flare-class conformal coverage deteriorated sharply in the later regimes, especially in 2026. The system therefore prefers graceful degradation to the stronger magnetic branch and reserves abstention for true fallback unavailability.
+
+### 4.8 Availability and provenance layer
+
+AIA acquisition failures are not modeled as independent Bernoulli masks. Upstream acquisition/recovery records are mapped back to Gray-Box cases and grouped into empirical failure episodes using their temporal and active-region structure. This enables replay of realistic clustered image failures while leaving SHARP availability unchanged.
+
+The provenance layer also records source hashes, case IDs, source series, role assignments and input-status reason codes. Its purpose is not merely reproducibility: it prevents a change in upstream data representation from being silently interpreted as model uncertainty or solar physics.
+
+### 4.9 Rolling monitoring without policy feedback
+
+For the prospective-style replay, the frozen v3 policy is evaluated chronologically at the declared 96-min cadence. A case outcome becomes visible to the monitoring process only after the 72 h forecast horizon plus a 24 h reporting-delay allowance, giving a 96 h maturity lag. At monitoring time t, only cases satisfying issue_time + 96 h <= t can contribute to the running reliability summaries.
+
+The rolling monitor records state mix, calibration/coverage summaries and uncertainty behaviour, but it never changes the forecast model, recalibrates probabilities, retunes thresholds or redesigns the policy. The exercise is therefore a prospective-style chronological replay, not a live prospective deployment.
+
+### 4.10 Gray-Box interpretation
+
+The final system is “Gray-Box” because it places an interpretable magnetic-state/applicability layer and explicit operational logic around learned predictors. It is not gray because the neural models are partially replaced by first-principles magnetohydrodynamics.
+
+In compact form, the trust stack is:
+
+learned forecasts -> {calibration, conformal UQ, agreement, physical applicability, availability/provenance} -> {NORMAL, DEGRADED, ABSTAIN}.
+
+The framework's central methodological choice is to keep these trust dimensions separable. A forecast can be statistically decisive yet physically out-of-reference; physically unusual yet easy to classify; multimodally uncertain yet still issuable through SHARP; or unavailable because of an acquisition failure. The state machine encodes those distinctions rather than treating one confidence score as a complete measure of trust.
+
+---
 
 ## 5. Experimental protocol
 Describe threshold freezing, policy freezing, outage replay, AIA-only fallback audit, rolling prospective-style replay, simple baseline suite, active-region block bootstrap, and claim boundaries.
