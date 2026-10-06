@@ -1,0 +1,92 @@
+{
+  "protocol_id": "graybox72_physical_state_v1",
+  "status": "PRE_EXECUTION_FREEZE",
+  "frozen_date": "2026-10-06",
+  "horizon_hours": 72,
+  "history_lag_native_minutes": [
+    288,
+    192,
+    96
+  ],
+  "feature_order": [
+    "MEANGBZ",
+    "MEANGAM",
+    "MEANGBT",
+    "MEANGBH",
+    "MEANJZD",
+    "TOTUSJZ",
+    "MEANALP",
+    "MEANJZH",
+    "ABSNJZH",
+    "SAVNCPP",
+    "MEANSHR",
+    "SHRGT45",
+    "R_VALUE",
+    "USFLUX",
+    "TOTPOT",
+    "TOTUSJH"
+  ],
+  "feature_families": {
+    "flux_pil": [
+      "USFLUX",
+      "R_VALUE"
+    ],
+    "energy_shear": [
+      "TOTPOT",
+      "MEANSHR",
+      "SHRGT45"
+    ],
+    "current_helicity": [
+      "TOTUSJZ",
+      "TOTUSJH",
+      "ABSNJZH",
+      "SAVNCPP",
+      "MEANJZD",
+      "MEANJZH",
+      "MEANALP"
+    ],
+    "gradients": [
+      "MEANGBZ",
+      "MEANGBH",
+      "MEANGBT"
+    ],
+    "inclination": [
+      "MEANGAM"
+    ]
+  },
+  "signed_magnitude_features": [
+    "MEANJZD",
+    "MEANJZH",
+    "MEANALP"
+  ],
+  "transform_reference": "training_only",
+  "family_aggregation": "median_robust_z",
+  "temporal_outputs": [
+    "latest",
+    "net_change",
+    "linear_slope"
+  ],
+  "physical_model": "logistic_regression_low_capacity",
+  "physical_ood": {
+    "estimator": "LedoitWolf",
+    "score": "squared_mahalanobis",
+    "primary_threshold_quantile": 0.99,
+    "fit_reference": "training_only"
+  },
+  "physical_consistency": {
+    "score": "absolute_logit_gap",
+    "branches": [
+      "physical_probability",
+      "frozen_fusion_probability"
+    ],
+    "epsilon": 0.000001
+  },
+  "policy_change_in_notebook_25": false,
+  "later_regime_status": "POSTHOC_ALREADY_SEEN_IN_A_TO_G",
+  "forbidden_claims": [
+    "MHD/PINN",
+    "causal flare law",
+    "untouched 2026 confirmation",
+    "automatic routing improvement before H2/H3"
+  ]
+}
