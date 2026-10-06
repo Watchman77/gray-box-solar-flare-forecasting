@@ -1,0 +1,8 @@
+role,cases,region_components,overlap_with_train_region_components
+train,25586,629,629
+model_validation,3905,99,0
+probability_calibration,2831,69,0
+conformal_calibration,4168,95,0
+policy_validation,13142,313,0
+retrospective_cycle25,35846,943,0
+supplementary_2026,11118,128,0

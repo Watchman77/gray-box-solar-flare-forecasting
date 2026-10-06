@@ -1,0 +1,35 @@
+{
+  "status": "POSTHOC_AR_EVENT_DISJOINT_AUDIT_COMPLETE",
+  "created_utc": "2026-10-06T01:22:20.638711+00:00",
+  "horizon_hours": 72,
+  "new_model_fitting": false,
+  "new_threshold_tuning": false,
+  "new_policy_selection": false,
+  "new_policy_redesign": false,
+  "ar_definition": "region_component_id from frozen multimodal case manifest",
+  "ar_disjoint_test": "verify zero mapped region_component_id overlap between train and each later role; then report AR-level detection/false-alert sensitivity",
+  "event_definition": "exact primary_event_ids from adjudicated 72h candidate outcomes when retained artifact is available",
+  "event_status": {
+    "candidate_outcomes_path": null,
+    "adjudicated_events_path": null,
+    "exact_event_linkage_available": false,
+    "lead_time_available": false
+  },
+  "evidence_boundary": {
+    "cycle24": "development/descriptive",
+    "cycle25": "diagnostic/post-hoc for v3",
+    "2026": "already-spent locked evidence; no redesign"
+  },
+  "source_sha256": {
+    "master_predictions": "17300093b88b7c61ecadf5eb28acba0d6d023b340d7740807852dd4352b22b46",
+    "sharp_predictions": "7368c002a978321cdc67221564f3b7901687badc7aba28ab9df615179d1e017b",
+    "cases": "b687afd3d953f884b21c2bcab527a39de3a7ca127e0262b3f727b201d080a846"
+  },
+  "outputs": [
+    "region_component_overlap_audit.csv",
+    "ar_level_cases.csv.gz",
+    "ar_level_summary.csv",
+    "event_level_summary.csv",
+    "event_artifact_status.json"
+  ]
+}
