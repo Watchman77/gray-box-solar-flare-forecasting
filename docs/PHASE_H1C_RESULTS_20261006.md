@@ -20,23 +20,23 @@ Within each regime, physical distance is also negatively associated with these s
 
 This is strong descriptive evidence that **physical-domain applicability and model agreement are distinct axes of trust**. A model ensemble can become more internally consistent and more decisive while the measured magnetic state moves farther from its development reference.
 
-## 2. The shift is not explained only by repeated 96-minute windows
+## 2. Active-region aggregation preserves the distance trend, but the any-OOD statistic is exposure-sensitive
 
-Active-region aggregation preserves the same direction:
+Active-region aggregation preserves the direction of the median physical-distance result:
 
-| Regime | Active regions | Positive ARs | Median AR median MD² | Fraction of ARs with any OOD window |
-|---|---:|---:|---:|---:|
-| Earlier Cycle-24 development | 1,223 | 106 | 11.331 | 0.188 |
-| Cycle 25 post-hoc | 948 | 138 | 13.092 | 0.158 |
-| Supplementary 2026 post-hoc | 128 | 22 | 16.553 | 0.563 |
+| Regime | Active regions | Positive ARs | Median AR median MD² | Median AR OOD fraction | Median windows per AR |
+|---|---:|---:|---:|---:|---:|
+| Earlier Cycle-24 development | 1,223 | 106 | 11.331 | 0.0000 | 45.0 |
+| Cycle 25 post-hoc | 948 | 138 | 13.092 | 0.0000 | 39.0 |
+| Supplementary 2026 post-hoc | 128 | 22 | 16.553 | 0.01227 | 72.5 |
 
-More than half of the 2026 active regions contain at least one physical-OOD window under the training q99 reference, compared with about 19% in the earlier Cycle-24 development evidence.
+The previously reported fraction of active regions with *any* OOD window is deliberately demoted because 2026 regions contain more forecast windows on average, increasing the opportunity to observe at least one tail event. The more defensible AR-level evidence is the rise in median AR-level physical distance and the non-zero median OOD fraction in 2026.
 
-Therefore the 2026 shift is not solely an artefact of many repeated windows from a small number of active regions.
+Therefore the 2026 physical-distance shift is not solely a repeated-window artefact, but the strength of the AR-level claim should rest on distance and OOD fraction rather than an any-window indicator.
 
 ## 3. The shift survives class conditioning
 
-Physical distance is systematically lower for positive flare windows than for non-flare windows. This explains why physical distance was negatively associated with case-level prediction error and why it should not be used as a naive rejection score.
+Physical distance is systematically lower for positive flare windows than for non-flare windows. This explains why physical distance was negatively associated with case-level prediction error and why it should not be used as a naive rejection score. The careful wording is that **non-flare windows occupy more distant physical-state distributions on average than flare windows**; the analysis does not equate every label-0 window with a physically quiet active region.
 
 Regime medians:
 
@@ -76,7 +76,7 @@ Monthly 2024–2026 diagnostics show:
 
 Thus the elevated 2026 aggregate is driven mainly by April–August rather than an immediate January transition. This weakens a simple “new calendar year/source cohort caused the entire shift” explanation, but it does not rule out an internal source or processing boundary.
 
-## 6. Which physical axes drive the 2026 shift?
+## 6. The 2026 shift is gradient-dominated and should not yet be called broad magnetic-state shift
 
 The largest standardized median shift is overwhelmingly:
 
@@ -92,13 +92,17 @@ All temporal net-change and curvature terms are much smaller in median standardi
 
 This indicates that the 2026 applicability change is driven primarily by the **latest-state magnetic-gradient family**, not by a broad large shift across every physical axis.
 
+Accordingly, the phrase **broad magnetic-state shift** is not supported at H1c. The defensible description is a **physical-applicability shift dominated by the latest magnetic-gradient family** until H1d establishes whether the separation survives feature-family removal and source-lineage checks.
+
 That finding requires a dedicated source/physics sensitivity audit before attributing the effect to solar-cycle physics.
 
 ## 7. Scientific conclusion after H1c
 
-H1c supports the Gray-Box proposition that physical applicability supplies information that is not captured by statistical confidence/agreement. The physical shift survives nonredundant representation, class conditioning and active-region aggregation.
+H1c supports the Gray-Box proposition that physical applicability supplies information that is not captured by statistical confidence/agreement. The physical-distance contrast survives nonredundant representation, class conditioning and active-region aggregation.
 
-However, the year-by-year non-monotonicity and the dominance of the latest magnetic-gradient axis mean the mechanism is not yet identified. The next step is **not H2 routing**. A source/feature sensitivity audit is required first.
+However, the year-by-year non-monotonicity, the exposure sensitivity of any-OOD-per-AR statistics, the late-2026 rise, and the dominance of the latest magnetic-gradient axis mean the mechanism is not yet identified. The next step is **not H2 routing**. A source/feature sensitivity audit is required first.
+
+The frozen v3 NORMAL / DEGRADED / ABSTAIN policy remains unchanged.
 
 Allowed current claim:
 
