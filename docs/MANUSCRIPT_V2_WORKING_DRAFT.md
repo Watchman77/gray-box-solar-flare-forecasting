@@ -530,13 +530,128 @@ Taken together, the 72 h evidence supports the following:
 The evidence does not support universal predictive superiority, a causal Solar-Cycle-25 explanation of the 2026 gradient shift, a first-principles physical model, or a claim of true live prospective validation.
 
 ## 7. Discussion
-Explain why confidence is not sufficient for trust, why physical applicability is monitoring rather than a gate, why fusion was not universally superior, and why graceful degradation is valuable even without a state-of-the-art predictor claim.
+
+### 7.1 Forecast skill and forecast trust are different system properties
+
+The central result of this study is not that a new predictor dominates existing flare-forecast models. In fact, the opposite evidence is scientifically useful: a simple latest-state logistic model is competitive, equal-weight fusion is not universally better than SHARP, and the AIA branch can become highly decisive while its rare-event reliability deteriorates. These findings force a distinction between **predictive skill** and **operational trust**.
+
+Predictive skill describes how well a forecast separates events from non-events or how accurate its probabilities are on a specified population. Operational trust additionally asks whether the system knows when the input regime has changed, whether an uncertainty estimate still behaves as expected, whether an input modality is available, whether a fallback has been validated, and whether withholding a forecast causes disproportionate loss of rare positive cases.
+
+This distinction is especially important for solar flares because the deployment population is non-stationary and strongly imbalanced. A high TSS on one historical interval does not imply preserved calibration in a later solar regime, and low model disagreement does not imply that the later population resembles the development data.
+
+### 7.2 The reliability paradox: agreement can increase while trustworthiness decreases
+
+Across the later regimes, seed spread, fusion entropy and SHARP-AIA disagreement become smaller while discrimination, calibration and flare-class conformal coverage deteriorate. The ensemble appears increasingly internally consistent at exactly the time when rare-event reliability becomes less transferable.
+
+This result cautions against treating ensemble agreement as a universal domain-shift detector. Seed spread is a property of the fitted ensemble, not a direct measurement of distance from the data-generating process. If all members share the same training support and inductive biases, they can agree confidently on a shifted population. Likewise, two modalities can converge numerically without becoming jointly well calibrated.
+
+The conformal results reinforce this point. In later regimes, singleton predictions can become more common even while flare-class empirical coverage collapses. That behaviour should not be described as a failure of conformal theory; the relevant exchangeability relationship between calibration and future cases is no longer assured. For operational use, coverage must therefore be monitored empirically rather than assumed to remain stable indefinitely.
+
+### 7.3 Graceful degradation is more useful than indiscriminate abstention
+
+Earlier policy versions used uncertainty more aggressively to withhold predictions. Cycle-25 diagnostics showed that this could create an apparently cleaner retained subset by preferentially removing flare-producing cases. That is unacceptable for a rare-event warning system: lower error among retained forecasts is not an operational improvement if coverage of the events that matter most is sacrificed.
+
+The fallback-first v3 design addresses this by separating ambiguity from technical unavailability. If the multimodal forecast does not satisfy the NORMAL trust gates but SHARP is still available, the system degrades to SHARP. Abstention is reserved for the stronger fallback becoming unavailable.
+
+This is not equivalent to claiming that SHARP is always correct. It is an availability decision supported by comparative evidence: the frozen SHARP branch transfers more robustly than AIA and remains probabilistically more useful in the later regimes. The mapped AIA incident replay demonstrates the practical value of this asymmetry, preserving service availability through clustered image failures without inventing an unvalidated AIA-only fallback.
+
+### 7.4 Real failures are structured, not independent masks
+
+The outage analysis also changes how robustness experiments should be designed. AIA acquisition failures are clustered over hours to days and often affect repeated observations of the same active region. Independent random masking therefore understates the persistence and correlation of operational failures.
+
+This matters for any multimodal system in which one branch depends on a complex acquisition pipeline. A fallback that works for a single missing frame may behave differently during a 20-hour or multi-day episode. Robustness evaluation should consequently preserve the temporal and entity-level structure of missingness wherever engineering logs are available.
+
+The present incidents are acquisition/recovery records rather than verified live-service outages, so they cannot be used to claim historical operational uptime. Their value is narrower but important: they provide a realistic stress pattern for evaluating routing semantics.
+
+### 7.5 The physical layer is a monitor, not a physics oracle
+
+Phase H makes the Gray-Box terminology explicit without claiming a first-principles flare model. The magnetic-state layer is built from physically meaningful SHARP families, training-only robust transforms and a transparent applicability distance. It therefore provides an interpretable reference for asking whether the current active-region state resembles the development domain.
+
+The experiments show both the value and the limitation of this layer. Physical distance moves differently from statistical agreement, which means it contributes information not contained in entropy or seed spread. At the same time, high physical distance is not associated monotonically with higher forecast error. In fact, flare windows are often closer to the training cloud than non-flare windows. The physical score therefore cannot be used naively as “distance equals danger” or “distance equals uncertainty.”
+
+The 2026 shift further demonstrates why the underlying dimensions must remain visible. The aggregate Mahalanobis increase is dominated by the latest magnetic-gradient family and disappears when that axis/family is removed. A scalar distance can therefore flag that something changed, but diagnosis requires inspection of the contributing physical variables and their provenance.
+
+This is the intended Gray-Box role: not to replace learned probabilities with a deterministic physical law, but to expose interpretable state and applicability evidence alongside them.
+
+### 7.6 Negative fusion results strengthen the operational interpretation
+
+The equal-weight fusion branch is useful precisely because it does not consistently win. If the paper were framed as a multimodal-performance study, the Cycle-25 paired bootstrap would be a negative result: SHARP has significantly higher TSS and AP. In the trust framework, however, that result clarifies the role of fusion.
+
+Fusion is a NORMAL-mode forecast source when its technical and trust conditions are satisfied, not the universal gold standard. The framework is allowed to degrade to a stronger constituent branch. This is operationally more realistic than forcing every modality into every prediction because multimodality is assumed to be beneficial.
+
+The result also illustrates why multimodal studies should report constituent-branch performance and same-support simple baselines. Without those comparisons, a system-level contribution can be mistaken for predictive novelty.
+
+### 7.7 Implications for operational flare forecasting
+
+Three broader implications follow.
+
+First, **uncertainty should be multidimensional**. Calibration error, conformal coverage, ensemble spread, cross-modal disagreement, physical applicability and data availability answer different questions and should not automatically be compressed into a single scalar confidence value.
+
+Second, **fallbacks require their own evidence**. A branch should not become an emergency fallback merely because it exists. The AIA-only experiment shows that a model can be highly decisive and still be unsuitable as the sole operational source for rare flare detection.
+
+Third, **trust logic should be frozen and auditable**. The state machine, numerical thresholds, source hashes and redesign chronology are retained explicitly in this study. That makes negative policy findings visible and prevents later evaluation periods from quietly becoming new tuning data.
+
+A mature operational system would extend this approach with live logging, automatic provenance checks, explicit service-level availability targets and periodic—but prospectively governed—recalibration. The present work provides a retrospective framework for testing those ideas before deployment.
+
+---
 
 ## 8. Limitations
-State post-hoc elements, lack of true live prospective deployment, unresolved local-versus-JSOC origin of the April-2026 gradient shift, dependence among repeated forecast windows, and the absence of a first-principles physical model.
+
+Several limitations define the scope of the conclusions.
+
+### 8.1 Final v3 policy is not untouched on Cycle 25
+
+The most important chronology limitation is that Cycle-25 diagnostics informed the semantic redesign from the earlier abstention policies to fallback-first v3. Although the numerical q90 thresholds were not retuned on Cycle 25, v3 should not be described as prospectively validated there. Cycle-25 v3 results are post-hoc/diagnostic. Supplementary 2026 is the clean future evaluation for the frozen v3 policy.
+
+### 8.2 The study is not a live prospective deployment
+
+The rolling evaluation reproduces chronological information maturity but does not recreate a service that issued forecasts in real time at each historical date. Historical inputs may also have undergone later definitive processing. The correct description is prospective-style chronological replay, not prospective deployment.
+
+### 8.3 Label and event-source limitations remain
+
+The M/X labels rely on reconciled GOES/NOAA event information and region association. Some historical events lack reliable region identifiers, and uncertain negatives are therefore masked rather than forced to zero. Event-source reconciliation substantially improves the target lineage but does not make the catalogue a perfect census of all physical flares.
+
+Exact event-disjoint lead-time reconstruction remains provenance-limited for parts of the historical archive. Region-component separation from training is verified, but complete event-level independence cannot be claimed beyond the available linkage evidence.
+
+### 8.4 Historical availability is not fully reconstructed
+
+The accepted AIA/SHARP cohorts establish the analysis support; they do not by themselves prove that every input value would have been delivered operationally at its historical issue time. The 24 h reporting-delay allowance used in the replay is an explicit operational assumption rather than a fully reconstructed historical delivery log.
+
+Likewise, the AIA acquisition/recovery incidents are engineering failures, not a verified record of end-user service outages.
+
+### 8.5 Repeated forecast windows remain dependent
+
+The native 96-min cadence generates many overlapping 72 h windows from the same active region. Active-region block bootstrap intervals reduce the risk of treating those windows as independent, but they do not remove all temporal or event-level dependence. A future evaluation on prospectively logged, event-separated forecasts would provide stronger inferential support.
+
+### 8.6 Physical-layer mechanism remains unresolved
+
+The 2026 physical-distance increase is dominated by the latest magnetic-gradient family. Same-record JSOC queries show exact keyword parity between hmi.sharp_720s and hmi.sharp_cea_720s on the tested pairs, but local-versus-JSOC equality has not been demonstrated for every overlapping CEA-era tensor row. The April-2026 shift therefore cannot yet be attributed uniquely to solar evolution or to a pipeline mechanism.
+
+The physical layer should be interpreted as an applicability/provenance monitor, not a causal flare model.
+
+### 8.7 The Gray-Box layer is not first-principles physics
+
+The framework uses physically interpretable magnetic quantities, but it does not solve MHD equations, impose conservation laws or implement a physics-informed neural network. The term Gray-Box refers to combining learned forecasts with an explicit interpretable physical-state/applicability layer and auditable operational logic.
+
+### 8.8 Baseline coverage is deliberately simple rather than exhaustive
+
+The same-support baseline suite includes training climatology and one 16-feature latest-state logistic regression. This is sufficient to show that a transparent baseline is competitive and to prevent an unsupported complexity claim, but it is not an exhaustive comparison against every published flare-forecast architecture. The manuscript therefore avoids state-of-the-art superiority language.
+
+### 8.9 The present paper is 72-hour only
+
+Although the architecture was designed for multiple horizons, the evidence in this manuscript is frozen at 72 h. The 24 h and 3 h versions require horizon-specific recalibration, conformal thresholds, alarm thresholds and routing validation. Multi-horizon generality remains a replication objective rather than a demonstrated result.
+
+---
 
 ## 9. Conclusion
-Reiterate the operational trust contribution and the evidence for separating predictive confidence, calibration, physical applicability, provenance, and availability.
+
+We presented a Gray-Box trust framework for 72-hour M/X-class solar-flare forecasting that separates forecast generation from evidence about whether and how that forecast should be used. Frozen SHARP and AIA predictors are surrounded by probability calibration, class-conditional conformal uncertainty, ensemble and cross-modal agreement diagnostics, an interpretable magnetic-state applicability monitor, provenance checks and an explicit NORMAL / DEGRADED / ABSTAIN state machine.
+
+The results show why this separation matters. Predictive discrimination, calibration and flare-class conformal coverage deteriorate in later regimes even as seed spread, entropy and SHARP-AIA disagreement become smaller. Real AIA acquisition failures are strongly clustered, and a fallback-first policy preserves issuance by degrading to SHARP when the image branch is unavailable. The frozen AIA branch is not stable enough to justify automatic AIA-only fallback. A simple latest-state logistic comparator is competitive, while equal-weight fusion is not universally superior to SHARP, confirming that the contribution is operational trust rather than predictive dominance.
+
+The physical layer adds a second view of applicability: the magnetic-state distribution can move away from its development reference even when the learned predictors become more internally confident. That signal is useful for monitoring but is not a case-level error score and is not promoted into the routing gate.
+
+The broader conclusion is therefore practical. A trustworthy flare-forecast system should not equate confidence with reliability or multimodal agreement with safety. It should preserve calibration and coverage diagnostics, expose physical/domain and provenance changes, validate its fallbacks, and specify in advance what happens when trust conditions fail. In this study, the most defensible contribution is not a better fusion score, but a reproducible framework for **issuing, degrading or withholding forecasts under imperfect and changing conditions**.
 
 ---
 
