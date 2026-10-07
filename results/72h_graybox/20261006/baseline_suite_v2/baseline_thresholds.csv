@@ -1,0 +1,6 @@
+model,threshold
+climatology,0.5
+logistic_latest_sharp,0.10265333871104586
+frozen_sharp,0.0752000237504641
+frozen_aia,0.025101790286788
+frozen_fusion,0.0905992648354184
