@@ -1,0 +1,33 @@
+{
+  "status": "partial_conformal_analysis",
+  "completed_utc": "2026-10-07T07:01:44.630065+00:00",
+  "complete_roles": [
+    "probability_calibration",
+    "conformal_calibration",
+    "policy_validation",
+    "retrospective_cycle25"
+  ],
+  "incomplete_roles": [
+    "supplementary_2026",
+    "train"
+  ],
+  "archive_counts": {
+    "conformal_cases": 4168,
+    "cycle25_cases": 35846
+  },
+  "branches": [
+    "sharp",
+    "aia",
+    "equal_probability_fusion"
+  ],
+  "methods": [
+    "pooled",
+    "class_conditional"
+  ],
+  "alphas": [
+    0.1,
+    0.05
+  ],
+  "scientific_acceptance": false,
+  "note": "Retrospective exploratory metrics from verified archived blocks; no final all-case claim."
+}
