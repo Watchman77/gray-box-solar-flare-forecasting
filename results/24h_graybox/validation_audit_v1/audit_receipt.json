@@ -1,0 +1,18 @@
+{
+  "status": "completed_validation_audit",
+  "horizon_hours": 24,
+  "predictions": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/results/24h_graybox/sharp_training_v1/predictions.csv.gz",
+  "predictions_sha256": "732d7f866aba4c77e396b9bc96919da367a9ae0e7ce5728ecc92a0ff8fa47b2f",
+  "labels": "/Users/mac/Documents/ChatGPT/Imaging_Project/gray-box-solar-flare-forecasting/data/processed/gray_box_multihorizon_labels_24h_v1/candidate_labels_24h.csv.gz",
+  "labels_sha256": "20d2c201216ccec8621dc352d20db310b4a874666fba251df8e959ce8f8749e3",
+  "selected_threshold": 0.0310642545421918,
+  "bootstrap_reps": 2000,
+  "bootstrap_seed": 20261007,
+  "role_mismatch_cases": 0,
+  "label_mismatch_cases": 0,
+  "limitations": [
+    "Labels remain provisional candidate labels, not confirmatory truth.",
+    "This audit validates AR/event separation and uncertainty intervals; it does not add AIA, GOES or fusion predictors.",
+    "Event IDs are reported separately for primary, patch and unresolved/unknown fields."
+  ]
+}

@@ -1,0 +1,9 @@
+role,role_region_components,train_region_components,overlap_with_train
+train,638,638,638
+unknown_label_excluded,540,638,101
+model_validation,105,638,2
+probability_calibration,82,638,0
+conformal_calibration,98,638,0
+policy_validation,315,638,0
+retrospective_cycle25,981,638,0
+supplementary_2026,128,638,0
