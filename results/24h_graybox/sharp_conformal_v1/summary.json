@@ -1,0 +1,15 @@
+{
+  "horizon_hours": 24,
+  "selected_calibration": "raw",
+  "alpha": 0.1,
+  "q0_no_flare": 0.0472929626703262,
+  "q1_flare": 0.9466516450047493,
+  "calibration_role": "conformal_calibration",
+  "evaluation_roles": [
+    "conformal_calibration",
+    "policy_validation",
+    "retrospective_cycle25",
+    "supplementary_2026"
+  ],
+  "thresholds_frozen_before_later_roles": true
+}

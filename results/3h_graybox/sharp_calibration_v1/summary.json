@@ -1,0 +1,16 @@
+{
+  "horizon_hours": 3,
+  "selected_method": "platt",
+  "selection_role": "internal_late_probability_calibration_block",
+  "methods": [
+    "raw",
+    "platt",
+    "isotonic"
+  ],
+  "future_roles_not_used_for_selection": [
+    "conformal_calibration",
+    "policy_validation",
+    "retrospective_cycle25",
+    "supplementary_2026"
+  ]
+}

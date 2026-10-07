@@ -1,0 +1,59 @@
+{
+  "status": "completed_exploratory_training",
+  "horizon_hours": 24,
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "roles": {
+    "retrospective_cycle25": 41101,
+    "train": 27470,
+    "policy_validation": 13320,
+    "supplementary_2026": 11808,
+    "unknown_label_excluded": 7207,
+    "conformal_calibration": 4550,
+    "model_validation": 4494,
+    "probability_calibration": 3483
+  },
+  "seed_records": [
+    {
+      "seed": 17,
+      "epochs": 10,
+      "best_epoch": 5,
+      "best_validation_log_loss": 0.12874647783106832
+    },
+    {
+      "seed": 29,
+      "epochs": 7,
+      "best_epoch": 2,
+      "best_validation_log_loss": 0.1334191841282712
+    },
+    {
+      "seed": 43,
+      "epochs": 14,
+      "best_epoch": 9,
+      "best_validation_log_loss": 0.13101158126979512
+    }
+  ],
+  "train_cases": 27470,
+  "train_positive": 738,
+  "validation_metrics": {
+    "cases": 4494,
+    "positive": 246,
+    "prevalence": 0.05473965287049399,
+    "brier": 0.03608504708889211,
+    "brier_skill_train_climatology": 0.31292989392768367,
+    "log_loss": 0.12915333062673848,
+    "average_precision": 0.556556484704947,
+    "roc_auc": 0.9280129912881051,
+    "threshold": 0.5,
+    "tp": 62,
+    "fp": 8,
+    "fn": 184,
+    "tn": 4240,
+    "tss": 0.25014928115382845
+  },
+  "limitations": [
+    "Provisional labels; not confirmatory truth.",
+    "Chronological roles are not event-disjoint validation.",
+    "Probabilities are uncalibrated; AIA and GOES predictors are not included."
+  ]
+}

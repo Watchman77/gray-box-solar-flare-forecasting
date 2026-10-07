@@ -1,0 +1,11 @@
+{
+  "horizon_hours": 24,
+  "policy_type": "SHARP_only_diagnostic",
+  "normal_rule": "available_and_conformal_singleton",
+  "degraded_rule": "available_and_non_singleton",
+  "abstain_rule": "SHARP_probability_unavailable",
+  "q0_no_flare": 0.0472929626703262,
+  "q1_flare": 0.9466516450047493,
+  "selected_calibration": "raw",
+  "final_operational_policy": false
+}
