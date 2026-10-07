@@ -1,0 +1,36 @@
+{
+  "status": "candidate_labels_built_not_training_ready",
+  "inventory": "data/processed/gray_box_inventory_v2/forecast_case_inventory.csv.gz",
+  "events": "data/processed/gray_box_outcomes_v2/adjudicated_events.csv.gz",
+  "horizons": [
+    24
+  ],
+  "known_event_decisions": [
+    "filled_missing_direct_xra",
+    "original_science_not_in_review_queue",
+    "retained_original_daily_supported"
+  ],
+  "support": [
+    {
+      "horizon_hours": 24,
+      "scope": "primary",
+      "cases": 153366,
+      "positive": 5160,
+      "negative": 138630,
+      "unresolved": 9576
+    },
+    {
+      "horizon_hours": 24,
+      "scope": "patch",
+      "cases": 153366,
+      "positive": 7484,
+      "negative": 136764,
+      "unresolved": 9118
+    }
+  ],
+  "output_sha256": {
+    "support.csv": "a20381fa6ee34b076799864319f4999b3774f5fa3195b6ff2eebf89c1a629549",
+    "candidate_labels_24h.csv.gz": "20d2c201216ccec8621dc352d20db310b4a874666fba251df8e959ce8f8749e3",
+    "receipt.json": "5955a082ab6c13cb47cd942283cc80be2126838015b5695d7c3c100b10507291"
+  }
+}

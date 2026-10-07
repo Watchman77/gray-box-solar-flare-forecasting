@@ -37,6 +37,7 @@ def main():
     ap.add_argument("--events", type=Path, default=Path("data/processed/gray_box_outcomes_v2/adjudicated_events.csv.gz"))
     ap.add_argument("--leap", type=Path, default=Path("data/raw/gray_box_inventory_v1/Leap_Second.dat"))
     ap.add_argument("--output", type=Path, default=Path("data/processed/gray_box_multihorizon_labels_v1"))
+    ap.add_argument("--horizon", type=int, choices=[24, 3], default=None)
     args = ap.parse_args()
     if args.output.exists(): raise ValueError("Output exists; choose a new version")
     cases = pd.read_csv(args.inventory, low_memory=False)
@@ -52,7 +53,8 @@ def main():
     native = pd.to_datetime(cases.issue_tai, format="%Y.%m.%d_%H:%M:%S_TAI")
     args.output.mkdir(parents=True)
     all_rows=[]; support=[]
-    for h in (24, 3):
+    horizons = [args.horizon] if args.horizon is not None else [24, 3]
+    for h in horizons:
         ends = tai_to_utc((native + pd.Timedelta(hours=h)).dt.strftime("%Y.%m.%d_%H:%M:%S_TAI"), args.leap)
         starts = pd.to_datetime(cases.issue_utc, utc=True).astype("int64").to_numpy()
         end_ns = pd.to_datetime(ends, utc=True).astype("int64").to_numpy()
@@ -76,7 +78,7 @@ def main():
             support.append({"horizon_hours":h,"scope":scope,"cases":len(frame),"positive":int((lab==1).sum()),"negative":int((lab==0).sum()),"unresolved":int(lab.isna().sum())})
         all_rows.append(frame)
     pd.DataFrame(support).to_csv(args.output/"support.csv",index=False)
-    receipt={"status":"candidate_labels_built_not_training_ready","inventory":str(args.inventory),"events":str(args.events),"horizons":[24,3],"known_event_decisions":sorted(KNOWN_DECISIONS),"support":support}
+    receipt={"status":"candidate_labels_built_not_training_ready","inventory":str(args.inventory),"events":str(args.events),"horizons":horizons,"known_event_decisions":sorted(KNOWN_DECISIONS),"support":support}
     (args.output/"receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
     print(json.dumps(receipt,indent=2))
 if __name__=='__main__': main()
