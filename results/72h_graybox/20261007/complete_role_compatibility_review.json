@@ -1,0 +1,102 @@
+{
+  "status": "COMPLETE_ROLE_SOURCE_NUMERICAL_COMPATIBILITY_REVIEW",
+  "reviewed_date": "2026-10-07",
+  "review_scope": "Local same-assistant review; not external scientific validation; no model/inference/retry/remote mutation",
+  "commands": [
+    {
+      "command": "python3 inline complete-role archive hash/order/schema gate and conformal-vs-canonical comparison",
+      "exit_code": 0
+    }
+  ],
+  "complete_role_counts": {
+    "probability_calibration": {
+      "expected_blocks": 6,
+      "verified_blocks": 6,
+      "expected_cases": 2831,
+      "verified_cases": 2831
+    },
+    "conformal_calibration": {
+      "expected_blocks": 9,
+      "verified_blocks": 9,
+      "expected_cases": 4168,
+      "verified_cases": 4168
+    },
+    "policy_validation": {
+      "expected_blocks": 26,
+      "verified_blocks": 26,
+      "expected_cases": 13142,
+      "verified_cases": 13142
+    },
+    "retrospective_cycle25": {
+      "expected_blocks": 71,
+      "verified_blocks": 71,
+      "expected_cases": 35846,
+      "verified_cases": 35846
+    }
+  },
+  "archive_gate_rows": 112,
+  "archive_gate_hash_digest": "8ad1195f8098bd0e6158ea3abf5689e902401fbfc66dbffe98e950b923c96108",
+  "cycle25_conformal_comparison": [
+    {
+      "branch": "sharp",
+      "partial_cases": 35846,
+      "canonical_cases": 35846,
+      "partial_flare_coverage": 0.7352331606217617,
+      "canonical_flare_coverage": 0.7352331606217617,
+      "absolute_difference": 0.0
+    },
+    {
+      "branch": "aia",
+      "partial_cases": 35846,
+      "canonical_cases": 35846,
+      "partial_flare_coverage": 0.6204663212435233,
+      "canonical_flare_coverage": 0.6204663212435233,
+      "absolute_difference": 0.0
+    },
+    {
+      "branch": "fusion",
+      "partial_cases": 35846,
+      "canonical_cases": 35846,
+      "partial_flare_coverage": 0.6922279792746114,
+      "canonical_flare_coverage": 0.6922279792746114,
+      "absolute_difference": 0.0
+    }
+  ],
+  "canonical_policy_artifacts_hashed": {
+    "results/72h_graybox/20261005/supplementary2026_v3/summary.json": "2f03c81291d52cfc6fff72f32fb8b1c7510c4c46ff70a3c90121fade9ed83518",
+    "results/72h_graybox/20261006/baseline_suite_v2/baseline_receipt.json": "66e629da030cb6a5de1bdd0ebfb728168d92f1fd113583a13afb8eaea7280913"
+  },
+  "failed_v3_boundary": {
+    "status": "relay_incomplete",
+    "blocks_archived": 116,
+    "error": "ValueError: Remote relay ended before all blocks",
+    "returncode": 255,
+    "cleanup": {
+      "worker_launch_state": "started",
+      "worker_pid": 46441,
+      "worker_reaped": true,
+      "process_group_empty": true,
+      "cleanup_errors": [
+        {
+          "stage": "signal_15",
+          "error": "PermissionError: [Errno 1] Operation not permitted"
+        }
+      ],
+      "returncode": 255,
+      "cleanup_verified": false
+    },
+    "cancellation_signals": [],
+    "automatic_retry": false
+  },
+  "limitations": [
+    "Canonical master creation/transfer/model-generation receipt remains missing.",
+    "Canonical supplementary claims remain protocol-scoped pending lineage acceptance.",
+    "2026 canonical results are not claimed as a completed v3 relay.",
+    "VM state is unknown after IAP failure.",
+    "The review is a same-assistant pass, not independent scientific validation."
+  ],
+  "remaining_priority": [
+    "Obtain original canonical creation/transfer/model/normalization receipts when read-only VM access returns.",
+    "Keep complete-role v3 source and numerical checks available for audit."
+  ]
+}
