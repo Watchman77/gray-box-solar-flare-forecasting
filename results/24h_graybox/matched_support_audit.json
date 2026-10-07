@@ -1,0 +1,177 @@
+{
+  "status": "matched_sharp_support_audit_complete_roles_proposed_only",
+  "horizon_hours": 24,
+  "matched_cases": 113433,
+  "cases_with_tensor": 113433,
+  "known_primary_on_matched": 106226,
+  "proposed_roles": [
+    {
+      "role": "train",
+      "start_utc": "2010-01-01",
+      "end_utc": "2013-12-31 23:59:59",
+      "cases": 28708,
+      "region_components": 638,
+      "null_region_components": 0
+    },
+    {
+      "role": "model_validation",
+      "start_utc": "2014-01-01",
+      "end_utc": "2014-06-30 23:59:59",
+      "cases": 4821,
+      "region_components": 105,
+      "null_region_components": 0
+    },
+    {
+      "role": "probability_calibration",
+      "start_utc": "2014-07-01",
+      "end_utc": "2014-12-31 23:59:59",
+      "cases": 4060,
+      "region_components": 83,
+      "null_region_components": 0
+    },
+    {
+      "role": "conformal_calibration",
+      "start_utc": "2015-01-01",
+      "end_utc": "2015-06-30 23:59:59",
+      "cases": 4769,
+      "region_components": 98,
+      "null_region_components": 0
+    },
+    {
+      "role": "policy_validation",
+      "start_utc": "2015-07-01",
+      "end_utc": "2019-12-31 23:59:59",
+      "cases": 13513,
+      "region_components": 315,
+      "null_region_components": 0
+    },
+    {
+      "role": "cycle25",
+      "start_utc": "2021-01-01",
+      "end_utc": "2025-12-31 23:59:59",
+      "cases": 45403,
+      "region_components": 985,
+      "null_region_components": 0
+    },
+    {
+      "role": "supplementary_2026",
+      "start_utc": "2026-01-01",
+      "end_utc": "2026-08-31 23:59:59",
+      "cases": 12159,
+      "region_components": 128,
+      "null_region_components": 0
+    }
+  ],
+  "region_component_overlap": [
+    {
+      "role_a": "train",
+      "role_b": "model_validation",
+      "shared_region_components": 2
+    },
+    {
+      "role_a": "train",
+      "role_b": "probability_calibration",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "train",
+      "role_b": "conformal_calibration",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "train",
+      "role_b": "policy_validation",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "train",
+      "role_b": "cycle25",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "train",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "model_validation",
+      "role_b": "probability_calibration",
+      "shared_region_components": 2
+    },
+    {
+      "role_a": "model_validation",
+      "role_b": "conformal_calibration",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "model_validation",
+      "role_b": "policy_validation",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "model_validation",
+      "role_b": "cycle25",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "model_validation",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "probability_calibration",
+      "role_b": "conformal_calibration",
+      "shared_region_components": 3
+    },
+    {
+      "role_a": "probability_calibration",
+      "role_b": "policy_validation",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "probability_calibration",
+      "role_b": "cycle25",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "probability_calibration",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "conformal_calibration",
+      "role_b": "policy_validation",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "conformal_calibration",
+      "role_b": "cycle25",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "conformal_calibration",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "policy_validation",
+      "role_b": "cycle25",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "policy_validation",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    },
+    {
+      "role_a": "cycle25",
+      "role_b": "supplementary_2026",
+      "shared_region_components": 0
+    }
+  ],
+  "limitations": [
+    "Roles are proposed for audit only and remain unassigned.",
+    "Labels remain provisional and require scientific target approval.",
+    "Disjoint region components do not establish event-level independence."
+  ]
+}
