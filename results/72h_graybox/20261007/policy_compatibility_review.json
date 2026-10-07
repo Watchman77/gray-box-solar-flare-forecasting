@@ -1,0 +1,56 @@
+{
+  "status": "FROZEN_THREE_STATE_POLICY_COMPATIBILITY_REVIEW",
+  "reviewed_date": "2026-10-07",
+  "review_scope": "Local same-assistant source and saved-output review; no policy fitting, inference, retry or remote mutation",
+  "command": "python3 inline policy partition/denominator/protocol check",
+  "command_exit_code": 0,
+  "checks": {
+    "calibration_state_partition_and_q90_counts": true,
+    "supplementary_state_counts_match_saved_metrics": true,
+    "policy_metric_denominator_identities": true,
+    "protocol_primary_and_selection_flags": true,
+    "cycle25_state_summary_source_present": true
+  },
+  "state_counts": {
+    "calibration_q90": {
+      "NORMAL": 3064,
+      "DEGRADED": 1104
+    },
+    "supplementary_q90": {
+      "NORMAL": 10281,
+      "DEGRADED": 837
+    },
+    "cycle25_saved_summary": {
+      "regime": "cycle25_2021_2025_diagnostic",
+      "cases": 35846,
+      "positives": 3860,
+      "prevalence": 0.1076828655916978,
+      "mean_sharp_aia_gap": 0.0798754250214935,
+      "median_sharp_aia_gap": 0.0192316049331418,
+      "mean_fusion_seed_std": 0.0172746836966084,
+      "mean_fusion_entropy": 0.1984570499017609,
+      "normal_cases": 27842,
+      "degraded_cases": 8004,
+      "abstain_cases": 0,
+      "normal_rate": 0.7767114880321375,
+      "degraded_rate": 0.2232885119678625,
+      "abstain_rate": 0.0
+    }
+  },
+  "source_sha256": {
+    "results/72h_graybox/20261005/fallback_v3/protocol.json": "af38b07172a8d029a83ef310b53de2be0c6acc2d76463396258d4ad13bef5514",
+    "results/72h_graybox/20261005/fallback_v3/policy_family_v3.json": "878b82514338a668550cd1938a6078e0837dd322b937145351499ec33227f485",
+    "results/72h_graybox/20261005/fallback_v3/calibration_policy_states_v3.csv.gz": "0956f8f221c81a7d007a1a7b3125ab609975188c647284b7c097ee498e2ce883",
+    "results/72h_graybox/20261005/policy_validation_v1_results.csv": "23685c40915dcfc67b3e7c93e0c8ab9438dc84db60ed11058b731945114e849c",
+    "results/72h_graybox/20261005/supplementary2026_v3/supplementary2026_policy_cases.csv.gz": "69375a700f636db85e3d889400ca62d4a108755c3e34bf772797d752b69a526e",
+    "results/72h_graybox/20261005/supplementary2026_v3/supplementary2026_policy_results.csv": "08dee9ebb9c94c55d4ed781fdf799272cf482daf8b63a1f202958d59aabb8fec",
+    "results/72h_graybox/20261006/cross_cycle_reliability_audit/cross_cycle_trust_state_summary.csv": "52989c2d560cf6ce2255bc138bc95f521087a43bf35d43d1f00374c54275f2f0",
+    "notebooks/72h_graybox/17_cross_cycle_reliability_audit_EXECUTED.ipynb": "c7d043dc295f0ba32ea78c5e817cba07e42518f72cd96aaf3574c4943ee835bc"
+  },
+  "unresolved_limits": [
+    "Policy-validation row-level state table is not preserved locally; only its aggregate result table was validated.",
+    "Cycle-25 row-level v3 state table is not preserved locally; its aggregate state summary comes from the executed cross-cycle notebook.",
+    "Canonical supplementary lineage remains provisional despite numerical compatibility.",
+    "The validation is not external scientific validation."
+  ]
+}
