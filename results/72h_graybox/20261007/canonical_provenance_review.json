@@ -1,6 +1,8 @@
 {
   "status": "CANONICAL_LINEAGE_REVIEW_PENDING_ACCEPTANCE",
-  "reviewed_utc": "2026-10-07T07:00:00Z",
+  "reviewed_utc": null,
+  "reviewed_date": "2026-10-07",
+  "timestamp_correction": "The earlier version used a rounded UTC timestamp that was not tool-derived. This version preserves the original commit history and removes that unsupported time-of-day claim.",
   "review_scope": "Local same-assistant provenance review; not external scientific validation",
   "canonical_master": {
     "rows": 71010,
@@ -57,7 +59,7 @@
     "gray_total_analysis_priority": true
   },
   "remaining_work": [
-    "Obtain or reconstruct a creation/transfer receipt for the canonical master before treating its model lineage as accepted.",
+    "Obtain the original creation/transfer receipt for the canonical master before treating its model lineage as accepted; any later evidence reconstruction must remain explicitly secondary and cannot substitute for that missing receipt.",
     "Bind each canonical branch to checkpoint, normalization, split, and case-level source manifests.",
     "Preserve the current canonical analyses as reported evidence while labeling lineage acceptance pending.",
     "Do not relaunch the expired v3 inference allowance."
