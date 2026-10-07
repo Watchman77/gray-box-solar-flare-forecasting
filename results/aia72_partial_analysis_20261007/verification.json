@@ -1,0 +1,80 @@
+{
+  "status": "source_and_numeric_review_complete",
+  "reviewed_utc": "2026-10-07T07:14:29.579187+00:00",
+  "relay_boundary": {
+    "status": "relay_incomplete",
+    "blocks_archived": 116,
+    "error": "ValueError: Remote relay ended before all blocks",
+    "returncode": 255,
+    "cleanup": {
+      "worker_launch_state": "started",
+      "worker_pid": 46441,
+      "worker_reaped": true,
+      "process_group_empty": true,
+      "cleanup_errors": [
+        {
+          "stage": "signal_15",
+          "error": "PermissionError: [Errno 1] Operation not permitted"
+        }
+      ],
+      "returncode": 255,
+      "cleanup_verified": false
+    },
+    "cancellation_signals": [],
+    "automatic_retry": false
+  },
+  "role_counts": {
+    "probability_calibration": {
+      "expected_blocks": 6,
+      "verified_ack_blocks": 6,
+      "expected_cases": 2831,
+      "verified_cases": 2831
+    },
+    "conformal_calibration": {
+      "expected_blocks": 9,
+      "verified_ack_blocks": 9,
+      "expected_cases": 4168,
+      "verified_cases": 4168
+    },
+    "policy_validation": {
+      "expected_blocks": 26,
+      "verified_ack_blocks": 26,
+      "expected_cases": 13142,
+      "verified_cases": 13142
+    },
+    "retrospective_cycle25": {
+      "expected_blocks": 71,
+      "verified_ack_blocks": 71,
+      "expected_cases": 35846,
+      "verified_cases": 35846
+    },
+    "supplementary_2026": {
+      "expected_blocks": 22,
+      "verified_ack_blocks": 5,
+      "expected_cases": 11118,
+      "verified_cases": 2560
+    },
+    "train": {
+      "expected_blocks": 50,
+      "verified_ack_blocks": 0,
+      "expected_cases": 25586,
+      "verified_cases": 0
+    }
+  },
+  "complete_roles_independently_rehashed": {
+    "conformal_calibration": {
+      "ordered_case_ids_sha256": "59aa9a3f6898172fdd88e4d1d20a06bb445db0a7a9bb520efdf62715137a3cf0",
+      "archive_hashes_sha256": "b22c3b529b122de8518f03cd6500d42f0460eff1c40213aa1c9a6207af9f125d",
+      "blocks": 9,
+      "cases": 4168
+    },
+    "retrospective_cycle25": {
+      "ordered_case_ids_sha256": "7509b06cbbaa3179d308214dd387d64b974301be0c087187601b95b5d39b2dcb",
+      "archive_hashes_sha256": "833cdf5f19e8c72d03f737e77009ef4a546248d9df73e4365686dcf41b99d44d",
+      "blocks": 71,
+      "cases": 35846
+    }
+  },
+  "metric_file_sha256": "f1d0ca65c642479c3233a04080b94f378f2bce3775ddeaa4367fa0787aa7d3e7",
+  "claim_boundary": "Exploratory only; no cleanup acceptance, complete-run claim, or independent scientific validation. Overlapping workspace outputs in results/72h_graybox/20261005 and 20261006 are recorded separately and not silently merged."
+}
