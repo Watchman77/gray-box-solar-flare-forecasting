@@ -1,0 +1,9 @@
+{
+  "protocol_id": "graybox24_protocol_v1",
+  "horizon_hours": 24,
+  "target_definition": "same_region_M_or_X_event_start_in_(issue_time, issue_time_plus_horizon]",
+  "time_scale_for_labeling": "TAI",
+  "reporting_delay_hours": 24,
+  "status": "label_construction_pending",
+  "forbidden_reuse": ["72h_labels", "72h_calibration", "72h_conformal_quantiles", "72h_policy_cutoffs", "72h_model_checkpoints"]
+}
