@@ -1,0 +1,81 @@
+{
+  "status": "label_quality_audit_complete_provisional_only",
+  "horizon_hours": 3,
+  "checks": {
+    "rows": 153366,
+    "unique_case_ids": 153366,
+    "horizon_values": [
+      3
+    ],
+    "duplicate_case_ids": 0,
+    "endpoint_parse_failures": 0,
+    "primary_counts": {
+      "0.0": 150768,
+      "nan": 1561,
+      "1.0": 1037
+    },
+    "patch_counts": {
+      "0.0": 150241,
+      "1.0": 1596,
+      "nan": 1529
+    },
+    "cohort_primary": {
+      "cycle24": {
+        "0.0": 55121,
+        "nan": 433,
+        "1.0": 317
+      },
+      "missing": {
+        "0.0": 39302,
+        "nan": 398,
+        "1.0": 233
+      },
+      "primary_cycle25": {
+        "0.0": 44394,
+        "nan": 668,
+        "1.0": 341
+      },
+      "supplementary_2026": {
+        "0.0": 11951,
+        "1.0": 146,
+        "nan": 62
+      }
+    },
+    "cohort_patch": {
+      "cycle24": {
+        "0.0": 55026,
+        "nan": 428,
+        "1.0": 417
+      },
+      "missing": {
+        "0.0": 39182,
+        "nan": 389,
+        "1.0": 362
+      },
+      "primary_cycle25": {
+        "0.0": 44113,
+        "nan": 650,
+        "1.0": 640
+      },
+      "supplementary_2026": {
+        "0.0": 11920,
+        "1.0": 177,
+        "nan": 62
+      }
+    },
+    "region_components": 2410,
+    "unassigned_region_components": 0,
+    "role_values": [
+      "unassigned"
+    ],
+    "training_ready_values": [
+      false
+    ]
+  },
+  "limitations": [
+    "Labels remain provisional and are not training truth.",
+    "Continuous event-detection coverage is not established.",
+    "No experiment roles have been assigned.",
+    "Event-level independence and source completeness require separate audits."
+  ]
+}
