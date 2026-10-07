@@ -1,0 +1,18 @@
+{
+  "status": "completed_manuscript_evidence_build",
+  "horizons": [
+    3,
+    24,
+    72
+  ],
+  "outputs": [
+    "calibration_reliability.csv",
+    "multihorizon_comparison.csv",
+    "figures/calibration_reliability.png"
+  ],
+  "limitations": [
+    "Short-horizon labels remain provisional candidate labels.",
+    "Short-horizon rows are SHARP-only; 72-hour rows are multimodal fallback-v3 summaries and are not like-for-like model comparisons.",
+    "The figures are descriptive reliability displays; they do not refit the frozen operational policy."
+  ]
+}
